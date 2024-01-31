@@ -50,10 +50,12 @@ Welcome to the Task Manager App, the final project from the Fullstack Developmen
    cd task-manager-app
 
 2. **Install Dependencies:**
-    ```npm install
+    ```bash
+    npm install
 
 3. **Start the Development Server:**
-    ```npm run dev
+    ```bash
+    npm run dev
 
 4. **Open in Browser:**
     Open your browser and visit `http://localhost:3000`.
