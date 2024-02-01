@@ -121,7 +121,7 @@ export default function SignUp() {
               Registration
             </TypoTitleSignUpStyled>
             <LoginLink
-              href="/auth/signin"
+              href="#/auth/signin"
               variant="body2"
               style={{ fontSize: "1rem" }}
             >

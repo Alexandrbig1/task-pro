@@ -109,7 +109,7 @@ export default function SignIn() {
             }}
           >
             <RegistrationLink
-              href="/auth/signup"
+              href="#/auth/signup"
               variant="body2"
               style={{ fontSize: "1rem" }}
             >
