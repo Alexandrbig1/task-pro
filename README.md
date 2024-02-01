@@ -20,6 +20,17 @@ Welcome to the Task Manager App, the final project from the Fullstack Developmen
 [![JavaScript](https://img.shields.io/badge/JavaScript-Latest-EAD319.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![React Icons](https://img.shields.io/badge/React_Icons-4.12.0-E10051.svg)](https://react-icons.github.io/react-icons/)
 
+## Table of Contents
+
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Contributing](#contributing)
+- [Issues](#issues)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+- [Connect with me](#connect-with-me)
+
 ## Features
 
 - **User Authentication:** Users can register and log in to access the main application.
