@@ -20,20 +20,28 @@ export const ContainerStyled = styled(Container)`
   background: linear-gradient(
     180deg,
     rgba(196, 196, 196, 0) 25%,
-    #bedbb0 92.19%
+    ${(p) => p.theme.colors.accentColor} 92.19%
   );
 `;
 
 export const BoxStyled = styled(Box)`
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
-  padding: 4rem;
-
   border-radius: 8px;
   background: #151515;
-  max-width: 424px;
+
+  max-width: 300px;
+  padding: 2.4rem;
+
+  @media (min-width: 365px) {
+    max-width: 335px;
+  }
+
+  @media (min-width: 768px) {
+    padding: 4rem;
+    max-width: 424px;
+  }
 `;
 
 export const Form = styled(Box)`
@@ -42,28 +50,31 @@ export const Form = styled(Box)`
 
 export const ButtonEl = styled(Button)`
   width: 100%;
-  padding: 1.4rem;
+  height: 4.9rem;
 `;
 
 export const ButtonStyled = styled.div`
   width: 100%;
+  max-width: 260px;
+
+  @media (min-width: 365px) {
+    max-width: 287px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 344px;
+  }
+
   margin-top: 2.4rem;
   margin-bottom: 1.6rem;
-  background-color: ${(p) => p.theme.colors.headerColor};
+  background-color: ${(p) => p.theme.colors.accentColor};
+  font-size: 2.4rem;
 
-  background-color: #bedbb0;
   cursor: pointer;
   border: none;
   outline: none;
-  border-radius: 0.4rem;
-  color: ${(p) => p.theme.colors.headerTextColor};
-  color: white;
-  color: #161616;
-  font-family: "Raleway", sans-serif;
-  font-size: 1.2rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   transition: 0.3s ease-in-out;
 
   &:hover {
@@ -71,12 +82,23 @@ export const ButtonStyled = styled.div`
   }
 `;
 
+export const BtnLogInSpan = styled.span`
+  color: ${(p) => p.theme.colors.blackColor};
+  font-family: ${primaryFont};
+  font-size: 1.4rem;
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.28px;
+`;
+
 export const LinkStyled = styled(Link)`
   color: ${(p) => p.theme.colors.textColor};
 `;
 
 export const RegistrationLink = styled.a`
-  color: rgba(255, 255, 255, 0.3);
+  color: ${(p) => p.theme.colors.whiteColorLowOp};
   font-family: ${primaryFont};
   font-size: 18px;
   font-style: normal;
@@ -86,51 +108,84 @@ export const RegistrationLink = styled.a`
 `;
 
 export const TypoStyled = styled(Typography)`
-  color: ${(p) => p.theme.colors.textColor};
-  color: white;
-  color: #161616;
+  color: ${(p) => p.theme.colors.blackColor};
 `;
 
 export const TypoTitleStyled = styled(Typography)`
-  color: ${(p) => p.theme.colors.textColor};
-  color: white;
+  color: ${(p) => p.theme.colors.whiteColor};
+  font-family: ${primaryFont};
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.36px;
 `;
 
 export const TextFieldStyled = styled(TextField)`
+  width: 100%;
+  max-width: 260px;
+
+  @media (min-width: 365px) {
+    max-width: 287px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 344px;
+  }
+
   input {
-    color: ${(p) => p.theme.colors.textColor};
-    color: white;
-    background-color: ${(p) => p.theme.colors.inputBg};
     border-radius: 0.4rem;
-    font-family: "Roboto", sans-serif;
-    font-size: 1.4rem;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: ${(p) => p.theme.colors.whiteColor};
+    font-family: ${primaryFont};
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.28px;
+    border-radius: 4px;
+    outline: 1px solid
+      ${(p) =>
+        p.error ? p.theme.colors.errorColor : p.theme.colors.accentColor};
+    box-shadow: 0px 4px 16px 0px rgba(22, 22, 22, 0.08);
 
     &:focus-within {
       outline: none;
+      /* border: 1px solid transparent; */
     }
   }
 
   label {
-    color: ${(p) => p.theme.colors.textColorLowOp};
-    color: rgba(255, 255, 255, 0.3);
-
-    font-family: "Roboto", sans-serif;
+    color: ${(p) => p.theme.colors.whiteColorLowOp};
+    font-family: ${primaryFont};
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.28px;
   }
 `;
 
 export const EyePasswordWrap = styled.div`
   position: relative;
+  width: 100%;
+  max-width: 256px;
+
+  @media (min-width: 365px) {
+    max-width: 287px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 344px;
+  }
 `;
 
 export const EyeIconWrapper = styled.span`
   position: absolute;
   top: 50%;
   right: 1.2rem;
+
   transform: translateY(-35%);
   font-size: 2rem;
-  color: ${(p) => p.theme.colors.textColorLowOp};
-  color: rgba(255, 255, 255, 0.3);
+  color: ${(p) => p.theme.colors.whiteColorLowOp};
 
   &:hover {
     cursor: pointer;
@@ -141,7 +196,10 @@ export const SignInErrorMessage = styled.p`
   position: absolute;
   top: -0.4rem;
   right: 0;
-  font-size: 1.2rem;
-  color: ${(p) => p.theme.colors.deleteBtn};
-  color: red;
+  color: ${(p) => p.theme.colors.errorColor};
+  font-size: 1rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;

@@ -23,6 +23,7 @@ import { refreshUser } from "../redux/auth/operations";
 const themes = {
   light: {
     colors: {
+      accentColor: "#bedbb0",
       mainTextColor: "#161616",
       mainBgColor: "#F6F6F7",
       mainAsideColor: "#FFF",
@@ -34,10 +35,14 @@ const themes = {
       themeTextColor: "#161616",
       themeTextHoverColor: "#BEDBB0",
       whiteColor: "#FFF",
+      whiteColorLowOp: "rgba(255, 255, 255, 0.3)",
+      blackColor: "#161616",
+      errorColor: "#ff2929",
     },
   },
   dark: {
     colors: {
+      accentColor: "#bedbb0",
       mainTextColor: "#fff",
       mainBgColor: "#232323",
       mainAsideColor: "#121212",
@@ -49,10 +54,14 @@ const themes = {
       themeTextColor: "rgba(255, 255, 255, 0.5)",
       themeTextHoverColor: "#BEDBB0",
       whiteColor: "#FFF",
+      whiteColorLowOp: "rgba(255, 255, 255, 0.3)",
+      blackColor: "#161616",
+      errorColor: "#ff2929",
     },
   },
   violet: {
     colors: {
+      accentColor: "#bedbb0",
       mainTextColor: "#FFF",
       mainBgColor: "#D6D8FF",
       mainAsideColor: "#5255BC",
@@ -64,6 +73,9 @@ const themes = {
       themeTextColor: "#161616",
       themeTextHoverColor: "#5255BC",
       whiteColor: "#FFF",
+      whiteColorLowOp: "rgba(255, 255, 255, 0.3)",
+      blackColor: "#161616",
+      errorColor: "#ff2929",
     },
   },
 };

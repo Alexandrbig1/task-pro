@@ -21,20 +21,30 @@ export const ContainerSignUpStyled = styled(Container)`
   background: linear-gradient(
     180deg,
     rgba(196, 196, 196, 0) 25%,
-    #bedbb0 92.19%
+    ${(p) => p.theme.colors.accentColor} 92.19%
   );
 `;
 
 export const BoxSignUpStyled = styled(Box)`
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
+  margin: 0 auto;
 
   border-radius: 8px;
   background: #151515;
-  max-width: 424px;
-  padding: 4rem;
+  padding: 2.4rem;
+  max-width: 300px;
+
+  @media (min-width: 365px) {
+    max-width: 335px;
+    padding: 2.4rem;
+  }
+
+  @media (min-width: 768px) {
+    padding: 4rem;
+    max-width: 424px;
+  }
 `;
 
 export const FormSignUp = styled(Box)`
@@ -43,26 +53,30 @@ export const FormSignUp = styled(Box)`
 
 export const SignUpButtonEl = styled(Button)`
   width: 100%;
-  padding: 1.4rem;
+  height: 4.9rem;
 `;
 
 export const SignUpButtonStyled = styled.div`
   width: 100%;
+  max-width: 256px;
+
+  @media (min-width: 365px) {
+    max-width: 287px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 344px;
+  }
+
   margin-top: 2.4rem;
   margin-bottom: 1.6rem;
-  background-color: ${(p) => p.theme.colors.headerColor};
-  background-color: #bedbb0;
+  background-color: ${(p) => p.theme.colors.accentColor};
+  font-size: 2.4rem;
 
   cursor: pointer;
   border: none;
   outline: none;
-  border-radius: 0.4rem;
-  color: ${(p) => p.theme.colors.headerTextColor};
-  font-family: "Raleway", sans-serif;
-  font-size: 1.2rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+  border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   transition: 0.3s ease-in-out;
 
@@ -71,21 +85,37 @@ export const SignUpButtonStyled = styled.div`
   }
 `;
 
-export const LinkSignUpStyled = styled(Link)`
-  color: ${(p) => p.theme.colors.textColor};
+export const BtnSpan = styled.span`
+  color: ${(p) => p.theme.colors.blackColor};
+  font-family: ${primaryFont};
+  font-size: 1.4rem;
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.28px;
 `;
 
 export const TypoSignUpStyled = styled(Typography)`
-  color: ${(p) => p.theme.colors.textColor};
+  color: ${(p) => p.theme.colors.blackColor};
 `;
 
 export const TypoTitleSignUpStyled = styled(Typography)`
-  color: ${(p) => p.theme.colors.textColor};
-  color: white;
+  color: ${(p) => p.theme.colors.whiteColor};
+  font-family: ${primaryFont};
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.36px;
+`;
+
+export const LinkSignUpStyled = styled(Link)`
+  color: ${(p) => p.theme.colors.blackColor};
 `;
 
 export const LoginLink = styled.a`
-  color: rgba(255, 255, 255, 0.3);
+  color: ${(p) => p.theme.colors.whiteColorLowOp};
   font-family: ${primaryFont};
   font-size: 18px;
   font-style: normal;
@@ -95,40 +125,84 @@ export const LoginLink = styled.a`
 `;
 
 export const TextFieldSignUpStyled = styled(TextField)`
+  width: 100%;
+  max-width: 256px;
+
+  @media (min-width: 365px) {
+    max-width: 287px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 344px;
+  }
+
   input {
-    color: ${(p) => p.theme.colors.textColor};
-    color: white;
-    background-color: ${(p) => p.theme.colors.inputBg};
     border-radius: 0.4rem;
-    font-family: "Roboto", sans-serif;
-    font-size: 1.4rem;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: ${(p) => p.theme.colors.whiteColor};
+    font-family: ${primaryFont};
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.28px;
+    /* border: 1px solid #bedbb0; */
+    outline: 1px solid
+      ${(p) =>
+        p.error ? p.theme.colors.errorColor : p.theme.colors.accentColor};
+    box-shadow: 0px 4px 16px 0px rgba(22, 22, 22, 0.08);
 
     &:focus-within {
+      /* border: 1px solid transparent; */
       outline: none;
     }
   }
 
   label {
-    color: ${(p) => p.theme.colors.textColorLowOp};
-    color: rgba(255, 255, 255, 0.3);
+    color: ${(p) => p.theme.colors.whiteColorLowOp};
+    font-family: ${primaryFont};
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.28px;
+  }
+`;
 
-    font-family: "Roboto", sans-serif;
+export const FieldWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 256px;
+
+  @media (min-width: 365px) {
+    max-width: 287px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 344px;
   }
 `;
 
 export const EyePasswordSignUpWrap = styled.div`
   position: relative;
+  width: 100%;
+  max-width: 256px;
+
+  @media (min-width: 365px) {
+    max-width: 287px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 344px;
+  }
 `;
 
 export const EyeIconSignUpWrapper = styled.span`
   position: absolute;
   top: 50%;
   right: 1.2rem;
+
   transform: translateY(-35%);
   font-size: 2rem;
-  color: ${(p) => p.theme.colors.textColorLowOp};
-  color: rgba(255, 255, 255, 0.3);
+  color: ${(p) => p.theme.colors.whiteColorLowOp};
 
   &:hover {
     cursor: pointer;
@@ -137,9 +211,24 @@ export const EyeIconSignUpWrapper = styled.span`
 
 export const ErrorMessage = styled.p`
   position: absolute;
+  top: -2rem;
+  right: 0;
+  color: ${(p) => p.theme.colors.errorColor};
+  font-size: 1rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.2rem;
+  }
+`;
+
+export const PasswordErrorMessage = styled.p`
+  position: absolute;
   top: -0.4rem;
   right: 0;
-  font-size: 1.2rem;
-  color: ${(p) => p.theme.colors.deleteBtn};
-  color: red;
+  color: ${(p) => p.theme.colors.errorColor};
+  font-size: 1rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;
