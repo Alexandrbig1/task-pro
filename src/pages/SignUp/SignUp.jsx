@@ -61,7 +61,6 @@ export default function SignUp() {
   const [showPassword, setShowPassword] = React.useState(false);
   const dispatch = useDispatch();
   const [errors, setErrors] = React.useState({});
-  const [errorsLength, setErrorsLength] = React.useState(false);
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
