@@ -12,7 +12,7 @@ export default function Welcome() {
   return (
     <WelcomeContainer>
       <WelcomeWrapper>
-        <img src="/images/welcome.png" alt="boy with laptop" />
+        <img src="images/welcome.png" alt="boy with laptop" />
         <Logo />
         <WelcomeText>
           Supercharge your productivity and take control of your tasks with Task

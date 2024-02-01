@@ -1,17 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import { lazy } from "react";
 // import { useDispatch } from "react-redux";
 import {
   Route,
-  createBrowserRouter,
-  createRoutesFromElements,
-  RouterProvider,
+  // createBrowserRouter,
+  // createRoutesFromElements,
+  // RouterProvider,
 } from "react-router-dom";
-
+import { HashRouter as Router, Routes } from "react-router-dom";
 import FontsHelmet from "./FontHelmet";
 import RootLayout from "../layouts/RootLayout/RootLayout";
+import { useDispatch } from "react-redux";
+// import { useAuth } from "../hooks";
+import { refreshUser } from "../redux/auth/operations";
 // import { RestrictedRoute } from "./RestrictRoute";
 // import { PrivateRoute } from "./PrivateRoute";
 // import { useAuth } from "../hooks";
@@ -83,46 +86,71 @@ function App() {
     localStorage.setItem("theme", themeValue);
   }
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   // const { isRefreshing } = useAuth();
 
-  // useEffect(() => {
-  //   dispatch(refreshUser());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
 
-  const router = createBrowserRouter(
-    createRoutesFromElements(
-      <Route path="/" element={<RootLayout />}>
-        <Route index element={<Welcome />} />
-        <Route path="auth/signin" element={<SignIn />} />
-        {/* <Route
-          path="auth/signin"
-          element={<RestrictedRoute redirectTo="home" component={<SignIn />} />}
-        /> */}
-        <Route path="auth/signup" element={<SignUp />} />
-        {/* <Route
-          path="auth/signup"
-          element={<RestrictedRoute redirectTo="home" component={<SignUp />} />}
-        /> */}
-        <Route path="home" element={<Home toggleTheme={toggleTheme} />} />
-        {/* <Route
-          path="home"
-          element={
-            <PrivateRoute
-              redirectTo="auth/signin"
-              component={<Home toggleTheme={toggleTheme} />}
-            /> */}
+  // const router = (
+  //   <Router>
+  //     <Routes>
+  //       <Route path="/" element={<RootLayout />}>
+  //         <Route index element={<Welcome />} />
+  //         <Route path="#/auth/signin" element={<SignIn />} />
+  //         <Route path="#/auth/signup" element={<SignUp />} />
+  //         <Route path="#/home" element={<Home toggleTheme={toggleTheme} />} />
+  //         <Route path="*" element={<NotFound />} />
+  //       </Route>
+  //     </Routes>
+  //   </Router>
+  // );
 
-        <Route path="*" element={<NotFound />} />
-      </Route>
-    )
-  );
+  // const router = createBrowserRouter(
+  //   createRoutesFromElements(
+  //     <Route path="/" element={<RootLayout />}>
+  //       <Route index element={<Welcome />} />
+  //       <Route path="auth/signin" element={<SignIn />} />
+  //       {/* <Route
+  //         path="auth/signin"
+  //         element={<RestrictedRoute redirectTo="home" component={<SignIn />} />}
+  //       /> */}
+  //       <Route path="auth/signup" element={<SignUp />} />
+  //       {/* <Route
+  //         path="auth/signup"
+  //         element={<RestrictedRoute redirectTo="home" component={<SignUp />} />}
+  //       /> */}
+  //       <Route path="home" element={<Home toggleTheme={toggleTheme} />} />
+  //       {/* <Route
+  //         path="home"
+  //         element={
+  //           <PrivateRoute
+  //             redirectTo="auth/signin"
+  //             component={<Home toggleTheme={toggleTheme} />}
+  //           /> */}
+
+  //       <Route path="*" element={<NotFound />} />
+  //     </Route>
+  //   )
+  // );
 
   return (
     <ThemeProvider theme={themes[currentTheme]}>
       <FontsHelmet />
       <GlobalStyle />
-      <RouterProvider router={router} />
+      <Router>
+        <Routes>
+          <Route path="/" element={<RootLayout />}>
+            <Route index element={<Welcome />} />
+            <Route path="auth/signin" element={<SignIn />} />
+            <Route path="auth/signup" element={<SignUp />} />
+            <Route path="home" element={<Home toggleTheme={toggleTheme} />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </Router>
+      {/* <RouterProvider router={router} /> */}
     </ThemeProvider>
   );
 }
