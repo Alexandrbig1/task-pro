@@ -22,6 +22,7 @@ Welcome to the Task Manager App, the final project from the Fullstack Developmen
 
 ## Table of Contents
 
+- [Project Contributors](#project-contributors)
 - [Figma Design File](#figma-design-file)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
