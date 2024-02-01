@@ -89,9 +89,8 @@ function App() {
   //   dispatch(refreshUser());
   // }, [dispatch]);
 
-  const router = createBrowserRouter({
-    basename: "/",
-    routes: createRoutesFromElements(
+  const router = createBrowserRouter(
+    createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Welcome />} />
         <Route path="auth/signin" element={<SignIn />} />
@@ -115,8 +114,8 @@ function App() {
 
         <Route path="*" element={<NotFound />} />
       </Route>
-    ),
-  });
+    )
+  );
 
   return (
     <ThemeProvider theme={themes[currentTheme]}>
