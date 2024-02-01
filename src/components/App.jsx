@@ -9,7 +9,7 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
-import { HashRouter as Router, Routes } from "react-router-dom";
+
 import FontsHelmet from "./FontHelmet";
 import RootLayout from "../layouts/RootLayout/RootLayout";
 // import { RestrictedRoute } from "./RestrictRoute";
@@ -90,64 +90,39 @@ function App() {
   //   dispatch(refreshUser());
   // }, [dispatch]);
 
-  // const router = (
-  //   <Router>
-  //     <Routes>
-  //       <Route path="/" element={<RootLayout />}>
-  //         <Route index element={<Welcome />} />
-  //         <Route path="#/auth/signin" element={<SignIn />} />
-  //         <Route path="#/auth/signup" element={<SignUp />} />
-  //         <Route path="#/home" element={<Home toggleTheme={toggleTheme} />} />
-  //         <Route path="*" element={<NotFound />} />
-  //       </Route>
-  //     </Routes>
-  //   </Router>
-  // );
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<RootLayout />}>
+        <Route index element={<Welcome />} />
+        <Route path="auth/signin" element={<SignIn />} />
+        {/* <Route
+          path="auth/signin"
+          element={<RestrictedRoute redirectTo="home" component={<SignIn />} />}
+        /> */}
+        <Route path="auth/signup" element={<SignUp />} />
+        {/* <Route
+          path="auth/signup"
+          element={<RestrictedRoute redirectTo="home" component={<SignUp />} />}
+        /> */}
+        <Route path="home" element={<Home toggleTheme={toggleTheme} />} />
+        {/* <Route
+          path="home"
+          element={
+            <PrivateRoute
+              redirectTo="auth/signin"
+              component={<Home toggleTheme={toggleTheme} />}
+            /> */}
 
-  // const router = createBrowserRouter(
-  //   createRoutesFromElements(
-  //     <Route path="/" element={<RootLayout />}>
-  //       <Route index element={<Welcome />} />
-  //       <Route path="auth/signin" element={<SignIn />} />
-  //       {/* <Route
-  //         path="auth/signin"
-  //         element={<RestrictedRoute redirectTo="home" component={<SignIn />} />}
-  //       /> */}
-  //       <Route path="auth/signup" element={<SignUp />} />
-  //       {/* <Route
-  //         path="auth/signup"
-  //         element={<RestrictedRoute redirectTo="home" component={<SignUp />} />}
-  //       /> */}
-  //       <Route path="home" element={<Home toggleTheme={toggleTheme} />} />
-  //       {/* <Route
-  //         path="home"
-  //         element={
-  //           <PrivateRoute
-  //             redirectTo="auth/signin"
-  //             component={<Home toggleTheme={toggleTheme} />}
-  //           /> */}
-
-  //       <Route path="*" element={<NotFound />} />
-  //     </Route>
-  //   )
-  // );
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    )
+  );
 
   return (
     <ThemeProvider theme={themes[currentTheme]}>
       <FontsHelmet />
       <GlobalStyle />
-      <Router>
-        <Routes>
-          <Route path="/" element={<RootLayout />}>
-            <Route index element={<Welcome />} />
-            <Route path="auth/signin" element={<SignIn />} />
-            <Route path="auth/signup" element={<SignUp />} />
-            <Route path="home" element={<Home toggleTheme={toggleTheme} />} />
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
-      </Router>
-      {/* <RouterProvider router={router} /> */}
+      <RouterProvider router={router} />
     </ThemeProvider>
   );
 }
