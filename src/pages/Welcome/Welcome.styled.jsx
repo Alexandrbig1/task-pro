@@ -26,7 +26,7 @@ export const WelcomeWrapper = styled.div`
 export const WelcomeText = styled.p`
   color: #161616;
   text-align: center;
-  font-family: Poppins;
+  font-family: ${primaryFont};
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
