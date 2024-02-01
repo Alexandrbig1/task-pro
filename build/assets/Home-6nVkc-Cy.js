@@ -1,4 +1,4 @@
-import{u as r,p as a,j as t,g as j,r as m,M as v}from"./index-3gjTFa63.js";import{L as b}from"./Logo-EvAGUHaG.js";import{G as x}from"./iconBase-OkKNPazo.js";const C=r.div`
+import{u as r,p as a,j as t,g as j,r as m,M as v}from"./index-2utVNbi0.js";import{L as b}from"./Logo-rFm3Szw0.js";import{G as x}from"./iconBase-Du8rcPIR.js";const C=r.div`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;

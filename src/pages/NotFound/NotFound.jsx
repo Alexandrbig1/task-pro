@@ -1,3 +1,5 @@
+import { Container } from "../../components/Layout";
+
 export default function NotFound() {
-  return <div>404</div>;
+  return <Container>404</Container>;
 }

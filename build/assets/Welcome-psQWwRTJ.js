@@ -1,4 +1,4 @@
-import{u as t,p as n,L as o,j as e}from"./index-3gjTFa63.js";import{L as i}from"./Logo-EvAGUHaG.js";const r=t.div`
+import{u as t,p as n,L as o,j as e}from"./index-2utVNbi0.js";import{L as i}from"./Logo-rFm3Szw0.js";const r=t.div`
   background: linear-gradient(
     180deg,
     rgba(196, 196, 196, 0) 25%,
@@ -18,7 +18,7 @@ import{u as t,p as n,L as o,j as e}from"./index-3gjTFa63.js";import{L as i}from"
 `,l=t.p`
   color: #161616;
   text-align: center;
-  font-family: Poppins;
+  font-family: ${n};
   font-size: 14px;
   font-style: normal;
   font-weight: 400;

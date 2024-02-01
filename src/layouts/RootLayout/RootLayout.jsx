@@ -1,14 +1,12 @@
 import { Outlet } from "react-router-dom";
 import { Suspense } from "react";
-import { Container } from "../../components/Layout";
+import Loader from "../../components/Loader/Loader";
 
 function RootLayout() {
   return (
-    <Container>
-      <Suspense fallback={<div>loading...</div>}>
-        <Outlet />
-      </Suspense>
-    </Container>
+    <Suspense fallback={<Loader />}>
+      <Outlet />
+    </Suspense>
   );
 }
 

@@ -14,6 +14,22 @@ export const WelcomeContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  position: relative;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @media (min-width: 375px) {
+    max-width: 37.5rem;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 76.8rem;
+  }
+
+  @media (min-width: 1440px) {
+    max-width: 144rem;
+  }
 `;
 
 export const WelcomeWrapper = styled.div`
@@ -32,8 +48,16 @@ export const WelcomeText = styled.p`
   font-weight: 400;
   line-height: 1.28;
   letter-spacing: -0.28px;
-  max-width: 474px;
+  max-width: 300px;
   width: 100%;
+
+  @media (min-width: 375px) {
+    max-width: 335px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 474px;
+  }
 `;
 
 export const WelcomeBtnWrapper = styled.div`
@@ -55,7 +79,7 @@ export const RegistrationBtn = styled(Link)`
   background-color: #161616;
 
   display: flex;
-  width: 344px;
+  width: 300px;
   padding: 14px 0px;
   justify-content: center;
   align-items: center;
@@ -64,6 +88,14 @@ export const RegistrationBtn = styled(Link)`
 
   &:hover {
     cursor: pointer;
+  }
+
+  @media (min-width: 375px) {
+    max-width: 335px;
+  }
+
+  @media (min-width: 768px) {
+    width: 344px;
   }
 `;
 

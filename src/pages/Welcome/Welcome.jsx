@@ -8,12 +8,22 @@ import {
   LoginBtn,
 } from "./Welcome.styled";
 
+const size = {
+  width: "48px",
+  height: "48px",
+};
+
+const text = {
+  color: "#161616",
+  font: "4rem",
+};
+
 export default function Welcome() {
   return (
     <WelcomeContainer>
       <WelcomeWrapper>
         <img src="images/welcome.png" alt="boy with laptop" />
-        <Logo />
+        <Logo size={size} text={text} />
         <WelcomeText>
           Supercharge your productivity and take control of your tasks with Task
           Pro - Don't wait, start achieving your goals now!
