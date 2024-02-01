@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import { lazy } from "react";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import {
   Route,
   createBrowserRouter,
@@ -14,7 +14,7 @@ import RootLayout from "../layouts/RootLayout/RootLayout";
 // import { RestrictedRoute } from "./RestrictRoute";
 // import { PrivateRoute } from "./PrivateRoute";
 // import { useAuth } from "../hooks";
-import { refreshUser } from "../redux/auth/operations";
+// import { refreshUser } from "../redux/auth/operations";
 
 const themes = {
   light: {
@@ -82,12 +82,12 @@ function App() {
     localStorage.setItem("theme", themeValue);
   }
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // const { isRefreshing } = useAuth();
 
-  useEffect(() => {
-    dispatch(refreshUser());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(refreshUser());
+  // }, [dispatch]);
 
   const router = createBrowserRouter(
     createRoutesFromElements(
