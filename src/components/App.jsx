@@ -90,7 +90,7 @@ function App() {
   // }, [dispatch]);
 
   const router = createBrowserRouter({
-    basename: "/task-pro/",
+    basename: "/",
     routes: createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Welcome />} />
