@@ -13,7 +13,7 @@ export const ContainerStyled = styled(Container)`
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: calc(100vh - 6.4rem);
+  min-height: 100vh;
   padding: 1.2rem;
   overflow-x: hidden;
 

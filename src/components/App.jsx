@@ -1,10 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import { lazy } from "react";
-import { Provider } from "react-redux";
-import { store, persistor } from "../redux/store";
-import { PersistGate } from "redux-persist/integration/react";
+import { useDispatch } from "react-redux";
 import {
   Route,
   createBrowserRouter,
@@ -13,6 +11,10 @@ import {
 } from "react-router-dom";
 import FontsHelmet from "./FontHelmet";
 import RootLayout from "../layouts/RootLayout/RootLayout";
+// import { RestrictedRoute } from "./RestrictRoute";
+// import { PrivateRoute } from "./PrivateRoute";
+// import { useAuth } from "../hooks";
+import { refreshUser } from "../redux/auth/operations";
 
 const themes = {
   light: {
@@ -80,13 +82,36 @@ function App() {
     localStorage.setItem("theme", themeValue);
   }
 
+  const dispatch = useDispatch();
+  // const { isRefreshing } = useAuth();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Welcome />} />
         <Route path="auth/signin" element={<SignIn />} />
+        {/* <Route
+          path="auth/signin"
+          element={<RestrictedRoute redirectTo="home" component={<SignIn />} />}
+        /> */}
         <Route path="auth/signup" element={<SignUp />} />
+        {/* <Route
+          path="auth/signup"
+          element={<RestrictedRoute redirectTo="home" component={<SignUp />} />}
+        /> */}
         <Route path="home" element={<Home toggleTheme={toggleTheme} />} />
+        {/* <Route
+          path="home"
+          element={
+            <PrivateRoute
+              redirectTo="auth/signin"
+              component={<Home toggleTheme={toggleTheme} />}
+            /> */}
+
         <Route path="*" element={<NotFound />} />
       </Route>
     )
@@ -96,11 +121,7 @@ function App() {
     <ThemeProvider theme={themes[currentTheme]}>
       <FontsHelmet />
       <GlobalStyle />
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <RouterProvider router={router} />
-        </PersistGate>
-      </Provider>
+      <RouterProvider router={router} />
     </ThemeProvider>
   );
 }
