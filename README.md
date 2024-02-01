@@ -44,7 +44,7 @@ Welcome to the Task Manager App, the final project from the Fullstack Developmen
 - [krb](https://github.com/KRB-U) - Fullstack developer
 - [Vladyslav Parkhomovych](https://github.com/Parkhomovych) - Fullstack developer
 - [Svitlana Yurikova](https://github.com/SvitUriko) - Fullstack developer
-- [Yulia](https://github.com/Yullia90) - Fullstack developer
+- [Yulia Tsarenko](https://github.com/Yullia90) - Fullstack developer
 
 ## Figma Design File
 
