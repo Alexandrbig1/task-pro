@@ -1,4 +1,4 @@
-import{u as t,p as n,L as o,j as e}from"./index-pqyG-DKT.js";import{L as i}from"./Logo-yOpxmBI3.js";const r=t.div`
+import{u as t,p as n,L as o,j as e}from"./index-ZgWNFKV1.js";import{L as i}from"./Logo-sg_RogRi.js";const r=t.div`
   background: linear-gradient(
     180deg,
     rgba(196, 196, 196, 0) 25%,
@@ -66,4 +66,4 @@ import{u as t,p as n,L as o,j as e}from"./index-pqyG-DKT.js";import{L as i}from"
   &:hover {
     cursor: pointer;
   }
-`;function x(){return e.jsx(r,{children:e.jsxs(a,{children:[e.jsx("img",{src:"/images/welcome.png",alt:"boy with laptop"}),e.jsx(i,{}),e.jsx(l,{children:"Supercharge your productivity and take control of your tasks with Task Pro - Don't wait, start achieving your goals now!"}),e.jsxs(s,{children:[e.jsx(c,{to:"auth/signup",children:"Registration"}),e.jsx(p,{to:"auth/signin",children:"Log In"})]})]})})}export{x as default};
+`;function x(){return e.jsx(r,{children:e.jsxs(a,{children:[e.jsx("img",{src:"images/welcome.png",alt:"boy with laptop"}),e.jsx(i,{}),e.jsx(l,{children:"Supercharge your productivity and take control of your tasks with Task Pro - Don't wait, start achieving your goals now!"}),e.jsxs(s,{children:[e.jsx(c,{to:"auth/signup",children:"Registration"}),e.jsx(p,{to:"auth/signin",children:"Log In"})]})]})})}export{x as default};
