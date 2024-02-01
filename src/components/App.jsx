@@ -1,10 +1,18 @@
 import { useState } from "react";
 import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
-import Header from "./Header/Header";
-import { AsideContainer, Container, MainContainer } from "./Layout";
-import Logo from "./Logo/Logo";
-import MainPage from "./MainPage/MainPage";
+import { lazy } from "react";
+import { Provider } from "react-redux";
+import { store, persistor } from "../redux/store";
+import { PersistGate } from "redux-persist/integration/react";
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
+import FontsHelmet from "./FontHelmet";
+import RootLayout from "../layouts/RootLayout/RootLayout";
 
 const themes = {
   light: {
@@ -54,6 +62,12 @@ const themes = {
   },
 };
 
+const Welcome = lazy(() => import("../pages/Welcome/Welcome"));
+const Home = lazy(() => import("../pages/Home/Home"));
+const SignIn = lazy(() => import("../pages/SignIn/SignIn"));
+const SignUp = lazy(() => import("../pages/SignUp/SignUp"));
+const NotFound = lazy(() => import("../pages/NotFound/NotFound"));
+
 function App() {
   const [currentTheme, setCurrentTheme] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -66,20 +80,27 @@ function App() {
     localStorage.setItem("theme", themeValue);
   }
 
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<RootLayout />}>
+        <Route index element={<Welcome />} />
+        <Route path="auth/signin" element={<SignIn />} />
+        <Route path="auth/signup" element={<SignUp />} />
+        <Route path="home" element={<Home toggleTheme={toggleTheme} />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    )
+  );
+
   return (
     <ThemeProvider theme={themes[currentTheme]}>
-      <Container>
-        <AsideContainer>
-          <Logo />
-        </AsideContainer>
-        <MainContainer>
-          <Header toggleTheme={toggleTheme} />
-          <main>
-            <MainPage />
-          </main>
-        </MainContainer>
-      </Container>
+      <FontsHelmet />
       <GlobalStyle />
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <RouterProvider router={router} />
+        </PersistGate>
+      </Provider>
     </ThemeProvider>
   );
 }

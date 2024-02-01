@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import "modern-normalize/modern-normalize.css";
+import { primaryFont } from "./fonts";
 
 export const GlobalStyle = createGlobalStyle`* {
     margin: 0;
@@ -17,9 +18,9 @@ export const GlobalStyle = createGlobalStyle`* {
   }
 
   body {
-    background-color: ${(p) => p.theme.colors.mainAsideColor};
-    background-color: #f8f9fa;
-  font-family: 'Roboto', sans-serif;
+  background-color: ${(p) => p.theme.colors.mainAsideColor};
+  background-color: #f8f9fa;
+  font-family: ${primaryFont};
   height: 100%;
   margin: 0;
   }

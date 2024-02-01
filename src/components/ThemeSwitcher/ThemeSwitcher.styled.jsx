@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { primaryFont } from "../fonts";
 
 export const ShowThemeContainer = styled.div`
   position: relative;
@@ -10,7 +11,7 @@ export const ShowThemeContainer = styled.div`
 
 export const ThemeMainText = styled.p`
   color: ${(p) => p.theme.colors.themeMainTextColor};
-  font-family: Poppins;
+  font-family: ${primaryFont};
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -47,7 +48,7 @@ export const ShowThemeWrapper = styled.div`
 
 export const ThemeText = styled.p`
   color: ${(p) => p.theme.colors.themeTextColor};
-  font-family: Poppins;
+  font-family: ${primaryFont};
   font-size: 14px;
   font-style: normal;
   font-weight: 400;

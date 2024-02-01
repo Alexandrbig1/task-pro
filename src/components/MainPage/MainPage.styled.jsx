@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { primaryFont } from "../fonts";
 
 export const MainWrapper = styled.div`
   width: 100%;
@@ -13,7 +14,7 @@ export const MainWrapper = styled.div`
 export const MainText = styled.p`
   color: ${(p) => p.theme.colors.mainPageTextColor};
   text-align: center;
-  font-family: Poppins;
+  font-family: ${primaryFont};
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
