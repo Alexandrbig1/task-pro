@@ -41,7 +41,7 @@ Welcome to the Task Manager App, the final project from the Fullstack Developmen
 - [Natalia Spivak](https://github.com/Nataly-Naf) - Fullstack developer
 - [Oleg Baranov](https://github.com/Olegmkv) - Fullstack developer
 - [igrok](https://github.com/igrok1803444) - Fullstack developer
-- [krb](https://github.com/KRB-U) - Fullstack developer
+- [Dmytro Mukolyuk](https://github.com/KRB-U) - Fullstack developer
 - [Vladyslav Parkhomovych](https://github.com/Parkhomovych) - Fullstack developer
 - [Svitlana Yurikova](https://github.com/SvitUriko) - Fullstack developer
 - [Yulia Tsarenko](https://github.com/Yullia90) - Fullstack developer
