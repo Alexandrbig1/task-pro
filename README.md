@@ -91,7 +91,7 @@ Welcome to the Task Manager App, the final project from the Fullstack Developmen
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/your-username/task-pro.git
+   git clone https://github.com/Alexandrbig1/task-pro.git
    cd task-pro
 
    ```
