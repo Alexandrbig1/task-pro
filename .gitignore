@@ -12,6 +12,9 @@
 /out/
 /lib/
 
+# Environment variables file
+.env
+
 # misc
 .DS_Store
 .env.local

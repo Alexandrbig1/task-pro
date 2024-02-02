@@ -1,5 +1,6 @@
 import Logo from "../Logo/Logo";
-import NeedHelp from "../NeedHelp/NeedHElp";
+import LogoutButton from "../LogoutButton/LogoutButton";
+import NeedHelp from "../NeedHelp/NeedHelp";
 import NewBoard from "../NewBoard/NewBoard";
 import { AsideContainer } from "./Aside.styled";
 
@@ -9,6 +10,7 @@ export default function Aside() {
       <Logo />
       <NewBoard />
       <NeedHelp />
+      <LogoutButton />
     </AsideContainer>
   );
 }
