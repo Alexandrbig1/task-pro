@@ -2,11 +2,15 @@ import styled from "styled-components";
 
 export const HeaderWrapper = styled.div`
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
   padding: 1.8rem 2.4rem;
   width: 100%;
   background-color: ${(p) => p.theme.colors.mainHeaderColor};
+
+  @media (min-width: 1440px) {
+    justify-content: end;
+  }
 `;
 
 export const ThemeSwitcherWrapper = styled.div`

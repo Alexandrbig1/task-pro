@@ -28,6 +28,7 @@ const themes = {
     colors: {
       accentColor: "#bedbb0",
       mainTextColor: "#161616",
+      burgerColor: "#161616",
       mainBgColor: "#F6F6F7",
       mainAsideColor: "#FFF",
       mainHeaderColor: "#FCFCFC",
@@ -47,6 +48,7 @@ const themes = {
     colors: {
       accentColor: "#bedbb0",
       mainTextColor: "#fff",
+      burgerColor: "#fff",
       mainBgColor: "#232323",
       mainAsideColor: "#121212",
       mainHeaderColor: "#161616",
@@ -66,6 +68,7 @@ const themes = {
     colors: {
       accentColor: "#bedbb0",
       mainTextColor: "#FFF",
+      burgerColor: "#161616",
       mainBgColor: "#D6D8FF",
       mainAsideColor: "#5255BC",
       mainHeaderColor: "#FFF",
