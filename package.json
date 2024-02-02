@@ -1,8 +1,20 @@
 {
   "name": "task-pro",
   "author": "Creamy Sharks",
+  "description": "TaskPro - The ultimate task manager born from a 10-month Fullstack Development Bootcamp. Manage tasks effortlessly, similar to Trello, showcasing expertise in robust and feature-rich web applications.",
   "license": "MIT",
   "private": true,
+  "keywords": [
+    "task manager",
+    "Fullstack Development Bootcamp",
+    "web application",
+    "Trello",
+    "productivity",
+    "frontend",
+    "backend",
+    "react",
+    "nodejs"
+  ],
   "version": "0.0.0",
   "type": "module",
   "homepage": "http://Alexandrbig1.github.io/task-pro",
