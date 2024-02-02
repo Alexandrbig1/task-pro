@@ -7,7 +7,7 @@ export const HelpWrapper = styled.div`
   margin: 0 auto;
   padding: 20px;
   border-radius: 8px;
-  background-color: ${(p) => p.theme.colors.mainBgColor};
+  background-color: ${(p) => p.theme.colors.needHelpBgColor};
   margin-top: 40px;
 `;
 

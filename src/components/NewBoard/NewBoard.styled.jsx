@@ -8,7 +8,7 @@ export const NewBoardWrapper = styled.div`
 `;
 
 export const NewBoardSubTitle = styled.p`
-  color: rgba(255, 255, 255, 0.5);
+  color: ${(p) => p.theme.colors.mainTextColorLowOp};
   font-family: ${primaryFont};
   font-size: 12px;
   font-style: normal;
@@ -23,12 +23,12 @@ export const CreateNewBoardWrapper = styled.div`
   justify-content: space-between;
   padding: 1.4rem 0;
 
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid ${(p) => p.theme.colors.mainTextColorVeryLowOp};
+  border-bottom: 1px solid ${(p) => p.theme.colors.mainTextColorVeryLowOp};
 `;
 
 export const NewBoardText = styled.p`
-  color: #fff;
+  color: ${(p) => p.theme.colors.mainTextColor};
   font-family: ${primaryFont};
   font-size: 14px;
   font-style: normal;

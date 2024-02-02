@@ -4,7 +4,7 @@ import { HiOutlineLogout } from "react-icons/hi";
 
 export const ButtonIcon = styled(HiOutlineLogout)`
   font-size: 3.2rem;
-  color: ${(p) => p.theme.colors.mainTextColor};
+  color: ${(p) => p.theme.colors.logoutIcon};
 `;
 
 export const LogoutBtn = styled.a`
