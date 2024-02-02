@@ -1,18 +1,30 @@
-import { HelpWrapper } from "./NeedHelp.styled";
+import { useState } from "react";
+import { HelpBtn, HelpText, HelpWrapper, ImgWrap } from "./NeedHelp.styled";
 
 const NeedHelp = () => {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const openHelpModal = () => {
+    setIsOpenModal(true);
+  };
+
+  // const closeHelpModal = () => {
+  //   setIsOpenModal(false);
+  // };
+
   return (
     <>
       <HelpWrapper>
-        <div className="tempDiv"></div>
-        <p className="helpText">
+        <ImgWrap>
+          <img src="public/images/flower.png" alt="flower" />
+        </ImgWrap>
+        <HelpText>
           If you need help with TaskPro, check out our support resources or
           reach out to our customer support team.
-        </p>
-        <button type="button" className="helpBtn">
-          Need help?
-        </button>
+        </HelpText>
+        <HelpBtn onClick={() => openHelpModal()}>Need help?</HelpBtn>
       </HelpWrapper>
+      {isOpenModal && <div className="modal"></div>}
     </>
   );
 };
