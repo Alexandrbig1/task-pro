@@ -16,7 +16,7 @@ const NeedHelp = () => {
     <>
       <HelpWrapper>
         <ImgWrap>
-          <img src="public/images/flower.png" alt="flower" />
+          <img src="images/flower.png" alt="flower" />
         </ImgWrap>
         <HelpText>
           If you need help with TaskPro, check out our support resources or
