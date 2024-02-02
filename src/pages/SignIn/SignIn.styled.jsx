@@ -67,7 +67,7 @@ export const ButtonStyled = styled.div`
 
   margin-top: 2.4rem;
   margin-bottom: 1.6rem;
-  background-color: ${(p) => p.theme.colors.accentTextColor};
+  background-color: ${(p) => p.theme.colors.accentBgColor};
   font-size: 2.4rem;
 
   cursor: pointer;
@@ -145,7 +145,7 @@ export const TextFieldStyled = styled(TextField)`
     border-radius: 4px;
     outline: 1px solid
       ${(p) =>
-        p.error ? p.theme.colors.errorColor : p.theme.colors.accentTextColor};
+        p.error ? p.theme.colors.errorColor : p.theme.colors.accentBgColor};
     box-shadow: 0px 4px 16px 0px rgba(22, 22, 22, 0.08);
 
     &:focus-within {
