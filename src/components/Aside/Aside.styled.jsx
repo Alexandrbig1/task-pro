@@ -5,7 +5,9 @@ export const AsideContainer = styled.aside`
 
   @media (min-width: 1440px) {
     min-height: 100vh;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
     max-width: 26rem;
     width: 100%;
     padding: 2.4rem;
