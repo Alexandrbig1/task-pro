@@ -33,6 +33,8 @@ export const ShowThemeTextWrapper = styled.div`
 export const ShowThemeWrapper = styled.div`
   @media (min-width: 1440px) {
     position: absolute;
+    top: 100%;
+    left: -1.6rem;
     width: 10rem;
     padding: 1.8rem;
     border-radius: 8px;

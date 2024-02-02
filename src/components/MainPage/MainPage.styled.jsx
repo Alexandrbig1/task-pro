@@ -3,7 +3,7 @@ import { primaryFont } from "../fonts";
 
 export const MainWrapper = styled.div`
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 6rem);
   background-color: ${(p) => p.theme.colors.mainBgColor};
 
   display: flex;

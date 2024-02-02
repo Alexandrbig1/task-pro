@@ -10,6 +10,7 @@ export const HeaderWrapper = styled.div`
 
   @media (min-width: 1440px) {
     justify-content: end;
+    height: 6rem;
   }
 `;
 

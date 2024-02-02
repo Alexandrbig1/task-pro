@@ -7,10 +7,17 @@ export const AsideContainer = styled.aside`
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 2.4rem;
     max-width: 26rem;
     width: 100%;
     padding: 2.4rem;
     background-color: ${(p) => p.theme.colors.mainAsideColor};
   }
+`;
+
+export const LogoutWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
 `;
