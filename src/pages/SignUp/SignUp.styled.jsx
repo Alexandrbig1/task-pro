@@ -70,7 +70,7 @@ export const SignUpButtonStyled = styled.div`
 
   margin-top: 2.4rem;
   margin-bottom: 1.6rem;
-  background-color: ${(p) => p.theme.colors.accentColor};
+  background-color: ${(p) => p.theme.colors.accentTextColor};
   font-size: 2.4rem;
 
   cursor: pointer;
@@ -148,7 +148,7 @@ export const TextFieldSignUpStyled = styled(TextField)`
     /* border: 1px solid #bedbb0; */
     outline: 1px solid
       ${(p) =>
-        p.error ? p.theme.colors.errorColor : p.theme.colors.accentColor};
+        p.error ? p.theme.colors.errorColor : p.theme.colors.accentTextColor};
     box-shadow: 0px 4px 16px 0px rgba(22, 22, 22, 0.08);
 
     &:focus-within {
