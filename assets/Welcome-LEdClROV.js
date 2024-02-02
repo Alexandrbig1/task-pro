@@ -1,8 +1,8 @@
-import{u as e,p as i,L as n,j as t}from"./index--hyGx9AX.js";import{L as o}from"./Logo-fB4g4NhA.js";const r=e.div`
+import{u as e,p as i,L as n,j as t}from"./index-cLodByVC.js";import{L as r}from"./Logo-nfR_kCEH.js";const a=e.div`
   background: linear-gradient(
     180deg,
     rgba(196, 196, 196, 0) 25%,
-    #bedbb0 92.19%
+    ${o=>o.theme.colors.accentBgColor} 92.19%
   );
   min-height: 100vh;
   width: 100%;
@@ -26,7 +26,7 @@ import{u as e,p as i,L as n,j as t}from"./index--hyGx9AX.js";import{L as o}from"
   @media (min-width: 1440px) {
     max-width: 144rem;
   } */
-`,a=e.div`
+`,l=e.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,11 +50,11 @@ import{u as e,p as i,L as n,j as t}from"./index--hyGx9AX.js";import{L as o}from"
   @media (min-width: 768px) {
     max-width: 474px;
   }
-`,l=e.div`
+`,m=e.div`
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
-`,m=e(n)`
+`,c=e(n)`
   color: #fff;
   text-align: center;
   font-family: ${i};
@@ -98,4 +98,4 @@ import{u as e,p as i,L as n,j as t}from"./index--hyGx9AX.js";import{L as o}from"
   &:hover {
     cursor: pointer;
   }
-`,p={width:"48px",height:"48px"},c={color:"#161616",font:"4rem"};function g(){return t.jsx(r,{children:t.jsxs(a,{children:[t.jsx("img",{src:"images/welcome.png",alt:"boy with laptop"}),t.jsx(o,{size:p,text:c}),t.jsx(s,{children:"Supercharge your productivity and take control of your tasks with Task Pro - Don't wait, start achieving your goals now!"}),t.jsxs(l,{children:[t.jsx(m,{to:"auth/signup",children:"Registration"}),t.jsx(d,{to:"auth/signin",children:"Log In"})]})]})})}export{g as default};
+`,p={width:"48px",height:"48px"},x={color:"#161616",font:"4rem"};function f(){return t.jsx(a,{children:t.jsxs(l,{children:[t.jsx("img",{src:"images/welcome.png",alt:"boy with laptop"}),t.jsx(r,{size:p,text:x}),t.jsx(s,{children:"Supercharge your productivity and take control of your tasks with Task Pro - Don't wait, start achieving your goals now!"}),t.jsxs(m,{children:[t.jsx(c,{to:"auth/signup",children:"Registration"}),t.jsx(d,{to:"auth/signin",children:"Log In"})]})]})})}export{f as default};
