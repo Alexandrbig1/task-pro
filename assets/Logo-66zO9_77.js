@@ -1,4 +1,4 @@
-import{u as n,p as s,j as i}from"./index-1ICsUTGC.js";const r=n.a`
+import{u as n,p as s,j as i}from"./index-T0Wa3tg8.js";const r=n.a`
   color: ${t=>t.theme.colors.mainTextColor};
   font-family: ${s};
   font-size: 1.6rem;

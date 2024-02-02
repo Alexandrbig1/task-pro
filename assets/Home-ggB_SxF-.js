@@ -1,4 +1,23 @@
-import{u as t,j as o,p as s,a as w,r as c,g as v}from"./index-1ICsUTGC.js";import{L as b}from"./Logo-fVbgRxE1.js";import{G as a,s as C,a as k}from"./iconBase-27kHn4Jd.js";import{C as M,M as $}from"./Layout-U3IpVIix.js";const z=t.div`
+import{u as t,p as s,a as w,j as o,r as c,g as v}from"./index-T0Wa3tg8.js";import{L as b}from"./Logo-66zO9_77.js";import{G as a,s as C,a as k}from"./iconBase-SVJX2a5K.js";import{C as M,M as $}from"./Layout-Gxn4Fl7q.js";function z(e){return a({tag:"svg",attr:{fill:"none",viewBox:"0 0 24 24",strokeWidth:"2",stroke:"currentColor","aria-hidden":"true"},child:[{tag:"path",attr:{strokeLinecap:"round",strokeLinejoin:"round",d:"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"},child:[]}]})(e)}const B=t(z)`
+  font-size: 3.2rem;
+  color: ${e=>e.theme.colors.mainTextColor};
+`,S=t.a`
+  &:hover {
+    cursor: pointer;
+  }
+
+  display: flex;
+  gap: 1.4rem;
+  align-items: center;
+`,W=t.p`
+  color: ${e=>e.theme.colors.mainTextColor};
+  border-radius: 8px;
+  font-family: ${s};
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+`;function N(){const e=w();function r(){C(k).then(()=>{e("/")}).catch(i=>{console.error("Error signing out: ",i.message)})}return o.jsxs(S,{onClick:r,children:[o.jsx(B,{}),o.jsx(W,{children:"Log out"})]})}const H=t.div`
   position: absolute;
   bottom: 24px;
   width: 100%;
@@ -36,26 +55,7 @@ import{u as t,j as o,p as s,a as w,r as c,g as v}from"./index-1ICsUTGC.js";impor
     border: none;
     outline: none;
   }
-`,B=()=>o.jsx(o.Fragment,{children:o.jsxs(z,{children:[o.jsx("div",{className:"tempDiv"}),o.jsx("p",{className:"helpText",children:"If you need help with TaskPro, check out our support resources or reach out to our customer support team."}),o.jsx("button",{type:"button",className:"helpBtn",children:"Need help?"})]})}),S=B;function W(e){return a({tag:"svg",attr:{fill:"none",viewBox:"0 0 24 24",strokeWidth:"2",stroke:"currentColor","aria-hidden":"true"},child:[{tag:"path",attr:{strokeLinecap:"round",strokeLinejoin:"round",d:"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"},child:[]}]})(e)}const N=t(W)`
-  font-size: 3.2rem;
-  color: ${e=>e.theme.colors.mainTextColor};
-`,H=t.a`
-  &:hover {
-    cursor: pointer;
-  }
-
-  display: flex;
-  gap: 1.4rem;
-  align-items: center;
-`,O=t.p`
-  color: ${e=>e.theme.colors.mainTextColor};
-  border-radius: 8px;
-  font-family: ${s};
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-`;function P(){const e=w();function r(){C(k).then(()=>{e("/")}).catch(i=>{console.error("Error signing out: ",i.message)})}return o.jsxs(H,{onClick:r,children:[o.jsx(N,{}),o.jsx(O,{children:"Log out"})]})}const L=t.div`
+`,O=()=>o.jsx(o.Fragment,{children:o.jsxs(H,{children:[o.jsx("div",{className:"tempDiv"}),o.jsx("p",{className:"helpText",children:"If you need help with TaskPro, check out our support resources or reach out to our customer support team."}),o.jsx("button",{type:"button",className:"helpBtn",children:"Need help?"})]})}),P=O,L=t.div`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -88,13 +88,15 @@ import{u as t,j as o,p as s,a as w,r as c,g as v}from"./index-1ICsUTGC.js";impor
 
   @media (min-width: 1440px) {
     min-height: 100vh;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
     max-width: 26rem;
     width: 100%;
     padding: 2.4rem;
     background-color: ${e=>e.theme.colors.mainAsideColor};
   }
-`;function D(){return o.jsxs(_,{children:[o.jsx(b,{}),o.jsx(I,{}),o.jsx(S,{}),o.jsx(P,{})]})}function F(e){return a({tag:"svg",attr:{version:"1.2",baseProfile:"tiny",viewBox:"0 0 24 24"},child:[{tag:"path",attr:{d:"M19 17h-14c-1.103 0-2 .897-2 2s.897 2 2 2h14c1.103 0 2-.897 2-2s-.897-2-2-2zM19 10h-14c-1.103 0-2 .897-2 2s.897 2 2 2h14c1.103 0 2-.897 2-2s-.897-2-2-2zM19 3h-14c-1.103 0-2 .897-2 2s.897 2 2 2h14c1.103 0 2-.897 2-2s-.897-2-2-2z"},child:[]}]})(e)}const q=t.div`
+`;function D(){return o.jsxs(_,{children:[o.jsx(b,{}),o.jsx(I,{}),o.jsx(P,{}),o.jsx(N,{})]})}function F(e){return a({tag:"svg",attr:{version:"1.2",baseProfile:"tiny",viewBox:"0 0 24 24"},child:[{tag:"path",attr:{d:"M19 17h-14c-1.103 0-2 .897-2 2s.897 2 2 2h14c1.103 0 2-.897 2-2s-.897-2-2-2zM19 10h-14c-1.103 0-2 .897-2 2s.897 2 2 2h14c1.103 0 2-.897 2-2s-.897-2-2-2zM19 3h-14c-1.103 0-2 .897-2 2s.897 2 2 2h14c1.103 0 2-.897 2-2s-.897-2-2-2z"},child:[]}]})(e)}const q=t.div`
   display: block;
   cursor: pointer;
 
