@@ -45,14 +45,24 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, signOut } from "firebase/auth";
 
+const {
+  REACT_APP_FIREBASE_API_KEY,
+  REACT_APP_FIREBASE_AUTH_DOMAIN,
+  REACT_APP_FIREBASE_PROJECT_ID,
+  REACT_APP_FIREBASE_STORAGE_BUCKET,
+  REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  REACT_APP_FIREBASE_APP_ID,
+  REACT_APP_MEASUREMENT_APP_ID,
+} = process.env;
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCZ28tU2kAIjh5l-IpB3SzCt3blkLnAQhU",
-  authDomain: "task-pro-creamy-sharks.firebaseapp.com",
-  projectId: "task-pro-creamy-sharks",
-  storageBucket: "task-pro-creamy-sharks.appspot.com",
-  messagingSenderId: "554256292424",
-  appId: "1:554256292424:web:68b4fc8d94e62704a4567d",
-  measurementId: "G-QCG32KQ45Q",
+  apiKey: REACT_APP_FIREBASE_API_KEY,
+  authDomain: REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: REACT_APP_FIREBASE_APP_ID,
+  measurementId: REACT_APP_MEASUREMENT_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
