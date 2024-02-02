@@ -5,7 +5,7 @@ import { ButtonIcon, LogoutText, LogoutBtn } from "./LogoutButton.styled";
 export default function LogoutButton() {
   const navigate = useNavigate();
 
-  const handleLogout = () => {
+  function handleLogout() {
     signOut(auth)
       .then(() => {
         navigate("/");
@@ -13,7 +13,7 @@ export default function LogoutButton() {
       .catch((error) => {
         console.error("Error signing out: ", error.message);
       });
-  };
+  }
 
   return (
     <LogoutBtn onClick={handleLogout}>
