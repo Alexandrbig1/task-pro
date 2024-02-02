@@ -52,6 +52,23 @@ Welcome to the Task Manager App, the final project from the Fullstack Developmen
 
 [Figma Design](https://www.figma.com/file/fJF13s2UlxPIwTMcPVrSiz/TaskPro?type=design&t=8OR5JW2MuSskYTdw-0)
 
+### Screenshots:
+
+![Your Energy Fitness App](/src/public/images/screenshots/energy-home1.jpg) _Caption for Screenshot 1
+(Home Page)_
+
+![Your Energy Fitness App](/src/public/images/screenshots/energy-home2.jpg) _Caption for Screenshot 2
+(Home Page Dark Mode)_
+
+![Your Energy Fitness App](/src/public/images/screenshots/energy-home3.jpg) _Caption for Screenshot 3
+(Home Page Tablet Screen Dark Mode)_
+
+![Your Energy Fitness App](/src/public/images/screenshots/energy-favorites1.jpg) _Caption for Screenshot 4
+(Favorites Page)_
+
+![Your Energy Fitness App](/src/public/images/screenshots/energy-favorites2.jpg) _Caption for Screenshot 5
+(Favorites Page Dark Mode)_
+
 ## Features
 
 - **User Authentication:** Users can register and log in to access the main application.
