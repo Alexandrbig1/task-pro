@@ -6,7 +6,7 @@ export const WelcomeContainer = styled.div`
   background: linear-gradient(
     180deg,
     rgba(196, 196, 196, 0) 25%,
-    #bedbb0 92.19%
+    ${(p) => p.theme.colors.accentBgColor} 92.19%
   );
   min-height: 100vh;
   width: 100%;

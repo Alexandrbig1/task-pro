@@ -26,7 +26,8 @@ import RootLayout from "../layouts/RootLayout/RootLayout";
 const themes = {
   light: {
     colors: {
-      accentColor: "#bedbb0",
+      accentBgColor: "#bedbb0",
+      accentTextColor: "#bedbb0",
       mainTextColor: "#161616",
       burgerColor: "#161616",
       mainBgColor: "#F6F6F7",
@@ -47,7 +48,8 @@ const themes = {
   },
   dark: {
     colors: {
-      accentColor: "#bedbb0",
+      accentBgColor: "#bedbb0",
+      accentTextColor: "#bedbb0",
       mainTextColor: "#fff",
       burgerColor: "#fff",
       mainBgColor: "#232323",
@@ -68,7 +70,8 @@ const themes = {
   },
   violet: {
     colors: {
-      accentColor: "#5255BC",
+      accentBgColor: "#bedbb0",
+      accentTextColor: "#5255BC",
       mainTextColor: "#FFF",
       burgerColor: "#161616",
       mainBgColor: "#D6D8FF",

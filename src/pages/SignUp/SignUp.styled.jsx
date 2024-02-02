@@ -21,7 +21,7 @@ export const ContainerSignUpStyled = styled(Container)`
   background: linear-gradient(
     180deg,
     rgba(196, 196, 196, 0) 25%,
-    ${(p) => p.theme.colors.accentColor} 92.19%
+    ${(p) => p.theme.colors.accentBgColor} 92.19%
   );
 `;
 
