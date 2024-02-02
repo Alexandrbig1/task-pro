@@ -26,7 +26,8 @@ import RootLayout from "../layouts/RootLayout/RootLayout";
 const themes = {
   light: {
     colors: {
-      accentColor: "#bedbb0",
+      accentBgColor: "#bedbb0",
+      accentTextColor: "#bedbb0",
       mainTextColor: "#161616",
       burgerColor: "#161616",
       mainBgColor: "#F6F6F7",
@@ -41,12 +42,14 @@ const themes = {
       whiteColor: "#FFF",
       whiteColorLowOp: "rgba(255, 255, 255, 0.3)",
       blackColor: "#161616",
+      greenColor: "#BEDBB0",
       errorColor: "#ff2929",
     },
   },
   dark: {
     colors: {
-      accentColor: "#bedbb0",
+      accentBgColor: "#bedbb0",
+      accentTextColor: "#bedbb0",
       mainTextColor: "#fff",
       burgerColor: "#fff",
       mainBgColor: "#232323",
@@ -61,12 +64,14 @@ const themes = {
       whiteColor: "#FFF",
       whiteColorLowOp: "rgba(255, 255, 255, 0.3)",
       blackColor: "#161616",
+      greenColor: "#BEDBB0",
       errorColor: "#ff2929",
     },
   },
   violet: {
     colors: {
-      accentColor: "#bedbb0",
+      accentBgColor: "#bedbb0",
+      accentTextColor: "#5255BC",
       mainTextColor: "#FFF",
       burgerColor: "#161616",
       mainBgColor: "#D6D8FF",
@@ -81,6 +86,7 @@ const themes = {
       whiteColor: "#FFF",
       whiteColorLowOp: "rgba(255, 255, 255, 0.3)",
       blackColor: "#161616",
+      greenColor: "#BEDBB0",
       errorColor: "#ff2929",
     },
   },
