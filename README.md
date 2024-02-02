@@ -54,20 +54,14 @@ Welcome to the Task Manager App, the final project from the Fullstack Developmen
 
 ### Screenshots:
 
-![Your Energy Fitness App](/src/public/images/screenshots/energy-home1.jpg) _Caption for Screenshot 1
-(Home Page)_
+![Task Pro App](/src/public/images/screenshots/taskpro.jpg) _Caption for Screenshot 1
+(Welcome Page)_
 
-![Your Energy Fitness App](/src/public/images/screenshots/energy-home2.jpg) _Caption for Screenshot 2
-(Home Page Dark Mode)_
+![Task Pro App](/src/public/images/screenshots/taskpro2.jpg) _Caption for Screenshot 2
+(Sign Up Page)_
 
-![Your Energy Fitness App](/src/public/images/screenshots/energy-home3.jpg) _Caption for Screenshot 3
-(Home Page Tablet Screen Dark Mode)_
-
-![Your Energy Fitness App](/src/public/images/screenshots/energy-favorites1.jpg) _Caption for Screenshot 4
-(Favorites Page)_
-
-![Your Energy Fitness App](/src/public/images/screenshots/energy-favorites2.jpg) _Caption for Screenshot 5
-(Favorites Page Dark Mode)_
+![Task Pro App](/src/public/images/screenshots/taskpro3.jpg) _Caption for Screenshot 3
+(Sign In Page)_
 
 ## Features
 
@@ -81,6 +75,7 @@ Welcome to the Task Manager App, the final project from the Fullstack Developmen
 ## Technologies Used
 
 - **Frontend:**
+
   - React
   - Vite
   - Styled Components
@@ -94,20 +89,29 @@ Welcome to the Task Manager App, the final project from the Fullstack Developmen
 ## Getting Started
 
 1. **Clone the Repository:**
+
    ```bash
    git clone https://github.com/your-username/task-manager-app.git
    cd task-manager-app
 
+   ```
+
 2. **Install Dependencies:**
-    ```bash
-    npm install
+
+   ```bash
+   npm install
+
+   ```
 
 3. **Start the Development Server:**
-    ```bash
-    npm run dev
+
+   ```bash
+   npm run dev
+
+   ```
 
 4. **Open in Browser:**
-    Open your browser and visit `http://localhost:3000`.
+   Open your browser and visit `http://localhost:3000`.
 
 ## Contributing
 
