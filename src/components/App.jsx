@@ -1,6 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+// import { useEffect, useState } from "react";
 import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { lazy } from "react";
 // import { useDispatch } from "react-redux";
 import {
@@ -12,9 +15,9 @@ import {
 import { HashRouter as Router, Routes } from "react-router-dom";
 import FontsHelmet from "./FontHelmet";
 import RootLayout from "../layouts/RootLayout/RootLayout";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 // import { useAuth } from "../hooks";
-import { refreshUser } from "../redux/auth/operations";
+// import { refreshUser } from "../redux/auth/operations";
 // import { RestrictedRoute } from "./RestrictRoute";
 // import { PrivateRoute } from "./PrivateRoute";
 // import { useAuth } from "../hooks";
@@ -98,12 +101,12 @@ function App() {
     localStorage.setItem("theme", themeValue);
   }
 
-  const dispatch = useDispatch();
-  // const { isRefreshing } = useAuth();
+  // const dispatch = useDispatch();
+  // // const { isRefreshing } = useAuth();
 
-  useEffect(() => {
-    dispatch(refreshUser());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(refreshUser());
+  // }, [dispatch]);
 
   // const router = (
   //   <Router>
@@ -151,6 +154,7 @@ function App() {
     <ThemeProvider theme={themes[currentTheme]}>
       <FontsHelmet />
       <GlobalStyle />
+      <ToastContainer />
       <Router>
         <Routes>
           <Route path="/" element={<RootLayout />}>

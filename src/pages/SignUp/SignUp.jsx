@@ -1,10 +1,14 @@
 import * as React from "react";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import { useDispatch } from "react-redux";
-import { register } from "../../redux/auth/operations";
+// import { register } from "../../redux/auth/operations";
+// import { useDispatch } from "react-redux";
 import { BsFillEyeSlashFill, BsFillEyeFill } from "react-icons/bs";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../backend/firebase";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import {
   BoxSignUpStyled,
   ContainerSignUpStyled,
@@ -59,8 +63,9 @@ function Copyright(props) {
 
 export default function SignUp() {
   const [showPassword, setShowPassword] = React.useState(false);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [errors, setErrors] = React.useState({});
+  const navigate = useNavigate();
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -98,14 +103,46 @@ export default function SignUp() {
 
     if (Object.keys(newErrors).length === 0) {
       setErrors({});
-      dispatch(
-        register({
-          name: name,
-          email: email,
-          password: password,
+      createUserWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          toast.success("Welcome to TaskPro! 🚀 Created by Creamy Sharks 🦈", {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            progress: undefined,
+            theme: "light",
+          });
+          navigate("/home");
         })
-      );
-      form.reset();
+        .catch(() => {
+          toast.warning(
+            "Email already in use. Try logging in or reset your password.",
+            {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: false,
+              progress: undefined,
+              theme: "light",
+            }
+          );
+        })
+        .finally(() => {
+          form.reset();
+        });
+      // dispatch(
+      //   register({
+      //     name: name,
+      //     email: email,
+      //     password: password,
+      //   })
+      // );
+      // form.reset();
     }
   };
 

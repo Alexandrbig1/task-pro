@@ -1,9 +1,14 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { useDispatch } from "react-redux";
-import { logIn } from "../../redux/auth/operations";
+// import { logIn } from "../../redux/auth/operations";
 import { BsFillEyeSlashFill, BsFillEyeFill } from "react-icons/bs";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+// import { useDispatch } from "react-redux";
+import { FieldWrapper } from "../SignUp/SignUp.styled";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../backend/firebase";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import {
   BoxStyled,
   ButtonEl,
@@ -19,7 +24,6 @@ import {
   RegistrationLink,
   BtnLogInSpan,
 } from "./SignIn.styled";
-import { FieldWrapper } from "../SignUp/SignUp.styled";
 
 const customTheme = createTheme({
   breakpoints: {
@@ -57,7 +61,8 @@ function Copyright(props) {
 
 export default function SignIn() {
   const [showPassword, setShowPassword] = React.useState(false);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [errors, setErrors] = React.useState({});
 
   const handleClickShowPassword = () => {
@@ -89,13 +94,42 @@ export default function SignIn() {
 
     if (Object.keys(newErrors).length === 0) {
       setErrors({});
-      dispatch(
-        logIn({
-          email: email,
-          password: password,
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          navigate("/home");
+          toast.success("Welcome to TaskPro! 🚀 Created by Creamy Sharks 🦈", {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            progress: undefined,
+            theme: "light",
+          });
         })
-      );
-      form.reset();
+        .catch(() => {
+          toast.error("Incorrect email or password. Please try again.", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            progress: undefined,
+            theme: "light",
+          });
+        })
+        .finally(() => {
+          form.reset();
+        });
+      // dispatch(
+      //   logIn({
+      //     email: email,
+      //     password: password,
+      //   })
+      // );
+      // form.reset();
     }
   };
 
