@@ -54,13 +54,13 @@ Welcome to the Task Manager App, the final project from the Fullstack Developmen
 
 ### Screenshots:
 
-![Task Pro App](/src/public/images/screenshots/taskpro.jpg) _Caption for Screenshot 1
+![Task Pro App](/public/images/screenshots/taskpro.jpg) _Caption for Screenshot 1
 (Welcome Page)_
 
-![Task Pro App](/src/public/images/screenshots/taskpro2.jpg) _Caption for Screenshot 2
+![Task Pro App](/public/images/screenshots/taskpro2.jpg) _Caption for Screenshot 2
 (Sign Up Page)_
 
-![Task Pro App](/src/public/images/screenshots/taskpro3.jpg) _Caption for Screenshot 3
+![Task Pro App](/public/images/screenshots/taskpro3.jpg) _Caption for Screenshot 3
 (Sign In Page)_
 
 ## Features
