@@ -1,6 +1,6 @@
 # Task Pro App
 
-Welcome to the Task Manager App, the final project from the Fullstack Development Bootcamp. This web application allows users to manage tasks efficiently, similar to popular task management tools like Trello.
+Welcome to the Task Pro App, the final project from the Fullstack Development Bootcamp. This web application allows users to manage tasks efficiently, similar to popular task management tools like Trello.
 
 <img align="right" src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="100"/>
 
@@ -24,6 +24,7 @@ Welcome to the Task Manager App, the final project from the Fullstack Developmen
 
 - [Project Contributors](#project-contributors)
 - [Figma Design File](#figma-design-file)
+- [Screenshots](#screenshots)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
