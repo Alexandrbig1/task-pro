@@ -1,4 +1,4 @@
-import{u as o,p as a,a as v,j as t,r as l,g as b}from"./index-KBVTS2_C.js";import{L as C}from"./Logo-BMELFSx-.js";import{G as d,s as $,a as k}from"./iconBase-bnhNwwzA.js";import{C as M,M as z}from"./Layout-lOkYmTeL.js";function H(e){return d({tag:"svg",attr:{fill:"none",viewBox:"0 0 24 24",strokeWidth:"2",stroke:"currentColor","aria-hidden":"true"},child:[{tag:"path",attr:{strokeLinecap:"round",strokeLinejoin:"round",d:"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"},child:[]}]})(e)}const S=o(H)`
+import{u as o,p as a,a as v,j as t,r as l,g as b}from"./index-X98Ur32s.js";import{L as C}from"./Logo-O2XUyEk6.js";import{G as d,s as $,a as k}from"./iconBase-OYF0DDoi.js";import{C as M,M as z}from"./Layout-WtG_2Z1h.js";function H(e){return d({tag:"svg",attr:{fill:"none",viewBox:"0 0 24 24",strokeWidth:"2",stroke:"currentColor","aria-hidden":"true"},child:[{tag:"path",attr:{strokeLinecap:"round",strokeLinejoin:"round",d:"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"},child:[]}]})(e)}const S=o(H)`
   font-size: 3.2rem;
   color: ${e=>e.theme.colors.logoutIcon};
 `,B=o.a`
@@ -112,11 +112,11 @@ import{u as o,p as a,a as v,j as t,r as l,g as b}from"./index-KBVTS2_C.js";impor
   display: ${e=>e!=null&&e.$aside?"flex":"none"};
   position: ${e=>e!=null&&e.$aside?"absolute":"unset"};
 
-  min-height: 100vh;
   flex-direction: column;
   justify-content: space-between;
   gap: 2.4rem;
   max-width: 22.5rem;
+  min-height: 100vh;
   width: 100%;
   padding: 2.4rem;
   background-color: ${e=>e.theme.colors.mainAsideColor};
@@ -210,9 +210,13 @@ import{u as o,p as a,a as v,j as t,r as l,g as b}from"./index-KBVTS2_C.js";impor
   justify-content: space-between;
   align-items: center;
   padding: 1.8rem 3.2rem;
-  height: 6.8rem;
+  height: 6rem;
   width: 100%;
   background-color: ${e=>e.theme.colors.mainHeaderColor};
+
+  @media (min-width: 768px) {
+    height: 6.8rem;
+  }
 
   @media (min-width: 1440px) {
     justify-content: end;
@@ -227,7 +231,8 @@ import{u as o,p as a,a as v,j as t,r as l,g as b}from"./index-KBVTS2_C.js";impor
   gap: 0.8rem;
 `;function T({toggleTheme:e,handleAsideHide:r}){return t.jsxs(me,{children:[t.jsx(w,{handleAsideHide:r}),t.jsxs(xe,{children:[t.jsx(y,{toggleTheme:e}),t.jsxs(ue,{children:[t.jsx("p",{children:"John"}),t.jsx("span",{children:"img"})]})]})]})}T.propTypes={toggleTheme:c.func,handleAsideHide:c.func};const ge=o.div`
   width: 100%;
-  min-height: calc(100vh - 6.8rem);
+  height: 100%;
+  min-height: calc(100vh - 6rem);
   background-color: ${e=>e.theme.colors.mainBgColor};
   padding: 2rem;
 
@@ -235,8 +240,12 @@ import{u as o,p as a,a as v,j as t,r as l,g as b}from"./index-KBVTS2_C.js";impor
   align-items: center;
   justify-content: center;
 
+  @media (min-width: 768px) {
+    min-height: calc(100vh - 6.8rem);
+  }
+
   @media (min-width: 1440px) {
-    max-width: 118rem;
+    /* max-width: 118rem; */
   }
 `,fe=o.p`
   color: ${e=>e.theme.colors.mainPageTextColor};
