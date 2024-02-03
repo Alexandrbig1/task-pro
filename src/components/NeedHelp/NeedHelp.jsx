@@ -6,17 +6,14 @@ import {
   ImgWrap,
   HelpStrongText,
 } from "./NeedHelp.styled";
+import NeedHelpModal from "../NeedHelpModal/NeedHelpModal";
 
 const NeedHelp = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const openHelpModal = () => {
-    setIsOpenModal(true);
+    setIsOpenModal((prevState) => !prevState);
   };
-
-  // const closeHelpModal = () => {
-  //   setIsOpenModal(false);
-  // };
 
   return (
     <>
@@ -30,7 +27,9 @@ const NeedHelp = () => {
         </HelpText>
         <HelpBtn onClick={() => openHelpModal()}>Need help?</HelpBtn>
       </HelpWrapper>
-      {isOpenModal && <div className="modal"></div>}
+      {isOpenModal && (
+        <NeedHelpModal openHelpModal={openHelpModal}></NeedHelpModal>
+      )}
     </>
   );
 };
