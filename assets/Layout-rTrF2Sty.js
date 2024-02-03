@@ -1,8 +1,7 @@
-import{u as i}from"./index-_fjHLg8f.js";const a=i.div`
+import{u as i}from"./index-MKHMwZQG.js";const t=i.div`
   position: relative;
   margin: 0 auto;
   width: 100%;
-  padding: 0 2rem;
 
   @media (min-width: 375px) {
     max-width: 37.5rem;
@@ -10,7 +9,6 @@ import{u as i}from"./index-_fjHLg8f.js";const a=i.div`
 
   @media (min-width: 768px) {
     max-width: 76.8rem;
-    padding: 0 3.2rem;
   }
 
   @media (min-width: 1440px) {
@@ -20,4 +18,16 @@ import{u as i}from"./index-_fjHLg8f.js";const a=i.div`
 `,d=i.div`
   width: 100%;
   height: 100%;
-`;export{a as C,d as M};
+
+  @media (min-width: 375px) {
+    max-width: 37.5rem;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 76.8rem;
+  }
+
+  @media (min-width: 1440px) {
+    max-width: 144rem;
+  }
+`;export{t as C,d as M};

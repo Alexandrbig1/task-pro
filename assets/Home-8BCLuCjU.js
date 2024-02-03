@@ -1,4 +1,4 @@
-import{u as t,p as s,a as j,j as o,r as a,g as v}from"./index-_fjHLg8f.js";import{L as b}from"./Logo-yNSVhtmi.js";import{G as l,s as C,a as k}from"./iconBase-aVpE0O18.js";import{C as M,M as $}from"./Layout-SLdQ9Mct.js";function S(e){return l({tag:"svg",attr:{fill:"none",viewBox:"0 0 24 24",strokeWidth:"2",stroke:"currentColor","aria-hidden":"true"},child:[{tag:"path",attr:{strokeLinecap:"round",strokeLinejoin:"round",d:"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"},child:[]}]})(e)}const z=t(S)`
+import{u as t,p as s,a as j,j as o,r as a,g as v}from"./index-MKHMwZQG.js";import{L as b}from"./Logo-Gc_3l9If.js";import{G as l,s as C,a as k}from"./iconBase-_ugRicHx.js";import{C as M,M as $}from"./Layout-rTrF2Sty.js";function z(e){return l({tag:"svg",attr:{fill:"none",viewBox:"0 0 24 24",strokeWidth:"2",stroke:"currentColor","aria-hidden":"true"},child:[{tag:"path",attr:{strokeLinecap:"round",strokeLinejoin:"round",d:"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"},child:[]}]})(e)}const S=t(z)`
   font-size: 3.2rem;
   color: ${e=>e.theme.colors.logoutIcon};
 `,O=t.a`
@@ -17,7 +17,7 @@ import{u as t,p as s,a as j,j as o,r as a,g as v}from"./index-_fjHLg8f.js";impor
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-`;function H(){const e=j();function r(){C(k).then(()=>{e("/")}).catch(n=>{console.error("Error signing out: ",n.message)})}return o.jsxs(O,{onClick:r,children:[o.jsx(z,{}),o.jsx(B,{children:"Log out"})]})}const W=t.div`
+`;function H(){const e=j();function r(){C(k).then(()=>{e("/")}).catch(n=>{console.error("Error signing out: ",n.message)})}return o.jsxs(O,{onClick:r,children:[o.jsx(S,{}),o.jsx(B,{children:"Log out"})]})}const W=t.div`
   width: 100%;
   max-width: 212px;
   height: 272px;
@@ -124,20 +124,20 @@ import{u as t,p as s,a as j,j as o,r as a,g as v}from"./index-_fjHLg8f.js";impor
   align-items: center;
   gap: 0.8rem;
 `,le=t.div`
-  @media (min-width: 1440px) {
-    position: absolute;
-    top: 100%;
-    left: -1.6rem;
-    width: 10rem;
-    padding: 1.8rem;
-    border-radius: 8px;
-    border: 1px solid ${e=>e.theme.colors.themeWrapperBorder};
-    background: ${e=>e.theme.colors.themeWrapper};
-    box-shadow: 0px 4px 16px 0px rgba(17, 17, 17, 0.1);
+  position: absolute;
+  top: 100%;
+  left: -1.6rem;
+  width: 10rem;
+  padding: 1.8rem;
+  border-radius: 8px;
+  border: 1px solid ${e=>e.theme.colors.themeWrapperBorder};
+  background: ${e=>e.theme.colors.themeWrapper};
+  box-shadow: 0px 4px 16px 0px rgba(17, 17, 17, 0.1);
 
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  @media (min-width: 1440px) {
   }
 `,c=t.p`
   color: ${e=>e.theme.colors.themeTextColor};
@@ -156,41 +156,52 @@ import{u as t,p as s,a as j,j as o,r as a,g as v}from"./index-_fjHLg8f.js";impor
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.8rem 2.4rem;
+  padding: 1.8rem 3.2rem;
+  height: 6.8rem;
   width: 100%;
   background-color: ${e=>e.theme.colors.mainHeaderColor};
 
   @media (min-width: 1440px) {
     justify-content: end;
-    height: 6rem;
+    padding: 1.8rem 2.4rem;
   }
 `,pe=t.div`
   display: flex;
+  align-items: center;
   gap: 1.4rem;
 `,he=t.div`
   display: flex;
   gap: 0.8rem;
 `;function w({toggleTheme:e}){return o.jsxs(ce,{children:[o.jsx(Y,{}),o.jsxs(pe,{children:[o.jsx(y,{toggleTheme:e}),o.jsxs(he,{children:[o.jsx("p",{children:"John"}),o.jsx("span",{children:"img"})]})]})]})}w.propTypes={toggleTheme:p.func.isRequired};const de=t.div`
   width: 100%;
-  min-height: calc(100vh - 6rem);
+  min-height: calc(100vh - 6.8rem);
   background-color: ${e=>e.theme.colors.mainBgColor};
+  padding: 2rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: 1440px) {
+    max-width: 118rem;
+  }
 `,me=t.p`
   color: ${e=>e.theme.colors.mainPageTextColor};
   text-align: center;
   font-family: ${s};
-  font-size: 14px;
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.28;
-  letter-spacing: -0.28px;
+  line-height: 1.33;
+  letter-spacing: -0.24px;
+  width: 100%;
+  max-width: 335px;
 
-  @media (min-width: 1440px) {
+  @media (min-width: 768px) {
     max-width: 486px;
-    width: 100%;
+    line-height: 1.28;
+    font-size: 1.4rem;
+    letter-spacing: -0.28px;
   }
 `,xe=t.span`
   color: ${e=>e.theme.colors.themeTextHoverColor};
