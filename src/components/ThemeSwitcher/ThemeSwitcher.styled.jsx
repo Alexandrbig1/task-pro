@@ -31,20 +31,20 @@ export const ShowThemeTextWrapper = styled.div`
 `;
 
 export const ShowThemeWrapper = styled.div`
-  @media (min-width: 1440px) {
-    position: absolute;
-    top: 100%;
-    left: -1.6rem;
-    width: 10rem;
-    padding: 1.8rem;
-    border-radius: 8px;
-    border: 1px solid ${(p) => p.theme.colors.themeWrapperBorder};
-    background: ${(p) => p.theme.colors.themeWrapper};
-    box-shadow: 0px 4px 16px 0px rgba(17, 17, 17, 0.1);
+  position: absolute;
+  top: 100%;
+  left: -1.6rem;
+  width: 10rem;
+  padding: 1.8rem;
+  border-radius: 8px;
+  border: 1px solid ${(p) => p.theme.colors.themeWrapperBorder};
+  background: ${(p) => p.theme.colors.themeWrapper};
+  box-shadow: 0px 4px 16px 0px rgba(17, 17, 17, 0.1);
 
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  @media (min-width: 1440px) {
   }
 `;
 

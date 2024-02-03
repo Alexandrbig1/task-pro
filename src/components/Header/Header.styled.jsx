@@ -4,18 +4,20 @@ export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.8rem 2.4rem;
+  padding: 1.8rem 3.2rem;
+  height: 6.8rem;
   width: 100%;
   background-color: ${(p) => p.theme.colors.mainHeaderColor};
 
   @media (min-width: 1440px) {
     justify-content: end;
-    height: 6rem;
+    padding: 1.8rem 2.4rem;
   }
 `;
 
 export const ThemeSwitcherWrapper = styled.div`
   display: flex;
+  align-items: center;
   gap: 1.4rem;
 `;
 
