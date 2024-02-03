@@ -1,4 +1,4 @@
-import{u as o,p as a,a as v,j as t,r as l,g as b}from"./index-X98Ur32s.js";import{L as C}from"./Logo-O2XUyEk6.js";import{G as d,s as $,a as k}from"./iconBase-OYF0DDoi.js";import{C as M,M as z}from"./Layout-WtG_2Z1h.js";function H(e){return d({tag:"svg",attr:{fill:"none",viewBox:"0 0 24 24",strokeWidth:"2",stroke:"currentColor","aria-hidden":"true"},child:[{tag:"path",attr:{strokeLinecap:"round",strokeLinejoin:"round",d:"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"},child:[]}]})(e)}const S=o(H)`
+import{u as o,p as a,a as v,j as t,r as l,g as b}from"./index-uG47YMFH.js";import{L as C}from"./Logo-hn9WqvjZ.js";import{G as d,s as $,a as k}from"./iconBase-x6hGXxgF.js";import{C as M,M as z}from"./Layout-dQUy_ilD.js";function H(e){return d({tag:"svg",attr:{fill:"none",viewBox:"0 0 24 24",strokeWidth:"2",stroke:"currentColor","aria-hidden":"true"},child:[{tag:"path",attr:{strokeLinecap:"round",strokeLinejoin:"round",d:"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"},child:[]}]})(e)}const S=o(H)`
   font-size: 3.2rem;
   color: ${e=>e.theme.colors.logoutIcon};
 `,B=o.a`
@@ -116,7 +116,7 @@ import{u as o,p as a,a as v,j as t,r as l,g as b}from"./index-X98Ur32s.js";impor
   justify-content: space-between;
   gap: 2.4rem;
   max-width: 22.5rem;
-  min-height: 100vh;
+  height: 100%;
   width: 100%;
   padding: 2.4rem;
   background-color: ${e=>e.theme.colors.mainAsideColor};
@@ -130,6 +130,7 @@ import{u as o,p as a,a as v,j as t,r as l,g as b}from"./index-X98Ur32s.js";impor
   @media (min-width: 1440px) {
     display: flex;
     position: relative;
+    min-height: 100vh;
   }
 `,X=o.div`
   display: flex;
@@ -145,7 +146,7 @@ import{u as o,p as a,a as v,j as t,r as l,g as b}from"./index-X98Ur32s.js";impor
   @media (min-width: 1440px) {
     display: none;
   }
-`;function Y({aside:e,handleAsideHide:r}){function n(i){i.target.localName==="aside"&&r()}return t.jsx(G,{$aside:e,onClick:i=>n(i),children:t.jsxs(K,{$aside:e,children:[t.jsx(J,{onClick:r}),t.jsx(C,{}),t.jsx(U,{}),t.jsxs(X,{children:[t.jsx(E,{}),t.jsx(W,{})]})]})})}var u={exports:{}},Q="SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED",Z=Q,ee=Z;function g(){}function f(){}f.resetWarningCache=g;var te=function(){function e(i,p,m,s,je,j){if(j!==ee){var x=new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types");throw x.name="Invariant Violation",x}}e.isRequired=e;function r(){return e}var n={array:e,bigint:e,bool:e,func:e,number:e,object:e,string:e,symbol:e,any:e,arrayOf:r,element:e,elementType:e,instanceOf:r,node:e,objectOf:r,oneOf:r,oneOfType:r,shape:r,exact:r,checkPropTypes:f,resetWarningCache:g};return n.PropTypes=n,n};u.exports=te();var oe=u.exports;const c=b(oe);function re(e){return d({tag:"svg",attr:{version:"1.2",baseProfile:"tiny",viewBox:"0 0 24 24"},child:[{tag:"path",attr:{d:"M19 17h-14c-1.103 0-2 .897-2 2s.897 2 2 2h14c1.103 0 2-.897 2-2s-.897-2-2-2zM19 10h-14c-1.103 0-2 .897-2 2s.897 2 2 2h14c1.103 0 2-.897 2-2s-.897-2-2-2zM19 3h-14c-1.103 0-2 .897-2 2s.897 2 2 2h14c1.103 0 2-.897 2-2s-.897-2-2-2z"},child:[]}]})(e)}const ne=o.div`
+`;function Y({aside:e,handleAsideHide:r}){function n(i){i.target.localName==="aside"&&r()}return t.jsx(G,{$aside:e,onClick:i=>n(i),children:t.jsxs(K,{$aside:e,children:[t.jsx(J,{onClick:r}),t.jsx(C,{}),t.jsx(U,{}),t.jsxs(X,{children:[t.jsx(E,{}),t.jsx(W,{})]})]})})}var u={exports:{}},Q="SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED",Z=Q,ee=Z;function g(){}function f(){}f.resetWarningCache=g;var te=function(){function e(i,h,m,s,je,j){if(j!==ee){var x=new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types");throw x.name="Invariant Violation",x}}e.isRequired=e;function r(){return e}var n={array:e,bigint:e,bool:e,func:e,number:e,object:e,string:e,symbol:e,any:e,arrayOf:r,element:e,elementType:e,instanceOf:r,node:e,objectOf:r,oneOf:r,oneOfType:r,shape:r,exact:r,checkPropTypes:f,resetWarningCache:g};return n.PropTypes=n,n};u.exports=te();var oe=u.exports;const c=b(oe);function re(e){return d({tag:"svg",attr:{version:"1.2",baseProfile:"tiny",viewBox:"0 0 24 24"},child:[{tag:"path",attr:{d:"M19 17h-14c-1.103 0-2 .897-2 2s.897 2 2 2h14c1.103 0 2-.897 2-2s-.897-2-2-2zM19 10h-14c-1.103 0-2 .897-2 2s.897 2 2 2h14c1.103 0 2-.897 2-2s-.897-2-2-2zM19 3h-14c-1.103 0-2 .897-2 2s.897 2 2 2h14c1.103 0 2-.897 2-2s-.897-2-2-2z"},child:[]}]})(e)}const ne=o.div`
   display: block;
   cursor: pointer;
 
@@ -172,11 +173,11 @@ import{u as o,p as a,a as v,j as t,r as l,g as b}from"./index-X98Ur32s.js";impor
 `,de=o.div`
   color: ${e=>e.theme.colors.themeMainTextColor};
   font-size: 16px;
-`,pe=o.div`
+`,he=o.div`
   display: flex;
   align-items: center;
   gap: 0.8rem;
-`,he=o.div`
+`,pe=o.div`
   position: absolute;
   top: 100%;
   left: -1.6rem;
@@ -192,7 +193,7 @@ import{u as o,p as a,a as v,j as t,r as l,g as b}from"./index-X98Ur32s.js";impor
   gap: 0.4rem;
   @media (min-width: 1440px) {
   }
-`,h=o.p`
+`,p=o.p`
   color: ${e=>e.theme.colors.themeTextColor};
   font-family: ${a};
   font-size: 14px;
@@ -205,7 +206,7 @@ import{u as o,p as a,a as v,j as t,r as l,g as b}from"./index-X98Ur32s.js";impor
   &:hover {
     color: ${e=>e.theme.colors.themeTextHoverColor};
   }
-`;function y({toggleTheme:e}){const[r,n]=l.useState(!1),[i,p]=l.useState(!1);function m(){n(s=>!s),p(s=>!s)}return t.jsxs(le,{onClick:m,children:[t.jsxs(pe,{children:[t.jsx(ce,{children:"Theme"}),t.jsx(de,{children:i?t.jsx(ae,{}):t.jsx(se,{})})]}),r&&t.jsxs(he,{children:[t.jsx(h,{onClick:s=>e(s),children:"light"},"light"),t.jsx(h,{onClick:s=>e(s),children:"dark"},"dark"),t.jsx(h,{onClick:s=>e(s),children:"violet"},"violet")]})]})}y.propTypes={toggleTheme:c.func.isRequired};const me=o.div`
+`;function y({toggleTheme:e}){const[r,n]=l.useState(!1),[i,h]=l.useState(!1);function m(){n(s=>!s),h(s=>!s)}return t.jsxs(le,{onClick:m,children:[t.jsxs(he,{children:[t.jsx(ce,{children:"Theme"}),t.jsx(de,{children:i?t.jsx(ae,{}):t.jsx(se,{})})]}),r&&t.jsxs(pe,{children:[t.jsx(p,{onClick:s=>e(s),children:"light"},"light"),t.jsx(p,{onClick:s=>e(s),children:"dark"},"dark"),t.jsx(p,{onClick:s=>e(s),children:"violet"},"violet")]})]})}y.propTypes={toggleTheme:c.func.isRequired};const me=o.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -232,6 +233,8 @@ import{u as o,p as a,a as v,j as t,r as l,g as b}from"./index-X98Ur32s.js";impor
 `;function T({toggleTheme:e,handleAsideHide:r}){return t.jsxs(me,{children:[t.jsx(w,{handleAsideHide:r}),t.jsxs(xe,{children:[t.jsx(y,{toggleTheme:e}),t.jsxs(ue,{children:[t.jsx("p",{children:"John"}),t.jsx("span",{children:"img"})]})]})]})}T.propTypes={toggleTheme:c.func,handleAsideHide:c.func};const ge=o.div`
   width: 100%;
   height: 100%;
+  min-height: 100vh;
+
   min-height: calc(100vh - 6rem);
   background-color: ${e=>e.theme.colors.mainBgColor};
   padding: 2rem;
@@ -242,6 +245,7 @@ import{u as o,p as a,a as v,j as t,r as l,g as b}from"./index-X98Ur32s.js";impor
 
   @media (min-width: 768px) {
     min-height: calc(100vh - 6.8rem);
+    /* min-height: 100%; */
   }
 
   @media (min-width: 1440px) {
@@ -267,4 +271,4 @@ import{u as o,p as a,a as v,j as t,r as l,g as b}from"./index-X98Ur32s.js";impor
   }
 `,we=o.span`
   color: ${e=>e.theme.colors.themeTextHoverColor};
-`;function ye(){return t.jsx(ge,{children:t.jsxs(fe,{children:["Before starting your project, it is essential",t.jsx(we,{children:" to create a board"})," to visualize and track all the necessary tasks and milestones. This board serves as a powerful tool to organize the workflow and ensure effective collaboration among team members."]})})}function Te({toggleTheme:e}){const[r,n]=l.useState(!1);function i(){n(p=>!p)}return t.jsxs(M,{children:[t.jsx(Y,{aside:r,handleAsideHide:i}),t.jsxs(z,{children:[t.jsx(T,{toggleTheme:e,handleAsideHide:i}),t.jsx("main",{children:t.jsx(ye,{})})]})]})}Te.propTypes={toggleTheme:c.func.isRequired};export{Te as default};
+`;function ye(){return t.jsx(ge,{children:t.jsxs(fe,{children:["Before starting your project, it is essential",t.jsx(we,{children:" to create a board"})," to visualize and track all the necessary tasks and milestones. This board serves as a powerful tool to organize the workflow and ensure effective collaboration among team members."]})})}function Te({toggleTheme:e}){const[r,n]=l.useState(!1);function i(){n(h=>!h)}return t.jsxs(M,{children:[t.jsx(Y,{aside:r,handleAsideHide:i}),t.jsxs(z,{children:[t.jsx(T,{toggleTheme:e,handleAsideHide:i}),t.jsx("main",{children:t.jsx(ye,{})})]})]})}Te.propTypes={toggleTheme:c.func.isRequired};export{Te as default};

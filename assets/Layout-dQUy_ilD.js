@@ -1,9 +1,8 @@
-import{u as i}from"./index-X98Ur32s.js";const d=i.div`
+import{u as i}from"./index-uG47YMFH.js";const d=i.div`
   position: relative;
   margin: 0 auto;
   width: 100%;
   max-width: 144rem;
-  min-height: 100vh;
 
   overflow-x: hidden;
 
