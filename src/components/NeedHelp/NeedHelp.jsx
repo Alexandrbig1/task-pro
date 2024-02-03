@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { HelpBtn, HelpText, HelpWrapper, ImgWrap } from "./NeedHelp.styled";
+import {
+  HelpBtn,
+  HelpText,
+  HelpWrapper,
+  ImgWrap,
+  HelpStrongText,
+} from "./NeedHelp.styled";
 
 const NeedHelp = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -19,8 +25,8 @@ const NeedHelp = () => {
           <img src="images/flower.png" alt="flower" />
         </ImgWrap>
         <HelpText>
-          If you need help with TaskPro, check out our support resources or
-          reach out to our customer support team.
+          If you need help with <HelpStrongText>TaskPro</HelpStrongText>, check
+          out our support resources or reach out to our customer support team.
         </HelpText>
         <HelpBtn onClick={() => openHelpModal()}>Need help?</HelpBtn>
       </HelpWrapper>

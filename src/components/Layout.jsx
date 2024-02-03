@@ -5,6 +5,8 @@ export const Container = styled.div`
   margin: 0 auto;
   width: 100%;
 
+  overflow-x: hidden;
+
   @media (min-width: 375px) {
     max-width: 37.5rem;
   }

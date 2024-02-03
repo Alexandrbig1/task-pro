@@ -4,10 +4,10 @@ import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
 import { HeaderWrapper, ThemeSwitcherWrapper, UserData } from "./Header.styled";
 import PropTypes from "prop-types";
 
-export default function Header({ toggleTheme }) {
+export default function Header({ toggleTheme, handleAsideHide }) {
   return (
     <HeaderWrapper>
-      <MenuBurger />
+      <MenuBurger handleAsideHide={handleAsideHide} />
       <ThemeSwitcherWrapper>
         <ThemeSwitcher toggleTheme={toggleTheme} />
         <UserData>
@@ -20,5 +20,6 @@ export default function Header({ toggleTheme }) {
 }
 
 Header.propTypes = {
-  toggleTheme: PropTypes.func.isRequired,
+  toggleTheme: PropTypes.func,
+  handleAsideHide: PropTypes.func,
 };
