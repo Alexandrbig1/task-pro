@@ -12,7 +12,6 @@ export const GlobalStyle = createGlobalStyle`* {
     font-size: 62.5%;
     scroll-behavior: smooth;
   overflow-x: hidden;
-
   }
 
   @media(max-width:980px) {
@@ -23,10 +22,8 @@ export const GlobalStyle = createGlobalStyle`* {
   background-color: ${(p) => p.theme.colors.mainAsideColor};
   background-color: #f8f9fa;
   font-family: ${primaryFont};
-  height: 100%;
   margin: 0;
   overflow-x: hidden;
-
   }
 
   p {

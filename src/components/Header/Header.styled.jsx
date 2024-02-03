@@ -5,9 +5,13 @@ export const HeaderWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1.8rem 3.2rem;
-  height: 6.8rem;
+  height: 6rem;
   width: 100%;
   background-color: ${(p) => p.theme.colors.mainHeaderColor};
+
+  @media (min-width: 768px) {
+    height: 6.8rem;
+  }
 
   @media (min-width: 1440px) {
     justify-content: end;

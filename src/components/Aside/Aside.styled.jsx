@@ -27,11 +27,11 @@ export const AsideWrapper = styled.div`
   display: ${(p) => (p?.$aside ? "flex" : "none")};
   position: ${(p) => (p?.$aside ? "absolute" : "unset")};
 
-  min-height: 100vh;
   flex-direction: column;
   justify-content: space-between;
   gap: 2.4rem;
   max-width: 22.5rem;
+  min-height: 100vh;
   width: 100%;
   padding: 2.4rem;
   background-color: ${(p) => p.theme.colors.mainAsideColor};

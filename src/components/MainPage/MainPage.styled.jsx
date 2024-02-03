@@ -3,7 +3,8 @@ import { primaryFont } from "../fonts";
 
 export const MainWrapper = styled.div`
   width: 100%;
-  min-height: calc(100vh - 6.8rem);
+  height: 100%;
+  min-height: calc(100vh - 6rem);
   background-color: ${(p) => p.theme.colors.mainBgColor};
   padding: 2rem;
 
@@ -11,8 +12,12 @@ export const MainWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
+  @media (min-width: 768px) {
+    min-height: calc(100vh - 6.8rem);
+  }
+
   @media (min-width: 1440px) {
-    max-width: 118rem;
+    /* max-width: 118rem; */
   }
 `;
 
