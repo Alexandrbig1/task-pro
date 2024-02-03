@@ -31,8 +31,8 @@ export const AsideWrapper = styled.div`
   justify-content: space-between;
   gap: 2.4rem;
   max-width: 22.5rem;
-  height: 100%;
   width: 100%;
+  height: 100%;
   padding: 2.4rem;
   background-color: ${(p) => p.theme.colors.mainAsideColor};
   z-index: 20;
