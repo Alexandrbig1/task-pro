@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { IoClose } from "react-icons/io5";
 
 export const HelpModalWrap = styled.div`
   position: fixed;
@@ -7,9 +8,8 @@ export const HelpModalWrap = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: ${(p) => p.theme.colors.modalBgColor};
-  &:hover {
-    cursor: pointer;
-  }
+
+  z-index: 5;
 `;
 
 export const StyledModal = styled.div`
@@ -22,19 +22,16 @@ export const StyledModal = styled.div`
   max-width: 400px;
   min-height: 355px;
 
-  background-color: ${(p) => p.theme.colors.needHelpBgColor};
+  z-index: 10;
+
+  background-color: ${(p) => p.theme.colors.modalWindowsBgColor};
   border-radius: 10px;
-  cursor: auto;
 `;
 
-export const HelpCloseBtn = styled.button`
+export const HelpCloseBtn = styled.span`
   position: absolute;
   top: 14px;
   right: 14px;
-  stroke: ${(p) => p.theme.colors.mainTextColor};
-  background-color: transparent;
-  outline: none;
-  border: none;
   cursor: pointer;
 `;
 
@@ -42,7 +39,7 @@ export const HelpTitle = styled.h2`
   font-weight: 500;
   font-size: 18px;
   letter-spacing: -0.02em;
-  color: #fff;
+  color: ${(p) => p.theme.colors.secondaryTextColor};
   margin-bottom: 24px;
 `;
 
@@ -59,12 +56,12 @@ export const HelpInput = styled.input`
   height: 49px;
   font-size: 14px;
   letter-spacing: -0.02em;
-  color: ${(p) => p.theme.colors.mainTextColor};
+  color: ${(p) => p.theme.colors.secondaryTextColor};
   background-color: transparent;
 
   padding: 14px 18px;
   border-radius: 8px;
-  border: 1px solid ${(p) => p.theme.colors.mainTextColor};
+  border: 1px solid ${(p) => p.theme.colors.accentTextColor};
   outline: none;
   margin-bottom: 14px;
 `;
@@ -75,10 +72,10 @@ export const HelpTextArea = styled.textarea`
   background-color: transparent;
   padding: 14px 18px;
   border-radius: 8px;
-  border: 1px solid ${(p) => p.theme.colors.mainTextColor};
+  border: 1px solid ${(p) => p.theme.colors.accentTextColor};
   outline: none;
   font-size: 14px;
-  color: ${(p) => p.theme.colors.mainTextColor};
+  color: ${(p) => p.theme.colors.secondaryTextColor};
   margin-bottom: 24px;
 `;
 
@@ -86,12 +83,27 @@ export const HelpSubmitBtn = styled.button`
   width: 100%;
   height: 49px;
   border-radius: 8px;
-  background-color: ${(p) => p.theme.colors.priorityColorHigh};
+  background-color: ${(p) => p.theme.colors.accentTextColor};
   border: none;
   outline: none;
   cursor: pointer;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: -0.02em;
-  color: ${(p) => p.theme.colors.mainTextColor};
+  color: ${(p) => p.theme.colors.buttonsColor};
+`;
+
+export const CloseModal = styled(IoClose)`
+  font-size: 2.4rem;
+  color: ${(p) => p.theme.colors.secondaryTextColor};
+  position: absolute;
+  top: 1.4rem;
+  right: 0;
+
+  transition: 0.3s linear;
+
+  &:hover {
+    transform: rotate(90deg);
+    color: ${(p) => p.theme.colors.accentTextColor};
+  }
 `;
