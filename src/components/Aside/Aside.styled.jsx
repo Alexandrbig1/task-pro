@@ -31,7 +31,7 @@ export const AsideWrapper = styled.div`
   justify-content: space-between;
   gap: 2.4rem;
   max-width: 22.5rem;
-  min-height: 100vh;
+  height: 100%;
   width: 100%;
   padding: 2.4rem;
   background-color: ${(p) => p.theme.colors.mainAsideColor};
@@ -45,6 +45,7 @@ export const AsideWrapper = styled.div`
   @media (min-width: 1440px) {
     display: flex;
     position: relative;
+    min-height: 100vh;
   }
 `;
 

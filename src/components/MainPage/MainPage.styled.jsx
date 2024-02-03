@@ -4,6 +4,8 @@ import { primaryFont } from "../fonts";
 export const MainWrapper = styled.div`
   width: 100%;
   height: 100%;
+  min-height: 100vh;
+
   min-height: calc(100vh - 6rem);
   background-color: ${(p) => p.theme.colors.mainBgColor};
   padding: 2rem;
@@ -14,6 +16,7 @@ export const MainWrapper = styled.div`
 
   @media (min-width: 768px) {
     min-height: calc(100vh - 6.8rem);
+    /* min-height: 100%; */
   }
 
   @media (min-width: 1440px) {
