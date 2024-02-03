@@ -1,7 +1,9 @@
-import{u as i}from"./index-MKHMwZQG.js";const t=i.div`
+import{u as i}from"./index-KBVTS2_C.js";const d=i.div`
   position: relative;
   margin: 0 auto;
   width: 100%;
+
+  overflow-x: hidden;
 
   @media (min-width: 375px) {
     max-width: 37.5rem;
@@ -15,7 +17,7 @@ import{u as i}from"./index-MKHMwZQG.js";const t=i.div`
     display: flex;
     max-width: 144rem;
   }
-`,d=i.div`
+`,t=i.div`
   width: 100%;
   height: 100%;
 
@@ -30,4 +32,4 @@ import{u as i}from"./index-MKHMwZQG.js";const t=i.div`
   @media (min-width: 1440px) {
     max-width: 144rem;
   }
-`;export{t as C,d as M};
+`;export{d as C,t as M};
