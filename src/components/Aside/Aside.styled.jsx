@@ -62,6 +62,13 @@ export const CloseIcon = styled(IoClose)`
   top: 2.4rem;
   right: 2.4rem;
 
+  transition: 0.3s linear;
+
+  &:hover {
+    transform: rotate(90deg);
+    color: ${(p) => p.theme.colors.accentTextColor};
+  }
+
   @media (min-width: 1440px) {
     display: none;
   }

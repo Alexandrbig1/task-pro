@@ -1,27 +1,13 @@
 import { useState } from "react";
-// import { useEffect, useState } from "react";
 import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { lazy } from "react";
-// import { useDispatch } from "react-redux";
-import {
-  Route,
-  // createBrowserRouter,
-  // createRoutesFromElements,
-  // RouterProvider,
-} from "react-router-dom";
+import { Route } from "react-router-dom";
 import { HashRouter as Router, Routes } from "react-router-dom";
 import FontsHelmet from "./FontHelmet";
 import RootLayout from "../layouts/RootLayout/RootLayout";
-// import { useDispatch } from "react-redux";
-// import { useAuth } from "../hooks";
-// import { refreshUser } from "../redux/auth/operations";
-// import { RestrictedRoute } from "./RestrictRoute";
-// import { PrivateRoute } from "./PrivateRoute";
-// import { useAuth } from "../hooks";
-// import { refreshUser } from "../redux/auth/operations";
 
 const themes = {
   light: {
@@ -31,6 +17,8 @@ const themes = {
       mainTextColor: "#161616",
       secondaryTextColor: "#161616",
       buttonsColor: "#161616",
+      secondaryButtonsColor: "#121212",
+      buttonsBgColor: "#BEDBB0",
       burgerColor: "#161616",
       mainBgColor: "#F6F6F7",
       mainTextColorLowOp: "rgba(22, 22, 22, 0.50)",
@@ -46,6 +34,8 @@ const themes = {
       themeMainTextColor: "rgba(22, 22, 22, 0.80)",
       themeTextColor: "#161616",
       themeTextHoverColor: "#BEDBB0",
+      logoIconColor: "#fff",
+      logoIconBgColor: "#1F1F1F",
       whiteColor: "#FFF",
       whiteColorLowOp: "rgba(255, 255, 255, 0.3)",
       blackColor: "#161616",
@@ -66,6 +56,8 @@ const themes = {
       mainTextColor: "#fff",
       secondaryTextColor: "#fff",
       buttonsColor: "#161616",
+      secondaryButtonsColor: "#121212",
+      buttonsBgColor: "#BEDBB0",
       mainTextColorLowOp: "rgba(255, 255, 255, 0.50)",
       mainTextColorVeryLowOp: "rgba(255, 255, 255, 0.10)",
       modalBgColor: "rgba(21, 21, 21, 0.50)",
@@ -81,6 +73,8 @@ const themes = {
       themeMainTextColor: "rgba(255, 255, 255, 0.8)",
       themeTextColor: "rgba(255, 255, 255, 0.5)",
       themeTextHoverColor: "#BEDBB0",
+      logoIconColor: "#fff",
+      logoIconBgColor: "#1F1F1F",
       whiteColor: "#FFF",
       whiteColorLowOp: "rgba(255, 255, 255, 0.3)",
       blackColor: "#161616",
@@ -101,6 +95,8 @@ const themes = {
       mainTextColor: "#FFF",
       secondaryTextColor: "#161616",
       buttonsColor: "#fff",
+      secondaryButtonsColor: "#fff",
+      buttonsBgColor: "#B8BCFD",
       mainTextColorLowOp: "rgba(255, 255, 255, 0.50)",
       mainTextColorVeryLowOp: "rgba(255, 255, 255, 0.10)",
       modalBgColor: "rgba(21, 21, 21, 0.30)",
@@ -116,6 +112,8 @@ const themes = {
       themeMainTextColor: "rgba(22, 22, 22, 0.80)",
       themeTextColor: "#161616",
       themeTextHoverColor: "#5255BC",
+      logoIconColor: "#5255BC",
+      logoIconBgColor: "#ECEDFD",
       whiteColor: "#FFF",
       whiteColorLowOp: "rgba(255, 255, 255, 0.3)",
       blackColor: "#161616",
@@ -149,55 +147,6 @@ function App() {
     localStorage.setItem("theme", themeValue);
   }
 
-  // const dispatch = useDispatch();
-  // // const { isRefreshing } = useAuth();
-
-  // useEffect(() => {
-  //   dispatch(refreshUser());
-  // }, [dispatch]);
-
-  // const router = (
-  //   <Router>
-  //     <Routes>
-  //       <Route path="/" element={<RootLayout />}>
-  //         <Route index element={<Welcome />} />
-  //         <Route path="#/auth/signin" element={<SignIn />} />
-  //         <Route path="#/auth/signup" element={<SignUp />} />
-  //         <Route path="#/home" element={<Home toggleTheme={toggleTheme} />} />
-  //         <Route path="*" element={<NotFound />} />
-  //       </Route>
-  //     </Routes>
-  //   </Router>
-  // );
-
-  // const router = createBrowserRouter(
-  //   createRoutesFromElements(
-  //     <Route path="/" element={<RootLayout />}>
-  //       <Route index element={<Welcome />} />
-  //       <Route path="auth/signin" element={<SignIn />} />
-  //       {/* <Route
-  //         path="auth/signin"
-  //         element={<RestrictedRoute redirectTo="home" component={<SignIn />} />}
-  //       /> */}
-  //       <Route path="auth/signup" element={<SignUp />} />
-  //       {/* <Route
-  //         path="auth/signup"
-  //         element={<RestrictedRoute redirectTo="home" component={<SignUp />} />}
-  //       /> */}
-  //       <Route path="home" element={<Home toggleTheme={toggleTheme} />} />
-  //       {/* <Route
-  //         path="home"
-  //         element={
-  //           <PrivateRoute
-  //             redirectTo="auth/signin"
-  //             component={<Home toggleTheme={toggleTheme} />}
-  //           /> */}
-
-  //       <Route path="*" element={<NotFound />} />
-  //     </Route>
-  //   )
-  // );
-
   return (
     <ThemeProvider theme={themes[currentTheme]}>
       <FontsHelmet />
@@ -214,7 +163,6 @@ function App() {
           </Route>
         </Routes>
       </Router>
-      {/* <RouterProvider router={router} /> */}
     </ThemeProvider>
   );
 }
