@@ -2,49 +2,21 @@ import { useEffect, useState } from "react";
 import {
     AvatarBtn,
     AvatarIcon,
-    AvatarModal,
     AvatarText,
     AvatarWrapper,
-    StyledModal,
 } from "./UserData.styled";
+import EditProfileModal from "../EditProfileModal/EditProfileModal";
 
 export default function UserData() {
     const [isOpenModal, setIsOpenModal] = useState(false);
 
-    // const openModal = () => {
-    //     setIsOpenModal(true);
-    // };
-
-    // const closeModal = () => {
-    //     setIsOpenModal(false);
-    // };
-
     function toggleModal() {
         setIsOpenModal((prevState) => !prevState);
     }
-    useEffect(() => {
-        const handleKeyDown = (e) => {
-            if (e.code === "Escape") {
-                toggleModal();
-            }
-        };
 
-        window.addEventListener("keydown", handleKeyDown);
-        document.body.style.overflow = "hidden";
-        return () => {
-            window.removeEventListener("keydown", handleKeyDown);
-            document.body.style.overflow = "auto";
-        };
-    }, []);
-
-    const handleOverlayClick = (e) => {
-        if (e.currentTarget === e.target) {
-            toggleModal();
-        }
-    };
     return (
         <>
-            <AvatarWrapper onClick={handleOverlayClick}>
+            <AvatarWrapper>
                 <AvatarText>John</AvatarText>
                 <AvatarBtn onClick={() => toggleModal()}>
                     <AvatarIcon>
@@ -52,17 +24,7 @@ export default function UserData() {
                     </AvatarIcon>
                 </AvatarBtn>
             </AvatarWrapper>
-            {isOpenModal && (
-                <StyledModal onClick={handleOverlayClick}>
-                    <AvatarModal>
-                        <button onClick={toggleModal} className="btnClose">
-                            &times;
-                        </button>
-                        <h1>333333</h1>
-                        <p>Hello</p>
-                    </AvatarModal>
-                </StyledModal>
-            )}
+            {isOpenModal && <EditProfileModal toggleModal={toggleModal} />}
         </>
     );
 }
