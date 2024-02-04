@@ -1,164 +1,77 @@
-import { Field, Form } from "formik";
+import { IoClose } from "react-icons/io5";
 import styled from "styled-components";
-import { BackgroundImage } from "./ModalNewBoard";
 
-// // import { primaryFont } from '../fonts';
-export const StyledTitle = styled.p`
-  font-size: 18px;
-  color: ${(p) => p.theme.colors.mainTextColor};
-  text-align: left;
-  margin-bottom: 24px;
-`;
-export const StyledSmallTitle = styled.p`
-  color: ${(p) => p.theme.colors.mainTextColor};
-  font-size: 14px;
-  text-align: left;
-  margin-bottom: 14px;
-`;
-
-export const StyledInput = styled(Field)`
-  width: 287px;
-  height: 49px;
-  padding: 18px;
-  font-size: 14px;
-  border: 1px solid ${(p) => p.theme.colors.accentTextColor};
-  background-color: ${(p) => p.theme.colors.mainBgColor};
-  border-radius: 8px;
-  margin-bottom: 24px;
-  opacity: 0.4;
-
-  &:focus {
-    opacity: 1;
-    outline: none;
-  }
-
-  @media (min-width: 768px) {
-    width: 302px;
-  }
-`;
-export const StyledLabel = styled.label`
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  width: 18px;
-  height: 18px;
-`;
-
-export const StyledImgLabel = styled.label`
-  cursor: pointer;
+export const BackDrop = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 5px;
-  overflow: hidden;
-  flex-direction: column;
-  text-align: center;
+  background-color: rgb(46, 46, 46, 0.7);
 `;
 
-// export const StyledImg = styled(BackgroundImage)`
-//   display: flex;
-//   width: 100%;
-//   height: 100%;
-// `;
-export const StyledField = styled(Field)`
-  appearance: none;
-
-  &: checked {
-    color: ${(p) => p.theme.colors.whiteColor};
-  }
-`;
-
-export const IconsWrapper = styled.div`
-  display: flex;
-  gap: 8px;
-  margin-bottom: 24px;
-`;
-
-export const StyledIcon = styled.svg`
-  width: 100%;
-  height: 100%;
-  stroke: ${(p) => p.theme.colors.whiteColor};
-  stroke-width: 1.5;
-  opacity: ${({ ischecked }) => (ischecked ? "1" : "0.5")};
-  &:active {
-    opacity: 1;
-  }
-`;
-
-export const StyledBackgroundIcon = styled.svg`
-  width: 28px;
-  height: 28px;
-  background-color: white;
-  background-image: url("./images/Vector.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-`;
-
-export const AddBtn = styled.button`
-  background-color: ${(p) => p.theme.colors.accentTextColor};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-  width: 287px;
-  height: 49px;
-  padding: 0;
-  border-radius: 8px;
-  border: none;
-
-  &:hover {
-    background-color: #9dc888;
-  }
-
-  @media (min-width: 768px) {
-    width: 302px;
-  }
-`;
-
-export const IconBtnWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-  background-color: #161616;
-`;
-
-export const StyledBtnText = styled.span`
-  font-weight: 500;
-  font-size: 14px;
-  color: #161616;
-`;
-
-export const StyledForm = styled(Form)`
-  margin: 0;
-`;
-export const StyledWrapper = styled.div`
-  position: relative;
+export const Modal = styled.div`
+  position: absolute;
+  z-index: 20px;
   width: 335px;
   height: 433px;
-  padding: 24px;
+  border-radius: 8px;
   background-color: ${(p) => p.theme.colors.themeWrapper};
 
+  @media screen and (min-width: 320px) and (max-width: 375px) {
+    width: 90%;
+  }
   @media (min-width: 768px) {
     width: 350px;
   }
 `;
+export const StyledWrapper = styled.div`
+  position: relative;
+  z-index: 100;
+  padding: 24px;
+`;
+// export const ModalContainer = styled.div`
+//   height: 100%;
+//   padding: 24px;
+//   position: relative;
+// `;
 
-export const CloseIcon = styled.svg`
+export const StyledTitle = styled.p`
+  font-size: 18px;
+  color: ${(p) => p.theme.colors.mainTextColor};
+  text-align: left;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+`;
+
+export const CloseBtn = styled.button`
   position: absolute;
   top: 14px;
   right: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 18px;
   height: 18px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 `;
 
-export const IconsBackgroundWrapper = styled.div`
-  display: flex;
-  gap: 4px;
-  margin-bottom: 40px;
+export const CloseIcon = styled(IoClose)`
+  fill: ${(p) => p.theme.colors.burgerColor};
+
+  width: 18px;
+  height: 18px;
+
+  transition: 0.3s linear;
+
+  &:hover {
+    transform: rotate(90deg);
+    color: ${(p) => p.theme.colors.accentTextColor};
+  }
 `;

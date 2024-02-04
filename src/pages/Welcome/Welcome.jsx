@@ -38,6 +38,7 @@ export default function Welcome() {
           <RegistrationBtn to="auth/signup">Registration</RegistrationBtn>
           <LoginBtn to="auth/signin">Log In</LoginBtn>
         </WelcomeBtnWrapper>
+        <ModalNewBoard />
       </WelcomeWrapper>
     </WelcomeContainer>
   );
