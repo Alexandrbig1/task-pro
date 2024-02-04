@@ -17,6 +17,16 @@ export const LogoLink = styled.a`
 export const LogoIcon = styled.svg`
   width: ${(p) => (p?.size?.width ? p?.size?.width : "32px")};
   height: ${(p) => (p?.size?.height ? p?.size?.height : "32px")};
+
+  use#logo1 {
+    fill: ${(p) =>
+      p?.icon?.bgColor ? p?.icon?.bgColor : p.theme.colors.logoIconBgColor};
+  }
+
+  use#logo2 {
+    fill: ${(p) =>
+      p?.icon?.iconColor ? p?.icon?.iconColor : p.theme.colors.logoIconColor};
+  }
 `;
 
 export const LogoText = styled.span`

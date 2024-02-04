@@ -1,8 +1,10 @@
 import {
   CreateNewBoardWrapper,
+  NewBoardButton,
   NewBoardSubTitle,
   NewBoardText,
   NewBoardWrapper,
+  NewBoardBtnIcon,
 } from "./NewBoard.styled";
 
 export default function NewBoard() {
@@ -11,7 +13,9 @@ export default function NewBoard() {
       <NewBoardSubTitle>My boards</NewBoardSubTitle>
       <CreateNewBoardWrapper>
         <NewBoardText>Create a new board</NewBoardText>
-        <button>+</button>
+        <NewBoardButton>
+          <NewBoardBtnIcon />
+        </NewBoardButton>
       </CreateNewBoardWrapper>
     </NewBoardWrapper>
   );

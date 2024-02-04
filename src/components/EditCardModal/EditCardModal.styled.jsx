@@ -45,9 +45,10 @@ export const CloseIcon = styled(IoClose)`
   right: 14px;
   cursor: pointer;
 
-  transition: color 0.3s linear;
+  transition: 0.3s linear;
 
   &:hover {
+    transform: rotate(90deg);
     color: ${(p) => p.theme.colors.accentTextColor};
   }
 `;

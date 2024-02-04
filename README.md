@@ -5,6 +5,7 @@ Welcome to the Task Pro App, the final project from the Fullstack Development Bo
 <img align="right" src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="100"/>
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/Alexandrbig1/task-pro)](https://github.com/Alexandrbig1/task-pro/commits/main)
+[![GitHub license](https://img.shields.io/github/license/Alexandrbig1/task-pro)](https://github.com/Alexandrbig1/task-pro/blob/main/LICENSE)
 [![Vite](https://img.shields.io/badge/Vite-5.0.8-6868F2)](https://vitejs.dev/)
 [![React](https://img.shields.io/badge/React-18.2.0-51CAEF.svg)](https://reactjs.org/)
 [![Node.js Version](https://img.shields.io/badge/Node.js-v18.18.0-2B8B27)](https://nodejs.org/)

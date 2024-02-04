@@ -1,6 +1,7 @@
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
+// import { useDispatch } from "react-redux";
 import {
   FormWrapper,
   Input,
@@ -13,7 +14,7 @@ import {
   DeadlineWrapper,
   DeadlineTitle,
   DatePicker,
-} from "./AddCardForm.styled";
+} from "./EditCardForm.styled";
 import { CardButton } from "../CardButton/CardButton";
 
 const schema = Yup.object().shape({
@@ -21,39 +22,42 @@ const schema = Yup.object().shape({
   description: Yup.string(),
 });
 
-export const AddCardForm = () => {
+export const EditCardForm = () => {
   const [labelChecked, setLabelChecked] = useState("without");
+  //   const dispatch = useDispatch();
 
   const handleLableChange = (e) => {
     setLabelChecked(e.target.value);
   };
 
   // const handleSubmit = (values, { resetForm }) => {
-  //   const newCard = {
+  //   const newTask = {
   //     title: values.title,
   //     description: values.description,
   //     priority: labelChecked,
-  //     deadline: ""
   //   };
-  //     dispatch(
-  //   addContact({
-  //     name: values.name,
-  //     number: values.number,
-  //   })
-  // );
+  //   console.log(newTask);
   //   resetForm();
   // };
 
+  // initial values for Formik  from backend
+
   return (
     <Formik
-      initialValues={{ title: "", description: "" }}
+      initialValues={{ title: "swg", description: "wsrghywshtwsht" }}
       validationSchema={schema}
       // onSubmit={handleSubmit}
     >
       <Form autoComplete="off">
         <FormWrapper>
           <label htmlFor="title">
-            <Input type="text" name="title" placeholder="Title" required />
+            <Input
+              type="text"
+              name="title"
+              placeholder="Title"
+              autoFocus
+              required
+            />
           </label>
           <label htmlFor="description">
             <DescriptionArea
@@ -62,6 +66,7 @@ export const AddCardForm = () => {
               rows="5"
               cols="33"
               placeholder="Description"
+              autoFocus
             />
           </label>
         </FormWrapper>
@@ -113,7 +118,7 @@ export const AddCardForm = () => {
           <DatePicker>Today, 8</DatePicker>
         </DeadlineWrapper>
 
-        <CardButton btnText="Add" />
+        <CardButton btnText="Edit" />
       </Form>
     </Formik>
   );

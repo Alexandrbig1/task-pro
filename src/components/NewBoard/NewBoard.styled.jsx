@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { primaryFont } from "../fonts";
+import { FiPlus } from "react-icons/fi";
 
 export const NewBoardWrapper = styled.div`
   display: flex;
@@ -35,4 +36,24 @@ export const NewBoardText = styled.p`
   font-weight: 500;
   line-height: normal;
   letter-spacing: -0.28px;
+`;
+
+export const NewBoardButton = styled.button`
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem;
+  border-radius: 6px;
+  background-color: ${(p) => p.theme.colors.buttonsBgColor};
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const NewBoardBtnIcon = styled(FiPlus)`
+  font-size: 2rem;
+  color: ${(p) => p.theme.colors.secondaryButtonsColor};
 `;
