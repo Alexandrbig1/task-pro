@@ -11,7 +11,6 @@ export default function Header({ toggleTheme, handleAsideHide }) {
             <MenuBurger handleAsideHide={handleAsideHide} />
             <ThemeSwitcherWrapper>
                 <ThemeSwitcher toggleTheme={toggleTheme} />
-
                 <UserData />
             </ThemeSwitcherWrapper>
         </HeaderWrapper>
