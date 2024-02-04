@@ -36,7 +36,8 @@ export const AvatarModal = styled.div`
 `;
 
 export const BtnClose = styled(IoClose)`
-    stroke: ${(p) => p.theme.colors.mainTextColor};
+    fill: ${(p) => p.theme.colors.burgerColor};
+
     position: absolute;
     top: 1.4rem;
     right: 1.4rem;
@@ -51,7 +52,7 @@ export const BtnClose = styled(IoClose)`
 
     &:hover {
         transform: rotate(90deg);
-        color: ${(p) => p.theme.colors.accentTextColor};
+        fill: ${(p) => p.theme.colors.accentTextColor};
     }
 `;
 
