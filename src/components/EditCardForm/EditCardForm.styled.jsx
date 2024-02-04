@@ -19,16 +19,15 @@ export const Input = styled(Field)`
   border: 1px solid ${(p) => p.theme.colors.accentTextColor};
   border-radius: 8px;
   box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.08);
-  opacity: 0.4;
   padding: 14px 18px;
 
   &:focus {
-    opacity: 1;
     outline: none;
   }
 
   &::placeholder {
     color: ${(p) => p.theme.colors.burgerColor};
+    opacity: 0.4;
   }
 `;
 
@@ -45,16 +44,15 @@ export const DescriptionArea = styled(Field)`
   border: 1px solid ${(p) => p.theme.colors.accentTextColor};
   border-radius: 8px;
   box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.08);
-  opacity: 0.4;
   padding: 14px 18px;
 
   &:focus {
-    opacity: 1;
     outline: none;
   }
 
   &::placeholder {
     color: ${(p) => p.theme.colors.burgerColor};
+    opacity: 0.4;
   }
 `;
 
