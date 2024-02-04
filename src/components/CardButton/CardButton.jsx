@@ -1,15 +1,16 @@
-import sprite from "../../../public/images/icons.svg";
-import { AddBtn, IconWrapper, BtnTextWrapp } from "./CardButton.styled";
+import PropTypes from "prop-types";
+import { AddBtn, IconWrapper, Svg, BtnTextWrapp } from "./CardButton.styled";
 
-export const CardButton = () => {
+export const CardButton = ({ btnText }) => {
   return (
     <AddBtn type="submit">
       <IconWrapper>
-        <svg width="14" height="14">
-          <use href={`${sprite}#icon-plus-create-dark`}></use>
-        </svg>
+        <Svg />
       </IconWrapper>
-      <BtnTextWrapp>Add</BtnTextWrapp>
+      <BtnTextWrapp>{btnText}</BtnTextWrapp>
     </AddBtn>
   );
+};
+CardButton.propTypes = {
+  btnText: PropTypes.string,
 };
