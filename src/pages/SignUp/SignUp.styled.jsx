@@ -157,6 +157,12 @@ export const TextFieldSignUpStyled = styled(TextField)`
     }
   }
 
+  &:focus-within {
+    label {
+      font-size: 1rem;
+    }
+  }
+
   label {
     color: ${(p) => p.theme.colors.whiteColorLowOp};
     font-family: ${primaryFont};
@@ -164,6 +170,7 @@ export const TextFieldSignUpStyled = styled(TextField)`
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.28px;
+    font-size: 1.4rem;
   }
 `;
 

@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`* {
   html {
     font-size: 62.5%;
     scroll-behavior: smooth;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   }
 
   @media(max-width:980px) {
@@ -23,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`* {
   background-color: #f8f9fa;
   font-family: ${primaryFont};
   margin: 0;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   }
 
   p {

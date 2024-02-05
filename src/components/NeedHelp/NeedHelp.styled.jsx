@@ -1,3 +1,4 @@
+import { RxQuestionMarkCircled } from "react-icons/rx";
 import styled from "styled-components";
 
 export const HelpWrapper = styled.div`
@@ -38,17 +39,25 @@ export const HelpText = styled.p`
 `;
 
 export const HelpBtn = styled.button`
+  display: flex;
   font-weight: 500;
   font-size: 12px;
   letter-spacing: -0.02em;
-
-  color: ${(p) => p.theme.colors.mainTextColor};
+  color: #fff;
   background-color: transparent;
   cursor: pointer;
   border: none;
   outline: none;
+  align-items: center;
+  color: ${(p) => p.theme.colors.mainTextColor};
 `;
 
 export const HelpStrongText = styled.strong`
   color: ${(p) => p.theme.colors.themeTextHoverColor};
+`;
+
+export const QuestionMark = styled(RxQuestionMarkCircled)`
+  font-size: 20px;
+  color: ${(p) => p.theme.colors.mainTextColor};
+  margin-right: 8px;
 `;

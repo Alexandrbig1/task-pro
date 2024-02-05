@@ -8,6 +8,7 @@ export const WelcomeContainer = styled.div`
     rgba(196, 196, 196, 0) 25%,
     ${(p) => p.theme.colors.accentBgColor} 92.19%
   );
+  height: 100%;
   min-height: 100vh;
   width: 100%;
 

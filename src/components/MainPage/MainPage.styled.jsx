@@ -14,7 +14,7 @@ export const MainWrapper = styled.div`
   min-height: 100vh;
 
   @media (min-width: 1440px) {
-    min-height: calc(100vh - 6.8rem);
+    /* min-height: calc(100vh - 6.8rem); */
   }
 `;
 
