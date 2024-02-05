@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { PropTypes } from "prop-types";
 import {
-  AddModalWrap,
-  StyledAddModal,
-  AddColumnModalBtn,
-  CloseAddColumnModal,
-  AddColumnTitle,
-  AddColumnForm,
-  AddColumnInput,
+  EditModalWrap,
+  StyledEditModal,
+  EditColumnModalBtn,
+  EditColumnTitle,
+  EditColumnForm,
+  EditColumnInput,
+  CloseEditColumnModal,
 } from "../EditColumnModal/EditColumnModal.styled";
 import { CardButton } from "../CardButton/CardButton";
 
