@@ -1,9 +1,10 @@
-import{u as e,p as i,L as n,j as t}from"./index-0VgKRU7t.js";import{L as r}from"./Logo-Jcmu2n5c.js";const a=e.div`
+import{u as e,p as i,L as n,j as t}from"./index-soqI0PNR.js";import{L as r}from"./Logo-nq4CO1kO.js";const a=e.div`
   background: linear-gradient(
     180deg,
     rgba(196, 196, 196, 0) 25%,
     ${o=>o.theme.colors.accentBgColor} 92.19%
   );
+  height: 100%;
   min-height: 100vh;
   width: 100%;
 

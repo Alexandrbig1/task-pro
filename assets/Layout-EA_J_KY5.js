@@ -1,4 +1,4 @@
-import{u as i}from"./index-0VgKRU7t.js";const h=i.div`
+import{u as i}from"./index-soqI0PNR.js";const h=i.div`
   position: relative;
   margin: 0 auto;
   width: 100%;
@@ -6,7 +6,7 @@ import{u as i}from"./index-0VgKRU7t.js";const h=i.div`
   height: 100%;
   /* min-height: 100vh; */
 
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 
   @media (min-width: 375px) {
     /* max-width: 37.5rem; */
