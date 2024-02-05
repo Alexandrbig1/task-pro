@@ -44,6 +44,8 @@ export const BtnWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
+  transition: all var(--primary-transition);
+
   &:hover,
   &:focus {
     background-color: ${(p) => p.theme.colors.modalBtnHover};
