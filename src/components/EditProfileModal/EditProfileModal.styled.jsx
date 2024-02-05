@@ -17,7 +17,7 @@ export const StyledModal = styled.div`
 export const AvatarModal = styled.div`
     position: absolute;
     width: 40rem;
-    height: 44rem;
+
     background-color: ${(p) => p.theme.colors.mainHeaderColor};
     padding: 2.4rem;
     border-radius: 1rem;
@@ -57,8 +57,6 @@ export const BtnClose = styled(IoClose)`
 `;
 
 export const TitleModalText = styled.h2`
-    padding-top: 3px;
-    padding-bottom: 3px;
     margin-bottom: 2.4rem;
     font-family: ${primaryFont};
     font-weight: 500;

@@ -14,13 +14,12 @@ import {
     InputNthChild,
     ErrorMessage,
 } from "./EditProfileForm.styled";
-
-let EMAIL_REGX = `^(([^<>()\\[\\]\\.,;:\\s@"]+(.[^<>()\\[\\]\\.,;:\\s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/`;
+import emailRegex from "../../regex/emailRegex";
 
 const editProfileSchema = Yup.object().shape({
     avatar: Yup.string(),
     name: Yup.string().min(3, "Too Short!").max(50, "Too Long!"),
-    email: Yup.string().matches(EMAIL_REGX, "Invalid email address"),
+    email: Yup.string().matches(emailRegex, "Invalid email address"),
     password: Yup.string()
         .min(8, "Must Contain 8 Characters")
         .matches(/^(?=.*[a-z])/, " Must Contain One Lowercase Character")
@@ -132,7 +131,7 @@ export default function ProfileForm() {
                     onChange={handleChange}
                 />
             </Label>
-            <BtnSubmit type="submit">Submit</BtnSubmit>
+            <BtnSubmit type="submit">Send</BtnSubmit>
         </StyledForm>
     );
 }
