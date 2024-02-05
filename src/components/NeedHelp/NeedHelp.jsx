@@ -5,6 +5,7 @@ import {
   HelpWrapper,
   ImgWrap,
   HelpStrongText,
+  QuestionMark,
 } from "./NeedHelp.styled";
 import NeedHelpModal from "../NeedHelpModal/NeedHelpModal";
 
@@ -25,7 +26,10 @@ const NeedHelp = () => {
           If you need help with <HelpStrongText>TaskPro</HelpStrongText>, check
           out our support resources or reach out to our customer support team.
         </HelpText>
-        <HelpBtn onClick={() => openHelpModal()}>Need help?</HelpBtn>
+        <HelpBtn onClick={() => openHelpModal()}>
+          <QuestionMark />
+          Need help?
+        </HelpBtn>
       </HelpWrapper>
       {isOpenModal && (
         <NeedHelpModal openHelpModal={openHelpModal}></NeedHelpModal>

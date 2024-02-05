@@ -8,7 +8,7 @@ export const HelpModalWrap = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: ${(p) => p.theme.colors.modalBgColor};
-
+  /* cursor: pointer; */
   z-index: 5;
 `;
 
@@ -17,15 +17,20 @@ export const StyledModal = styled.div`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  padding: 20px;
+  padding: 24px;
   width: 100%;
   max-width: 400px;
-  min-height: 355px;
+  /* min-height: 355px; */
 
   z-index: 10;
 
   background-color: ${(p) => p.theme.colors.modalWindowsBgColor};
   border-radius: 10px;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    max-width: 355px;
+  }
 `;
 
 export const HelpCloseBtn = styled.span`
@@ -52,8 +57,7 @@ export const HelpForm = styled.form`
 
 export const HelpInput = styled.input`
   width: 100%;
-  /* max-width: 352px; */
-  height: 49px;
+  /* height: 49px; */
   font-size: 14px;
   letter-spacing: -0.02em;
   color: ${(p) => p.theme.colors.secondaryTextColor};
@@ -64,11 +68,17 @@ export const HelpInput = styled.input`
   border: 1px solid ${(p) => p.theme.colors.accentTextColor};
   outline: none;
   margin-bottom: 14px;
+
+  transition: border-color 0.3s linear;
+
+  &:hover {
+    border-color: ${(p) => p.theme.colors.modalBtnHover};
+  }
 `;
 export const HelpTextArea = styled.textarea`
   resize: none;
   width: 100%;
-  height: 120px;
+  max-height: 120px;
   background-color: transparent;
   padding: 14px 18px;
   border-radius: 8px;
@@ -77,11 +87,18 @@ export const HelpTextArea = styled.textarea`
   font-size: 14px;
   color: ${(p) => p.theme.colors.secondaryTextColor};
   margin-bottom: 24px;
+
+  transition: border-color 0.3s linear;
+
+  &:hover {
+    border-color: ${(p) => p.theme.colors.modalBtnHover};
+  }
 `;
 
 export const HelpSubmitBtn = styled.button`
   width: 100%;
-  height: 49px;
+  padding: 16px;
+  /* height: 49px; */
   border-radius: 8px;
   background-color: ${(p) => p.theme.colors.accentTextColor};
   border: none;
@@ -91,13 +108,17 @@ export const HelpSubmitBtn = styled.button`
   font-size: 14px;
   letter-spacing: -0.02em;
   color: ${(p) => p.theme.colors.buttonsColor};
+  transition: background-color 0.3s linear;
+
+  &:hover {
+    background-color: ${(p) => p.theme.colors.modalBtnHover};
+  }
 `;
 
 export const CloseModal = styled(IoClose)`
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   color: ${(p) => p.theme.colors.secondaryTextColor};
   position: absolute;
-  top: 1.4rem;
   right: 0;
 
   transition: 0.3s linear;
