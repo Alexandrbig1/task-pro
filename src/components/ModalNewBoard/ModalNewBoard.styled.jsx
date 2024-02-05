@@ -40,9 +40,9 @@ export const StyledWrapper = styled.div`
 //   position: relative;
 // `;
 
-export const StyledTitle = styled.p`
+export const StyledTitle = styled.h2`
   font-size: 18px;
-  color: ${(p) => p.theme.colors.mainTextColor};
+  color: ${(p) => p.theme.colors.secondaryTextColor};
   text-align: left;
   letter-spacing: -0.02em;
   margin-bottom: 24px;

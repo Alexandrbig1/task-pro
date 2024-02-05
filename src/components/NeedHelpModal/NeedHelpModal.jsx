@@ -24,7 +24,6 @@ const NeedHelpModal = ({ openHelpModal }) => {
     document.body.style.overflow = "hidden";
 
     return () => {
-      // componentWillUnmount(
       window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "auto";
     };
