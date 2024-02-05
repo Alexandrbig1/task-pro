@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import {
   StyledWrapper,
   StyledTitle,
@@ -8,12 +10,34 @@ import {
 } from "../ModalNewBoard/ModalNewBoard.styled";
 import CreateNewBoardForm from "./CreateNewBoardForm";
 
-export default function ModalNewBoard() {
+export default function ModalNewBoard({ openNewBoardModal }) {
+  useEffect(() => {
+    const handleKeyDown = (evt) => {
+      if (evt.code === "Escape") {
+        openNewBoardModal();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      // componentWillUnmount(
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "auto";
+    };
+  }, [openNewBoardModal]);
+
+  const handleOverlayClick = (evt) => {
+    if (evt.target === evt.currentTarget) {
+      openNewBoardModal();
+    }
+  };
   return (
-    <BackDrop>
+    <BackDrop onClick={handleOverlayClick}>
       <Modal>
         <StyledWrapper>
-          <CloseBtn>
+          <CloseBtn onClick={openNewBoardModal}>
             <CloseIcon />
           </CloseBtn>
           <StyledTitle>New board</StyledTitle>

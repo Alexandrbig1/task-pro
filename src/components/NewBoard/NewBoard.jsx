@@ -1,3 +1,5 @@
+import ModalNewBoard from "../ModalNewBoard/ModalNewBoard";
+import { useState } from "react";
 import {
   CreateNewBoardWrapper,
   NewBoardButton,
@@ -6,17 +8,28 @@ import {
   NewBoardWrapper,
   NewBoardBtnIcon,
 } from "./NewBoard.styled";
+ModalNewBoard;
 
-export default function NewBoard() {
+const NewBoard = () => {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const openNewBoardModal = () => {
+    setIsOpenModal((prevState) => !prevState);
+  };
   return (
     <NewBoardWrapper>
       <NewBoardSubTitle>My boards</NewBoardSubTitle>
       <CreateNewBoardWrapper>
         <NewBoardText>Create a new board</NewBoardText>
-        <NewBoardButton>
+        <NewBoardButton onClick={() => openNewBoardModal()}>
           <NewBoardBtnIcon />
         </NewBoardButton>
       </CreateNewBoardWrapper>
+      {isOpenModal && (
+        <ModalNewBoard openNewBoardModal={openNewBoardModal}></ModalNewBoard>
+      )}
     </NewBoardWrapper>
   );
-}
+};
+
+export default NewBoard;
