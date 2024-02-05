@@ -9,6 +9,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../backend/firebase";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import emailRegex from "../../regex/emailRegex";
 import {
   BoxStyled,
   ButtonEl,
@@ -80,9 +81,7 @@ export default function SignIn() {
 
     if (email.trim().length === 0) {
       newErrors.email = "Email address is required";
-    } else if (!/@/.test(email)) {
-      newErrors.email = "Please enter a valid email address";
-    } else if (!/\.[a-z]{2,}$/.test(email)) {
+    } else if (!emailRegex.test(email)) {
       newErrors.email = "Please enter a valid email address";
     }
 

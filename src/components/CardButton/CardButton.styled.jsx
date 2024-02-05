@@ -26,7 +26,7 @@ export const IconWrapper = styled.div`
   width: 28px;
   height: 28px;
   border-radius: 6px;
-  background-color: ${(p) => p.theme.colors.modalPlusIconWpapper};
+  background-color: ${(p) => p.theme.colors.modalPlusIconWrapper};
 `;
 
 export const Svg = styled(FiPlus)`
@@ -38,5 +38,5 @@ export const BtnTextWrapp = styled.span`
   font-weight: 500;
   font-size: 14px;
   letter-spacing: -0.02em;
-  color: ${(p) => p.theme.colors.modalPlusIconWpapper};
+  color: ${(p) => p.theme.colors.modalPlusIconWrapper};
 `;

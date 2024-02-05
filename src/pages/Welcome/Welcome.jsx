@@ -1,5 +1,4 @@
 import Logo from "../../components/Logo/Logo";
-import ModalNewBoard from "../../components/ModalNewBoard/ModalNewBoard";
 import {
   WelcomeWrapper,
   WelcomeContainer,
@@ -38,7 +37,6 @@ export default function Welcome() {
           <RegistrationBtn to="auth/signup">Registration</RegistrationBtn>
           <LoginBtn to="auth/signin">Log In</LoginBtn>
         </WelcomeBtnWrapper>
-        <ModalNewBoard />
       </WelcomeWrapper>
     </WelcomeContainer>
   );

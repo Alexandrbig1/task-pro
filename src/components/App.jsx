@@ -49,7 +49,7 @@ const themes = {
       logoutIcon: "#BEDBB0",
       modalBtnHover: "#9dc888",
       modalPlusIcon: "#fff",
-      modalPlusIconWpapper: "#161616",
+      modalPlusIconWrapper: "#161616",
     },
   },
   dark: {
@@ -91,7 +91,7 @@ const themes = {
       logoutIcon: "#BEDBB0",
       modalBtnHover: "#9dc888",
       modalPlusIcon: "#fff",
-      modalPlusIconWpapper: "#161616",
+      modalPlusIconWrapper: "#161616",
     },
   },
   violet: {
@@ -133,7 +133,7 @@ const themes = {
       logoutIcon: "#FFF",
       modalBtnHover: "#7b7ede",
       modalPlusIcon: "#161616",
-      modalPlusIconWpapper: "#FFF",
+      modalPlusIconWrapper: "#FFF",
     },
   },
 };
