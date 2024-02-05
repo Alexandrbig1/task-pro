@@ -1,4 +1,4 @@
-import{u as e,p as i,L as n,j as t}from"./index-8KyRcqBu.js";import{L as r}from"./Logo-i6gcLEJG.js";const a=e.div`
+import{u as e,p as i,L as n,j as t}from"./index-0VgKRU7t.js";import{L as r}from"./Logo-Jcmu2n5c.js";const a=e.div`
   background: linear-gradient(
     180deg,
     rgba(196, 196, 196, 0) 25%,

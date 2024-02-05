@@ -1,4 +1,4 @@
-import{u as i}from"./index-8KyRcqBu.js";const t=i.div`
+import{u as i}from"./index-0VgKRU7t.js";const h=i.div`
   position: relative;
   margin: 0 auto;
   width: 100%;
@@ -19,23 +19,24 @@ import{u as i}from"./index-8KyRcqBu.js";const t=i.div`
   @media (min-width: 1440px) {
     max-width: 144rem;
     display: flex;
+    /* min-height: 100vh; */
   }
-`,h=i.div`
+`,t=i.div`
   width: 100%;
   max-width: 144rem;
   height: 100%;
-  min-height: calc(100vh - 6rem);
+  /* min-height: calc(100vh - 6rem); */
 
   @media (min-width: 375px) {
     /* max-width: 37.5rem; */
   }
 
   @media (min-width: 768px) {
-    min-height: calc(100vh - 6.8rem);
+    /* min-height: calc(100vh - 6.8rem); */
     /* max-width: 76.8rem; */
   }
 
   @media (min-width: 1440px) {
     max-width: 144rem;
   }
-`;export{t as C,h as M};
+`;export{h as C,t as M};
