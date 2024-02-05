@@ -26,6 +26,11 @@ export const StyledModal = styled.div`
 
   background-color: ${(p) => p.theme.colors.modalWindowsBgColor};
   border-radius: 10px;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    max-width: 355px;
+  }
 `;
 
 export const HelpCloseBtn = styled.span`
