@@ -1,4 +1,4 @@
-import{u as o,p as s,r as c,a as C,j as t,B as p}from"./index-s94SMBr8.js";import{B as a,a as j,L as v,T as u,b as k,c as S,F as $,d as B,e as T,f as E,g as P}from"./emailRegex-Jdl0QArB.js";import{b as F,a as I}from"./hoist-non-react-statics.cjs-k-lsbD2Q.js";const L=o(a)`
+import{u as o,p as s,r as c,a as C,j as t,B as p}from"./index-NvoS6FG4.js";import{B as a,a as j,L as v,T as u,b as k,c as S,F as $,d as B,e as T,f as E,g as P}from"./emailRegex-D95uDaxe.js";import{b as z,a as F}from"./hoist-non-react-statics.cjs-nzecL8bV.js";const I=o(a)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,7 +13,7 @@ import{u as o,p as s,r as c,a as C,j as t,B as p}from"./index-s94SMBr8.js";impor
     rgba(196, 196, 196, 0) 25%,
     ${e=>e.theme.colors.accentBgColor} 92.19%
   );
-`,z=o(a)`
+`,L=o(a)`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -124,6 +124,12 @@ import{u as o,p as s,r as c,a as C,j as t,B as p}from"./index-s94SMBr8.js";impor
     }
   }
 
+  &:focus-within {
+    label {
+      font-size: 1rem;
+    }
+  }
+
   label {
     color: ${e=>e.theme.colors.whiteColorLowOp};
     font-family: ${s};
@@ -131,6 +137,7 @@ import{u as o,p as s,r as c,a as C,j as t,B as p}from"./index-s94SMBr8.js";impor
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.28px;
+    font-size: 1.4rem;
   }
 `,Y=o.div`
   position: relative;
@@ -166,4 +173,4 @@ import{u as o,p as s,r as c,a as C,j as t,B as p}from"./index-s94SMBr8.js";impor
   @media (min-width: 768px) {
     font-size: 1.2rem;
   }
-`,M=E({breakpoints:{values:{xs:0,sm:550,md:960,lg:1280,xl:1920}}});function V(e){return t.jsxs(D,{variant:"body2",align:"center",...e,style:{fontSize:"1rem"},children:["Creamy Sharks © ",t.jsx(q,{color:"inherit",href:"https://alexandrbig1.github.io/task-pro/",target:"_blank",children:"TaskPro"})," ",new Date().getFullYear(),"."]})}function K(){const[e,w]=c.useState(!1),f=C(),[r,m]=c.useState({}),y=()=>{w(!e)},b=h=>{h.preventDefault();const n=h.currentTarget,l=n.elements.email.value,d=n.elements.password.value,i={};l.trim().length===0?i.email="Email address is required":P.test(l)||(i.email="Please enter a valid email address"),(d.length<6||d.length>18)&&(i.password="Password must be between 6 and 18 characters"),m(i),Object.keys(i).length===0&&(m({}),F(I,l,d).then(()=>{f("/home"),p.success("Welcome to TaskPro! 🚀 Created by Creamy Sharks 🦈",{position:"top-right",autoClose:3e3,hideProgressBar:!1,closeOnClick:!0,pauseOnHover:!1,draggable:!1,progress:void 0,theme:"light"})}).catch(()=>{p.error("Incorrect email or password. Please try again.",{position:"top-right",autoClose:5e3,hideProgressBar:!1,closeOnClick:!0,pauseOnHover:!1,draggable:!1,progress:void 0,theme:"light"})}).finally(()=>{n.reset()}))};return t.jsx(S,{theme:M,children:t.jsxs(L,{children:[t.jsx("div",{style:{display:"flex",alignItems:"center",justifyContent:"center",padding:"1.2rem"},children:t.jsxs(z,{children:[t.jsxs(a,{style:{display:"flex",alignItems:"center",gap:"1.4rem"},children:[t.jsx(H,{href:"#/auth/signup",variant:"body2",children:"Registration"}),t.jsx(N,{component:"h1",variant:"h5",children:"Log In"})]}),t.jsxs(a,{component:"form",onSubmit:b,noValidate:!0,sx:{mt:2,width:{sm:"376px",xs:"312px"}},children:[t.jsxs($,{children:[t.jsx(x,{margin:"normal",required:!0,fullWidth:!0,id:"email",label:"Enter your email",name:"email",autoComplete:"email",autoFocus:!0,error:!!r.email}),r.email&&t.jsx(g,{children:r.email})]}),t.jsxs(Y,{children:[t.jsx(x,{label:"Confirm a password",variant:"outlined",margin:"normal",required:!0,fullWidth:!0,name:"password",id:"password",autoComplete:"current-password",type:e?"text":"password",error:!!r.password}),r.password&&t.jsx(g,{children:r.password}),t.jsx(A,{onClick:y,children:e?t.jsx(B,{}):t.jsx(T,{})})]}),t.jsx(W,{children:t.jsx(O,{type:"submit",color:"inherit",children:t.jsx(R,{children:"Log In Now"})})})]})]})}),t.jsx(V,{sx:{mt:8,mb:4}})]})})}export{K as default};
+`,M=E({breakpoints:{values:{xs:0,sm:550,md:960,lg:1280,xl:1920}}});function V(e){return t.jsxs(D,{variant:"body2",align:"center",...e,style:{fontSize:"1rem"},children:["Creamy Sharks © ",t.jsx(q,{color:"inherit",href:"https://alexandrbig1.github.io/task-pro/",target:"_blank",children:"TaskPro"})," ",new Date().getFullYear(),"."]})}function K(){const[e,f]=c.useState(!1),w=C(),[r,m]=c.useState({}),y=()=>{f(!e)},b=h=>{h.preventDefault();const n=h.currentTarget,l=n.elements.email.value,d=n.elements.password.value,i={};l.trim().length===0?i.email="Email address is required":P.test(l)||(i.email="Please enter a valid email address"),(d.length<6||d.length>18)&&(i.password="Password must be between 6 and 18 characters"),m(i),Object.keys(i).length===0&&(m({}),z(F,l,d).then(()=>{w("/home"),p.success("Welcome to TaskPro! 🚀 Created by Creamy Sharks 🦈",{position:"top-right",autoClose:3e3,hideProgressBar:!1,closeOnClick:!0,pauseOnHover:!1,draggable:!1,progress:void 0,theme:"light"})}).catch(()=>{p.error("Incorrect email or password. Please try again.",{position:"top-right",autoClose:5e3,hideProgressBar:!1,closeOnClick:!0,pauseOnHover:!1,draggable:!1,progress:void 0,theme:"light"})}).finally(()=>{n.reset()}))};return t.jsx(S,{theme:M,children:t.jsxs(I,{children:[t.jsx("div",{style:{display:"flex",alignItems:"center",justifyContent:"center",padding:"1.2rem"},children:t.jsxs(L,{children:[t.jsxs(a,{style:{display:"flex",alignItems:"center",gap:"1.4rem"},children:[t.jsx(H,{href:"#/auth/signup",variant:"body2",children:"Registration"}),t.jsx(N,{component:"h1",variant:"h5",children:"Log In"})]}),t.jsxs(a,{component:"form",onSubmit:b,noValidate:!0,sx:{mt:2,width:{sm:"376px",xs:"312px"}},children:[t.jsxs($,{children:[t.jsx(x,{margin:"normal",required:!0,fullWidth:!0,id:"email",label:"Enter your email",name:"email",autoComplete:"email",autoFocus:!0,error:!!r.email}),r.email&&t.jsx(g,{children:r.email})]}),t.jsxs(Y,{children:[t.jsx(x,{label:"Confirm a password",variant:"outlined",margin:"normal",required:!0,fullWidth:!0,name:"password",id:"password",autoComplete:"current-password",type:e?"text":"password",error:!!r.password}),r.password&&t.jsx(g,{children:r.password}),t.jsx(A,{onClick:y,children:e?t.jsx(B,{}):t.jsx(T,{})})]}),t.jsx(W,{children:t.jsx(O,{type:"submit",color:"inherit",children:t.jsx(R,{children:"Log In Now"})})})]})]})}),t.jsx(V,{sx:{mt:8,mb:4}})]})})}export{K as default};
