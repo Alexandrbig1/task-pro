@@ -9,8 +9,8 @@ export const AsideContainer = styled.aside`
 
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  bottom: 0;
+  right: 0;
 
   z-index: 10;
 
@@ -39,8 +39,6 @@ export const AsideWrapper = styled.div`
   background-color: ${(p) => p.theme.colors.mainAsideColor};
   z-index: 20;
 
-  min-height: 100vh;
-
   @media (min-width: 768px) {
     max-width: 26rem;
     width: 26rem;
@@ -49,7 +47,6 @@ export const AsideWrapper = styled.div`
   @media (min-width: 1440px) {
     display: flex;
     position: relative;
-    /* min-height: 100vh; */
   }
 `;
 

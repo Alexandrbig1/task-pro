@@ -116,7 +116,7 @@ export const HelpSubmitBtn = styled.button`
 `;
 
 export const CloseModal = styled(IoClose)`
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   color: ${(p) => p.theme.colors.secondaryTextColor};
   position: absolute;
   right: 0;

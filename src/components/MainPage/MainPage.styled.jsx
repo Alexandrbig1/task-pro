@@ -11,10 +11,10 @@ export const MainWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: calc(100vh - 6rem);
 
-  @media (min-width: 1440px) {
-    /* min-height: calc(100vh - 6.8rem); */
+  @media (min-width: 768px) {
+    min-height: calc(100vh - 6.8rem);
   }
 `;
 
