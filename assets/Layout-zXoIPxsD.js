@@ -1,9 +1,10 @@
-import{u as i}from"./index-NvoS6FG4.js";const t=i.div`
+import{u as i}from"./index-8KyRcqBu.js";const t=i.div`
   position: relative;
   margin: 0 auto;
   width: 100%;
   max-width: 144rem;
-  min-height: 100vh;
+  height: 100%;
+  /* min-height: 100vh; */
 
   overflow-x: hidden;
 
@@ -19,7 +20,7 @@ import{u as i}from"./index-NvoS6FG4.js";const t=i.div`
     max-width: 144rem;
     display: flex;
   }
-`,e=i.div`
+`,h=i.div`
   width: 100%;
   max-width: 144rem;
   height: 100%;
@@ -37,4 +38,4 @@ import{u as i}from"./index-NvoS6FG4.js";const t=i.div`
   @media (min-width: 1440px) {
     max-width: 144rem;
   }
-`;export{t as C,e as M};
+`;export{t as C,h as M};
