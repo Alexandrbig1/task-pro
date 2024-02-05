@@ -39,7 +39,7 @@ export const AsideWrapper = styled.div`
   background-color: ${(p) => p.theme.colors.mainAsideColor};
   z-index: 20;
 
-  /* min-height: 100vh; */
+  min-height: 100vh;
 
   @media (min-width: 768px) {
     max-width: 26rem;
