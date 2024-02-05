@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ErrorMessage, Field, Form, Formik } from "formik";
+import { ErrorMessage, Form, Formik } from "formik";
 import * as Yup from "yup";
 import {
     BtnPlus,
@@ -9,14 +9,27 @@ import {
     UpdateAvatar,
     WrapperUpdateAvatar,
     BtnWrapper,
+    InputForm,
+    Label,
+    InputNthChild,
 } from "./EditProfileForm.styled";
-// import { FiPlus } from "react-icons/fi";
+
+let EMAIL_REGX = `^(([^<>()\[\]\\.,;:\s@"]+(.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/`;
 
 const editProfileSchema = Yup.object().shape({
     avatar: Yup.string(),
-    name: Yup.string(),
-    email: Yup.string(),
-    password: Yup.string(),
+    name: Yup.string().min(3, "Too Short!").max(50, "Too Long!"),
+    email: Yup.string().matches(EMAIL_REGX, "Invalid email address"),
+    password: Yup.string()
+        .min(8, "Must Contain 8 Characters")
+        .required()
+        .matches(/^(?=.*[a-z])/, " Must Contain One Lowercase Character")
+        .matches(/^(?=.*[A-Z])/, "  Must Contain One Uppercase Character")
+        .matches(/^(?=.*[0-9])/, "  Must Contain One Number Character")
+        .matches(
+            /^(?=.*[!@#\$%\^&\*])/,
+            "  Must Contain  One Special Case Character"
+        ),
 });
 
 const onSubmit = (values) => {
@@ -77,18 +90,22 @@ export default function ProfileForm() {
                         </LabelAvatar>
                     </div>
 
-                    <label>
-                        <Field type="text" name="name" />
+                    <Label>
+                        <InputForm type="text" name="name" />
                         <ErrorMessage name="name" />
-                    </label>
-                    <label>
-                        <Field type="text" name="email" />
+                    </Label>
+                    <Label>
+                        <InputForm type="text" name="email" />
                         <ErrorMessage name="email" />
-                    </label>
-                    <label>
-                        <Field type="password" name="password" />
+                    </Label>
+                    <Label>
+                        <InputNthChild
+                            type="password"
+                            name="password"
+                            className="nth-child"
+                        />
                         <ErrorMessage name="password" />
-                    </label>
+                    </Label>
 
                     <BtnSubmit type="submit">Submit</BtnSubmit>
                 </StyledForm>
