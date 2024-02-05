@@ -13,41 +13,40 @@ export const WrapperUpdateAvatar = styled.div`
     position: relative;
     margin-bottom: 2.5rem;
 
-    width: 6.8rem;
-    height: 6.8rem;
-    border: "1px solid blue";
+    /* width: 6.8rem;
+    height: 6.8rem; */
 `;
 
 export const UpdateAvatar = styled.img`
-    position: relative;
     width: 6.8rem;
     height: 6.8rem;
     outline: none;
     border: none;
     border-radius: 0.8rem;
-    border: "1px solid blue";
 `;
 export const LabelAvatar = styled.label`
+    position: relative;
     width: 100%;
     height: 100%;
 `;
 
 export const BtnWrapper = styled.div`
     position: absolute;
-    top: 13rem;
+    bottom: 0;
     left: 50%;
     stroke: ${(p) => p.theme.colors.blackColor};
-    background-color: ${(p) => p.theme.colors.buttonsBgColor};
-    padding: 7px;
-    border-radius: 7px;
-
+    background-color: ${(p) => p.theme.colors.themeWrapperBorder};
+    padding: 0.7rem;
+    border-radius: 0.7rem;
     transform: translateX(-50%);
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    &:hover {
+    &:hover,
+    &:focus {
+        background-color: ${(p) => p.theme.colors.modalBtnHover};
         cursor: pointer;
     }
 `;
@@ -61,7 +60,6 @@ export const InputForm = styled.input`
     margin-bottom: 1.4rem;
     padding: 1.4rem 1.8rem;
     width: 100%;
-    height: 4.9rem;
     border-radius: 8px;
     background-color: inherit;
     opacity: 0.4;
@@ -83,7 +81,6 @@ export const InputNthChild = styled.input`
     margin-bottom: 2.4rem;
     padding: 1.4rem 1.8rem;
     width: 100%;
-    height: 4.9rem;
     border-radius: 8px;
     background-color: inherit;
     opacity: 0.4;
@@ -110,7 +107,7 @@ export const BtnSubmit = styled.button`
     display: block;
     border-radius: 0.8rem;
     width: 100%;
-    height: 4.9rem;
+    padding: 1.4rem 1.59rem;
     border: none;
     outline: none;
     font-family: ${primaryFont};
@@ -119,6 +116,11 @@ export const BtnSubmit = styled.button`
     letter-spacing: -0.02em;
     color: ${(p) => p.theme.colors.buttonsColor};
     background-color: ${(p) => p.theme.colors.themeTextHoverColor};
+
+    &:hover,
+    &:focus {
+        background-color: ${(p) => p.theme.colors.modalBtnHover};
+    }
 `;
 
 export const ErrorMessage = styled.span`

@@ -16,12 +16,21 @@ export const StyledModal = styled.div`
 `;
 
 export const AvatarModal = styled.div`
+
+    position: absolute;
+    width: 40rem;
+
+    background-color: ${(p) => p.theme.colors.mainHeaderColor};
+    padding: 2.4rem;
+    border-radius: 1rem;
+
   position: absolute;
   width: 40rem;
   /* height: 44rem; */
   background-color: ${(p) => p.theme.colors.mainHeaderColor};
   padding: 2.4rem;
   border-radius: 1rem;
+
 
   left: 50%;
   top: 50%;
@@ -58,6 +67,14 @@ export const BtnClose = styled(IoClose)`
 `;
 
 export const TitleModalText = styled.h2`
+
+    margin-bottom: 2.4rem;
+    font-family: ${primaryFont};
+    font-weight: 500;
+    font-size: 1.8rem;
+    letter-spacing: -0.02em;
+    color: ${(p) => p.theme.colors.secondaryTextColor};
+
   padding-top: 3px;
   padding-bottom: 3px;
   margin-bottom: 2.4rem;
