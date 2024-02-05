@@ -1,4 +1,4 @@
-import{u as n,p as s,j as i}from"./index-oPP1Prld.js";const l=n.a`
+import{u as n,p as s,j as i}from"./index-B7CRwh7h.js";const l=n.a`
   color: ${o=>o.theme.colors.mainTextColor};
   font-family: ${s};
   font-size: 1.6rem;
