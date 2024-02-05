@@ -1,14 +1,12 @@
 import styled from "styled-components";
 import { primaryFont } from "../fonts";
 import { FiPlus } from "react-icons/fi";
-import { Field } from "formik";
 
-export const StyledForm = styled.div`
+export const StyledForm = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* gap: 14px; */
 `;
 
 export const WrapperUpdateAvatar = styled.div`
@@ -36,7 +34,7 @@ export const LabelAvatar = styled.label`
 
 export const BtnWrapper = styled.div`
     position: absolute;
-    top: 12.5rem;
+    top: 13rem;
     left: 50%;
     stroke: ${(p) => p.theme.colors.blackColor};
     background-color: ${(p) => p.theme.colors.buttonsBgColor};
@@ -59,8 +57,9 @@ export const BtnPlus = styled(FiPlus)`
     font-size: 1rem;
 `;
 
-export const InputForm = styled(Field)`
+export const InputForm = styled.input`
     margin-bottom: 1.4rem;
+    padding: 1.4rem 1.8rem;
     width: 100%;
     height: 4.9rem;
     border-radius: 8px;
@@ -74,14 +73,15 @@ export const InputForm = styled(Field)`
     font-size: 1.4rem;
     letter-spacing: -0.02em;
     color: ${(p) => p.theme.colors.secondaryTextColor};
-    padding: 14px;
+
     &:hover {
         opacity: 1;
     }
 `;
 
-export const InputNthChild = styled(Field)`
+export const InputNthChild = styled.input`
     margin-bottom: 2.4rem;
+    padding: 1.4rem 1.8rem;
     width: 100%;
     height: 4.9rem;
     border-radius: 8px;
@@ -89,6 +89,11 @@ export const InputNthChild = styled(Field)`
     opacity: 0.4;
     outline: none;
     border: 1px solid ${(p) => p.theme.colors.buttonsBgColor};
+    font-family: ${primaryFont};
+    font-weight: 400;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    color: ${(p) => p.theme.colors.secondaryTextColor};
 
     &:hover {
         opacity: 1;
@@ -96,6 +101,7 @@ export const InputNthChild = styled(Field)`
 `;
 
 export const Label = styled.label`
+    position: relative;
     width: 100%;
 `;
 
@@ -107,5 +113,16 @@ export const BtnSubmit = styled.button`
     height: 4.9rem;
     border: none;
     outline: none;
+    font-family: ${primaryFont};
+    font-weight: 500;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    color: ${(p) => p.theme.colors.buttonsColor};
     background-color: ${(p) => p.theme.colors.themeTextHoverColor};
+`;
+
+export const ErrorMessage = styled.span`
+    position: absolute;
+    top: -1.5rem;
+    bottom: 0;
 `;
