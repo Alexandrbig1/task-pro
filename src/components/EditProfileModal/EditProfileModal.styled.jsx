@@ -57,10 +57,12 @@ export const BtnClose = styled(IoClose)`
 `;
 
 export const TitleModalText = styled.h2`
+    padding-top: 3px;
+    padding-bottom: 3px;
     margin-bottom: 2.4rem;
     font-family: ${primaryFont};
     font-weight: 500;
     font-size: 1.8rem;
     letter-spacing: -0.02em;
-    color: ${(p) => p.theme.colors.mainTextColor};
+    color: ${(p) => p.theme.colors.secondaryTextColor};
 `;
