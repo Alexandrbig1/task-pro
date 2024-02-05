@@ -2,7 +2,12 @@ import { createGlobalStyle } from "styled-components";
 import "modern-normalize/modern-normalize.css";
 import { primaryFont } from "./fonts";
 
-export const GlobalStyle = createGlobalStyle`* {
+export const GlobalStyle = createGlobalStyle`
+:root {
+  --primary-transition: 0.3s ease-in-out;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
