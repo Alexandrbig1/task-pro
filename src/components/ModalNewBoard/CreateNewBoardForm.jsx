@@ -16,7 +16,9 @@ import {
   StyledBackgroundLabel,
 } from "../ModalNewBoard/CreateNewBoardForm.styled";
 
-import sprite from "../../../public/images/icons.svg";
+// import sprite from "../../../public/images/icons.svg";
+import sprite from "./images/icons.svg";
+
 import backgroundImage from "./images/Vector1.jpg";
 import { useState } from "react";
 import { CardButton } from "../CardButton/CardButton";

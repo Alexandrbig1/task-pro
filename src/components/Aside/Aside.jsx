@@ -16,7 +16,6 @@ export default function Aside({ aside, handleAsideHide }) {
       handleAsideHide();
     }
   }
-
   return (
     <AsideContainer $aside={aside} onClick={(e) => handleBgClose(e)}>
       <AsideWrapper $aside={aside}>
