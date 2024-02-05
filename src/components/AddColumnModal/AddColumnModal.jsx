@@ -1,6 +1,15 @@
 import { useEffect } from "react";
 import { PropTypes } from "prop-types";
-import { CloseModal } from "../NeedHelpModal/NeedHelpModal.styled";
+import {
+  AddModalWrap,
+  StyledAddModal,
+  AddColumnModalBtn,
+  CloseAddColumnModal,
+  AddColumnTitle,
+  AddColumnForm,
+  AddColumnInput,
+} from "../AddColumnModal/AddColumnModal.styled";
+import { CardButton } from "../CardButton/CardButton";
 
 const AddColumnModal = ({ openColumnModal }) => {
     useEffect(() => {
@@ -25,26 +34,20 @@ const AddColumnModal = ({ openColumnModal }) => {
         }
     };
     return (
-        <AddModalWrap onClick={handleModalClick}>
-        //HelpModalWrap
-            <StyledAddModal class="">
-          //StyledModal
-                <AddColumnModalBtn onclick={openColumnModal} type="button">
-            //HelpCloseBtn
-                    <CloseAddColumnModal />
-            //CloseModal
-                </AddColumnModalBtn>
-                <div>
-                    <AddColumnTitle>Add column</AddColumnTitle>//HelpTitle
-                    <AddColumnForm>
-              //HelpForm
-                        <AddColumnInput type="text" placeholder="Title" /> HelpInput
-                        <AddColumnSubmitBtn type="submit">Add</AddColumnSubmitBtn>
-              //HelpSubmitBtn
-                    </AddColumnForm>
-                </div>
-            </StyledAddModal>
-        </AddModalWrap>
+      <AddModalWrap onClick={handleModalClick}>
+        <StyledAddModal class="modal">
+          <AddColumnModalBtn onclick={openColumnModal} type="button">
+            <CloseAddColumnModal />
+          </AddColumnModalBtn>
+          <div>
+            <AddColumnTitle>Add column</AddColumnTitle>
+            <AddColumnForm>
+              <AddColumnInput type="text" placeholder="Title" />
+              <CardButton btnText="Add" />
+            </AddColumnForm>
+          </div>
+        </StyledAddModal>
+      </AddModalWrap>
     );
 };
 
