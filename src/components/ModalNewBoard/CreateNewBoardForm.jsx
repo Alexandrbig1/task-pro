@@ -66,7 +66,7 @@ export default function CreateNewBoardForm() {
     setSelectedIcon(e.target.value);
   };
 
-  const [selectedBackground, setSelectedBackground] = useState(
+  const [background, setSelectedBackground] = useState(
     "../../../public/images/background/mobile/balloon-mobile.jpg"
   );
 
@@ -76,7 +76,7 @@ export default function CreateNewBoardForm() {
   };
 
   const handleSubmit = (values, { resetForm }) => {
-    const formValues = { ...values, selectedIcon, selectedBackground };
+    const formValues = { ...values, selectedIcon, background };
     console.log(formValues);
     //     const newBoard = {
     //       title: formValues.title,
@@ -89,7 +89,11 @@ export default function CreateNewBoardForm() {
 
   return (
     <Formik
-      initialValues={{ title: "", selectedIcon: "icon-project" }}
+      initialValues={{
+        title: "",
+        selectedIcon: "icon-project",
+        background: "default",
+      }}
       validationSchema={formSquema}
       onSubmit={handleSubmit}
     >
@@ -132,13 +136,13 @@ export default function CreateNewBoardForm() {
               <StyledBackgroundLabel key={name}>
                 <StyledBackgroudField
                   onChange={handleRadioChangeBackground}
-                  checked={selectedBackground === name.toString()}
+                  checked={background === name.toString()}
                   type="radio"
                   name="selectedBackground"
                   value={name}
                 />
                 <StyledIconBackground
-                  isSelected={selectedBackground === name.toString()}
+                  isSelected={background === name.toString()}
                 >
                   <img src={`${url}`} alt={`${name}`}></img>
                 </StyledIconBackground>

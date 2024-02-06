@@ -72,6 +72,6 @@ export const CloseIcon = styled(IoClose)`
 
   &:hover {
     transform: rotate(90deg);
-    color: ${(p) => p.theme.colors.accentTextColor};
+    fill: ${(p) => p.theme.colors.accentTextColor};
   }
 `;
