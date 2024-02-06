@@ -41,6 +41,8 @@ export const ShowThemeWrapper = styled.div`
   background: ${(p) => p.theme.colors.themeWrapper};
   box-shadow: 0px 4px 16px 0px rgba(17, 17, 17, 0.1);
 
+  z-index: 100;
+
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
