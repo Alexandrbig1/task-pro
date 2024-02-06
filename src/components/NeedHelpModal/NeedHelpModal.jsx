@@ -12,8 +12,7 @@ import {
   StyledModal,
 } from "./NeedHelpModal.styled";
 import emailRegex from "../../regex/emailRegex";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 const NeedHelpModal = ({ openHelpModal }) => {
   useEffect(() => {
@@ -52,7 +51,16 @@ const NeedHelpModal = ({ openHelpModal }) => {
       openHelpModal();
       form.reset();
     } else {
-      toast.error("Please provide a valid email and a comment.");
+      toast.error("Please provide a valid email and a comment", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "light",
+      });
     }
   };
 
@@ -76,8 +84,6 @@ const NeedHelpModal = ({ openHelpModal }) => {
           </HelpForm>
         </div>
       </StyledModal>
-
-      <ToastContainer />
     </HelpModalWrap>
   );
 };
