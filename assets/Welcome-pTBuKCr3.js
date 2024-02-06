@@ -1,4 +1,4 @@
-import{u as e,p as i,L as n,j as t}from"./index-9bbTUVDI.js";import{L as r}from"./Logo-gpWv1I1c.js";const a=e.div`
+import{u as e,p as i,L as n,j as t}from"./index-tBQRuE3B.js";import{L as r}from"./Logo-xE0N0Gt1.js";const a=e.div`
   background: linear-gradient(
     180deg,
     rgba(196, 196, 196, 0) 25%,
@@ -99,4 +99,4 @@ import{u as e,p as i,L as n,j as t}from"./index-9bbTUVDI.js";import{L as r}from"
   &:hover {
     cursor: pointer;
   }
-`,p={width:"48px",height:"48px"},x={color:"#161616",font:"4rem"},h={bgColor:"#161616",iconColor:"#fff"};function w(){return t.jsx(a,{children:t.jsxs(l,{children:[t.jsx("img",{src:"images/welcome.png",alt:"boy with laptop"}),t.jsx(r,{size:p,text:x,icon:h}),t.jsx(s,{children:"Supercharge your productivity and take control of your tasks with Task Pro - Don't wait, start achieving your goals now!"}),t.jsxs(c,{children:[t.jsx(m,{to:"auth/signup",children:"Registration"}),t.jsx(d,{to:"auth/signin",children:"Log In"})]})]})})}export{w as default};
+`,p={width:"48px",height:"48px"},x={color:"#161616",font:"4rem"},h={bgColor:"#161616",iconColor:"#fff"};function w(){return t.jsx(a,{children:t.jsxs(l,{children:[t.jsx("img",{src:"images/welcome.png",alt:"boy with laptop"}),t.jsx(r,{size:p,text:x,icon:h}),t.jsx(s,{children:"Supercharge your productivity and take control of your tasks with Task Pro - Don't wait, start achieving your goals now!"}),t.jsxs(c,{children:[t.jsx(m,{to:"signup",children:"Registration"}),t.jsx(d,{to:"signin",children:"Log In"})]})]})})}export{w as default};
