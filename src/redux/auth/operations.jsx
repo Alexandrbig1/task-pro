@@ -18,6 +18,7 @@ export const register = createAsyncThunk(
     try {
       const res = await axios.post("/auth/register", credentials);
       console.log(res);
+      console.log(res.data.token);
       setAuthHeader(res.data.token);
       toast.success(
         "Congratulations, your account has been successfully created. Welcome to TaskPro! 🚀 Created by Creamy Sharks 🦈",
@@ -110,6 +111,28 @@ export const refreshUser = createAsyncThunk(
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+const fetchCurrentUser = createAsyncThunk(
+  "auth/fetchCurrentUser",
+  async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
+
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue();
+    }
+
+    token.set(persistedToken);
+    try {
+      const { data } = await axios.get("/user/current");
+      const favorite = await axios.get("/user/favorite");
+      return { ...data, favorite: favorite.data };
+    } catch (error) {
+      toast.error(error.response.data.message);
+      return thunkAPI.rejectWithValue();
     }
   }
 );
