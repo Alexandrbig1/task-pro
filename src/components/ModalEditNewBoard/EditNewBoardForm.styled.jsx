@@ -83,7 +83,6 @@ export const IconsWrapper = styled.div`
 export const StyledIcon = styled.svg`
   width: 100%;
   height: 100%;
-
   stroke: ${(p) => p.theme.colors.secondaryTextColor};
   stroke-width: 1.5;
   opacity: ${(p) => (p.isSelected ? "1" : "0.5")};
@@ -103,12 +102,26 @@ export const StyledIconBackground = styled.div`
     opacity: 1;
   }
 `;
+
+export const StyledForm = styled(Form)`
+  margin: 0;
+`;
+
+export const IconsBackgroundWrapper = styled.div`
+  display: flex;
+  width: 252px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px;
+  margin-bottom: 40px;
+`;
+
 export const StyledDefaultIcon = styled.svg`
   width: 16px;
   height: 16px;
   stroke: ${(p) => p.theme.colors.secondaryTextColor};
   stroke-width: 1.5;
-  opacity: ${(p) => (p.isSelected ? "1" : "0.3")};
+  opacity: ${(p) => (p.isSelected ? "1" : "0.5")};
   &:active {
     opacity: 1;
   }
@@ -124,13 +137,4 @@ export const DefaultIconWrapper = styled.div`
 `;
 export const StyledForm = styled(Form)`
   margin: 0;
-`;
-
-export const IconsBackgroundWrapper = styled.div`
-  display: flex;
-  width: 252px;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 4px;
-  margin-bottom: 40px;
 `;

@@ -7,10 +7,10 @@ import {
   CloseBtn,
   BackDrop,
   Modal,
-} from "../ModalNewBoard/ModalNewBoard.styled";
-import CreateNewBoardForm from "./CreateNewBoardForm";
-import ModalEditNewBoard from "../ModalEditNewBoard/ModalEditNewBoard";
-export default function ModalNewBoard({ openNewBoardModal }) {
+} from "../ModalEditNewBoard/ModalEditNewBoard.styled";
+import EditNewBoardForm from "./EditNewBoardForm";
+
+export default function ModalEditNewBoard({ openNewBoardModal }) {
   useEffect(() => {
     const handleKeyDown = (evt) => {
       if (evt.code === "Escape") {
@@ -40,9 +40,8 @@ export default function ModalNewBoard({ openNewBoardModal }) {
           <CloseBtn onClick={openNewBoardModal}>
             <CloseIcon />
           </CloseBtn>
-          <StyledTitle>New board</StyledTitle>
-
-          <CreateNewBoardForm />
+          <StyledTitle>Edit board</StyledTitle>
+          <EditNewBoardForm />
         </StyledWrapper>
       </Modal>
     </BackDrop>

@@ -8,7 +8,6 @@ import {
   NewBoardWrapper,
   NewBoardBtnIcon,
 } from "./NewBoard.styled";
-ModalNewBoard;
 
 const NewBoard = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
