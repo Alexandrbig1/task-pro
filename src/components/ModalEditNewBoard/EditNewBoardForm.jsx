@@ -14,12 +14,13 @@ import {
   StyledError,
   StyledIconBackground,
   StyledBackgroundLabel,
-  StyledDefaultIcon,
   DefaultIconWrapper,
-} from "../ModalNewBoard/CreateNewBoardForm.styled";
+  StyledDefaultIcon,
+} from "../ModalEditNewBoard/EditNewBoardForm.styled";
 
 import sprite from "./images/icons.svg";
 
+import backgroundImage from "./images/Vector1.jpg";
 import { useState } from "react";
 import { CardButton } from "../CardButton/CardButton";
 
@@ -40,45 +41,26 @@ const icons = {
   icon8: "icon-hexagon",
 };
 
-// const backgrounds = {
-//   background1: backgroundImage.toString(),
-//   background2: backgroundImage.toString(),
-//   background3: backgroundImage.toString(),
-//   background4: backgroundImage.toString(),
-//   background5: backgroundImage.toString(),
-//   background6: backgroundImage.toString(),
-//   background7: backgroundImage.toString(),
-//   background8: backgroundImage.toString(),
-//   background9: backgroundImage.toString(),
-//   background10: backgroundImage.toString(),
-//   background11: backgroundImage.toString(),
-//   background12: backgroundImage.toString(),
-//   background13: backgroundImage.toString(),
-//   background14: backgroundImage.toString(),
-//   background15: backgroundImage.toString(),
-//   background16: backgroundImage.toString(),
-// };
+const backgrounds = {
+  background1: backgroundImage.toString(),
+  background2: backgroundImage.toString(),
+  background3: backgroundImage.toString(),
+  background4: backgroundImage.toString(),
+  background5: backgroundImage.toString(),
+  background6: backgroundImage.toString(),
+  background7: backgroundImage.toString(),
+  background8: backgroundImage.toString(),
+  background9: backgroundImage.toString(),
+  background10: backgroundImage.toString(),
+  background11: backgroundImage.toString(),
+  background12: backgroundImage.toString(),
+  background13: backgroundImage.toString(),
+  background14: backgroundImage.toString(),
+  background15: backgroundImage.toString(),
+  background16: backgroundImage.toString(),
+};
 
-const backgrounds = [
-  "default",
-  "balloon",
-  "clouds",
-  "flowers",
-  "full-moon",
-  "gorge",
-  "kapadokia",
-  "milky-way",
-  "moon",
-  "night",
-  "ocean",
-  "pink-tree",
-  "plant",
-  "rocks",
-  "ship",
-  "unsplash",
-];
-
-export default function CreateNewBoardForm() {
+export default function EditNewBoardForm() {
   const [icon, setIcon] = useState("icon-project");
 
   const handleRadioChange = (e) => {
@@ -96,8 +78,8 @@ export default function CreateNewBoardForm() {
   const handleSubmit = (values, { resetForm }) => {
     const newBoard = {
       titleBoard: values.titleBoard,
-      icon: icon,
-      background: background,
+      icon: values.icon,
+      background: values.background,
     };
     console.log(newBoard);
     resetForm();
@@ -116,7 +98,11 @@ export default function CreateNewBoardForm() {
       <StyledForm>
         <label>
           {" "}
-          <StyledInput type="text" name="titleBoard" placeholder="Title" />
+          <StyledInput
+            type="text"
+            name="titleBoard"
+            placeholder="Project office"
+          />
           <StyledError>
             <ErrorMessage name="titleBoard" />
           </StyledError>
@@ -142,7 +128,6 @@ export default function CreateNewBoardForm() {
             ))}
           </IconsWrapper>
         </div>
-
         <StyledSmallTitle>Background</StyledSmallTitle>
         <div id="my-backgrounds-radio-group">
           <IconsBackgroundWrapper
@@ -186,7 +171,7 @@ export default function CreateNewBoardForm() {
             ))}
           </IconsBackgroundWrapper>
         </div>
-        <CardButton btnText="Create" onSubmit={handleSubmit} />
+        <CardButton btnText="Edit" onSubmit={handleSubmit} />
       </StyledForm>
     </Formik>
   );
