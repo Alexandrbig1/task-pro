@@ -4,6 +4,7 @@ import { primaryFont } from "../fonts";
 export const MainWrapper = styled.div`
   width: 100%;
   height: 100%;
+  position: relative;
 
   background-color: ${(p) => p.theme.colors.mainBgColor};
   padding: 2rem;
