@@ -8,7 +8,6 @@ import {
   StyledForm,
   UpdateAvatar,
   WrapperUpdateAvatar,
-  BtnWrapper,
   InputForm,
   Label,
   InputNthChild,
@@ -70,11 +69,6 @@ export default function ProfileForm() {
     <StyledForm onSubmit={formik.handleSubmit}>
       <WrapperUpdateAvatar>
         <UpdateAvatar src={avatarPreview} />
-        <BtnWrapper>
-          <BtnPlus />
-        </BtnWrapper>
-      </WrapperUpdateAvatar>
-      <div>
         <LabelAvatar htmlFor="button-file">
           <input
             name="avatar"
@@ -84,8 +78,10 @@ export default function ProfileForm() {
             hidden
             onChange={handleChange}
           />
+          <BtnPlus />
         </LabelAvatar>
-      </div>
+      </WrapperUpdateAvatar>
+      <div></div>
 
       <Label>
         {formik.touched.name && formik.errors.name && (
