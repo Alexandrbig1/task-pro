@@ -10,6 +10,8 @@ export const StyledModal = styled.div`
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
 
+  z-index: 200;
+
   &:hover {
     cursor: pointer;
   }
