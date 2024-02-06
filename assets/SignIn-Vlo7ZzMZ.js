@@ -1,4 +1,4 @@
-import{u as o,p as s,r as c,a as C,j as t,B as p}from"./index-z5ny1g4P.js";import{B as a,a as j,L as v,T as u,b as k,c as S,F as $,d as B,e as T,f as E}from"./SignUp.styled-oQJONea_.js";import{b as P,e as z,a as F}from"./emailRegex-ZnOFvOVe.js";const I=o(a)`
+import{u as o,p as s,r as c,a as C,j as t,B as p}from"./index-9bbTUVDI.js";import{B as a,a as j,L as v,T as u,b as k,c as S,F as $,d as B,e as T,f as E}from"./SignUp.styled-ZmaZo3GI.js";import{b as P,e as z,a as F}from"./emailRegex-D6FbSY2r.js";const I=o(a)`
   display: flex;
   flex-direction: column;
   align-items: center;
