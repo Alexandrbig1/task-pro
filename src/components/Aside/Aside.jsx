@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import Logo from "../Logo/Logo";
 import LogoutButton from "../LogoutButton/LogoutButton";
 import NeedHelp from "../NeedHelp/NeedHelp";
@@ -11,14 +12,33 @@ import {
 
 // eslint-disable-next-line react/prop-types
 export default function Aside({ aside, handleAsideHide }) {
+  const [scrollable, setScrollable] = useState(false);
+
+  const containerRef = useRef();
+
+  useEffect(() => {
+    const container = containerRef.current;
+
+    const handleScroll = () => {
+      setScrollable(container.scrollTop > 0);
+    };
+
+    container.addEventListener("scroll", handleScroll);
+
+    return () => {
+      container.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   function handleBgClose(e) {
     if (e.target.localName === "aside") {
       handleAsideHide();
     }
   }
+
   return (
     <AsideContainer $aside={aside} onClick={(e) => handleBgClose(e)}>
-      <AsideWrapper $aside={aside}>
+      <AsideWrapper ref={containerRef} $aside={aside} $scrollable={scrollable}>
         <CloseIcon onClick={handleAsideHide} />
         <Logo />
         <NewBoard />

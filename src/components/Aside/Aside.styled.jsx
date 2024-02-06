@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { IoClose } from "react-icons/io5";
 
 export const AsideContainer = styled.aside`
@@ -28,6 +28,30 @@ export const AsideWrapper = styled.div`
   position: ${(p) => (p?.$aside ? "absolute" : "unset")};
 
   overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  ${(p) =>
+    p?.$scrollable &&
+    css`
+      &::-webkit-scrollbar-thumb {
+        background-color: ${(p) => p.theme.colors.scrollThumb};
+      }
+      &::-webkit-scrollbar-track {
+        background-color: ${(p) => p.theme.colors.scrollBar};
+      }
+    `}
 
   flex-direction: column;
   justify-content: space-between;
