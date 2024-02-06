@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import PropTypes from "prop-types";
 import {
   BackDrop,
   Modal,
@@ -38,4 +39,8 @@ export const EditCardModal = ({ onClose }) => {
       </Modal>
     </BackDrop>
   );
+};
+
+EditCardModal.propTypes = {
+  onClose: PropTypes.func,
 };

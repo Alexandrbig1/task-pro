@@ -7,13 +7,13 @@ export const AddBtn = styled.button`
   align-items: center;
   gap: 8px;
   width: 100%;
-  height: 49px;
   background-color: ${(p) => p.theme.colors.accentTextColor};
   border: none;
   border-radius: 8px;
+  padding: 10px 0;
   cursor: pointer;
 
-  transition: 0.3s linear;
+  transition: all var(--primary-transition);
 
   &:hover {
     background-color: ${(p) => p.theme.colors.modalBtnHover};

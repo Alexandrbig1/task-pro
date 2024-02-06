@@ -59,7 +59,7 @@ export const DescriptionArea = styled(Field)`
 export const FormRadioWrapper = styled.div`
   width: 80px;
   height: 36px;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 `;
 
 export const TitleForRadio = styled.div`
@@ -67,7 +67,7 @@ export const TitleForRadio = styled.div`
   font-size: 12px;
   letter-spacing: -0.02em;
   color: ${(p) => p.theme.colors.mainPageTextColor};
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 `;
 export const WrappRadioButtons = styled.div`
   display: flex;
@@ -117,7 +117,7 @@ export const DeadlineTitle = styled.p`
   font-size: 12px;
   letter-spacing: -0.02em;
   color: ${(p) => p.theme.colors.mainPageTextColor};
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 `;
 
 export const DatePicker = styled.div`
