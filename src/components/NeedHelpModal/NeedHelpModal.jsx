@@ -70,7 +70,7 @@ const NeedHelpModal = ({ openHelpModal }) => {
               cols="30"
               rows="10"
               name="comment"
-              placeholder="Comment"
+              placeholder="Enter your message"
             ></HelpTextArea>
             <HelpSubmitBtn type="submit">Send</HelpSubmitBtn>
           </HelpForm>
