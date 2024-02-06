@@ -11,6 +11,9 @@ import {
   HelpTitle,
   StyledModal,
 } from "./NeedHelpModal.styled";
+import emailRegex from "../../regex/emailRegex";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const NeedHelpModal = ({ openHelpModal }) => {
   useEffect(() => {
@@ -35,6 +38,24 @@ const NeedHelpModal = ({ openHelpModal }) => {
     }
   };
 
+  const onSubmitClick = (evt) => {
+    evt.preventDefault();
+
+    const form = evt.currentTarget;
+    const email = form.elements.email.value;
+    const comment = form.elements.comment.value;
+
+    const validEmail = emailRegex.test(email);
+    const validComment = comment.length > 0;
+
+    if (validEmail && validComment) {
+      openHelpModal();
+      form.reset();
+    } else {
+      toast.error("Please provide a valid email and a comment.");
+    }
+  };
+
   return (
     <HelpModalWrap onClick={handleOverlayClick}>
       <StyledModal className="modal">
@@ -43,19 +64,20 @@ const NeedHelpModal = ({ openHelpModal }) => {
         </HelpCloseBtn>
         <div>
           <HelpTitle>Need help</HelpTitle>
-          <HelpForm>
-            <HelpInput type="text" placeholder="Email address" />
-
+          <HelpForm onSubmit={onSubmitClick}>
+            <HelpInput name="email" type="text" placeholder="Email address" />
             <HelpTextArea
               cols="30"
               rows="10"
+              name="comment"
               placeholder="Comment"
             ></HelpTextArea>
-
             <HelpSubmitBtn type="submit">Send</HelpSubmitBtn>
           </HelpForm>
         </div>
       </StyledModal>
+
+      <ToastContainer />
     </HelpModalWrap>
   );
 };
