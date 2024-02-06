@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const CardItem = styled.li`
   width: 335px;
-  height: 154px;
   border-radius: 8px;
   background: #8fa1d0;
   overflow: hidden;
@@ -10,8 +9,7 @@ export const CardItem = styled.li`
 `;
 export const Container = styled.div`
   width: 330px;
-  padding: 14px 21px;
-  height: 100%;
+  padding: 14px 20px;
   background: ${(p) => p.theme.colors.themeWrapper};
   margin-left: auto;
 `;
@@ -20,7 +18,7 @@ export const Title = styled.h2`
   font-size: 14px;
   letter-spacing: -0.02em;
   color: ${(p) => p.theme.colors.burgerColor};
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 `;
 
 export const Description = styled.div`
@@ -31,14 +29,14 @@ export const Description = styled.div`
   color: ${(p) => p.theme.colors.mainPageTextColor};
   height: 34px;
   overflow: hidden;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 `;
 
 export const Line = styled.div`
   width: 290px;
   height: 0.5px;
   background-color: ${(p) => p.theme.colors.priorityColorWithout};
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 `;
 
 export const UnderlineInfo = styled.div`

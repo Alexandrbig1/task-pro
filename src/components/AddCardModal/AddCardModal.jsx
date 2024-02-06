@@ -1,4 +1,5 @@
-// import { useEffect } from "react";
+import { useEffect } from "react";
+import PropTypes from "prop-types";
 import {
   BackDrop,
   Modal,
@@ -9,24 +10,24 @@ import {
 import { AddCardForm } from "../AddCardForm/AddCardForm";
 
 export const AddCardModal = ({ onClose }) => {
-  // useEffect(() => {
-  //   const handleCloseOnKeydown = (e) => {
-  //     if (e.key === "Escape") {
-  //       onClose();
-  //     }
-  //   };
-  //   window.addEventListener("keydown", handleCloseOnKeydown);
+  useEffect(() => {
+    const handleCloseOnKeydown = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", handleCloseOnKeydown);
 
-  //   return () => {
-  //     window.removeEventListener("keydown", handleCloseOnKeydown);
-  //   };
-  // }, [onClose]);
+    return () => {
+      window.removeEventListener("keydown", handleCloseOnKeydown);
+    };
+  }, [onClose]);
 
-  // const handleCloseOnBackdrop = (e) => {
-  //   if (e.target === e.currentTarget) {
-  //     onClose();
-  //   }
-  // };
+  const handleCloseOnBackdrop = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
 
   return (
     <BackDrop onClick={handleCloseOnBackdrop}>
@@ -39,4 +40,8 @@ export const AddCardModal = ({ onClose }) => {
       </Modal>
     </BackDrop>
   );
+};
+
+AddCardModal.propTypes = {
+  onClose: PropTypes.func,
 };

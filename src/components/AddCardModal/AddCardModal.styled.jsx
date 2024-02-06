@@ -18,7 +18,6 @@ export const Modal = styled.div`
   position: absolute;
   z-index: 20px;
   width: 335px;
-  height: 522px;
   border: 1px solid rgba(190, 219, 176, 0.5);
   border-radius: 8px;
   background-color: ${(p) => p.theme.colors.themeWrapper};
@@ -32,7 +31,6 @@ export const Modal = styled.div`
 `;
 
 export const ModalContainer = styled.div`
-  height: 100%;
   padding: 24px;
   position: relative;
 `;
@@ -45,9 +43,10 @@ export const CloseIcon = styled(IoClose)`
   right: 14px;
   cursor: pointer;
 
-  transition: color 0.3s linear;
+  transition: all var(--primary-transition);
 
   &:hover {
+    transform: rotate(90deg);
     color: ${(p) => p.theme.colors.accentTextColor};
   }
 `;
