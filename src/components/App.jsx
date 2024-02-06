@@ -8,6 +8,8 @@ import { Route } from "react-router-dom";
 import { HashRouter as Router, Routes } from "react-router-dom";
 import FontsHelmet from "./FontHelmet";
 import RootLayout from "../layouts/RootLayout/RootLayout";
+import { RestrictedRoute } from "./RestrictRoute";
+import { PrivateRoute } from "./PrivateRoute";
 
 const themes = {
   light: {
@@ -168,9 +170,28 @@ function App() {
         <Routes>
           <Route path="/" element={<RootLayout />}>
             <Route index element={<Welcome />} />
-            <Route path="auth/signin" element={<SignIn />} />
-            <Route path="auth/signup" element={<SignUp />} />
-            <Route path="home" element={<Home toggleTheme={toggleTheme} />} />
+            <Route
+              path="/home"
+              element={
+                <PrivateRoute
+                  redirectTo="signin"
+                  component={<Home toggleTheme={toggleTheme} />}
+                />
+              }
+            />
+
+            <Route
+              path="signin"
+              element={
+                <RestrictedRoute redirectTo="/home" component={<SignIn />} />
+              }
+            />
+            <Route
+              path="signup"
+              element={
+                <RestrictedRoute redirectTo="/home" component={<SignUp />} />
+              }
+            />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
@@ -180,3 +201,15 @@ function App() {
 }
 
 export default App;
+
+{
+  /* <Routes>
+  <Route path="/" element={<RootLayout />}>
+    <Route index element={<Welcome />} />
+    <Route path="auth/signin" element={<SignIn />} />
+    <Route path="auth/signup" element={<SignUp />} />
+    <Route path="home" element={<Home toggleTheme={toggleTheme} />} />
+    <Route path="*" element={<NotFound />} />
+  </Route>
+</Routes>; */
+}

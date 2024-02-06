@@ -1,14 +1,14 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-// import { logIn } from "../../redux/auth/operations";
 import { BsFillEyeSlashFill, BsFillEyeFill } from "react-icons/bs";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
+import { logIn } from "../../redux/auth/operations";
 import { FieldWrapper } from "../SignUp/SignUp.styled";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../backend/firebase";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+// import { signInWithEmailAndPassword } from "firebase/auth";
+// import { auth } from "../../backend/firebase";
+// import { useNavigate } from "react-router-dom";
+// import { toast } from "react-toastify";
 import emailRegex from "../../regex/emailRegex";
 import {
   BoxStyled,
@@ -62,8 +62,8 @@ function Copyright(props) {
 
 export default function SignIn() {
   const [showPassword, setShowPassword] = React.useState(false);
-  // const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  // const navigate = useNavigate();
   const [errors, setErrors] = React.useState({});
 
   const handleClickShowPassword = () => {
@@ -93,42 +93,42 @@ export default function SignIn() {
 
     if (Object.keys(newErrors).length === 0) {
       setErrors({});
-      signInWithEmailAndPassword(auth, email, password)
-        .then(() => {
-          navigate("/home");
-          toast.success("Welcome to TaskPro! 🚀 Created by Creamy Sharks 🦈", {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: false,
-            progress: undefined,
-            theme: "light",
-          });
-        })
-        .catch(() => {
-          toast.error("Incorrect email or password. Please try again.", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: false,
-            progress: undefined,
-            theme: "light",
-          });
-        })
-        .finally(() => {
-          form.reset();
-        });
-      // dispatch(
-      //   logIn({
-      //     email: email,
-      //     password: password,
+      // signInWithEmailAndPassword(auth, email, password)
+      //   .then(() => {
+      //     navigate("/home");
+      //     toast.success("Welcome to TaskPro! 🚀 Created by Creamy Sharks 🦈", {
+      //       position: "top-right",
+      //       autoClose: 3000,
+      //       hideProgressBar: false,
+      //       closeOnClick: true,
+      //       pauseOnHover: false,
+      //       draggable: false,
+      //       progress: undefined,
+      //       theme: "light",
+      //     });
       //   })
-      // );
-      // form.reset();
+      //   .catch(() => {
+      //     toast.error("Incorrect email or password. Please try again.", {
+      //       position: "top-right",
+      //       autoClose: 5000,
+      //       hideProgressBar: false,
+      //       closeOnClick: true,
+      //       pauseOnHover: false,
+      //       draggable: false,
+      //       progress: undefined,
+      //       theme: "light",
+      //     });
+      //   })
+      //   .finally(() => {
+      //     form.reset();
+      //   });
+      dispatch(
+        logIn({
+          email: email,
+          password: password,
+        })
+      );
+      form.reset();
     }
   };
 
@@ -151,7 +151,7 @@ export default function SignIn() {
                 gap: "1.4rem",
               }}
             >
-              <RegistrationLink href="#/auth/signup" variant="body2">
+              <RegistrationLink href="#/signup" variant="body2">
                 Registration
               </RegistrationLink>
               <TypoTitleStyled component="h1" variant="h5">

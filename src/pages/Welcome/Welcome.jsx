@@ -34,11 +34,10 @@ export default function Welcome() {
           Pro - Don't wait, start achieving your goals now!
         </WelcomeText>
         <WelcomeBtnWrapper>
-          <RegistrationBtn to="auth/signup">Registration</RegistrationBtn>
-          <LoginBtn to="auth/signin">Log In</LoginBtn>
+          <RegistrationBtn to="signup">Registration</RegistrationBtn>
+          <LoginBtn to="signin">Log In</LoginBtn>
         </WelcomeBtnWrapper>
       </WelcomeWrapper>
     </WelcomeContainer>
   );
 }
-
