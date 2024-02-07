@@ -13,7 +13,8 @@
     "frontend",
     "backend",
     "react",
-    "nodejs"
+    "nodejs",
+    "fullstack"
   ],
   "version": "0.0.0",
   "type": "module",
