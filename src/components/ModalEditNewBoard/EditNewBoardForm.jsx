@@ -22,6 +22,8 @@ import sprite from "./images/icons.svg";
 
 import { useState } from "react";
 import { CardButton } from "../CardButton/CardButton";
+import { useSelector } from "react-redux";
+import { selectBoards } from "../../redux/boards/selectors";
 
 // import { selectBoards, selectIsLoading } from "../../redux/boards/selectors";
 
@@ -63,8 +65,12 @@ const backgrounds = [
 
 // eslint-disable-next-line react/prop-types
 export default function EditNewBoardForm({ boardId }) {
-  // const boards = useSelector(selectBoards);
-  console.log(boardId);
+  const boards = useSelector(selectBoards);
+  console.log(boardId, boards);
+  const selectedBoard = boards.filter((board) => {
+    return board._id === boardId;
+  });
+  console.log(selectedBoard);
 
   const [icon, setIcon] = useState("icon-project");
 
@@ -93,9 +99,9 @@ export default function EditNewBoardForm({ boardId }) {
   return (
     <Formik
       initialValues={{
-        titleBoard: "",
-        icon: "icon-project",
-        background: "default",
+        titleBoard: selectedBoard[0].titleBoard,
+        icon: selectedBoard[0].icon,
+        background: selectedBoard[0].background,
       }}
       validationSchema={formSquema}
       onSubmit={handleSubmit}
@@ -106,7 +112,7 @@ export default function EditNewBoardForm({ boardId }) {
           <StyledInput
             type="text"
             name="titleBoard"
-            placeholder="Project office"
+            placeholder={selectedBoard[0].titleBoard}
           />
           <StyledError>
             <ErrorMessage name="titleBoard" />

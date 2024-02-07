@@ -64,7 +64,6 @@ const backgrounds = [
 
 export default function CreateNewBoardForm() {
   const dispatch = useDispatch();
-  // const boards = useSelector(selectBoards);
 
   const [icon, setIcon] = useState("icon-project");
 
