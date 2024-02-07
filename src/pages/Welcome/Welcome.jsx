@@ -1,5 +1,6 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Logo from "../../components/Logo/Logo";
+
 import {
   WelcomeWrapper,
   WelcomeContainer,
