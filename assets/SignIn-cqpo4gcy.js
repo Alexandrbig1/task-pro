@@ -1,4 +1,4 @@
-import{u as o,p as n,r as c,b,j as t,H as j,a as v,e as C}from"./index-KBMeqsTl.js";import{B as s,a as k,L as S,T as u,b as $,c as T,F as E,d as B,e as F,f as z}from"./SignUp.styled-uOZPd_P5.js";import{e as P}from"./hoist-non-react-statics.cjs-uPjFzWyW.js";const I=o(s)`
+import{u as o,p as n,r as c,b,j as t,H as j,a as v,e as C}from"./index-xIlaxi8C.js";import{B as k,a as S,e as $}from"./index-AMdMYdhi.js";import{B as s,a as T,L as B,T as u,b as E,c as F,F as z,d as P}from"./SignUp.styled-5aN55ziE.js";const I=o(s)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +33,7 @@ import{u as o,p as n,r as c,b,j as t,H as j,a as v,e as C}from"./index-KBMeqsTl.
   }
 `;o(s)`
   width: 100%;
-`;const W=o(k)`
+`;const W=o(T)`
   width: 100%;
   height: 4.9rem;
 `,D=o.div`
@@ -72,7 +72,7 @@ import{u as o,p as n,r as c,b,j as t,H as j,a as v,e as C}from"./index-KBMeqsTl.
   font-weight: 500;
   line-height: normal;
   letter-spacing: -0.28px;
-`,O=o(S)`
+`,O=o(B)`
   color: ${e=>e.theme.colors.textColor};
 `,R=o.a`
   color: ${e=>e.theme.colors.whiteColorLowOp};
@@ -92,7 +92,7 @@ import{u as o,p as n,r as c,b,j as t,H as j,a as v,e as C}from"./index-KBMeqsTl.
   font-weight: 500;
   line-height: normal;
   letter-spacing: -0.36px;
-`,p=o($)`
+`,p=o(E)`
   width: 100%;
   max-width: 260px;
 
@@ -173,4 +173,4 @@ import{u as o,p as n,r as c,b,j as t,H as j,a as v,e as C}from"./index-KBMeqsTl.
   @media (min-width: 768px) {
     font-size: 1.2rem;
   }
-`,V=z({breakpoints:{values:{xs:0,sm:550,md:960,lg:1280,xl:1920}}});function _(e){return t.jsxs(q,{variant:"body2",align:"center",...e,style:{fontSize:"1rem"},children:["Creamy Sharks © ",t.jsx(O,{color:"inherit",href:"https://alexandrbig1.github.io/task-pro/",target:"_blank",children:"TaskPro"})," ",new Date().getFullYear(),"."]})}function K(){const[e,g]=c.useState(!1),w=b(),[r,m]=c.useState({}),f=()=>{g(!e)},y=h=>{h.preventDefault();const a=h.currentTarget,l=a.elements.email.value,d=a.elements.password.value,i={};l.trim().length===0?i.email="Email address is required":P.test(l)||(i.email="Please enter a valid email address"),(d.length<6||d.length>18)&&(i.password="Password must be between 6 and 18 characters"),m(i),Object.keys(i).length===0&&(m({}),w(C({email:l,password:d})),a.reset())};return t.jsxs(t.Fragment,{children:[t.jsx(j,{children:t.jsxs(v,{children:[t.jsx("title",{children:"Creamy Sharks - Sign In"}),t.jsx("meta",{name:"description",content:"Explore TaskPro, the ultimate task manager born out of a 10-month Fullstack Development Bootcamp. Elevate your productivity with TaskPro's intuitive design and powerful functionality."})]})}),t.jsx(T,{theme:V,children:t.jsxs(I,{children:[t.jsx("div",{style:{display:"flex",alignItems:"center",justifyContent:"center",padding:"1.2rem"},children:t.jsxs(L,{children:[t.jsxs(s,{style:{display:"flex",alignItems:"center",gap:"1.4rem"},children:[t.jsx(R,{href:"#/signup",variant:"body2",children:"Registration"}),t.jsx(Y,{component:"h1",variant:"h5",children:"Log In"})]}),t.jsxs(s,{component:"form",onSubmit:y,noValidate:!0,sx:{mt:2,width:{sm:"376px",xs:"312px"}},children:[t.jsxs(E,{children:[t.jsx(p,{margin:"normal",required:!0,fullWidth:!0,id:"email",label:"Enter your email",name:"email",autoComplete:"email",autoFocus:!0,error:!!r.email}),r.email&&t.jsx(x,{children:r.email})]}),t.jsxs(M,{children:[t.jsx(p,{label:"Confirm a password",variant:"outlined",margin:"normal",required:!0,fullWidth:!0,name:"password",id:"password",autoComplete:"current-password",type:e?"text":"password",error:!!r.password}),r.password&&t.jsx(x,{children:r.password}),t.jsx(N,{onClick:f,children:e?t.jsx(B,{}):t.jsx(F,{})})]}),t.jsx(D,{children:t.jsx(W,{type:"submit",color:"inherit",children:t.jsx(H,{children:"Log In Now"})})})]})]})}),t.jsx(_,{sx:{mt:8,mb:4}})]})})]})}export{K as default};
+`,V=P({breakpoints:{values:{xs:0,sm:550,md:960,lg:1280,xl:1920}}});function _(e){return t.jsxs(q,{variant:"body2",align:"center",...e,style:{fontSize:"1rem"},children:["Creamy Sharks © ",t.jsx(O,{color:"inherit",href:"https://alexandrbig1.github.io/task-pro/",target:"_blank",children:"TaskPro"})," ",new Date().getFullYear(),"."]})}function K(){const[e,g]=c.useState(!1),w=b(),[r,m]=c.useState({}),f=()=>{g(!e)},y=h=>{h.preventDefault();const a=h.currentTarget,l=a.elements.email.value,d=a.elements.password.value,i={};l.trim().length===0?i.email="Email address is required":$.test(l)||(i.email="Please enter a valid email address"),(d.length<6||d.length>18)&&(i.password="Password must be between 6 and 18 characters"),m(i),Object.keys(i).length===0&&(m({}),w(C({email:l,password:d})),a.reset())};return t.jsxs(t.Fragment,{children:[t.jsx(j,{children:t.jsxs(v,{children:[t.jsx("title",{children:"Creamy Sharks - Sign In"}),t.jsx("meta",{name:"description",content:"Explore TaskPro, the ultimate task manager born out of a 10-month Fullstack Development Bootcamp. Elevate your productivity with TaskPro's intuitive design and powerful functionality."})]})}),t.jsx(F,{theme:V,children:t.jsxs(I,{children:[t.jsx("div",{style:{display:"flex",alignItems:"center",justifyContent:"center",padding:"1.2rem"},children:t.jsxs(L,{children:[t.jsxs(s,{style:{display:"flex",alignItems:"center",gap:"1.4rem"},children:[t.jsx(R,{href:"#/signup",variant:"body2",children:"Registration"}),t.jsx(Y,{component:"h1",variant:"h5",children:"Log In"})]}),t.jsxs(s,{component:"form",onSubmit:y,noValidate:!0,sx:{mt:2,width:{sm:"376px",xs:"312px"}},children:[t.jsxs(z,{children:[t.jsx(p,{margin:"normal",required:!0,fullWidth:!0,id:"email",label:"Enter your email",name:"email",autoComplete:"email",autoFocus:!0,error:!!r.email}),r.email&&t.jsx(x,{children:r.email})]}),t.jsxs(M,{children:[t.jsx(p,{label:"Confirm a password",variant:"outlined",margin:"normal",required:!0,fullWidth:!0,name:"password",id:"password",autoComplete:"current-password",type:e?"text":"password",error:!!r.password}),r.password&&t.jsx(x,{children:r.password}),t.jsx(N,{onClick:f,children:e?t.jsx(k,{}):t.jsx(S,{})})]}),t.jsx(D,{children:t.jsx(W,{type:"submit",color:"inherit",children:t.jsx(H,{children:"Log In Now"})})})]})]})}),t.jsx(_,{sx:{mt:8,mb:4}})]})})]})}export{K as default};
