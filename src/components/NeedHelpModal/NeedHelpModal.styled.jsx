@@ -121,7 +121,7 @@ export const CloseModal = styled(IoClose)`
   position: absolute;
   right: 0;
 
-  transition: 0.3s linear;
+  transition: all var(--primary-transition);
 
   &:hover {
     transform: rotate(90deg);

@@ -27,6 +27,7 @@ import {
   FieldWrapper,
   PasswordErrorMessage,
 } from "./SignUp.styled";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const customTheme = createTheme({
   breakpoints: {
@@ -146,112 +147,125 @@ export default function SignUp() {
   };
 
   return (
-    <ThemeProvider theme={customTheme}>
-      <ContainerSignUpStyled>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "1.2rem",
-          }}
-        >
-          <BoxSignUpStyled>
-            <Box
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "1.4rem",
-              }}
-            >
-              <TypoTitleSignUpStyled component="h1" variant="h5">
-                Registration
-              </TypoTitleSignUpStyled>
-              <LoginLink href="#/signin" variant="body2">
-                Log In
-              </LoginLink>
-            </Box>
-            <Box
-              component="form"
-              noValidate
-              onSubmit={handleSubmit}
-              sx={{
-                mt: 2,
-                width: { sm: "376px", xs: "312px" },
-              }}
-            >
-              <Grid container spacing={2}>
-                <Grid item xs={12} style={{ marginTop: "0.4rem" }}>
-                  <FieldWrapper>
-                    <TextFieldSignUpStyled
-                      autoComplete="given-name"
-                      name="name"
-                      required
-                      fullWidth
-                      id="name"
-                      label="Enter your name"
-                      autoFocus
-                      error={errors.name ? true : false}
-                    />
-                    {errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
-                  </FieldWrapper>
-                </Grid>
-                <Grid item xs={12} style={{ marginTop: "0.4rem" }}>
-                  <FieldWrapper>
-                    <TextFieldSignUpStyled
-                      required
-                      fullWidth
-                      id="email"
-                      label="Enter your email"
-                      name="email"
-                      autoComplete="email"
-                      error={errors.email ? true : false}
-                    />
-                    {errors.email && (
-                      <ErrorMessage>{errors.email}</ErrorMessage>
-                    )}
-                  </FieldWrapper>
-                </Grid>
-                <Grid item xs={12} style={{ position: "relative" }}>
-                  <EyePasswordSignUpWrap>
-                    <TextFieldSignUpStyled
-                      label="Create a password"
-                      variant="outlined"
-                      margin="normal"
-                      required
-                      fullWidth
-                      name="password"
-                      id="password"
-                      autoComplete="new-password"
-                      type={showPassword ? "text" : "password"}
-                      error={errors.password ? true : false}
-                    />
-                    {errors.password && (
-                      <PasswordErrorMessage>
-                        {errors.password}
-                      </PasswordErrorMessage>
-                    )}
-
-                    <EyeIconSignUpWrapper onClick={handleClickShowPassword}>
-                      {showPassword ? (
-                        <BsFillEyeSlashFill />
-                      ) : (
-                        <BsFillEyeFill />
+    <>
+      <HelmetProvider>
+        <Helmet>
+          <title>Creamy Sharks - Sign Up</title>
+          <meta
+            name="description"
+            content="Explore TaskPro, the ultimate task manager born out of a 10-month Fullstack Development Bootcamp. Elevate your productivity with TaskPro's intuitive design and powerful functionality."
+          />
+        </Helmet>
+      </HelmetProvider>
+      <ThemeProvider theme={customTheme}>
+        <ContainerSignUpStyled>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "1.2rem",
+            }}
+          >
+            <BoxSignUpStyled>
+              <Box
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "1.4rem",
+                }}
+              >
+                <TypoTitleSignUpStyled component="h1" variant="h5">
+                  Registration
+                </TypoTitleSignUpStyled>
+                <LoginLink href="#/signin" variant="body2">
+                  Log In
+                </LoginLink>
+              </Box>
+              <Box
+                component="form"
+                noValidate
+                onSubmit={handleSubmit}
+                sx={{
+                  mt: 2,
+                  width: { sm: "376px", xs: "312px" },
+                }}
+              >
+                <Grid container spacing={2}>
+                  <Grid item xs={12} style={{ marginTop: "0.4rem" }}>
+                    <FieldWrapper>
+                      <TextFieldSignUpStyled
+                        autoComplete="given-name"
+                        name="name"
+                        required
+                        fullWidth
+                        id="name"
+                        label="Enter your name"
+                        autoFocus
+                        error={errors.name ? true : false}
+                      />
+                      {errors.name && (
+                        <ErrorMessage>{errors.name}</ErrorMessage>
                       )}
-                    </EyeIconSignUpWrapper>
-                  </EyePasswordSignUpWrap>
+                    </FieldWrapper>
+                  </Grid>
+                  <Grid item xs={12} style={{ marginTop: "0.4rem" }}>
+                    <FieldWrapper>
+                      <TextFieldSignUpStyled
+                        required
+                        fullWidth
+                        id="email"
+                        label="Enter your email"
+                        name="email"
+                        autoComplete="email"
+                        error={errors.email ? true : false}
+                      />
+                      {errors.email && (
+                        <ErrorMessage>{errors.email}</ErrorMessage>
+                      )}
+                    </FieldWrapper>
+                  </Grid>
+                  <Grid item xs={12} style={{ position: "relative" }}>
+                    <EyePasswordSignUpWrap>
+                      <TextFieldSignUpStyled
+                        label="Create a password"
+                        variant="outlined"
+                        margin="normal"
+                        required
+                        fullWidth
+                        name="password"
+                        id="password"
+                        autoComplete="new-password"
+                        type={showPassword ? "text" : "password"}
+                        error={errors.password ? true : false}
+                      />
+                      {errors.password && (
+                        <PasswordErrorMessage>
+                          {errors.password}
+                        </PasswordErrorMessage>
+                      )}
+
+                      <EyeIconSignUpWrapper onClick={handleClickShowPassword}>
+                        {showPassword ? (
+                          <BsFillEyeSlashFill />
+                        ) : (
+                          <BsFillEyeFill />
+                        )}
+                      </EyeIconSignUpWrapper>
+                    </EyePasswordSignUpWrap>
+                  </Grid>
                 </Grid>
-              </Grid>
-              <SignUpButtonStyled>
-                <SignUpButtonEl type="submit" color="inherit">
-                  <BtnSpan>Register Now</BtnSpan>
-                </SignUpButtonEl>
-              </SignUpButtonStyled>
-            </Box>
-          </BoxSignUpStyled>
-        </div>
-        <Copyright sx={{ mt: 5 }} />
-      </ContainerSignUpStyled>
-    </ThemeProvider>
+                <SignUpButtonStyled>
+                  <SignUpButtonEl type="submit" color="inherit">
+                    <BtnSpan>Register Now</BtnSpan>
+                  </SignUpButtonEl>
+                </SignUpButtonStyled>
+              </Box>
+            </BoxSignUpStyled>
+          </div>
+          <Copyright sx={{ mt: 5 }} />
+        </ContainerSignUpStyled>
+      </ThemeProvider>
+    </>
   );
 }

@@ -10,6 +10,7 @@ import { FieldWrapper } from "../SignUp/SignUp.styled";
 // import { useNavigate } from "react-router-dom";
 // import { toast } from "react-toastify";
 import emailRegex from "../../regex/emailRegex";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import {
   BoxStyled,
   ButtonEl,
@@ -133,87 +134,98 @@ export default function SignIn() {
   };
 
   return (
-    <ThemeProvider theme={customTheme}>
-      <ContainerStyled>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "1.2rem",
-          }}
-        >
-          <BoxStyled>
-            <Box
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "1.4rem",
-              }}
-            >
-              <RegistrationLink href="#/signup" variant="body2">
-                Registration
-              </RegistrationLink>
-              <TypoTitleStyled component="h1" variant="h5">
-                Log In
-              </TypoTitleStyled>
-            </Box>
-            <Box
-              component="form"
-              onSubmit={handleSubmit}
-              noValidate
-              sx={{
-                mt: 2,
-                width: { sm: "376px", xs: "312px" },
-              }}
-            >
-              <FieldWrapper>
-                <TextFieldStyled
-                  margin="normal"
-                  required
-                  fullWidth
-                  id="email"
-                  label="Enter your email"
-                  name="email"
-                  autoComplete="email"
-                  autoFocus
-                  error={errors.email ? true : false}
-                />
-                {errors.email && (
-                  <SignInErrorMessage>{errors.email}</SignInErrorMessage>
-                )}
-              </FieldWrapper>
+    <>
+      <HelmetProvider>
+        <Helmet>
+          <title>Creamy Sharks - Sign In</title>
+          <meta
+            name="description"
+            content="Explore TaskPro, the ultimate task manager born out of a 10-month Fullstack Development Bootcamp. Elevate your productivity with TaskPro's intuitive design and powerful functionality."
+          />
+        </Helmet>
+      </HelmetProvider>
+      <ThemeProvider theme={customTheme}>
+        <ContainerStyled>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "1.2rem",
+            }}
+          >
+            <BoxStyled>
+              <Box
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "1.4rem",
+                }}
+              >
+                <RegistrationLink href="#/signup" variant="body2">
+                  Registration
+                </RegistrationLink>
+                <TypoTitleStyled component="h1" variant="h5">
+                  Log In
+                </TypoTitleStyled>
+              </Box>
+              <Box
+                component="form"
+                onSubmit={handleSubmit}
+                noValidate
+                sx={{
+                  mt: 2,
+                  width: { sm: "376px", xs: "312px" },
+                }}
+              >
+                <FieldWrapper>
+                  <TextFieldStyled
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="email"
+                    label="Enter your email"
+                    name="email"
+                    autoComplete="email"
+                    autoFocus
+                    error={errors.email ? true : false}
+                  />
+                  {errors.email && (
+                    <SignInErrorMessage>{errors.email}</SignInErrorMessage>
+                  )}
+                </FieldWrapper>
 
-              <EyePasswordWrap>
-                <TextFieldStyled
-                  label="Confirm a password"
-                  variant="outlined"
-                  margin="normal"
-                  required
-                  fullWidth
-                  name="password"
-                  id="password"
-                  autoComplete="current-password"
-                  type={showPassword ? "text" : "password"}
-                  error={errors.password ? true : false}
-                />
-                {errors.password && (
-                  <SignInErrorMessage>{errors.password}</SignInErrorMessage>
-                )}
-                <EyeIconWrapper onClick={handleClickShowPassword}>
-                  {showPassword ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}
-                </EyeIconWrapper>
-              </EyePasswordWrap>
-              <ButtonStyled>
-                <ButtonEl type="submit" color="inherit">
-                  <BtnLogInSpan>Log In Now</BtnLogInSpan>
-                </ButtonEl>
-              </ButtonStyled>
-            </Box>
-          </BoxStyled>
-        </div>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
-      </ContainerStyled>
-    </ThemeProvider>
+                <EyePasswordWrap>
+                  <TextFieldStyled
+                    label="Confirm a password"
+                    variant="outlined"
+                    margin="normal"
+                    required
+                    fullWidth
+                    name="password"
+                    id="password"
+                    autoComplete="current-password"
+                    type={showPassword ? "text" : "password"}
+                    error={errors.password ? true : false}
+                  />
+                  {errors.password && (
+                    <SignInErrorMessage>{errors.password}</SignInErrorMessage>
+                  )}
+                  <EyeIconWrapper onClick={handleClickShowPassword}>
+                    {showPassword ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}
+                  </EyeIconWrapper>
+                </EyePasswordWrap>
+                <ButtonStyled>
+                  <ButtonEl type="submit" color="inherit">
+                    <BtnLogInSpan>Log In Now</BtnLogInSpan>
+                  </ButtonEl>
+                </ButtonStyled>
+              </Box>
+            </BoxStyled>
+          </div>
+          <Copyright sx={{ mt: 8, mb: 4 }} />
+        </ContainerStyled>
+      </ThemeProvider>
+    </>
   );
 }

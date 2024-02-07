@@ -18,7 +18,6 @@ export const Modal = styled.div`
   position: absolute;
   z-index: 11;
   width: 300px;
-  height: 234px;
   padding: 24px;
   border-radius: 8px;
   background-color: ${(p) => p.theme.colors.themeWrapper};
@@ -34,36 +33,28 @@ export const StyledTitle = styled.h2`
   color: ${(p) => p.theme.colors.secondaryTextColor};
   text-align: left;
   letter-spacing: -0.02em;
-  margin-bottom: 24px;
 `;
 
-export const CloseBtn = styled.button`
+export const CloseBtn = styled.span`
   position: absolute;
   top: 14px;
   right: 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 18px;
-  height: 18px;
-  background-color: transparent;
-  border: none;
   cursor: pointer;
 `;
 
 export const CloseIcon = styled(IoClose)`
-  fill: ${(p) => p.theme.colors.burgerColor};
+  color: ${(p) => p.theme.colors.secondaryTextColor};
 
-  width: 18px;
-  height: 18px;
+  font-size: 2.4rem;
 
-  transition: 0.3s linear;
+  transition: all var(--primary-transition);
 
   &:hover {
     transform: rotate(90deg);
     color: ${(p) => p.theme.colors.accentTextColor};
   }
 `;
+
 export const StyledWrapper = styled.div`
   border-top: 1px solid ${(p) => p.theme.colors.modalBorderColorLowOp};
 `;
@@ -87,7 +78,7 @@ export const Btn = styled.button`
   font-size: 12px;
   letter-spacing: -0.02em;
   text-decoration: underline;
-  color: rgba(255, 255, 255, 0.5);
+  color: ${(p) => p.theme.colors.secondaryTextColorLowOp};
 `;
 export const List = styled.ul`
   display: flex;
@@ -160,12 +151,12 @@ export const Span = styled.span`
   font-size: 12px;
   letter-spacing: -0.02em;
 
-  color: ${(p) => p.theme.colors.secondaryTextColor};
+  color: ${(p) => p.theme.colors.secondaryTextColorLowOp};
 `;
 export const CheckedSpan = styled.span`
   font-weight: 400;
   font-size: 12px;
   letter-spacing: -0.02em;
 
-  color: ${(p) => p.theme.colors.mainTextColor};
+  color: ${(p) => p.theme.colors.secondaryTextColor};
 `;

@@ -1,3 +1,4 @@
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import Logo from "../../components/Logo/Logo";
 import {
   WelcomeWrapper,
@@ -25,19 +26,30 @@ const icon = {
 
 export default function Welcome() {
   return (
-    <WelcomeContainer>
-      <WelcomeWrapper>
-        <img src="images/welcome.png" alt="boy with laptop" />
-        <Logo size={size} text={text} icon={icon} />
-        <WelcomeText>
-          Supercharge your productivity and take control of your tasks with Task
-          Pro - Don't wait, start achieving your goals now!
-        </WelcomeText>
-        <WelcomeBtnWrapper>
-          <RegistrationBtn to="signup">Registration</RegistrationBtn>
-          <LoginBtn to="signin">Log In</LoginBtn>
-        </WelcomeBtnWrapper>
-      </WelcomeWrapper>
-    </WelcomeContainer>
+    <>
+      <HelmetProvider>
+        <Helmet>
+          <title>Creamy Sharks - Sign Up</title>
+          <meta
+            name="description"
+            content="Explore TaskPro, the ultimate task manager born out of a 10-month Fullstack Development Bootcamp. Elevate your productivity with TaskPro's intuitive design and powerful functionality."
+          />
+        </Helmet>
+      </HelmetProvider>
+      <WelcomeContainer>
+        <WelcomeWrapper>
+          <img src="images/welcome.png" alt="boy with laptop" />
+          <Logo size={size} text={text} icon={icon} />
+          <WelcomeText>
+            Supercharge your productivity and take control of your tasks with
+            Task Pro - Don't wait, start achieving your goals now!
+          </WelcomeText>
+          <WelcomeBtnWrapper>
+            <RegistrationBtn to="signup">Registration</RegistrationBtn>
+            <LoginBtn to="signin">Log In</LoginBtn>
+          </WelcomeBtnWrapper>
+        </WelcomeWrapper>
+      </WelcomeContainer>
+    </>
   );
 }
