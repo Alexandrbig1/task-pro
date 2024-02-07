@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import {
   CloseModal,
@@ -12,7 +12,7 @@ import {
   StyledModal,
 } from "./NeedHelpModal.styled";
 import emailRegex from "../../regex/emailRegex";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const NeedHelpModal = ({ openHelpModal }) => {
@@ -38,7 +38,7 @@ const NeedHelpModal = ({ openHelpModal }) => {
     }
   };
 
-  const onSubmitClick = (evt) => {
+  const onSubmitClick = async (evt) => {
     evt.preventDefault();
 
     const form = evt.currentTarget;
@@ -49,10 +49,29 @@ const NeedHelpModal = ({ openHelpModal }) => {
     const validComment = comment.length > 0;
 
     if (validEmail && validComment) {
-      openHelpModal();
       form.reset();
+      openHelpModal();
+      toast.success("Thank you for your request, we will contact you!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "light",
+      });
     } else {
-      toast.error("Please provide a valid email and a comment.");
+      toast.error("Please provide a valid email and a comment", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "light",
+      });
     }
   };
 
@@ -76,8 +95,6 @@ const NeedHelpModal = ({ openHelpModal }) => {
           </HelpForm>
         </div>
       </StyledModal>
-
-      <ToastContainer />
     </HelpModalWrap>
   );
 };
