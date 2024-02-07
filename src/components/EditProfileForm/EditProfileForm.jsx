@@ -16,6 +16,7 @@ import {
     EyeWrapper,
 } from "./EditProfileForm.styled";
 import emailRegex from "../../regex/emailRegex";
+import { useAuth } from "../../hooks";
 
 const editProfileSchema = Yup.object().shape({
     avatar: Yup.string(),
@@ -37,6 +38,7 @@ export default function ProfileForm() {
         "images/VectorExample.png"
     );
     const [showPassword, setShowPassword] = useState(false);
+    const { user } = useAuth();
 
     const handleClickShowPassword = () => {
         setShowPassword(!showPassword);
@@ -102,6 +104,7 @@ export default function ProfileForm() {
                 <InputForm
                     type="text"
                     name="name"
+                    placeholder={user.name}
                     value={formik.values.name}
                     onChange={handleChange}
                 />
@@ -116,6 +119,7 @@ export default function ProfileForm() {
                 <InputForm
                     type="text"
                     name="email"
+                    placeholder={user.email}
                     value={formik.values.email}
                     onChange={handleChange}
                 />
@@ -129,12 +133,13 @@ export default function ProfileForm() {
                 <InputNthChild
                     type={showPassword ? "text" : "password"}
                     name="password"
+                    placeholder="Enter your password"
                     className="nth-child"
                     value={formik.values.password}
                     onChange={handleChange}
                 />
                 <EyeWrapper onClick={handleClickShowPassword}>
-                    {showPassword ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}
+                    {showPassword ? <BsFillEyeFill /> : <BsFillEyeSlashFill />}
                 </EyeWrapper>
             </Label>
 
