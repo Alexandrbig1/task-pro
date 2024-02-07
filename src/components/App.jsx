@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import { ToastContainer } from "react-toastify";
@@ -10,6 +10,10 @@ import FontsHelmet from "./FontHelmet";
 import RootLayout from "../layouts/RootLayout/RootLayout";
 import { RestrictedRoute } from "./RestrictRoute";
 import { PrivateRoute } from "./PrivateRoute";
+import { refreshUser } from "../redux/auth/operations";
+import { useAuth } from "../hooks";
+import { useDispatch } from "react-redux";
+import Loader from "./Loader/Loader";
 
 const themes = {
   light: {
@@ -156,6 +160,13 @@ const SignUp = lazy(() => import("../pages/SignUp/SignUp"));
 const NotFound = lazy(() => import("../pages/NotFound/NotFound"));
 
 function App() {
+  const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
   const [currentTheme, setCurrentTheme] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
     return savedTheme || "dark";
@@ -167,7 +178,9 @@ function App() {
     localStorage.setItem("theme", themeValue);
   }
 
-  return (
+  return isRefreshing ? (
+    <Loader />
+  ) : (
     <ThemeProvider theme={themes[currentTheme]}>
       <FontsHelmet />
       <GlobalStyle />
