@@ -1,4 +1,4 @@
-import{u as i}from"./index-IyjxuckV.js";const t=i.div`
+import{u as i}from"./index-Fgr1iXop.js";const t=i.div`
   position: relative;
   margin: 0 auto;
   height: 100%;
@@ -34,5 +34,6 @@ import{u as i}from"./index-IyjxuckV.js";const t=i.div`
     /* height: 100%; */
     flex: 1;
     overflow: auto;
+    min-height: 100vh;
   }
 `;export{t as C,e as M};
