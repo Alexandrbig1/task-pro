@@ -1,4 +1,5 @@
 import Logo from "../../components/Logo/Logo";
+
 import {
   WelcomeWrapper,
   WelcomeContainer,
