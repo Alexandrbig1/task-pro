@@ -28,9 +28,7 @@ export default function Home({ toggleTheme }) {
         <Aside aside={aside} handleAsideHide={handleAsideHide} />
         <MainContainer>
           <Header toggleTheme={toggleTheme} handleAsideHide={handleAsideHide} />
-          <main>
-            <MainPage />
-          </main>
+          <MainPage />
         </MainContainer>
       </Container>
     </>

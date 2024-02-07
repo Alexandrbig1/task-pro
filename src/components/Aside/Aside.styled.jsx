@@ -71,7 +71,10 @@ export const AsideWrapper = styled.div`
   @media (min-width: 1440px) {
     display: flex;
     position: relative;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    height: 100%;
+    flex: 1;
+    overflow: auto;
   }
 `;
 

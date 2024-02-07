@@ -29,6 +29,8 @@ export const GlobalStyle = createGlobalStyle`
     font-family: ${primaryFont};
     margin: 0;
     overflow-x: hidden;
+
+    min-height: 100vh;
   }
 
   p {
