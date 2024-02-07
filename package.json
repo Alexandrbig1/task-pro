@@ -14,7 +14,8 @@
     "backend",
     "react",
     "nodejs",
-    "fullstack"
+    "fullstack",
+    "taskpro"
   ],
   "version": "0.0.0",
   "type": "module",
