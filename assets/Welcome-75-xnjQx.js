@@ -1,4 +1,4 @@
-import{u as e,p as i,L as n,j as t}from"./index-NfksIrYO.js";import{L as r}from"./Logo-OlV9_hP8.js";const a=e.div`
+import{u as e,p as i,L as n,j as t,H as r,a}from"./index-KBMeqsTl.js";import{L as s}from"./Logo-Es9bei4h.js";const l=e.div`
   background: linear-gradient(
     180deg,
     rgba(196, 196, 196, 0) 25%,
@@ -27,12 +27,12 @@ import{u as e,p as i,L as n,j as t}from"./index-NfksIrYO.js";import{L as r}from"
   @media (min-width: 1440px) {
     max-width: 144rem;
   } */
-`,l=e.div`
+`,m=e.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2.4rem;
-`,s=e.p`
+`,c=e.p`
   color: #161616;
   text-align: center;
   font-family: ${i};
@@ -51,11 +51,11 @@ import{u as e,p as i,L as n,j as t}from"./index-NfksIrYO.js";import{L as r}from"
   @media (min-width: 768px) {
     max-width: 474px;
   }
-`,c=e.div`
+`,d=e.div`
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
-`,m=e(n)`
+`,p=e(n)`
   color: #fff;
   text-align: center;
   font-family: ${i};
@@ -86,7 +86,7 @@ import{u as e,p as i,L as n,j as t}from"./index-NfksIrYO.js";import{L as r}from"
   @media (min-width: 768px) {
     width: 344px;
   }
-`,d=e(n)`
+`,x=e(n)`
   color: #161616;
   font-family: ${i};
   font-size: 14px;
@@ -99,4 +99,4 @@ import{u as e,p as i,L as n,j as t}from"./index-NfksIrYO.js";import{L as r}from"
   &:hover {
     cursor: pointer;
   }
-`,p={width:"48px",height:"48px"},x={color:"#161616",font:"4rem"},h={bgColor:"#161616",iconColor:"#fff"};function w(){return t.jsx(a,{children:t.jsxs(l,{children:[t.jsx("img",{src:"images/welcome.png",alt:"boy with laptop"}),t.jsx(r,{size:p,text:x,icon:h}),t.jsx(s,{children:"Supercharge your productivity and take control of your tasks with Task Pro - Don't wait, start achieving your goals now!"}),t.jsxs(c,{children:[t.jsx(m,{to:"signup",children:"Registration"}),t.jsx(d,{to:"signin",children:"Log In"})]})]})})}export{w as default};
+`,h={width:"48px",height:"48px"},g={color:"#161616",font:"4rem"},f={bgColor:"#161616",iconColor:"#fff"};function y(){return t.jsxs(t.Fragment,{children:[t.jsx(r,{children:t.jsxs(a,{children:[t.jsx("title",{children:"Creamy Sharks - Sign Up"}),t.jsx("meta",{name:"description",content:"Explore TaskPro, the ultimate task manager born out of a 10-month Fullstack Development Bootcamp. Elevate your productivity with TaskPro's intuitive design and powerful functionality."})]})}),t.jsx(l,{children:t.jsxs(m,{children:[t.jsx("img",{src:"images/welcome.png",alt:"boy with laptop"}),t.jsx(s,{size:h,text:g,icon:f}),t.jsx(c,{children:"Supercharge your productivity and take control of your tasks with Task Pro - Don't wait, start achieving your goals now!"}),t.jsxs(d,{children:[t.jsx(p,{to:"signup",children:"Registration"}),t.jsx(x,{to:"signin",children:"Log In"})]})]})})]})}export{y as default};
