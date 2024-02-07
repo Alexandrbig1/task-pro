@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   Modal,
   BackDrop,
@@ -13,9 +13,19 @@ import {
   Item,
   RadioInput,
   Label,
+  Radio,
+  CheckedRadioUp,
+  CheckedRadioIn,
+  Span,
+  CheckedSpan,
 } from "./ModalFilter.styled";
-
+// eslint-disable-next-line react/prop-types
 export function ModalFilters({ closeModal }) {
+  const [checkPriority, setCheckPriority] = useState("without");
+
+  const isCheck = (e) => {
+    setCheckPriority(e.target.value);
+  };
   useEffect(() => {
     const handleKeyDown = (evt) => {
       if (evt.code === "Escape") {
@@ -45,27 +55,92 @@ export function ModalFilters({ closeModal }) {
           </Box>
           <List>
             <Item>
-              <Label>
-                <RadioInput type="radio" name="priority" value="without" />
-                Without priority
+              <Label $check={checkPriority}>
+                <RadioInput
+                  defaultChecked="true"
+                  onChange={isCheck}
+                  type="radio"
+                  name="priority"
+                  value="without"
+                />
+                {checkPriority === "without" ? (
+                  <CheckedRadioUp $priority={"without"}>
+                    <CheckedRadioIn $priority={"without"} />
+                  </CheckedRadioUp>
+                ) : (
+                  <Radio $priority={"without"} />
+                )}
+                {checkPriority !== "without" ? (
+                  <Span>Without priority</Span>
+                ) : (
+                  <CheckedSpan>Without priority</CheckedSpan>
+                )}
               </Label>
             </Item>
             <Item>
               <Label>
-                <RadioInput type="radio" name="priority" value="Low" />
-                Low
+                <RadioInput
+                  onChange={isCheck}
+                  type="radio"
+                  name="priority"
+                  value="low"
+                />
+                {checkPriority === "low" ? (
+                  <CheckedRadioUp $priority={"low"}>
+                    <CheckedRadioIn $priority={"low"} />
+                  </CheckedRadioUp>
+                ) : (
+                  <Radio $priority={"low"} />
+                )}
+                {checkPriority !== "low" ? (
+                  <Span>Low</Span>
+                ) : (
+                  <CheckedSpan>Low</CheckedSpan>
+                )}
               </Label>
             </Item>
             <Item>
               <Label>
-                <RadioInput type="radio" name="priority" value="Medium" />
-                Medium
+                <RadioInput
+                  onChange={isCheck}
+                  type="radio"
+                  name="priority"
+                  value="medium"
+                />
+                {checkPriority === "medium" ? (
+                  <CheckedRadioUp $priority={"medium"}>
+                    <CheckedRadioIn $priority={"medium"} />
+                  </CheckedRadioUp>
+                ) : (
+                  <Radio $priority={"medium"} />
+                )}
+                {checkPriority !== "medium" ? (
+                  <Span>Medium</Span>
+                ) : (
+                  <CheckedSpan>Medium</CheckedSpan>
+                )}
               </Label>
             </Item>
             <Item>
               <Label>
-                <RadioInput type="radio" name="priority" value="High" />
-                High
+                <RadioInput
+                  onChange={isCheck}
+                  type="radio"
+                  name="priority"
+                  value="high"
+                />
+                {checkPriority === "high" ? (
+                  <CheckedRadioUp $priority={"high"}>
+                    <CheckedRadioIn $priority={"high"} />
+                  </CheckedRadioUp>
+                ) : (
+                  <Radio $priority={"high"} />
+                )}
+                {checkPriority !== "high" ? (
+                  <Span>High</Span>
+                ) : (
+                  <CheckedSpan>High</CheckedSpan>
+                )}
               </Label>
             </Item>
           </List>

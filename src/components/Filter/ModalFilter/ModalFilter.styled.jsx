@@ -64,7 +64,7 @@ export const CloseIcon = styled(IoClose)`
   }
 `;
 export const StyledWrapper = styled.div`
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid ${(p) => p.theme.colors.mainTextColorVeryLowOp};
 `;
 export const Box = styled.div`
   display: flex;
@@ -75,7 +75,7 @@ export const Text = styled.p`
   font-weight: 500;
   font-size: 14px;
   letter-spacing: -0.02em;
-  color: #fff;
+  color: ${(p) => p.theme.colors.secondaryTextColor};
 `;
 export const Btn = styled.button`
   background-color: transparent;
@@ -94,28 +94,76 @@ export const List = styled.ul`
 `;
 export const Item = styled.li``;
 
-// const background = {
-//   without: "rgba(255, 255, 255, 0.3)",
-//   Low: "#8fa1d0",
-//   Medium: "#e09cb5",
-//   High: "#bedbb0",
-// };
+export const Label = styled.label`
+  position: relative;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  cursor: pointer;
+`;
 export const RadioInput = styled.input`
+  display: none;
+`;
+
+export const Radio = styled.span`
   width: 14px;
   height: 14px;
+  border-radius: 50%;
 
-  background: tomato !important;
-  color: tomato;
-  cursor: pointer;
-  &:checked {
-    background: tomato !important;
-  }
+  background-color: ${(p) =>
+    p?.$priority === "without"
+      ? p.theme.colors.priorityColorWithout
+      : p?.$priority === "low"
+      ? p.theme.colors.priorityColorLow
+      : p?.$priority === "medium"
+      ? p.theme.colors.priorityColorMedium
+      : p.theme.colors.priorityColorHigh};
 `;
-export const Label = styled.label`
+
+export const CheckedRadioUp = styled.span`
   display: flex;
-  column-gap: 8px;
+  justify-content: center;
+  align-items: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid
+    ${(p) =>
+      p?.$priority === "without"
+        ? p.theme.colors.priorityColorWithout
+        : p?.$priority === "low"
+        ? p.theme.colors.priorityColorLow
+        : p?.$priority === "medium"
+        ? p.theme.colors.priorityColorMedium
+        : p.theme.colors.priorityColorHigh};
+`;
+
+export const CheckedRadioIn = styled.span`
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: ${(p) =>
+    p?.$priority === "without"
+      ? p.theme.colors.priorityColorWithout
+      : p?.$priority === "low"
+      ? p.theme.colors.priorityColorLow
+      : p?.$priority === "medium"
+      ? p.theme.colors.priorityColorMedium
+      : p.theme.colors.priorityColorHigh};
+`;
+
+export const Span = styled.span`
   font-weight: 400;
   font-size: 12px;
   letter-spacing: -0.02em;
-  color: rgba(255, 255, 255, 0.5);
+
+  color: ${(p) => p.theme.colors.secondaryTextColor};
+`;
+export const CheckedSpan = styled.span`
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: -0.02em;
+
+  color: ${(p) => p.theme.colors.mainTextColor};
 `;
