@@ -1,4 +1,4 @@
-import{u as i}from"./index-DLljo4Pn.js";const t=i.div`
+import{u as i}from"./index-0fYEB2bo.js";const t=i.div`
   position: relative;
   margin: 0 auto;
   width: 100%;
@@ -14,7 +14,7 @@ import{u as i}from"./index-DLljo4Pn.js";const t=i.div`
   }
 
   @media (min-width: 1440px) {
-    max-width: 144rem;
+    /* max-width: 144rem; */
     display: flex;
   }
 `,d=i.div`
