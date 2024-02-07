@@ -133,7 +133,7 @@ export default function ProfileForm() {
                 <InputNthChild
                     type={showPassword ? "text" : "password"}
                     name="password"
-                    placeholder={user.password}
+                    placeholder="Enter your password"
                     className="nth-child"
                     value={formik.values.password}
                     onChange={handleChange}
