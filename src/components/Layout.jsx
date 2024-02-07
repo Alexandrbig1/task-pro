@@ -38,5 +38,6 @@ export const MainContainer = styled.div`
     /* height: 100%; */
     flex: 1;
     overflow: auto;
+    min-height: 100vh;
   }
 `;

@@ -15,7 +15,7 @@ export const MainWrapper = styled.main`
   /* min-height: calc(100vh - 6rem); */
 
   @media (min-width: 768px) {
-    /* min-height: calc(100vh - 6.8rem); */
+    min-height: calc(100vh - 6.8rem);
     /* height: 100%; */
   }
 
