@@ -17,11 +17,11 @@ export const Button = styled.button`
   font-weight: 500;
   font-size: 14px;
   letter-spacing: -0.02em;
-  color: rgba(255, 255, 255, 0.8);
+  color: ${(p) => p.theme.colors.themeMainTextColor};
 `;
 
 export const IconFilter = styled(LiaFilterSolid)`
-  fill: rgba(255, 255, 255, 0.8);
-  width: 16px;
-  height: 16px;
+  fill: ${(p) => p.theme.colors.themeMainTextColor};
+  width: 2.4rem;
+  height: 2.4rem;
 `;
