@@ -20,9 +20,11 @@ import {
 
 import sprite from "./images/icons.svg";
 
-import backgroundImage from "./images/Vector1.jpg";
 import { useState } from "react";
 import { CardButton } from "../CardButton/CardButton";
+
+import { selectBoards } from "../../redux/boards/selectors";
+import { useDispatch, useSelector } from "react-redux";
 
 const formSquema = Yup.object().shape({
   titleBoard: Yup.string()
@@ -41,26 +43,29 @@ const icons = {
   icon8: "icon-hexagon",
 };
 
-const backgrounds = {
-  background1: backgroundImage.toString(),
-  background2: backgroundImage.toString(),
-  background3: backgroundImage.toString(),
-  background4: backgroundImage.toString(),
-  background5: backgroundImage.toString(),
-  background6: backgroundImage.toString(),
-  background7: backgroundImage.toString(),
-  background8: backgroundImage.toString(),
-  background9: backgroundImage.toString(),
-  background10: backgroundImage.toString(),
-  background11: backgroundImage.toString(),
-  background12: backgroundImage.toString(),
-  background13: backgroundImage.toString(),
-  background14: backgroundImage.toString(),
-  background15: backgroundImage.toString(),
-  background16: backgroundImage.toString(),
-};
+const backgrounds = [
+  "default",
+  "flowers",
+  "night",
+  "pink-tree",
+  "moon",
+  "plant",
+  "clouds",
+  "rocks",
+  "unsplash",
+  "full-moon",
+  "ship",
+  "balloon",
+  "gorge",
+  "ocean",
+  "kapadokia",
+  "milky-way",
+];
 
-export default function EditNewBoardForm() {
+export default function EditNewBoardForm({ boardId }) {
+  const boards = useSelector(selectBoards);
+  console.log(boards, boardId);
+
   const [icon, setIcon] = useState("icon-project");
 
   const handleRadioChange = (e) => {
@@ -119,7 +124,7 @@ export default function EditNewBoardForm() {
                   name="icon"
                   value={iconId}
                 />
-                <StyledIcon isSelected={icon === iconId.toString()}>
+                <StyledIcon value={icon === iconId.toString()}>
                   <svg width="18" height="18">
                     <use href={`${sprite}#${iconId}-dark`} />
                   </svg>
@@ -145,18 +150,14 @@ export default function EditNewBoardForm() {
                 />
                 {name === "default" ? (
                   <DefaultIconWrapper>
-                    <StyledDefaultIcon
-                      isSelected={background === name.toString()}
-                    >
+                    <StyledDefaultIcon value={background === name.toString()}>
                       <svg width="16" height="16">
                         <use href={`${sprite}#default`} />
                       </svg>
                     </StyledDefaultIcon>
                   </DefaultIconWrapper>
                 ) : (
-                  <StyledIconBackground
-                    isSelected={background === name.toString()}
-                  >
+                  <StyledIconBackground value={background === name.toString()}>
                     <img
                       srcSet={`
       https://res.cloudinary.com/dsywt0aej/image/upload/v1707244606/back-check/${name}.png 1x,
