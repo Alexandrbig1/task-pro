@@ -21,7 +21,7 @@ import {
 } from "./ModalFilter.styled";
 // eslint-disable-next-line react/prop-types
 export function ModalFilters({ closeModal }) {
-  const [checkPriority, setCheckPriority] = useState("without");
+  const [checkPriority, setCheckPriority] = useState("");
 
   const isCheck = (e) => {
     setCheckPriority(e.target.value);
@@ -58,13 +58,12 @@ export function ModalFilters({ closeModal }) {
         <StyledWrapper>
           <Box>
             <Text>Label color</Text>
-            <Btn>Show all</Btn>
+            <Btn onClick={() => setCheckPriority("")}>Show all</Btn>
           </Box>
           <List>
             <Item>
               <Label $check={checkPriority}>
                 <RadioInput
-                  defaultChecked="true"
                   onChange={isCheck}
                   type="radio"
                   name="priority"
