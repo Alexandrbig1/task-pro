@@ -17,14 +17,16 @@ import {
   ButtonIcon,
 } from "./NewBoard.styled";
 import ModalEditNewBoard from "../ModalEditNewBoard/ModalEditNewBoard";
-import { useSelector } from "react-redux";
 import { selectBoards } from "../../redux/boards/selectors";
 import sprite from "../ModalNewBoard/images/icons.svg";
+import { deleteBoard } from "../../redux/boards/operations";
+import { useDispatch, useSelector } from "react-redux";
 
 const NewBoard = () => {
   const [isOpenModalNewBoard, setIsOpenModalNewBoard] = useState(false);
   const [isOpenModalEditBoard, setIsOpenModalEditBoard] = useState(false);
   const [boardId, setBoardId] = useState("");
+  const dispatch = useDispatch();
 
   const boards = useSelector(selectBoards);
   console.log(boards);
@@ -35,6 +37,9 @@ const NewBoard = () => {
   const openEditBoardModal = (id) => {
     setBoardId(id);
     setIsOpenModalEditBoard((prevState) => !prevState);
+  };
+  const handleDelete = (id) => {
+    dispatch(deleteBoard(id));
   };
 
   return (
@@ -71,7 +76,7 @@ const NewBoard = () => {
                 </ButtonIcon>
               </BoardButton>
               <BoardButton>
-                <ButtonIcon>
+                <ButtonIcon onClick={() => handleDelete(id)}>
                   <svg width="18" height="18">
                     <use href={`${sprite}#icon-trash-dark`} />
                   </svg>
