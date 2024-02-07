@@ -4,7 +4,7 @@ export const Container = styled.div`
   position: relative;
   margin: 0 auto;
   width: 100%;
-  max-width: 144rem;
+  /* max-width: 144rem; */
   height: 100%;
 
   @media (min-width: 375px) {
