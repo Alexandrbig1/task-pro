@@ -9,9 +9,6 @@ export const MainWrapper = styled.main`
   background-color: ${(p) => p.theme.colors.mainBgColor};
   padding: 2rem;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
   /* min-height: calc(100vh - 6rem); */
 
   @media (min-width: 768px) {
@@ -22,6 +19,14 @@ export const MainWrapper = styled.main`
   @media (min-width: 1440px) {
     /* min-height: auto; */
   }
+`;
+
+export const MainTextWrapper = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
 `;
 
 export const MainText = styled.p`
