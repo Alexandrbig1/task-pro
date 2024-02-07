@@ -24,6 +24,7 @@ import sprite from "../ModalNewBoard/images/icons.svg";
 const NewBoard = () => {
   const [isOpenModalNewBoard, setIsOpenModalNewBoard] = useState(false);
   const [isOpenModalEditBoard, setIsOpenModalEditBoard] = useState(false);
+  const [boardId, setBoardId] = useState("");
 
   const boards = useSelector(selectBoards);
   console.log(boards);
@@ -31,8 +32,8 @@ const NewBoard = () => {
   const openNewBoardModal = () => {
     setIsOpenModalNewBoard((prevState) => !prevState);
   };
-  const openEditBoardModal = (boardId) => {
-    console.log(boardId);
+  const openEditBoardModal = (id) => {
+    setBoardId(id);
     setIsOpenModalEditBoard((prevState) => !prevState);
   };
 
@@ -51,19 +52,19 @@ const NewBoard = () => {
         )}
       </NewBoardWrapper>
       <BoardsList>
-        {boards.map((board) => (
-          <BoardItem key={board._id}>
+        {boards.map(({ _id: id, icon, titleBoard }) => (
+          <BoardItem key={id}>
             <IconTitleWrapper>
               <BoardIcon>
                 <svg width="18" height="18">
-                  <use href={`${sprite}#${board.icon}-dark`} />
+                  <use href={`${sprite}#${icon}-dark`} />
                 </svg>
               </BoardIcon>
-              <BoardTitle>{board.titleBoard}</BoardTitle>
+              <BoardTitle>{titleBoard}</BoardTitle>
             </IconTitleWrapper>
             <ButtonsWrapper>
               <BoardButton>
-                <ButtonIcon onClick={() => openEditBoardModal(board._id)}>
+                <ButtonIcon onClick={() => openEditBoardModal(id)}>
                   <svg width="18" height="18">
                     <use href={`${sprite}#icon-pencil-dark`} />
                   </svg>
@@ -83,6 +84,7 @@ const NewBoard = () => {
       {isOpenModalEditBoard && (
         <ModalEditNewBoard
           openEditBoardModal={openEditBoardModal}
+          boardId={boardId}
         ></ModalEditNewBoard>
       )}
     </>

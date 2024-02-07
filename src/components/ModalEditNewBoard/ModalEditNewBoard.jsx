@@ -10,8 +10,8 @@ import {
 } from "../ModalEditNewBoard/ModalEditNewBoard.styled";
 import EditNewBoardForm from "./EditNewBoardForm";
 
+// eslint-disable-next-line react/prop-types
 export default function ModalEditNewBoard({ openEditBoardModal, boardId }) {
-  console.log(boardId);
   useEffect(() => {
     const handleKeyDown = (evt) => {
       if (evt.code === "Escape") {

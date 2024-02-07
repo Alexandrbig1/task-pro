@@ -7,6 +7,7 @@ export const BackDrop = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
+  width: 100vw;
   z-index: 10;
   display: flex;
   align-items: center;
@@ -42,27 +43,19 @@ export const StyledTitle = styled.h2`
   margin-bottom: 24px;
 `;
 
-export const CloseBtn = styled.button`
+export const CloseBtn = styled.span`
   position: absolute;
   top: 14px;
   right: 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 18px;
-  height: 18px;
-  background-color: transparent;
-  border: none;
   cursor: pointer;
 `;
 
 export const CloseIcon = styled(IoClose)`
   color: ${(p) => p.theme.colors.burgerColor};
 
-  width: 24px;
-  height: 24px;
+  font-size: 2.4rem;
 
-  transition: 0.3s linear;
+  transition: all var(--primary-transition);
 
   &:hover {
     transform: rotate(90deg);

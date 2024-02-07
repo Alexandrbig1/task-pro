@@ -23,8 +23,7 @@ import sprite from "./images/icons.svg";
 import { useState } from "react";
 import { CardButton } from "../CardButton/CardButton";
 
-import { selectBoards } from "../../redux/boards/selectors";
-import { useDispatch, useSelector } from "react-redux";
+// import { selectBoards, selectIsLoading } from "../../redux/boards/selectors";
 
 const formSquema = Yup.object().shape({
   titleBoard: Yup.string()
@@ -62,9 +61,10 @@ const backgrounds = [
   "milky-way",
 ];
 
+// eslint-disable-next-line react/prop-types
 export default function EditNewBoardForm({ boardId }) {
-  const boards = useSelector(selectBoards);
-  console.log(boards, boardId);
+  // const boards = useSelector(selectBoards);
+  console.log(boardId);
 
   const [icon, setIcon] = useState("icon-project");
 
