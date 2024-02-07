@@ -1,4 +1,4 @@
-import{u as i}from"./index-XfZ-DO3L.js";const t=i.div`
+import{u as i}from"./index-fBOMqu4O.js";const t=i.div`
   position: relative;
   margin: 0 auto;
   width: 100%;
