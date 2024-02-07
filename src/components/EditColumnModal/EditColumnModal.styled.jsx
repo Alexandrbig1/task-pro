@@ -16,10 +16,10 @@ export const StyledEditModal = styled.div`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  padding: 20px;
+  padding: 24px;
   width: 100%;
-  max-width: 400px;
-  min-height: 355px;
+  max-width: 350px;
+  min-height: 221px;
   z-index: 10;
   background-color: ${(p) => p.theme.colors.modalWindowsBgColor};
   border-radius: 10px;
@@ -60,14 +60,14 @@ export const EditColumnInput = styled.input`
   border-radius: 8px;
   border: 1px solid ${(p) => p.theme.colors.accentTextColor};
   outline: none;
-  margin-bottom: 14px;
+  margin-bottom: 24px;
 `;
 
 export const CloseEditColumnModal = styled(IoClose)`
   font-size: 2.4rem;
   color: ${(p) => p.theme.colors.secondaryTextColor};
   position: absolute;
-  top: 1.4rem;
+  // top: 1.4rem;
   right: 0;
 
   transition: 0.3s linear;
