@@ -1,8 +1,8 @@
-import{u as i}from"./index-0fYEB2bo.js";const t=i.div`
+import{u as i}from"./index-yWNb9avW.js";const t=i.div`
   position: relative;
   margin: 0 auto;
   width: 100%;
-  max-width: 144rem;
+  /* max-width: 144rem; */
   height: 100%;
 
   @media (min-width: 375px) {
