@@ -27,6 +27,7 @@ export const Modal = styled.div`
     width: 90%;
   }
 `;
+
 export const StyledTitle = styled.h2`
   font-size: 18px;
   font-weight: 500;
@@ -64,8 +65,9 @@ export const CloseIcon = styled(IoClose)`
   }
 `;
 export const StyledWrapper = styled.div`
-  border-top: 1px solid ${(p) => p.theme.colors.mainTextColorVeryLowOp};
+  border-top: 1px solid ${(p) => p.theme.colors.modalBorderColorLowOp};
 `;
+
 export const Box = styled.div`
   display: flex;
   justify-content: space-between;
