@@ -1,4 +1,4 @@
-import{u as i}from"./index-yWNb9avW.js";const t=i.div`
+import{u as i}from"./index-XfZ-DO3L.js";const t=i.div`
   position: relative;
   margin: 0 auto;
   width: 100%;
@@ -19,7 +19,7 @@ import{u as i}from"./index-yWNb9avW.js";const t=i.div`
   }
 `,d=i.div`
   width: 100%;
-  max-width: 144rem;
+  /* max-width: 144rem; */
   height: 100%;
 
   @media (min-width: 375px) {
@@ -31,6 +31,6 @@ import{u as i}from"./index-yWNb9avW.js";const t=i.div`
   }
 
   @media (min-width: 1440px) {
-    max-width: 144rem;
+    /* max-width: 144rem; */
   }
 `;export{t as C,d as M};
