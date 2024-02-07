@@ -23,7 +23,7 @@ export const Container = styled.div`
 
 export const MainContainer = styled.div`
   width: 100%;
-  max-width: 144rem;
+  /* max-width: 144rem; */
   height: 100%;
 
   @media (min-width: 375px) {
@@ -35,6 +35,6 @@ export const MainContainer = styled.div`
   }
 
   @media (min-width: 1440px) {
-    max-width: 144rem;
+    /* max-width: 144rem; */
   }
 `;
