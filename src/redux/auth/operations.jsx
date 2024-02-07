@@ -1,8 +1,9 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
+import { URL } from "../../services/apiService";
 
-axios.defaults.baseURL = "https://task-backend-project.onrender.com/api";
+axios.defaults.baseURL = URL;
 
 const setAuthHeader = (token) => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -17,9 +18,7 @@ export const register = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       const res = await axios.post("/auth/register", credentials);
-      console.log(res);
-      console.log(res.data.token);
-      setAuthHeader(res.data.token);
+      setAuthHeader(res.data.user.token);
       toast.success(
         "Congratulations, your account has been successfully created. Welcome to TaskPro! 🚀 Created by Creamy Sharks 🦈",
         {
@@ -99,7 +98,9 @@ export const refreshUser = createAsyncThunk(
   "auth/refresh",
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
+    console.log(state);
     const persistedToken = state.auth.token;
+    console.log(persistedToken);
 
     if (persistedToken === null) {
       return thunkAPI.rejectWithValue("Unable to fetch user");
@@ -107,32 +108,11 @@ export const refreshUser = createAsyncThunk(
 
     try {
       setAuthHeader(persistedToken);
-      const res = await axios.get("/auth/current");
+      const res = await axios.get("/auth/current-user");
+      console.log(res);
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
-
-const fetchCurrentUser = createAsyncThunk(
-  "auth/fetchCurrentUser",
-  async (_, thunkAPI) => {
-    const state = thunkAPI.getState();
-    const persistedToken = state.auth.token;
-
-    if (persistedToken === null) {
-      return thunkAPI.rejectWithValue();
-    }
-
-    token.set(persistedToken);
-    try {
-      const { data } = await axios.get("/user/current");
-      const favorite = await axios.get("/user/favorite");
-      return { ...data, favorite: favorite.data };
-    } catch (error) {
-      toast.error(error.response.data.message);
-      return thunkAPI.rejectWithValue();
     }
   }
 );

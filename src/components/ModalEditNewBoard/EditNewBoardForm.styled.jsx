@@ -103,10 +103,6 @@ export const StyledIconBackground = styled.div`
   }
 `;
 
-export const StyledForm = styled(Form)`
-  margin: 0;
-`;
-
 export const IconsBackgroundWrapper = styled.div`
   display: flex;
   width: 252px;

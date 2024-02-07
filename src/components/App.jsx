@@ -171,15 +171,14 @@ function App() {
           <Route path="/" element={<RootLayout />}>
             <Route index element={<Welcome />} />
             <Route
-              path="/home"
+              path="home"
               element={
                 <PrivateRoute
-                  redirectTo="signin"
+                  redirectTo="/signin"
                   component={<Home toggleTheme={toggleTheme} />}
                 />
               }
             />
-
             <Route
               path="signin"
               element={
@@ -201,15 +200,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* <Routes>
-  <Route path="/" element={<RootLayout />}>
-    <Route index element={<Welcome />} />
-    <Route path="auth/signin" element={<SignIn />} />
-    <Route path="auth/signup" element={<SignUp />} />
-    <Route path="home" element={<Home toggleTheme={toggleTheme} />} />
-    <Route path="*" element={<NotFound />} />
-  </Route>
-</Routes>; */
-}
