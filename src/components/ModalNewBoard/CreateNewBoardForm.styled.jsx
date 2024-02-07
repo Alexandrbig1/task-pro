@@ -86,7 +86,7 @@ export const StyledIcon = styled.svg`
 
   stroke: ${(p) => p.theme.colors.secondaryTextColor};
   stroke-width: 1.5;
-  opacity: ${(p) => (p.isSelected ? "1" : "0.5")};
+  opacity: ${(p) => (p.value ? "1" : "0.5")};
   &:active {
     opacity: 1;
   }
@@ -96,9 +96,9 @@ export const StyledIconBackground = styled.div`
   height: 28px;
   stroke: ${(p) => p.theme.colors.secondaryTextColor};
   stroke-width: 3.5;
-  opacity: ${(p) => (p.isSelected ? "1" : "0.7")};
+  opacity: ${(p) => (p.value ? "1" : "0.7")};
   border: 1px solid
-    ${(p) => (p.isSelected ? p.theme.colors.accentTextColor : "transparent")};
+    ${(p) => (p.value ? p.theme.colors.accentTextColor : "transparent")};
   &:active {
     opacity: 1;
   }
@@ -108,7 +108,7 @@ export const StyledDefaultIcon = styled.svg`
   height: 16px;
   stroke: ${(p) => p.theme.colors.secondaryTextColor};
   stroke-width: 1.5;
-  opacity: ${(p) => (p.isSelected ? "1" : "0.3")};
+  opacity: ${(p) => (p.value ? "1" : "0.3")};
   &:active {
     opacity: 1;
   }

@@ -10,11 +10,12 @@ import {
 } from "../ModalEditNewBoard/ModalEditNewBoard.styled";
 import EditNewBoardForm from "./EditNewBoardForm";
 
-export default function ModalEditNewBoard({ openNewBoardModal }) {
+export default function ModalEditNewBoard({ openEditBoardModal, boardId }) {
+  console.log(boardId);
   useEffect(() => {
     const handleKeyDown = (evt) => {
       if (evt.code === "Escape") {
-        openNewBoardModal();
+        openEditBoardModal();
       }
     };
 
@@ -26,22 +27,25 @@ export default function ModalEditNewBoard({ openNewBoardModal }) {
       window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "auto";
     };
-  }, [openNewBoardModal]);
+  }, [openEditBoardModal]);
 
   const handleOverlayClick = (evt) => {
     if (evt.target === evt.currentTarget) {
-      openNewBoardModal();
+      openEditBoardModal();
     }
+  };
+  const handleCloseBtnClick = () => {
+    openEditBoardModal();
   };
   return (
     <BackDrop onClick={handleOverlayClick}>
       <Modal>
         <StyledWrapper>
-          <CloseBtn onClick={openNewBoardModal}>
+          <CloseBtn onClick={handleCloseBtnClick}>
             <CloseIcon />
           </CloseBtn>
           <StyledTitle>Edit board</StyledTitle>
-          <EditNewBoardForm />
+          <EditNewBoardForm boardId={boardId} />
         </StyledWrapper>
       </Modal>
     </BackDrop>

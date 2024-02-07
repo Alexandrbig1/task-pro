@@ -57,3 +57,61 @@ export const NewBoardBtnIcon = styled(FiPlus)`
   font-size: 2rem;
   color: ${(p) => p.theme.colors.secondaryButtonsColor};
 `;
+
+export const BoardsList = styled.ul`
+  width: 100%;
+`;
+
+export const BoardTitle = styled.p`
+  color: white;
+  font-size: 14px;
+  color: ${(p) => p.theme.colors.secondaryTextColor};
+  margin-left: 8px;
+`;
+
+export const BoardItem = styled.li`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  width: 100%;
+  background-color: ${(p) => p.theme.colors.needHelpBgColor};
+`;
+
+export const BoardIcon = styled.svg`
+  width: 18px;
+  height: 18px;
+  stroke: ${(p) => p.theme.colors.secondaryTextColor};
+  stroke-width: 1.5;
+`;
+
+export const ButtonsWrapper = styled.div`
+  display: flex;
+  gap: 8px;
+`;
+
+export const IconTitleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const BoardButton = styled.button`
+  background-color: ${(p) => p.theme.colors.needHelpBgColor};
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+export const ButtonIcon = styled.svg`
+  width: 18px;
+  height: 18px;
+  stroke: ${(p) => p.theme.colors.secondaryTextColor};
+  stroke-width: 1.5;
+  opacity: 0.5;
+`;

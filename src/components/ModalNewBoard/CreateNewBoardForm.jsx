@@ -23,6 +23,9 @@ import sprite from "./images/icons.svg";
 import { useState } from "react";
 import { CardButton } from "../CardButton/CardButton";
 
+import { useDispatch, useSelector } from "react-redux";
+import { addBoard } from "../../redux/boards/operations";
+
 const formSquema = Yup.object().shape({
   titleBoard: Yup.string()
     .min(2, "Too Short!")
@@ -40,45 +43,29 @@ const icons = {
   icon8: "icon-hexagon",
 };
 
-// const backgrounds = {
-//   background1: backgroundImage.toString(),
-//   background2: backgroundImage.toString(),
-//   background3: backgroundImage.toString(),
-//   background4: backgroundImage.toString(),
-//   background5: backgroundImage.toString(),
-//   background6: backgroundImage.toString(),
-//   background7: backgroundImage.toString(),
-//   background8: backgroundImage.toString(),
-//   background9: backgroundImage.toString(),
-//   background10: backgroundImage.toString(),
-//   background11: backgroundImage.toString(),
-//   background12: backgroundImage.toString(),
-//   background13: backgroundImage.toString(),
-//   background14: backgroundImage.toString(),
-//   background15: backgroundImage.toString(),
-//   background16: backgroundImage.toString(),
-// };
-
 const backgrounds = [
   "default",
-  "balloon",
-  "clouds",
   "flowers",
+  "night",
+  "pink-tree",
+  "moon",
+  "plant",
+  "clouds",
+  "rocks",
+  "unsplash",
   "full-moon",
+  "ship",
+  "balloon",
   "gorge",
+  "ocean",
   "kapadokia",
   "milky-way",
-  "moon",
-  "night",
-  "ocean",
-  "pink-tree",
-  "plant",
-  "rocks",
-  "ship",
-  "unsplash",
 ];
 
 export default function CreateNewBoardForm() {
+  const dispatch = useDispatch();
+  // const boards = useSelector(selectBoards);
+
   const [icon, setIcon] = useState("icon-project");
 
   const handleRadioChange = (e) => {
@@ -100,9 +87,9 @@ export default function CreateNewBoardForm() {
       background: background,
     };
     console.log(newBoard);
+    dispatch(addBoard(newBoard));
     resetForm();
   };
-
   return (
     <Formik
       initialValues={{
@@ -133,7 +120,7 @@ export default function CreateNewBoardForm() {
                   name="icon"
                   value={iconId}
                 />
-                <StyledIcon isSelected={icon === iconId.toString()}>
+                <StyledIcon value={icon === iconId.toString()}>
                   <svg width="18" height="18">
                     <use href={`${sprite}#${iconId}-dark`} />
                   </svg>
@@ -160,18 +147,14 @@ export default function CreateNewBoardForm() {
                 />
                 {name === "default" ? (
                   <DefaultIconWrapper>
-                    <StyledDefaultIcon
-                      isSelected={background === name.toString()}
-                    >
+                    <StyledDefaultIcon value={background === name.toString()}>
                       <svg width="16" height="16">
                         <use href={`${sprite}#default`} />
                       </svg>
                     </StyledDefaultIcon>
                   </DefaultIconWrapper>
                 ) : (
-                  <StyledIconBackground
-                    isSelected={background === name.toString()}
-                  >
+                  <StyledIconBackground value={background === name.toString()}>
                     <img
                       srcSet={`
       https://res.cloudinary.com/dsywt0aej/image/upload/v1707244606/back-check/${name}.png 1x,
