@@ -42,7 +42,14 @@ export function ModalFilters({ closeModal }) {
     };
   }, [closeModal]);
   return (
-    <BackDrop>
+    <BackDrop
+      id="backfrop"
+      onClick={(e) => {
+        if (e.target.id === "backfrop") {
+          closeModal();
+        }
+      }}
+    >
       <Modal>
         <CloseBtn onClick={() => closeModal()}>
           <CloseIcon />
