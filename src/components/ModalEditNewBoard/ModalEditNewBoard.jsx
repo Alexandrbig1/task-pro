@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import PropTypes from "prop-types";
 
 import {
   StyledWrapper,
@@ -51,3 +52,7 @@ export default function ModalEditNewBoard({ openEditBoardModal, boardId }) {
     </BackDrop>
   );
 }
+
+ModalEditNewBoard.propTypes = {
+  boardId: PropTypes.string,
+};
