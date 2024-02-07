@@ -47,6 +47,9 @@ export const LabelAvatar = styled.label`
 export const BtnPlus = styled(FiPlus)`
     stroke: ${(p) => p.theme.colors.blackColor};
     font-size: 1.2rem;
+    &:hover {
+        cursor: pointer;
+    }
 `;
 
 export const InputForm = styled.input`
@@ -63,6 +66,9 @@ export const InputForm = styled.input`
     font-weight: 400;
     font-size: 1.4rem;
     letter-spacing: -0.02em;
+
+    transition: all var(--primary-transition);
+
     color: ${(p) => p.theme.colors.secondaryTextColor};
 
     &:hover {
@@ -83,6 +89,9 @@ export const InputNthChild = styled.input`
     font-weight: 400;
     font-size: 1.4rem;
     letter-spacing: -0.02em;
+
+    transition: all var(--primary-transition);
+
     color: ${(p) => p.theme.colors.secondaryTextColor};
 
     &:hover {
@@ -114,6 +123,7 @@ export const BtnSubmit = styled.button`
 
     &:hover,
     &:focus {
+        cursor: pointer;
         background-color: ${(p) => p.theme.colors.modalBtnHover};
     }
 `;

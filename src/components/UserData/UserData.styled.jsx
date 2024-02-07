@@ -26,4 +26,7 @@ export const AvatarBtn = styled.button`
 
     width: ${(p) => (p?.size?.width ? p?.size?.width : "32px")};
     height: ${(p) => (p?.size?.height ? p?.size?.height : "32px")};
+    &:hover {
+        cursor: pointer;
+    }
 `;
