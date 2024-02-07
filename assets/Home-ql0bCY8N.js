@@ -1,4 +1,4 @@
-import{u as d,p as z,b as Lt,j as s,l as mo,g as Rt,r as g,Q as go,B as xo,c as yo,d as rn,e as bo,f as vo,h as nn,H as wo,a as To}from"./index-fBOMqu4O.js";import{L as $o}from"./Logo-REvwri1K.js";import{G as re,e as on,h as jo,B as Co,a as So}from"./index-rwgWBqw1.js";import{C as Eo,M as ko}from"./Layout-kG4dSIjd.js";function _o(e){return re({tag:"svg",attr:{fill:"none",viewBox:"0 0 24 24",strokeWidth:"2",stroke:"currentColor","aria-hidden":"true"},child:[{tag:"path",attr:{strokeLinecap:"round",strokeLinejoin:"round",d:"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"},child:[]}]})(e)}const Fo=d(_o)`
+import{u as d,p as z,b as Lt,j as s,l as mo,g as Rt,r as g,Q as go,B as xo,c as yo,d as rn,e as bo,f as vo,h as nn,H as wo,a as To}from"./index-IyjxuckV.js";import{L as $o}from"./Logo-6tYjuvuO.js";import{G as re,e as on,h as jo,B as Co,a as So}from"./index-MKlZRo6p.js";import{C as Eo,M as ko}from"./Layout-Ox43t7w3.js";function _o(e){return re({tag:"svg",attr:{fill:"none",viewBox:"0 0 24 24",strokeWidth:"2",stroke:"currentColor","aria-hidden":"true"},child:[{tag:"path",attr:{strokeLinecap:"round",strokeLinejoin:"round",d:"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"},child:[]}]})(e)}const Fo=d(_o)`
   font-size: 3.2rem;
   color: ${e=>e.theme.colors.logoutIcon};
 `,Oo=d.a`
@@ -694,7 +694,10 @@ attempted value: ${a}
   @media (min-width: 1440px) {
     display: flex;
     position: relative;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    height: 100%;
+    flex: 1;
+    overflow: auto;
   }
 `,_d=d.div`
   display: flex;
@@ -1147,9 +1150,9 @@ attempted value: ${a}
   letter-spacing: -0.02em;
 
   color: ${e=>e.theme.colors.secondaryTextColor};
-`;function jf({closeModal:e}){const[t,r]=g.useState(""),n=o=>{r(o.target.value)};return g.useEffect(()=>{const o=i=>{i.code==="Escape"&&e()};return window.addEventListener("keydown",o),document.body.style.overflow="hidden",()=>{window.removeEventListener("keydown",o),document.body.style.overflow="auto"}},[e]),s.jsx(pf,{id:"backfrop",onClick:o=>{o.target.id==="backfrop"&&e()},children:s.jsxs(mf,{children:[s.jsx(xf,{onClick:()=>e(),children:s.jsx(yf,{})}),s.jsx(gf,{children:"Filters"}),s.jsxs(bf,{children:[s.jsxs(vf,{children:[s.jsx(wf,{children:"Label color"}),s.jsx(Tf,{onClick:()=>r(""),children:"Show all"})]}),s.jsxs($f,{children:[s.jsx(He,{children:s.jsxs(We,{$check:t,children:[s.jsx(Ge,{onChange:n,type:"radio",name:"priority",value:"without"}),t==="without"?s.jsx(qe,{$priority:"without",children:s.jsx(Ke,{$priority:"without"})}):s.jsx(Ze,{$priority:"without"}),t!=="without"?s.jsx(Ye,{children:"Without priority"}):s.jsx(Xe,{children:"Without priority"})]})}),s.jsx(He,{children:s.jsxs(We,{children:[s.jsx(Ge,{onChange:n,type:"radio",name:"priority",value:"low"}),t==="low"?s.jsx(qe,{$priority:"low",children:s.jsx(Ke,{$priority:"low"})}):s.jsx(Ze,{$priority:"low"}),t!=="low"?s.jsx(Ye,{children:"Low"}):s.jsx(Xe,{children:"Low"})]})}),s.jsx(He,{children:s.jsxs(We,{children:[s.jsx(Ge,{onChange:n,type:"radio",name:"priority",value:"medium"}),t==="medium"?s.jsx(qe,{$priority:"medium",children:s.jsx(Ke,{$priority:"medium"})}):s.jsx(Ze,{$priority:"medium"}),t!=="medium"?s.jsx(Ye,{children:"Medium"}):s.jsx(Xe,{children:"Medium"})]})}),s.jsx(He,{children:s.jsxs(We,{children:[s.jsx(Ge,{onChange:n,type:"radio",name:"priority",value:"high"}),t==="high"?s.jsx(qe,{$priority:"high",children:s.jsx(Ke,{$priority:"high"})}):s.jsx(Ze,{$priority:"high"}),t!=="high"?s.jsx(Ye,{children:"High"}):s.jsx(Xe,{children:"High"})]})})]})]})]})})}function Cf(){const[e,t]=g.useState(!1),r=()=>{t(!e)};return s.jsxs(s.Fragment,{children:[e&&s.jsx(jf,{closeModal:r}),s.jsxs(ff,{onClick:r,children:[s.jsx(hf,{}),"Filters"]})]})}const Sf=d.div`
+`;function jf({closeModal:e}){const[t,r]=g.useState(""),n=o=>{r(o.target.value)};return g.useEffect(()=>{const o=i=>{i.code==="Escape"&&e()};return window.addEventListener("keydown",o),document.body.style.overflow="hidden",()=>{window.removeEventListener("keydown",o),document.body.style.overflow="auto"}},[e]),s.jsx(pf,{id:"backfrop",onClick:o=>{o.target.id==="backfrop"&&e()},children:s.jsxs(mf,{children:[s.jsx(xf,{onClick:()=>e(),children:s.jsx(yf,{})}),s.jsx(gf,{children:"Filters"}),s.jsxs(bf,{children:[s.jsxs(vf,{children:[s.jsx(wf,{children:"Label color"}),s.jsx(Tf,{onClick:()=>r(""),children:"Show all"})]}),s.jsxs($f,{children:[s.jsx(He,{children:s.jsxs(We,{$check:t,children:[s.jsx(Ge,{onChange:n,type:"radio",name:"priority",value:"without"}),t==="without"?s.jsx(qe,{$priority:"without",children:s.jsx(Ke,{$priority:"without"})}):s.jsx(Ze,{$priority:"without"}),t!=="without"?s.jsx(Ye,{children:"Without priority"}):s.jsx(Xe,{children:"Without priority"})]})}),s.jsx(He,{children:s.jsxs(We,{children:[s.jsx(Ge,{onChange:n,type:"radio",name:"priority",value:"low"}),t==="low"?s.jsx(qe,{$priority:"low",children:s.jsx(Ke,{$priority:"low"})}):s.jsx(Ze,{$priority:"low"}),t!=="low"?s.jsx(Ye,{children:"Low"}):s.jsx(Xe,{children:"Low"})]})}),s.jsx(He,{children:s.jsxs(We,{children:[s.jsx(Ge,{onChange:n,type:"radio",name:"priority",value:"medium"}),t==="medium"?s.jsx(qe,{$priority:"medium",children:s.jsx(Ke,{$priority:"medium"})}):s.jsx(Ze,{$priority:"medium"}),t!=="medium"?s.jsx(Ye,{children:"Medium"}):s.jsx(Xe,{children:"Medium"})]})}),s.jsx(He,{children:s.jsxs(We,{children:[s.jsx(Ge,{onChange:n,type:"radio",name:"priority",value:"high"}),t==="high"?s.jsx(qe,{$priority:"high",children:s.jsx(Ke,{$priority:"high"})}):s.jsx(Ze,{$priority:"high"}),t!=="high"?s.jsx(Ye,{children:"High"}):s.jsx(Xe,{children:"High"})]})})]})]})]})})}function Cf(){const[e,t]=g.useState(!1),r=()=>{t(!e)};return s.jsxs(s.Fragment,{children:[e&&s.jsx(jf,{closeModal:r}),s.jsxs(ff,{onClick:r,children:[s.jsx(hf,{}),"Filters"]})]})}const Sf=d.main`
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   position: relative;
 
   background-color: ${e=>e.theme.colors.mainBgColor};
@@ -1158,10 +1161,15 @@ attempted value: ${a}
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 6rem);
+  /* min-height: calc(100vh - 6rem); */
 
   @media (min-width: 768px) {
-    min-height: calc(100vh - 6.8rem);
+    /* min-height: calc(100vh - 6.8rem); */
+    /* height: 100%; */
+  }
+
+  @media (min-width: 1440px) {
+    /* min-height: auto; */
   }
 `,Ef=d.p`
   color: ${e=>e.theme.colors.mainPageTextColor};
@@ -1183,4 +1191,4 @@ attempted value: ${a}
   }
 `,kf=d.span`
   color: ${e=>e.theme.colors.themeTextHoverColor};
-`;function _f(){return s.jsxs(Sf,{children:[s.jsx(Cf,{}),s.jsxs(Ef,{children:["Before starting your project, it is essential",s.jsx(kf,{children:" to create a board"})," to visualize and track all the necessary tasks and milestones. This board serves as a powerful tool to organize the workflow and ensure effective collaboration among team members."]})]})}function Ff({toggleTheme:e}){const[t,r]=g.useState(!1);function n(){r(o=>!o)}return s.jsxs(s.Fragment,{children:[s.jsx(wo,{children:s.jsxs(To,{children:[s.jsx("title",{children:"Creamy Sharks - Task Pro"}),s.jsx("meta",{name:"description",content:"Explore TaskPro, the ultimate task manager born out of a 10-month Fullstack Development Bootcamp. Elevate your productivity with TaskPro's intuitive design and powerful functionality."})]})}),s.jsxs(Eo,{children:[s.jsx(Od,{aside:t,handleAsideHide:n}),s.jsxs(ko,{children:[s.jsx(to,{toggleTheme:e,handleAsideHide:n}),s.jsx("main",{children:s.jsx(_f,{})})]})]})]})}Ff.propTypes={toggleTheme:ue.func.isRequired};export{Ff as default};
+`;function _f(){return s.jsxs(Sf,{children:[s.jsx(Cf,{}),s.jsxs(Ef,{children:["Before starting your project, it is essential",s.jsx(kf,{children:" to create a board"})," to visualize and track all the necessary tasks and milestones. This board serves as a powerful tool to organize the workflow and ensure effective collaboration among team members."]})]})}function Ff({toggleTheme:e}){const[t,r]=g.useState(!1);function n(){r(o=>!o)}return s.jsxs(s.Fragment,{children:[s.jsx(wo,{children:s.jsxs(To,{children:[s.jsx("title",{children:"Creamy Sharks - Task Pro"}),s.jsx("meta",{name:"description",content:"Explore TaskPro, the ultimate task manager born out of a 10-month Fullstack Development Bootcamp. Elevate your productivity with TaskPro's intuitive design and powerful functionality."})]})}),s.jsxs(Eo,{children:[s.jsx(Od,{aside:t,handleAsideHide:n}),s.jsxs(ko,{children:[s.jsx(to,{toggleTheme:e,handleAsideHide:n}),s.jsx(_f,{})]})]})]})}Ff.propTypes={toggleTheme:ue.func.isRequired};export{Ff as default};

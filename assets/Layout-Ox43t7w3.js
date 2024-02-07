@@ -1,8 +1,6 @@
-import{u as i}from"./index-fBOMqu4O.js";const t=i.div`
+import{u as i}from"./index-IyjxuckV.js";const t=i.div`
   position: relative;
   margin: 0 auto;
-  width: 100%;
-  /* max-width: 144rem; */
   height: 100%;
 
   @media (min-width: 375px) {
@@ -17,7 +15,7 @@ import{u as i}from"./index-fBOMqu4O.js";const t=i.div`
     /* max-width: 144rem; */
     display: flex;
   }
-`,d=i.div`
+`,e=i.div`
   width: 100%;
   /* max-width: 144rem; */
   height: 100%;
@@ -32,5 +30,9 @@ import{u as i}from"./index-fBOMqu4O.js";const t=i.div`
 
   @media (min-width: 1440px) {
     /* max-width: 144rem; */
+    /* min-height: 100vh; */
+    /* height: 100%; */
+    flex: 1;
+    overflow: auto;
   }
-`;export{t as C,d as M};
+`;export{t as C,e as M};
