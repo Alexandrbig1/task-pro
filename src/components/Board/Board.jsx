@@ -14,10 +14,17 @@ import { AddColumnButton } from "./AddColumnButton/AddColumnButton";
 import { useState } from "react";
 import AddColumnModal from "../AddColumnModal/AddColumnModal";
 import { AddCardModal } from "../AddCardModal/AddCardModal";
+import { useSelector } from "react-redux";
+import { selectColumns } from "../../redux/columns/selectors";
+import { selectCards } from "../../redux/cards/selectors";
 
-export const Board = ({ title, info }) => {
+export const Board = () => {
   const [isModalColumnOpen, setIsModalColumnOpen] = useState(false);
   const [isModalCardOpen, setIsModalCardOpen] = useState(false);
+
+  const { board } = useSelector((state) => state.boards.boards.current);
+  const columns = useSelector(selectColumns);
+  const cards = useSelector(selectCards);
 
   const handleColumnModalOpen = () => {
     setIsModalColumnOpen(!isModalColumnOpen);
@@ -30,16 +37,19 @@ export const Board = ({ title, info }) => {
   return (
     <>
       <BoardWrapper>
-        <BoardTitle></BoardTitle>
-        {info.lenght !== 0 && (
+        <BoardTitle>{board.titleBoard ? board.titleBoard : ""}</BoardTitle>
+
+        {columns.length !== 0 && (
           <ColumnList>
-            {title.map((item) => (
-              <ColumnItem key={item}>
+            {columns.map((column) => (
+              <ColumnItem key={column.id}>
                 <Wrapper>
-                  <ColumnTitle>{item}</ColumnTitle>
+                  <ColumnTitle>{column.title}</ColumnTitle>
                   <IconList />
                 </Wrapper>
-                <CardList cardInfo={info} />
+
+                {cards.length !== 0 && <CardList cardInfo={cards} />}
+
                 <AddCardButton onClick={handleCardModalOpen} />
               </ColumnItem>
             ))}
@@ -53,9 +63,4 @@ export const Board = ({ title, info }) => {
       </BoardWrapper>
     </>
   );
-};
-
-Board.propTypes = {
-  title: PropTypes.array,
-  info: PropTypes.array,
 };
