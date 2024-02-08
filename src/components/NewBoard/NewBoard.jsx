@@ -19,7 +19,11 @@ import {
 import ModalEditNewBoard from "../ModalEditNewBoard/ModalEditNewBoard";
 import { selectBoards } from "../../redux/boards/selectors";
 import sprite from "../ModalNewBoard/images/icons.svg";
-import { deleteBoard, fetchBoards } from "../../redux/boards/operations";
+import {
+  deleteBoard,
+  fetchBoards,
+  getBoardById,
+} from "../../redux/boards/operations";
 import { useDispatch, useSelector } from "react-redux";
 
 const NewBoard = () => {
@@ -27,6 +31,10 @@ const NewBoard = () => {
   const [isOpenModalEditBoard, setIsOpenModalEditBoard] = useState(false);
   const [boardId, setBoardId] = useState("");
   const dispatch = useDispatch();
+
+  const handleClick = (id) => {
+    dispatch(getBoardById(id));
+  };
 
   useEffect(() => {
     dispatch(fetchBoards());
@@ -61,7 +69,7 @@ const NewBoard = () => {
       </NewBoardWrapper>
       <BoardsList>
         {boards.map(({ _id: id, icon, titleBoard }) => (
-          <BoardItem key={id}>
+          <BoardItem key={id} onClick={() => handleClick(id)}>
             <IconTitleWrapper>
               <BoardIcon>
                 <svg width="18" height="18">
