@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";///dispatch
+import { addColumn } from "../../redux/columns/columnsActions";///dispatch
 import  PropTypes  from "prop-types";
 import {
   AddModalWrap,
@@ -16,62 +18,66 @@ import "react-toastify/dist/ReactToastify.css";
 
 
 const AddColumnModal = ({ openColumnModal }) => {
-    useEffect(() => {
-        const handleKeyDown = (e) => {
-            if (e.code === "Escape") {
-                openColumnModal();
-            }
-        };
+  const dispatch = useDispatch();
 
-        window.addEventListener("keydown", handleKeyDown);
-        document.body.style.overflow = "hidden";
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.code === "Escape") {
+        openColumnModal();
+      }
+    };
 
-        return () => {
-            window.removeEventListener("keydown", handleKeyDown);
-            document.body.style.overflow = "auto";
-        };
-    }, [openColumnModal]);
+    window.addEventListener("keydown", handleKeyDown);
+    document.body.style.overflow = "hidden";
 
-    const handleModalClick = (e) => {
-        if (e.target === e.currentTarget) {
-            openColumnModal();
-        }
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "auto";
+    };
+  }, [openColumnModal]);
+
+  const handleModalClick = (e) => {
+    if (e.target === e.currentTarget) {
+      openColumnModal();
+    }
   };
   
-  const onSubmitColumnClick = async (e) => {
-    e.preventDefault();
+    const onSubmitColumnClick = async (e) => {
+      e.preventDefault();
 
-    const form = e.currentTarget;
-    const title = form.elements.title.value;
+      const form = e.currentTarget;
+      const title = form.elements.title.value.trim();
 
-    const validTitle = title.length > 0;
+      const validTitle = title.length > 0;
 
-    if (validTitle) {
-      form.reset();
-      openColumnModal();
-      toast.success("You are successful add column!", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        progress: undefined,
-        theme: "light",
-      });
+      if (validTitle) {
+        dispatch(addColumn(title)); // Диспатч action з назвою колонки
+        form.reset();
+        openColumnModal();
+        toast.success("You are successful add column!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: "light",
+        });
       } else {
-      toast.error("Please enter a title", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        progress: undefined,
-        theme: "light",
-      });
+        toast.error("Please enter a title", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: "light",
+        });
+      }
     }
-  }
+  
 
     return (
       <AddModalWrap onClick={handleModalClick}>
@@ -89,12 +95,13 @@ const AddColumnModal = ({ openColumnModal }) => {
         </StyledAddModal>
       </AddModalWrap>
     );
-};
+  };
+
 
 export default AddColumnModal;
 
 AddColumnModal.propTypes = {
-  openColumnModal: PropTypes.func,
+  openColumnModal: PropTypes.func.isRequired,
 };
 
 
