@@ -10,47 +10,16 @@ import { selectBoards } from "../../redux/boards/selectors";
 import { useSelector } from "react-redux";
 import TaskList from "../Ring/Ring";
 
-const title = ["To Do", "Process"];
-const cards = [
-  {
-    title: "...",
-    description: "hbu",
-    priority: "low",
-    deadline: "01-02-2024",
-    id: "1",
-  },
-  {
-    title: "....",
-    description: "ksjdv",
-    priority: "ршпр",
-    deadline: "01-07-2022",
-    id: "2",
-  },
-  {
-    title: ".....",
-    description: "ksjdv",
-    priority: "ршпр",
-    deadline: "01-07-2022",
-    id: "3",
-  },
-  {
-    title: "......",
-    description: "ksjdv",
-    priority: "ршпр",
-    deadline: "01-07-2022",
-    id: "4",
-  },
-];
-
 export default function MainPage() {
   // const boards = useSelector(selectBoards);
   // console.log(boards);
-  const boards = 4;
+  // const boards = 4;
+  const board = useSelector((state) => state.boards.boards.current);
 
   return (
     <MainWrapper>
       <FilterBtn />
-      {boards.length === 0 ? (
+      {Object.keys(board).length === 0 ? (
         <MainTextWrapper>
           <MainText>
             Before starting your project, it is essential
@@ -61,7 +30,7 @@ export default function MainPage() {
           </MainText>
         </MainTextWrapper>
       ) : (
-        <Board title={title} info={cards} />
+        <Board />
       )}
     </MainWrapper>
   );
