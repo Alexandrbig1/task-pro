@@ -24,6 +24,8 @@ import { useState } from "react";
 import { CardButton } from "../CardButton/CardButton";
 import { useSelector } from "react-redux";
 import { selectBoards } from "../../redux/boards/selectors";
+import { useDispatch } from "react-redux";
+import { editBoardById } from "../../redux/boards/operations";
 
 // import { selectBoards, selectIsLoading } from "../../redux/boards/selectors";
 
@@ -64,44 +66,47 @@ const backgrounds = [
 ];
 
 // eslint-disable-next-line react/prop-types
-export default function EditNewBoardForm({ boardId }) {
+export default function EditNewBoardForm({ boardId, closeModal }) {
+  const dispatch = useDispatch();
+
   const boards = useSelector(selectBoards);
-  console.log(boardId, boards);
   const selectedBoard = boards.filter((board) => {
     return board._id === boardId;
   });
   console.log(selectedBoard);
 
-  const [icon, setIcon] = useState("icon-project");
+  const [icon, setIcon] = useState(selectedBoard[0].icon);
 
   const handleRadioChange = (e) => {
     setIcon(e.target.value);
   };
 
-  const [background, setBackground] = useState(
-    "../../../public/images/background/mobile/balloon-mobile.jpg"
-  );
+  const [background, setBackground] = useState(selectedBoard[0].background);
 
   const handleRadioChangeBackground = (e) => {
     setBackground(e.target.value);
   };
 
   const handleSubmit = (values, { resetForm }) => {
-    const newBoard = {
+    const updatedData = {
       titleBoard: values.titleBoard,
-      icon: values.icon,
-      background: values.background,
+      background: background,
+      icon: icon,
     };
-    console.log(newBoard);
+    console.log(boardId);
+
+    dispatch(editBoardById({ boardId, updatedData }));
+
     resetForm();
+    closeModal();
   };
 
   return (
     <Formik
       initialValues={{
         titleBoard: selectedBoard[0].titleBoard,
-        icon: selectedBoard[0].icon,
-        background: selectedBoard[0].background,
+        icon: icon,
+        background: background,
       }}
       validationSchema={formSquema}
       onSubmit={handleSubmit}

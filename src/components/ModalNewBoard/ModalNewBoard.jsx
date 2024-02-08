@@ -33,6 +33,9 @@ export default function ModalNewBoard({ openNewBoardModal }) {
       openNewBoardModal();
     }
   };
+  const closeModal = () => {
+    openNewBoardModal();
+  };
   return (
     <BackDrop onClick={handleOverlayClick}>
       <Modal>
@@ -42,7 +45,7 @@ export default function ModalNewBoard({ openNewBoardModal }) {
           </CloseBtn>
           <StyledTitle>New board</StyledTitle>
 
-          <CreateNewBoardForm />
+          <CreateNewBoardForm closeModal={closeModal} />
         </StyledWrapper>
       </Modal>
     </BackDrop>

@@ -37,6 +37,9 @@ export default function ModalEditNewBoard({ openEditBoardModal, boardId }) {
   const handleCloseBtnClick = () => {
     openEditBoardModal();
   };
+  const closeModal = () => {
+    openEditBoardModal();
+  };
   return (
     <BackDrop onClick={handleOverlayClick}>
       <Modal>
@@ -45,7 +48,7 @@ export default function ModalEditNewBoard({ openEditBoardModal, boardId }) {
             <CloseIcon />
           </CloseBtn>
           <StyledTitle>Edit board</StyledTitle>
-          <EditNewBoardForm boardId={boardId} />
+          <EditNewBoardForm boardId={boardId} closeModal={closeModal} />
         </StyledWrapper>
       </Modal>
     </BackDrop>
