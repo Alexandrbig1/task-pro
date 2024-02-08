@@ -13,37 +13,39 @@ import TaskList from "../Ring/Ring";
 const title = ["To Do", "Process"];
 const cards = [
   {
-    title: "РУддщ",
+    title: "...",
     description: "hbu",
     priority: "low",
     deadline: "01-02-2024",
     id: "1",
   },
-  // {
-  //   title: "juhdvbjd",
-  //   description: "ksjdv",
-  //   priority: "ршпр",
-  //   deadline: "01-07-2022",
-  //   id: "2",
-  // },
-  // {
-  //   title: "juhdvbjd",
-  //   description: "ksjdv",
-  //   priority: "ршпр",
-  //   deadline: "01-07-2022",
-  //   id: "3",
-  // },
-  // {
-  //   title: "juhdvbjd",
-  //   description: "ksjdv",
-  //   priority: "ршпр",
-  //   deadline: "01-07-2022",
-  //   id: "4",
-  // },
+  {
+    title: "....",
+    description: "ksjdv",
+    priority: "ршпр",
+    deadline: "01-07-2022",
+    id: "2",
+  },
+  {
+    title: ".....",
+    description: "ksjdv",
+    priority: "ршпр",
+    deadline: "01-07-2022",
+    id: "3",
+  },
+  {
+    title: "......",
+    description: "ksjdv",
+    priority: "ршпр",
+    deadline: "01-07-2022",
+    id: "4",
+  },
 ];
 
 export default function MainPage() {
-  const boards = useSelector(selectBoards);
+  // const boards = useSelector(selectBoards);
+  // console.log(boards);
+  const boards = 4;
 
   return (
     <MainWrapper>

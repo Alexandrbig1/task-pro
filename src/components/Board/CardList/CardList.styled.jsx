@@ -10,7 +10,7 @@ export const List = styled.ul`
   padding-right: 4px;
 
   &::-webkit-scrollbar-thumb {
-    background: #121212;
+    background: ${(p) => p.theme.colors.cardListScrollThumb};
     border-radius: 12px;
   }
 
@@ -19,8 +19,7 @@ export const List = styled.ul`
   }
 
   &::-webkit-scrollbar-track {
-    background: ${(p) => p.theme.colors.priorityColorWithout};
-    opacity: 0.08;
+    background: ${(p) => p.theme.colors.cardListScrollBar};
     border-radius: 12px;
   }
 `;

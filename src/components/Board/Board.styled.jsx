@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-export const BoardWrapper = styled.div``;
+export const BoardWrapper = styled.div`
+  display: flex;
+  gap: 15px;
+`;
 
 export const BoardTitle = styled.h2`
   position: absolute;
@@ -9,7 +12,7 @@ export const BoardTitle = styled.h2`
   font-weight: 500;
   font-size: 14px;
   letter-spacing: -0.02em;
-  color: #fff;
+  color: ${(p) => p.theme.colors.burgerColor};
 `;
 
 export const ColumnList = styled.ul`
@@ -45,7 +48,7 @@ export const Wrapper = styled.div`
   border-radius: 8px;
   width: 335px;
   height: 56px;
-  background: #121212;
+  background: ${(p) => p.theme.colors.addColumnBtn};
   padding: 18px 20px;
 `;
 
@@ -53,27 +56,5 @@ export const ColumnTitle = styled.h2`
   font-weight: 500;
   font-size: 14px;
   letter-spacing: -0.02em;
-  color: #fff;
-`;
-
-export const IconList = styled.ul`
-  display: flex;
-  gap: 8px;
-  list-style: none;
-  margin-left: auto;
-`;
-
-export const ListItem = styled.li`
-  display: flex;
-  align-items: flex-end;
-`;
-
-export const Button = styled.button`
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-`;
-
-export const Svg = styled.svg`
-  stroke: ${(p) => p.theme.colors.mainPageTextColor};
+  color: ${(p) => p.theme.colors.burgerColor};
 `;
