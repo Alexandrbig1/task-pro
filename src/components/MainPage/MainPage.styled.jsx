@@ -6,7 +6,7 @@ export const MainWrapper = styled.main`
   position: relative;
 
   background-color: ${(p) => p.theme.colors.mainBgColor};
-  padding: 2rem;
+  padding: 7.4rem 2rem 2rem;
 
   min-height: calc(100vh - 6rem);
 
@@ -16,6 +16,7 @@ export const MainWrapper = styled.main`
 
   @media (min-width: 1440px) {
     height: 100%;
+    padding: 4.8rem 2rem 2rem;
   }
 `;
 

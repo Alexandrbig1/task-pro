@@ -59,6 +59,10 @@ const themes = {
       modalBtnHover: "#9dc888",
       modalPlusIcon: "#fff",
       modalPlusIconWrapper: "#161616",
+      addColumnBtn: "#fff",
+      addColumnPlusWrapper: "#161616",
+      cardListScrollThumb: "rgba(22, 22, 22, 0.1)",
+      cardListScrollBar: "rgba(22, 22, 22, 0.10)",
     },
   },
   dark: {
@@ -104,6 +108,10 @@ const themes = {
       modalBtnHover: "#9dc888",
       modalPlusIcon: "#fff",
       modalPlusIconWrapper: "#161616",
+      addColumnBtn: "#121212",
+      addColumnPlusWrapper: "#fff",
+      cardListScrollThumb: "#121212",
+      cardListScrollBar: "rgba(255, 255, 255, 0.10)",
     },
   },
   violet: {
@@ -149,6 +157,10 @@ const themes = {
       modalBtnHover: "#7b7ede",
       modalPlusIcon: "#161616",
       modalPlusIconWrapper: "#FFF",
+      addColumnBtn: "#fff",
+      addColumnPlusWrapper: "#5255BC",
+      cardListScrollThumb: "#b8bcfd",
+      cardListScrollBar: "#FFF",
     },
   },
 };
