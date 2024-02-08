@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
+
 import {
   CloseModal,
   HelpCloseBtn,
@@ -13,9 +15,11 @@ import {
 } from "./NeedHelpModal.styled";
 import emailRegex from "../../regex/emailRegex";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { requestHelp } from "../../redux/user/operations";
 
 const NeedHelpModal = ({ openHelpModal }) => {
+  const dispatch = useDispatch();
+
   useEffect(() => {
     const handleKeyDown = (evt) => {
       if (evt.code === "Escape") {
@@ -38,7 +42,7 @@ const NeedHelpModal = ({ openHelpModal }) => {
     }
   };
 
-  const onSubmitClick = async (evt) => {
+  const onSubmitClick = (evt) => {
     evt.preventDefault();
 
     const form = evt.currentTarget;
@@ -48,19 +52,39 @@ const NeedHelpModal = ({ openHelpModal }) => {
     const validEmail = emailRegex.test(email);
     const validComment = comment.length > 0;
 
+    const formData = {
+      email,
+      comment,
+    };
+
     if (validEmail && validComment) {
-      form.reset();
       openHelpModal();
-      toast.success("Thank you for your request, we will contact you!", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        progress: undefined,
-        theme: "light",
-      });
+      try {
+        const responseText = dispatch(requestHelp(formData));
+        form.reset();
+
+        toast.success(responseText, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: "light",
+        });
+      } catch (err) {
+        toast.error("Failed to submit request", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: "light",
+        });
+      }
     } else {
       toast.error("Please provide a valid email and a comment", {
         position: "top-right",
