@@ -19,10 +19,6 @@ export const register = createAsyncThunk(
     try {
       const res = await axios.post("/auth/register", credentials);
       setAuthHeader(res.data.user.token);
-
-      // await axios.post("/auth/register", credentials);
-      // const { email, password } = credentials;
-      // const res = await axios.post("auth/login", { email, password });
       toast.success(
         "Congratulations, your account has been successfully created. Welcome to TaskPro! 🚀 Created by Creamy Sharks 🦈",
         {

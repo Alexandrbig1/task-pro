@@ -2,7 +2,8 @@ import { IconList, ListItem, Button, Svg } from "./CardIconsList.styled";
 import sprite from "/public/images/icons.svg";
 import { EditCardModal } from "../../EditCardModal/EditCardModal";
 import { useState } from "react";
-import { DeadlineBell } from "../DeadlineBell/DeadlineBell";
+// import { DeadlineBell } from "../DeadlineBell/DeadlineBell";
+import Ring from "../../Ring/Ring";
 
 export const CardIconsList = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -14,7 +15,8 @@ export const CardIconsList = () => {
   return (
     <>
       <IconList>
-        <DeadlineBell />
+        {/* <DeadlineBell /> */}
+        <Ring />
         <ListItem key={"move"}>
           <Button type="button">
             <Svg width="16" height="16">
