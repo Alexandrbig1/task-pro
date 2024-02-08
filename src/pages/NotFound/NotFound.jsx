@@ -1,5 +1,5 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { Container } from "../../components/Layout";
+import { NotFoundContainer, NotFoundTitle } from "./NotFound.styled";
 
 export default function NotFound() {
   return (
@@ -13,7 +13,9 @@ export default function NotFound() {
           />
         </Helmet>
       </HelmetProvider>
-      <Container>404 Page Not Found</Container>
+      <NotFoundContainer>
+        <NotFoundTitle>404 Page Not Found</NotFoundTitle>
+      </NotFoundContainer>
     </>
   );
 }
