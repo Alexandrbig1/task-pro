@@ -9,6 +9,11 @@ import { Board } from "../Board/Board";
 import { selectBoards } from "../../redux/boards/selectors";
 import { useSelector } from "react-redux";
 
+import { useState } from "react";
+
+import sprite from "/public/images/icons.svg";
+import { Tooltip } from "../Tooltip/Tooltip";
+
 const title = ["To Do", "Process"];
 const cards = [
   {
@@ -43,9 +48,20 @@ const cards = [
 
 export default function MainPage() {
   const boards = useSelector(selectBoards);
+  const [openModal, setOpenModal] = useState(false);
+
+  const handlerModal = () => {
+    setOpenModal(!openModal);
+  };
 
   return (
     <MainWrapper>
+      <button onClick={() => handlerModal()}>
+        <svg stroke="black" width="16" height="16">
+          <use href={`${sprite}#icon-arrow-circle-dark`}></use>
+        </svg>
+      </button>
+      {openModal && <Tooltip closeModal={handlerModal} />}
       <FilterBtn />
       {boards.length === 0 ? (
         <MainTextWrapper>
