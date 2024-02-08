@@ -7,6 +7,7 @@ export const BackDrop = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
+  width: 100vw;
   z-index: 10;
   display: flex;
   align-items: center;

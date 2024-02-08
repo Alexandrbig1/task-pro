@@ -1,5 +1,5 @@
 import ModalNewBoard from "../ModalNewBoard/ModalNewBoard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   CreateNewBoardWrapper,
   NewBoardButton,
@@ -19,7 +19,7 @@ import {
 import ModalEditNewBoard from "../ModalEditNewBoard/ModalEditNewBoard";
 import { selectBoards } from "../../redux/boards/selectors";
 import sprite from "../ModalNewBoard/images/icons.svg";
-import { deleteBoard } from "../../redux/boards/operations";
+import { deleteBoard, fetchBoards } from "../../redux/boards/operations";
 import { useDispatch, useSelector } from "react-redux";
 
 const NewBoard = () => {
@@ -27,6 +27,10 @@ const NewBoard = () => {
   const [isOpenModalEditBoard, setIsOpenModalEditBoard] = useState(false);
   const [boardId, setBoardId] = useState("");
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchBoards());
+  }, [dispatch]);
 
   const boards = useSelector(selectBoards);
 

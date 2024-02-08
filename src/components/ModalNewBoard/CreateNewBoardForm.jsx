@@ -17,13 +17,13 @@ import {
   StyledDefaultIcon,
   DefaultIconWrapper,
 } from "../ModalNewBoard/CreateNewBoardForm.styled";
-
+import PropTypes from "prop-types";
 import sprite from "./images/icons.svg";
 
 import { useState } from "react";
 import { CardButton } from "../CardButton/CardButton";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addBoard } from "../../redux/boards/operations";
 
 const formSquema = Yup.object().shape({
@@ -62,7 +62,7 @@ const backgrounds = [
   "milky-way",
 ];
 
-export default function CreateNewBoardForm() {
+export default function CreateNewBoardForm({ closeModal }) {
   const dispatch = useDispatch();
 
   const [icon, setIcon] = useState("icon-project");
@@ -88,6 +88,7 @@ export default function CreateNewBoardForm() {
     console.log(newBoard);
     dispatch(addBoard(newBoard));
     resetForm();
+    closeModal();
   };
   return (
     <Formik
@@ -173,3 +174,6 @@ export default function CreateNewBoardForm() {
     </Formik>
   );
 }
+CreateNewBoardForm.propTypes = {
+  closeModal: PropTypes.func,
+};
