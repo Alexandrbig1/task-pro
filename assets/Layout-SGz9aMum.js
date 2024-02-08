@@ -1,7 +1,7 @@
-import{u as i}from"./index-M6LYSlbZ.js";const t=i.div`
+import{u as i}from"./index-m3puM4A9.js";const d=i.div`
   position: relative;
   margin: 0 auto;
-  height: 100%;
+  display: flex;
 
   @media (min-width: 375px) {
     /* max-width: 37.5rem; */
@@ -15,10 +15,9 @@ import{u as i}from"./index-M6LYSlbZ.js";const t=i.div`
     /* max-width: 144rem; */
     display: flex;
   }
-`,e=i.div`
+`,a=i.div`
   width: 100%;
   /* max-width: 144rem; */
-  height: 100%;
 
   @media (min-width: 375px) {
     /* max-width: 37.5rem; */
@@ -30,10 +29,7 @@ import{u as i}from"./index-M6LYSlbZ.js";const t=i.div`
 
   @media (min-width: 1440px) {
     /* max-width: 144rem; */
-    /* min-height: 100vh; */
-    /* height: 100%; */
-    flex: 1;
-    overflow: auto;
-    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
-`;export{t as C,e as M};
+`;export{d as C,a as M};
