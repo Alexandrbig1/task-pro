@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   position: relative;
   margin: 0 auto;
-  height: 100%;
+  display: flex;
 
   @media (min-width: 375px) {
     /* max-width: 37.5rem; */
@@ -22,7 +22,6 @@ export const Container = styled.div`
 export const MainContainer = styled.div`
   width: 100%;
   /* max-width: 144rem; */
-  height: 100%;
 
   @media (min-width: 375px) {
     /* max-width: 37.5rem; */
@@ -34,10 +33,7 @@ export const MainContainer = styled.div`
 
   @media (min-width: 1440px) {
     /* max-width: 144rem; */
-    /* min-height: 100vh; */
-    /* height: 100%; */
-    flex: 1;
-    overflow: auto;
-    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 `;

@@ -3,21 +3,19 @@ import { primaryFont } from "../fonts";
 
 export const MainWrapper = styled.main`
   width: 100%;
-  /* height: 100%; */
   position: relative;
 
   background-color: ${(p) => p.theme.colors.mainBgColor};
   padding: 2rem;
 
-  /* min-height: calc(100vh - 6rem); */
+  min-height: calc(100vh - 6rem);
 
   @media (min-width: 768px) {
     min-height: calc(100vh - 6.8rem);
-    /* height: 100%; */
   }
 
   @media (min-width: 1440px) {
-    /* min-height: auto; */
+    height: 100%;
   }
 `;
 

@@ -29,7 +29,6 @@ const NewBoard = () => {
   const dispatch = useDispatch();
 
   const boards = useSelector(selectBoards);
-  console.log(boards);
 
   const openNewBoardModal = () => {
     setIsOpenModalNewBoard((prevState) => !prevState);

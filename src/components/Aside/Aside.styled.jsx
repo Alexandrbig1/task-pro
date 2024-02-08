@@ -71,10 +71,7 @@ export const AsideWrapper = styled.div`
   @media (min-width: 1440px) {
     display: flex;
     position: relative;
-    min-height: 100vh;
     height: 100%;
-    flex: 1;
-    overflow: auto;
   }
 `;
 
@@ -91,11 +88,12 @@ export const CloseIcon = styled(IoClose)`
   top: 2.4rem;
   right: 2.4rem;
 
-  transition: 0.3s linear;
+  transition: all var(--primary-transition);
 
   &:hover {
     transform: rotate(90deg);
-    color: ${(p) => p.theme.colors.accentTextColor};
+    color: ${(p) => p.theme.colors.buttonsBgColor};
+    cursor: pointer;
   }
 
   @media (min-width: 1440px) {
