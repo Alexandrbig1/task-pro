@@ -1,4 +1,4 @@
-import{g as N}from"./index-ZTY7dMny.js";import{G as j}from"./iconBase-eyNKJFmo.js";const tt=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;var z={exports:{}},r={};/** @license React v16.13.1
+import{g as N}from"./index-BRLGNusZ.js";import{G as j}from"./iconBase-_7rerzyQ.js";const tt=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;var z={exports:{}},r={};/** @license React v16.13.1
  * react-is.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
