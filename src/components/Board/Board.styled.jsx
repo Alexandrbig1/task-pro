@@ -10,7 +10,7 @@ export const BoardTitle = styled.h2`
   top: 14px;
   left: 20px;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 18px;
   letter-spacing: -0.02em;
   color: ${(p) => p.theme.colors.burgerColor};
 `;
