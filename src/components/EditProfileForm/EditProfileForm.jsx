@@ -2,6 +2,8 @@ import { useState } from "react";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { BsFillEyeSlashFill, BsFillEyeFill } from "react-icons/bs";
+import { useDispatch, useSelector } from "react-redux";
+import { usersAvatar, editUser } from "../../redux/user/operations";
 import {
     BtnPlus,
     BtnSubmit,
@@ -16,10 +18,11 @@ import {
     EyeWrapper,
 } from "./EditProfileForm.styled";
 import emailRegex from "../../regex/emailRegex";
-import { useAuth } from "../../hooks";
+// import { useAuth } from "../../hooks";
+import { selectUser } from "../../redux/user/selectors";
 
 const editProfileSchema = Yup.object().shape({
-    avatar: Yup.string(),
+    avatarURL: Yup.string(),
     name: Yup.string().min(3, "Too Short!").max(50, "Too Long!"),
     email: Yup.string().matches(emailRegex, "Invalid email address"),
     password: Yup.string()
@@ -38,7 +41,9 @@ export default function ProfileForm() {
         "images/VectorExample.png"
     );
     const [showPassword, setShowPassword] = useState(false);
-    const { user } = useAuth();
+    // const { user } = useAuth();
+    const user = useSelector(selectUser);
+    const dispatch = useDispatch();
 
     const handleClickShowPassword = () => {
         setShowPassword(!showPassword);
@@ -46,14 +51,35 @@ export default function ProfileForm() {
 
     const formik = useFormik({
         initialValues: {
-            avatar: "images/VectorExample.png",
+            avatarURL: "images/VectorExample.png",
             name: "",
             email: "",
             password: "",
         },
         validationSchema: editProfileSchema,
-        onSubmit: (values) => {
-            console.log(values);
+        onSubmit: async (values, actions) => {
+            try {
+                const formData = {
+                    avatarURL: values.avatarURL,
+                    name: values.name,
+                    email: values.email,
+                    password: values.password,
+                };
+                await dispatch(editUser(formData));
+                // await dispatch(usersAvatar(formData.avatarURL));
+                console.log(values.name);
+                console.log(user);
+
+                actions.resetForm({
+                    values: {
+                        name: "",
+                        email: "",
+                        password: "",
+                    },
+                });
+            } catch (error) {
+                console.error("error:", error);
+            }
         },
     });
 
