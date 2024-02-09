@@ -50,7 +50,7 @@ export const Board = () => {
               <ColumnItem key={column._id}>
                 <Wrapper>
                   <ColumnTitle>{column.titleColumn}</ColumnTitle>
-                  <IconList />
+                  <IconList columnID={column._id} />
                 </Wrapper>
 
                 {column.cards.length !== 0 && (
@@ -67,7 +67,11 @@ export const Board = () => {
         )}
         <AddColumnButton onClick={handleColumnModalOpen} />
         {isModalCardOpen && (
-          <AddCardModal onClose={handleCardModalOpen} id={columnId} />
+          <AddCardModal
+            onClose={handleCardModalOpen}
+            id={columnId}
+            boardID={board._id}
+          />
         )}
         {isModalColumnOpen && (
           <AddColumnModal openColumnModal={handleColumnModalOpen} />

@@ -24,7 +24,7 @@ const schema = Yup.object().shape({
   description: Yup.string(),
 });
 
-export const AddCardForm = ({ onClose, columnId }) => {
+export const AddCardForm = ({ onClose, columnId, boardID }) => {
   const [labelChecked, setLabelChecked] = useState("without");
   const dispatch = useDispatch();
 
@@ -39,6 +39,7 @@ export const AddCardForm = ({ onClose, columnId }) => {
       priority: labelChecked,
       deadline: "2024-02-08",
       columnId: columnId,
+      boardId: boardID,
     };
     dispatch(addCard(newCard));
     resetForm();
@@ -123,4 +124,5 @@ export const AddCardForm = ({ onClose, columnId }) => {
 AddCardForm.propTypes = {
   onClose: PropTypes.func,
   columnId: PropTypes.string,
+  boardID: PropTypes.string,
 };

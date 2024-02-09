@@ -45,7 +45,8 @@ export const UnderlineInfo = styled.div`
 `;
 
 export const PriorityWrapp = styled.div`
-  width: 35px;
+  text-align: left;
+  width: 56px;
 `;
 
 export const Subtitle = styled.div`
@@ -58,18 +59,33 @@ export const Subtitle = styled.div`
 
 export const Wrapper = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: start;
   gap: 4px;
 `;
 
+const changeColor = (props) => {
+  switch (props.value) {
+    case "low":
+      return `${props.theme.colors.priorityColorLow}`;
+    case "medium":
+      return `${props.theme.colors.priorityColorMedium}`;
+    case "high":
+      return `${props.theme.colors.priorityColorHigh}`;
+    case "without":
+      return `${props.theme.colors.priorityColorWithout}`;
+    default:
+      return `${props.theme.colors.priorityColorWithout}`;
+  }
+};
 export const PriorityColor = styled.div`
   border-radius: 100%;
   width: 12px;
   height: 12px;
-  background: #8fa1d0;
+  background: ${changeColor};
 `;
 
 export const PriorityText = styled.span`
+  text-transform: capitalize;
   font-weight: 400;
   font-size: 10px;
   letter-spacing: -0.02em;
