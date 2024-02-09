@@ -1,4 +1,4 @@
-import{u as e,p as i,j as t,H as n,a as o}from"./index-E80wt4Ac.js";const a=e.div`
+import{u as e,p as i,j as t,H as n,a as o}from"./index-kOvLi1O7.js";const a=e.div`
   margin: 0 auto;
   width: 100%;
   min-height: 100vh;
