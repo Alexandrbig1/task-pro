@@ -59,15 +59,15 @@ const boardsSlice = createSlice({
       .addCase(getBoardById.pending, (state) => {
         state.boards.isLoading = true;
       })
-      .addCase(getBoardById.fulfilled, (state, action) => {
-        state.boards.isLoading = false;
-        state.boards.error = null;
-        const boardById = state.boards.items.map((board) =>
-          board._id === action.payload._id ? action.payload : board
-        );
+      // .addCase(getBoardById.fulfilled, (state, action) => {
+      //   state.boards.isLoading = false;
+      //   state.boards.error = null;
+      //   const boardById = state.boards.items.map((board) =>
+      //     board._id === action.payload._id ? action.payload : board
+      //   );
 
-        state.boards.items = boardById;
-      })
+      //   state.boards.items = boardById;
+      // })
       .addCase(getBoardById.rejected, (state, action) => {
         state.boards.isLoading = false;
         state.boards.error = action.payload;
