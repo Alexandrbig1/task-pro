@@ -63,6 +63,7 @@ const themes = {
       addColumnPlusWrapper: "#161616",
       cardListScrollThumb: "rgba(22, 22, 22, 0.1)",
       cardListScrollBar: "rgba(22, 22, 22, 0.10)",
+      defaultIconBackground: "#F6F6F7",
     },
   },
   dark: {
@@ -112,6 +113,7 @@ const themes = {
       addColumnPlusWrapper: "#fff",
       cardListScrollThumb: "#121212",
       cardListScrollBar: "rgba(255, 255, 255, 0.10)",
+      defaultIconBackground: "#1F1F1F",
     },
   },
   violet: {
@@ -161,6 +163,7 @@ const themes = {
       addColumnPlusWrapper: "#5255BC",
       cardListScrollThumb: "#b8bcfd",
       cardListScrollBar: "#FFF",
+      defaultIconBackground: "#ECEDFD",
     },
   },
 };
