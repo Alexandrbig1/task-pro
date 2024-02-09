@@ -13,6 +13,9 @@ export const BoardTitle = styled.h2`
   font-size: 18px;
   letter-spacing: -0.02em;
   color: ${(p) => p.theme.colors.burgerColor};
+  @media only screen and (max-width: 767.9px) {
+    font-size: 14px;
+  }
 `;
 
 export const ColumnList = styled.ul`
