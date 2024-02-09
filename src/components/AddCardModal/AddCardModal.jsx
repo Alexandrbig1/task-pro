@@ -9,7 +9,7 @@ import {
 } from "./AddCardModal.styled";
 import { AddCardForm } from "../AddCardForm/AddCardForm";
 
-export const AddCardModal = ({ onClose, id }) => {
+export const AddCardModal = ({ onClose, id, boardID }) => {
   useEffect(() => {
     const handleCloseOnKeydown = (e) => {
       if (e.key === "Escape") {
@@ -35,7 +35,7 @@ export const AddCardModal = ({ onClose, id }) => {
         <ModalContainer>
           <CloseIcon onClick={onClose} />
           <Title>Add card</Title>
-          <AddCardForm onClose={onClose} columnId={id} />
+          <AddCardForm onClose={onClose} columnId={id} boardID={boardID} />
         </ModalContainer>
       </Modal>
     </BackDrop>
@@ -45,4 +45,5 @@ export const AddCardModal = ({ onClose, id }) => {
 AddCardModal.propTypes = {
   onClose: PropTypes.func,
   id: PropTypes.string,
+  boardID: PropTypes.string,
 };
