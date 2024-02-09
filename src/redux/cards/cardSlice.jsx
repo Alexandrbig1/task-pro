@@ -6,14 +6,14 @@ const cardsSlice = createSlice({
   initialState: {
     cards: {
       items: [
-        {
-          id: "1",
-          title: "todo",
-          description:
-            "Create visually appealing and functional design prototypes based on the approved concepts",
-          priority: "high",
-          deadline: "2/10/2023",
-        },
+        // {
+        //   id: "1",
+        //   title: "todo",
+        //   description:
+        //     "Create visually appealing and functional design prototypes based on the approved concepts",
+        //   priority: "high",
+        //   deadline: "2/10/2023",
+        // },
       ],
       isLoading: false,
       error: null,

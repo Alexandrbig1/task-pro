@@ -6,9 +6,9 @@ const columnsSlice = createSlice({
   initialState: {
     columns: {
       items: [
-        { id: "1", title: "to do" },
-        { id: "2", title: "proggres" },
-        { id: "3", title: "done" },
+        // { id: "1", title: "to do" },
+        // { id: "2", title: "proggres" },
+        // { id: "3", title: "done" },
       ],
       isLoading: false,
       error: null,
