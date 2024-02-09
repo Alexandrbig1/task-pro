@@ -102,6 +102,7 @@ const boardsSlice = createSlice({
           (board) => board._id !== deletedId
         );
       })
+
       .addCase(deleteBoard.rejected, (state, action) => {
         state.boards.isLoading = false;
         state.boards.error = action.payload;

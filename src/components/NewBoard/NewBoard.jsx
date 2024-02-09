@@ -54,6 +54,8 @@ const NewBoard = () => {
     setIsOpenModalEditBoard((prevState) => !prevState);
   };
   const handleDelete = (id) => {
+    console.log(id);
+
     dispatch(deleteBoard(id));
     dispatch(fetchBoards());
   };
