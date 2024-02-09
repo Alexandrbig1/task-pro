@@ -36,7 +36,7 @@ const EditColumnModal = ({ openEditColumnModal }) => {
   return (
     <EditModalWrap onClick={handleEditModalClick}>
       <StyledEditModal className="modal">
-        <EditColumnModalBtn onСlick={openEditColumnModal} type="button">
+        <EditColumnModalBtn onClick={()=>openEditColumnModal()} type="button">
           <CloseEditColumnModal />
         </EditColumnModalBtn>
         <div>
@@ -57,10 +57,7 @@ EditColumnModal.propTypes = {
   openEditColumnModal: PropTypes.func,
 };
 
-
-
 //Connect
-
 
 // import React, { useState } from 'react';
 // import EditColumnModal from './EditColumnModal'; // Імпортуйте ваш компонент модального вікна

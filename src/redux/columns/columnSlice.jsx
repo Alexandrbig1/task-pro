@@ -5,7 +5,11 @@ const columnsSlice = createSlice({
   name: "columns",
   initialState: {
     columns: {
-      items: [],
+      items: [
+        { id: "1", title: "to do" },
+        { id: "2", title: "proggres" },
+        { id: "3", title: "done" },
+      ],
       isLoading: false,
       error: null,
     },

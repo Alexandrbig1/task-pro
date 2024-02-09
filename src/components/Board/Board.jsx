@@ -48,7 +48,9 @@ export const Board = () => {
                   <IconList />
                 </Wrapper>
 
-                {cards.length !== 0 && <CardList cardInfo={cards} />}
+                {cards.length !== 0 && (
+                  <CardList currentColumn={column.title} cardInfo={cards} />
+                )}
 
                 <AddCardButton onClick={handleCardModalOpen} />
               </ColumnItem>
