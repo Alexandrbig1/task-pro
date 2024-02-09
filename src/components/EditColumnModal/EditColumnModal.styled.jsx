@@ -25,7 +25,9 @@ export const StyledEditModal = styled.div`
   border-radius: 10px;
 `;
 
-export const EditColumnModalBtn = styled.span`
+export const EditColumnModalBtn = styled.button`
+  background-color: transparent;
+  border: none;
   position: absolute;
   top: 14px;
   right: 14px;

@@ -18,14 +18,17 @@ import { CardIconsList } from "./CardIconsList/CardIconsList";
 
 const text =
   " Create visually appealing and functional design prototypes based on the approved concepts.";
-export const Card = () => {
+
+export const Card = ({ info, currentColumn }) => {
+
+  const { title, description, priority, deadline } = info;
   return (
     <CardItem>
       <Container>
-        <Title>The Watch Spot Design</Title>
+        <Title>{title}</Title>
         <Description>
           <ReactReadMoreReadLess charLimit={90}>
-            {text + "..."}
+            {description + "..."}
           </ReactReadMoreReadLess>
         </Description>
         <Line />
@@ -34,14 +37,14 @@ export const Card = () => {
             <Subtitle>Priority</Subtitle>
             <Wrapper>
               <PriorityColor />
-              <PriorityText>Low</PriorityText>
+              <PriorityText>{priority}</PriorityText>
             </Wrapper>
           </PriorityWrapp>
           <DeadlineWrapp>
             <Subtitle>Deadline</Subtitle>
-            <Date>12/05/2023</Date>
+            <Date>{deadline}</Date>
           </DeadlineWrapp>
-          <CardIconsList />
+          <CardIconsList currentColumn={currentColumn} />
         </UnderlineInfo>
       </Container>
     </CardItem>

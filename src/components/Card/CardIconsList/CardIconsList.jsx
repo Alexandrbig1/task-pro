@@ -4,9 +4,11 @@ import { EditCardModal } from "../../EditCardModal/EditCardModal";
 import { useState } from "react";
 // import { DeadlineBell } from "../DeadlineBell/DeadlineBell";
 import Ring from "../../Ring/Ring";
+import { Tooltip } from "../../Tooltip/Tooltip";
 
-export const CardIconsList = () => {
+export const CardIconsList = ({ currentColumn }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isTooltipModalOpen, setIsTooltipModalOpen] = useState(false);
 
   const handleToggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -18,7 +20,12 @@ export const CardIconsList = () => {
         {/* <DeadlineBell /> */}
         <Ring />
         <ListItem key={"move"}>
-          <Button type="button">
+          <Button
+            type="button"
+            onClick={() => {
+              setIsTooltipModalOpen(!isTooltipModalOpen);
+            }}
+          >
             <Svg width="16" height="16">
               <use href={`${sprite}#icon-arrow-circle-dark`}></use>
             </Svg>
@@ -40,6 +47,12 @@ export const CardIconsList = () => {
         </ListItem>
       </IconList>
       {isModalOpen && <EditCardModal onClose={handleToggleModal} />}
+      {isTooltipModalOpen && (
+        <Tooltip
+          currentColumn={currentColumn}
+          onClose={setIsTooltipModalOpen}
+        />
+      )}
     </>
   );
 };
