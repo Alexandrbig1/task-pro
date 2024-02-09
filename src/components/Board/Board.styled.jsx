@@ -8,27 +8,27 @@ export const BoardWrapper = styled.div`
   overflow-x: scroll;
 
   &::-webkit-scrollbar {
-    width: 12px;
-    /* width: 0; */
+    /* width: 12px; */
+    width: 0;
   }
 
   &::-webkit-scrollbar-thumb {
     background-color: transparent;
     border-radius: 12px;
-    /* background: ${(p) => p.theme.colors.cardListScrollThumb}; */
     background-color: ${(p) => p.theme.colors.scrollThumb};
   }
 
   &::-webkit-scrollbar-track {
     background-color: transparent;
     border-radius: 12px;
-    /* background: ${(p) => p.theme.colors.cardListScrollBar}; */
-    background-color: ${(p) => p.theme.colors.scrollBar};
   }
 
   ${(p) =>
     p?.$scrollable &&
     css`
+      &::-webkit-scrollbar {
+        width: 12px;
+      }
       &::-webkit-scrollbar-thumb {
         background-color: ${(p) => p.theme.colors.scrollThumb};
       }
