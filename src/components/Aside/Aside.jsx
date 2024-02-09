@@ -41,10 +41,12 @@ export default function Aside({ aside, handleAsideHide }) {
     <AsideContainer $aside={aside} onClick={(e) => handleBgClose(e)}>
       <AsideWrapper ref={containerRef} $aside={aside} $scrollable={scrollable}>
         <CloseIcon onClick={handleAsideHide} />
-        <LogoWrapper>
-          <Logo />
-        </LogoWrapper>
-        <NewBoard />
+        <div>
+          <LogoWrapper>
+            <Logo />
+          </LogoWrapper>
+          <NewBoard />
+        </div>
         <LogoutWrapper>
           <NeedHelp />
           <LogoutButton />

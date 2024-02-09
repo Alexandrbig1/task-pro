@@ -13,9 +13,9 @@ import {
   BoardTitle,
   ButtonsWrapper,
   IconTitleWrapper,
-  BoardButton,
-  ButtonIcon,
   BoardContainer,
+  BoardIconDelete,
+  BoardIconEdit,
 } from "./NewBoard.styled";
 import ModalEditNewBoard from "../ModalEditNewBoard/ModalEditNewBoard";
 import { selectBoards } from "../../redux/boards/selectors";
@@ -80,20 +80,8 @@ const NewBoard = () => {
               <BoardTitle>{titleBoard}</BoardTitle>
             </IconTitleWrapper>
             <ButtonsWrapper>
-              <BoardButton>
-                <ButtonIcon onClick={() => openEditBoardModal(id)}>
-                  <svg width="18" height="18">
-                    <use href={`${sprite}#icon-pencil-dark`} />
-                  </svg>
-                </ButtonIcon>
-              </BoardButton>
-              <BoardButton>
-                <ButtonIcon onClick={() => handleDelete(id)}>
-                  <svg width="18" height="18">
-                    <use href={`${sprite}#icon-trash-dark`} />
-                  </svg>
-                </ButtonIcon>
-              </BoardButton>
+              <BoardIconEdit onClick={() => openEditBoardModal(id)} />
+              <BoardIconDelete onClick={() => handleDelete(id)} />
             </ButtonsWrapper>
           </BoardItem>
         ))}

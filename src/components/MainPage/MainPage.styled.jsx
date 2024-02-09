@@ -15,7 +15,7 @@ export const MainWrapper = styled.main`
   }
 
   @media (min-width: 1440px) {
-    /* height: 100%; */
+    height: 100%;
     padding: 4.8rem 2rem 2rem;
   }
 `;

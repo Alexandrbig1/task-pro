@@ -30,7 +30,8 @@ export const AsideWrapper = styled.div`
   overflow-y: scroll;
 
   &::-webkit-scrollbar {
-    width: 12px;
+    /* width: 12px; */
+    width: 0;
   }
 
   &::-webkit-scrollbar-thumb {
@@ -46,10 +47,10 @@ export const AsideWrapper = styled.div`
     p?.$scrollable &&
     css`
       &::-webkit-scrollbar-thumb {
-        background-color: ${(p) => p.theme.colors.scrollThumb};
+        /* background-color: ${(p) => p.theme.colors.scrollThumb}; */
       }
       &::-webkit-scrollbar-track {
-        background-color: ${(p) => p.theme.colors.scrollBar};
+        /* background-color: ${(p) => p.theme.colors.scrollBar}; */
       }
     `}
 
@@ -71,19 +72,24 @@ export const AsideWrapper = styled.div`
     display: flex;
     position: relative;
     height: 100%;
+    overflow-y: hidden;
+    justify-content: space-between;
+    gap: 0;
     /* gap: 4rem; */
   }
 `;
 
 export const LogoWrapper = styled.div`
-  padding: 2.4rem;
+  padding: 2.4rem 2.4rem 0;
+  margin-bottom: 6rem;
 `;
 
 export const LogoutWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
-  padding: 2.4rem;
+  padding: 0 2.4rem 2.4rem;
+  margin-top: 4rem;
 `;
 
 export const CloseIcon = styled(IoClose)`
