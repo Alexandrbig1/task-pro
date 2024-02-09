@@ -73,7 +73,7 @@ export default function EditNewBoardForm({ boardId, closeModal }) {
   const selectedBoard = boards.filter((board) => {
     return board._id === boardId;
   });
-  console.log(selectedBoard);
+  // console.log(selectedBoard);
 
   const [icon, setIcon] = useState(selectedBoard[0].icon);
 
@@ -93,8 +93,8 @@ export default function EditNewBoardForm({ boardId, closeModal }) {
       background: background,
       icon: icon,
     };
-    console.log(boardId);
 
+    // dispatch(editBoardById(boardId, updatedData));
     dispatch(editBoardById({ boardId, updatedData }));
 
     resetForm();

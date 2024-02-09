@@ -59,15 +59,15 @@ const boardsSlice = createSlice({
       .addCase(getBoardById.pending, (state) => {
         state.boards.isLoading = true;
       })
-      // .addCase(getBoardById.fulfilled, (state, action) => {
-      //   state.boards.isLoading = false;
-      //   state.boards.error = null;
-      //   const boardById = state.boards.items.map((board) =>
-      //     board.id === action.payload.id ? action.payload : board
-      //   );
+      .addCase(getBoardById.fulfilled, (state, action) => {
+        state.boards.isLoading = false;
+        state.boards.error = null;
+        const boardById = state.boards.items.map((board) =>
+          board._id === action.payload._id ? action.payload : board
+        );
 
-      //   state.boards.items = boardById;
-      // })
+        state.boards.items = boardById;
+      })
       .addCase(getBoardById.rejected, (state, action) => {
         state.boards.isLoading = false;
         state.boards.error = action.payload;
@@ -78,11 +78,12 @@ const boardsSlice = createSlice({
       .addCase(editBoardById.fulfilled, (state, action) => {
         state.boards.isLoading = false;
         state.boards.error = null;
-        const editedBoard = state.boards.items.map((board) =>
-          board.id === action.payload.id ? action.payload : board
-        );
 
-        state.boards.items = editedBoard;
+        state.boards.items = state.boards.items.map((board) =>
+          board._id === action.payload._id
+            ? { ...board, ...action.payload }
+            : board
+        );
       })
       .addCase(editBoardById.rejected, (state, action) => {
         state.boards.isLoading = false;
@@ -95,7 +96,7 @@ const boardsSlice = createSlice({
         state.boards.isLoading = false;
         state.boards.error = null;
         const index = state.boards.items.findIndex(
-          (board) => board.id === action.payload.id
+          (board) => board._id === action.payload._id
         );
         state.boards.items.splice(index, 1);
       })

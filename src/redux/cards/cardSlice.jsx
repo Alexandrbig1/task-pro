@@ -31,7 +31,7 @@ const cardsSlice = createSlice({
         state.cards.isLoading = false;
         state.cards.error = null;
         const editedCards = state.cards.items.map((card) =>
-          card.id === action.payload.id ? action.payload : card
+          card._id === action.payload._id ? action.payload : card
         );
 
         state.cards.items = editedCards;
@@ -47,7 +47,7 @@ const cardsSlice = createSlice({
         state.cards.isLoading = false;
         state.cards.error = null;
         const index = state.cards.items.findIndex(
-          (card) => card.id === action.payload.id
+          (card) => card._id === action.payload._id
         );
         state.cards.items.splice(index, 1);
       })

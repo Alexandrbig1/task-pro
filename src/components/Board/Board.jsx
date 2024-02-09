@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import {
   BoardWrapper,
   BoardTitle,
@@ -23,6 +23,7 @@ export const Board = () => {
   const [isModalCardOpen, setIsModalCardOpen] = useState(false);
 
   const { board } = useSelector((state) => state.boards.boards.current);
+
   const columns = useSelector(selectColumns);
   const cards = useSelector(selectCards);
 
@@ -37,7 +38,7 @@ export const Board = () => {
   return (
     <>
       <BoardWrapper>
-        <BoardTitle>{board.titleBoard ? board.titleBoard : ""}</BoardTitle>
+        <BoardTitle>{board?.titleBoard ? board?.titleBoard : ""}</BoardTitle>
 
         {columns.length !== 0 && (
           <ColumnList>

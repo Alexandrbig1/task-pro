@@ -40,8 +40,9 @@ export const getBoardById = createAsyncThunk(
 
 export const editBoardById = createAsyncThunk(
   "boards/editBoardById",
-  async ({ boardId }, { updatedData }, thunkAPI) => {
+  async (params, thunkAPI) => {
     try {
+      const { boardId, updatedData } = params;
       const response = await axios.put(`${URL}/boards/${boardId}`, updatedData);
       return response.data;
     } catch (e) {

@@ -167,6 +167,7 @@ const themes = {
 
 const Welcome = lazy(() => import("../pages/Welcome/Welcome"));
 const Home = lazy(() => import("../pages/Home/Home"));
+const MainPage = lazy(() => import("../pages/MainPage/MainPage"));
 const SignIn = lazy(() => import("../pages/SignIn/SignIn"));
 const SignUp = lazy(() => import("../pages/SignUp/SignUp"));
 const NotFound = lazy(() => import("../pages/NotFound/NotFound"));
@@ -209,7 +210,9 @@ function App() {
                   component={<Home toggleTheme={toggleTheme} />}
                 />
               }
-            />
+            >
+              <Route path=":boardName" element={<MainPage />} />
+            </Route>
             <Route
               path="signin"
               element={

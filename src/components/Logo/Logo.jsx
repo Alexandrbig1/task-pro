@@ -4,7 +4,7 @@ import { LogoIcon, LogoText, LogoLink } from "./Logo.styled";
 export default function Logo({ size, text, icon }) {
   return (
     <div>
-      <LogoLink href="#">
+      <LogoLink href="#/home">
         <LogoIcon size={size} icon={icon}>
           <use id="logo1" href="images/icons.svg#icon-logo-path1" />
           <use id="logo2" href="images/icons.svg#icon-logo-path2" />

@@ -94,7 +94,7 @@ export const BoardIcon = styled.svg`
   transition: all var(--primary-transition);
 `;
 
-export const BoardItem = styled.li`
+export const BoardItem = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -1,5 +1,7 @@
 import ModalNewBoard from "../ModalNewBoard/ModalNewBoard";
 import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+
 import {
   CreateNewBoardWrapper,
   NewBoardButton,
@@ -31,7 +33,10 @@ const NewBoard = () => {
   const [isOpenModalNewBoard, setIsOpenModalNewBoard] = useState(false);
   const [isOpenModalEditBoard, setIsOpenModalEditBoard] = useState(false);
   const [boardId, setBoardId] = useState("");
+
   const dispatch = useDispatch();
+  const location = useLocation();
+  const boards = useSelector(selectBoards);
 
   const handleClick = (id) => {
     dispatch(getBoardById(id));
@@ -40,8 +45,6 @@ const NewBoard = () => {
   useEffect(() => {
     dispatch(fetchBoards());
   }, [dispatch]);
-
-  const boards = useSelector(selectBoards);
 
   const openNewBoardModal = () => {
     setIsOpenModalNewBoard((prevState) => !prevState);
@@ -70,20 +73,24 @@ const NewBoard = () => {
       </NewBoardWrapper>
       <BoardsList>
         {boards.map(({ _id: id, icon, titleBoard }) => (
-          <BoardItem key={id} onClick={() => handleClick(id)}>
-            <IconTitleWrapper>
-              <BoardIcon>
-                <svg width="18" height="18">
-                  <use href={`${sprite}#${icon}-dark`} />
-                </svg>
-              </BoardIcon>
-              <BoardTitle>{titleBoard}</BoardTitle>
-            </IconTitleWrapper>
-            <ButtonsWrapper>
-              <BoardIconEdit onClick={() => openEditBoardModal(id)} />
-              <BoardIconDelete onClick={() => handleDelete(id)} />
-            </ButtonsWrapper>
-          </BoardItem>
+          <li key={id} onClick={() => handleClick(id)}>
+            <Link to={`/home/${titleBoard}`} state={{ from: location }}>
+              <BoardItem>
+                <IconTitleWrapper>
+                  <BoardIcon>
+                    <svg width="18" height="18">
+                      <use href={`${sprite}#${icon}-dark`} />
+                    </svg>
+                  </BoardIcon>
+                  <BoardTitle>{titleBoard}</BoardTitle>
+                </IconTitleWrapper>
+                <ButtonsWrapper>
+                  <BoardIconEdit onClick={() => openEditBoardModal(id)} />
+                  <BoardIconDelete onClick={() => handleDelete(id)} />
+                </ButtonsWrapper>
+              </BoardItem>
+            </Link>
+          </li>
         ))}
       </BoardsList>
       {isOpenModalEditBoard && (

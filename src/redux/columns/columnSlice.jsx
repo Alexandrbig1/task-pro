@@ -31,7 +31,7 @@ const columnsSlice = createSlice({
         state.columns.isLoading = false;
         state.columns.error = null;
         const editedColumn = state.columns.items.map((column) =>
-          column.id === action.payload.id ? action.payload : column
+          column._id === action.payload._id ? action.payload : column
         );
 
         state.columns.items = editedColumn;
@@ -47,7 +47,7 @@ const columnsSlice = createSlice({
         state.columns.isLoading = false;
         state.columns.error = null;
         const index = state.columns.items.findIndex(
-          (column) => column.id === action.payload.id
+          (column) => column._id === action.payload._id
         );
         state.columns.items.splice(index, 1);
       })

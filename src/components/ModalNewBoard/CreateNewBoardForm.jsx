@@ -71,9 +71,7 @@ export default function CreateNewBoardForm({ closeModal }) {
     setIcon(e.target.value);
   };
 
-  const [background, setBackground] = useState(
-    "../../../public/images/background/mobile/balloon-mobile.jpg"
-  );
+  const [background, setBackground] = useState("default");
 
   const handleRadioChangeBackground = (e) => {
     setBackground(e.target.value);
@@ -85,7 +83,6 @@ export default function CreateNewBoardForm({ closeModal }) {
       icon: icon,
       background: background,
     };
-    console.log(newBoard);
     dispatch(addBoard(newBoard));
     resetForm();
     closeModal();
