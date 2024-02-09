@@ -3,11 +3,10 @@ import { Card } from "../../Card/Card";
 import { List } from "./CardList.styled";
 
 export const CardList = ({ currentColumn, cardInfo }) => {
-
   return (
     <List>
       {cardInfo.map((card) => (
-        <li key={card.id}>
+        <li key={card._id}>
           <Card currentColumn={currentColumn} info={card} />
         </li>
       ))}

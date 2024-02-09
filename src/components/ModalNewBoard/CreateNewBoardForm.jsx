@@ -32,16 +32,16 @@ const formSquema = Yup.object().shape({
     .max(50, "Too Long!")
     .required("Please fill the title field"),
 });
-const icons = {
-  icon1: "icon-project",
-  icon2: "icon-star",
-  icon3: "icon-loading",
-  icon4: "icon-puzzle-piece",
-  icon5: "icon-container",
-  icon6: "icon-lightning",
-  icon7: "icon-colors",
-  icon8: "icon-hexagon",
-};
+const icons = [
+  "icon-project",
+  "icon-star",
+  "icon-loading",
+  "icon-puzzle-piece",
+  "icon-container",
+  "icon-lightning",
+  "icon-colors",
+  "icon-hexagon",
+];
 
 const backgrounds = [
   "default",
@@ -108,18 +108,18 @@ export default function CreateNewBoardForm({ closeModal }) {
         <StyledSmallTitle>Icons</StyledSmallTitle>
         <div id="my-radio-group">
           <IconsWrapper role="group" aria-labelledby="my-radio-group">
-            {Object.entries(icons).map(([iconName, iconId]) => (
-              <StyledLabel key={iconId}>
+            {icons.map((name) => (
+              <StyledLabel value={icon === name.toString()} key={name}>
                 <StyledField
                   onChange={handleRadioChange}
-                  checked={icon === iconId.toString()}
+                  checked={icon === name.toString()}
                   type="radio"
                   name="icon"
-                  value={iconId}
+                  value={name}
                 />
-                <StyledIcon value={icon === iconId.toString()}>
+                <StyledIcon value={icon === name.toString()}>
                   <svg width="18" height="18">
-                    <use href={`${sprite}#${iconId}-dark`} />
+                    <use href={`${sprite}#${name}-dark`} />
                   </svg>
                 </StyledIcon>
               </StyledLabel>
@@ -134,7 +134,11 @@ export default function CreateNewBoardForm({ closeModal }) {
             aria-labelledby="my-backgrounds-radio-group"
           >
             {backgrounds.map((name) => (
-              <StyledBackgroundLabel key={name}>
+              <StyledBackgroundLabel
+                value={background === name.toString()}
+                key={name}
+              >
+                {" "}
                 <StyledBackgroudField
                   onChange={handleRadioChangeBackground}
                   checked={background === name.toString()}
@@ -144,14 +148,12 @@ export default function CreateNewBoardForm({ closeModal }) {
                 />
                 {name === "default" ? (
                   <DefaultIconWrapper>
-                    <StyledDefaultIcon value={background === name.toString()}>
-                      <svg width="16" height="16">
-                        <use href={`${sprite}#default`} />
-                      </svg>
+                    <StyledDefaultIcon width="16" height="16">
+                      <use href={`${sprite}#default`} />
                     </StyledDefaultIcon>
                   </DefaultIconWrapper>
                 ) : (
-                  <StyledIconBackground value={background === name.toString()}>
+                  <StyledIconBackground>
                     <img
                       srcSet={`
       https://res.cloudinary.com/dsywt0aej/image/upload/v1707244606/back-check/${name}.png 1x,

@@ -1,6 +1,7 @@
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
+import PropTypes from "prop-types";
 import {
   FormWrapper,
   Input,
@@ -15,40 +16,40 @@ import {
   DatePicker,
 } from "./AddCardForm.styled";
 import { CardButton } from "../CardButton/CardButton";
+import { useDispatch } from "react-redux";
+import { addCard } from "../../redux/cards/operations";
 
 const schema = Yup.object().shape({
   title: Yup.string().required(),
   description: Yup.string(),
 });
 
-export const AddCardForm = () => {
+export const AddCardForm = ({ onClose, columnId }) => {
   const [labelChecked, setLabelChecked] = useState("without");
+  const dispatch = useDispatch();
 
   const handleLableChange = (e) => {
     setLabelChecked(e.target.value);
   };
 
-  // const handleSubmit = (values, { resetForm }) => {
-  //   const newCard = {
-  //     title: values.title,
-  //     description: values.description,
-  //     priority: labelChecked,
-  //     deadline: ""
-  //   };
-  //     dispatch(
-  //   addContact({
-  //     name: values.name,
-  //     number: values.number,
-  //   })
-  // );
-  //   resetForm();
-  // };
+  const handleSubmit = (values, { resetForm }) => {
+    const newCard = {
+      titleCard: values.title,
+      description: values.description,
+      priority: labelChecked,
+      deadline: "2024-02-08",
+      columnId: columnId,
+    };
+    dispatch(addCard(newCard));
+    resetForm();
+    onClose();
+  };
 
   return (
     <Formik
       initialValues={{ title: "", description: "" }}
       validationSchema={schema}
-      // onSubmit={handleSubmit}
+      onSubmit={handleSubmit}
     >
       <Form autoComplete="off">
         <FormWrapper>
@@ -117,4 +118,9 @@ export const AddCardForm = () => {
       </Form>
     </Formik>
   );
+};
+
+AddCardForm.propTypes = {
+  onClose: PropTypes.func,
+  columnId: PropTypes.string,
 };

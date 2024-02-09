@@ -1,6 +1,9 @@
 import { Field, Form } from "formik";
 import styled from "styled-components";
 
+export const StyledForm = styled(Form)`
+  margin: 0;
+`;
 export const StyledSmallTitle = styled.p`
   color: ${(p) => p.theme.colors.secondaryTextColor};
   font-size: 14px;
@@ -49,6 +52,11 @@ export const StyledBackgroundLabel = styled.label`
   flex-direction: column;
   text-align: center;
   flex-basis: calc(100% / 8 - 4px);
+  outline: 1px solid
+    ${(p) => (p.value ? p.theme.colors.accentTextColor : "transparent")};
+  &:active {
+    opacity: 1;
+  }
 `;
 
 export const StyledField = styled(Field)`
@@ -83,7 +91,6 @@ export const IconsWrapper = styled.div`
 export const StyledIcon = styled.svg`
   width: 100%;
   height: 100%;
-
   stroke: ${(p) => p.theme.colors.secondaryTextColor};
   stroke-width: 1.5;
   opacity: ${(p) => (p.value ? "1" : "0.5")};
@@ -91,39 +98,49 @@ export const StyledIcon = styled.svg`
     opacity: 1;
   }
 `;
+
 export const StyledIconBackground = styled.div`
-  width: 28px;
-  height: 28px;
-  stroke: ${(p) => p.theme.colors.secondaryTextColor};
+  width: 100%;
+  height: 100%;
   stroke-width: 3.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    border-radius: 6px;
   opacity: ${(p) => (p.value ? "1" : "0.7")};
-  border: 1px solid
+  outline: 1px solid
     ${(p) => (p.value ? p.theme.colors.accentTextColor : "transparent")};
   &:active {
     opacity: 1;
+  }
   }
 `;
 export const StyledDefaultIcon = styled.svg`
   width: 16px;
   height: 16px;
   stroke: ${(p) => p.theme.colors.secondaryTextColor};
-  stroke-width: 1.5;
+  stroke-width: 1;
   opacity: ${(p) => (p.value ? "1" : "0.3")};
+
   &:active {
     opacity: 1;
   }
 `;
-
 export const DefaultIconWrapper = styled.div`
-  background-color: ${(p) => p.theme.colors.logoIconBgColor};
-  width: 28px;
-  height: 28px;
+  background-color: ${(p) => p.theme.colors.defaultIconBackground};
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-`;
-export const StyledForm = styled(Form)`
-  margin: 0;
+  stroke-width: 3.5;
+  border-radius: 6px;
+
+  border: 1px solid
+    ${(p) => (p.value ? p.theme.colors.accentTextColor : "transparent")};
+  &:active {
+    opacity: 1;
+  }
 `;
 
 export const IconsBackgroundWrapper = styled.div`
