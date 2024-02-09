@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";///dispatch
-import { addColumn } from "../../redux/columns/columnsActions";///dispatch
-import  PropTypes  from "prop-types";
+import { useDispatch } from "react-redux"; ///dispatch
+import { addColumn } from "../../redux/columns/operations";
+import PropTypes from "prop-types";
 import {
   AddModalWrap,
   StyledAddModal,
@@ -14,8 +14,6 @@ import {
 import { CardButton } from "../CardButton/CardButton";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-
 
 const AddColumnModal = ({ openColumnModal }) => {
   const dispatch = useDispatch();
@@ -41,72 +39,66 @@ const AddColumnModal = ({ openColumnModal }) => {
       openColumnModal();
     }
   };
-  
-    const onSubmitColumnClick = async (e) => {
-      e.preventDefault();
 
-      const form = e.currentTarget;
-      const title = form.elements.title.value.trim();
+  const onSubmitColumnClick = async (e) => {
+    e.preventDefault();
 
-      const validTitle = title.length > 0;
+    const form = e.currentTarget;
+    const title = form.elements.title.value.trim();
 
-      if (validTitle) {
-        dispatch(addColumn(title)); // Диспатч action з назвою колонки
-        form.reset();
-        openColumnModal();
-        toast.success("You are successful add column!", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: false,
-          progress: undefined,
-          theme: "light",
-        });
-      } else {
-        toast.error("Please enter a title", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: false,
-          progress: undefined,
-          theme: "light",
-        });
-      }
+    const validTitle = title.length > 0;
+
+    if (validTitle) {
+      dispatch(addColumn(title)); // Диспатч action з назвою колонки
+      form.reset();
+      openColumnModal();
+      toast.success("You are successful add column!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "light",
+      });
+    } else {
+      toast.error("Please enter a title", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "light",
+      });
     }
-  
-
-    return (
-      <AddModalWrap onClick={handleModalClick}>
-        <StyledAddModal className="modal">
-          <AddColumnModalBtn onClick={openColumnModal} type="button">
-            <CloseAddColumnModal />
-          </AddColumnModalBtn>
-          <div>
-            <AddColumnTitle>Add column</AddColumnTitle>
-            <AddColumnForm onSubmit={onSubmitColumnClick}>
-              <AddColumnInput type="text" placeholder="Title" name="title" />
-              <CardButton type="submit" btnText="Add" />
-            </AddColumnForm>
-          </div>
-        </StyledAddModal>
-      </AddModalWrap>
-    );
   };
 
+  return (
+    <AddModalWrap onClick={handleModalClick}>
+      <StyledAddModal className="modal">
+        <AddColumnModalBtn onClick={openColumnModal} type="button">
+          <CloseAddColumnModal />
+        </AddColumnModalBtn>
+        <div>
+          <AddColumnTitle>Add column</AddColumnTitle>
+          <AddColumnForm onSubmit={onSubmitColumnClick}>
+            <AddColumnInput type="text" placeholder="Title" name="title" />
+            <CardButton type="submit" btnText="Add" />
+          </AddColumnForm>
+        </div>
+      </StyledAddModal>
+    </AddModalWrap>
+  );
+};
 
 export default AddColumnModal;
 
 AddColumnModal.propTypes = {
   openColumnModal: PropTypes.func.isRequired,
 };
-
-
-
-
 
 // import { useEffect } from "react";
 // import { PropTypes } from "prop-types";
@@ -166,22 +158,6 @@ AddColumnModal.propTypes = {
 // AddColumnModal.propTypes = {
 //   openColumnModal: PropTypes.func,
 // };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // // import { useEffect } from "react";
 // // import  PropTypes  from "prop-types";
