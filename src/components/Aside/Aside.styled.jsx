@@ -59,7 +59,6 @@ export const AsideWrapper = styled.div`
   max-width: 22.5rem;
   width: 100%;
   height: 100%;
-  padding: 2.4rem;
   background-color: ${(p) => p.theme.colors.mainAsideColor};
   z-index: 20;
 
@@ -72,13 +71,19 @@ export const AsideWrapper = styled.div`
     display: flex;
     position: relative;
     height: 100%;
+    /* gap: 4rem; */
   }
+`;
+
+export const LogoWrapper = styled.div`
+  padding: 2.4rem;
 `;
 
 export const LogoutWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+  padding: 2.4rem;
 `;
 
 export const CloseIcon = styled(IoClose)`

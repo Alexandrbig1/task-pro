@@ -15,6 +15,7 @@ import {
   IconTitleWrapper,
   BoardButton,
   ButtonIcon,
+  BoardContainer,
 } from "./NewBoard.styled";
 import ModalEditNewBoard from "../ModalEditNewBoard/ModalEditNewBoard";
 import { selectBoards } from "../../redux/boards/selectors";
@@ -54,7 +55,7 @@ const NewBoard = () => {
   };
 
   return (
-    <>
+    <BoardContainer>
       <NewBoardWrapper>
         <NewBoardSubTitle>My boards</NewBoardSubTitle>
         <CreateNewBoardWrapper>
@@ -103,7 +104,7 @@ const NewBoard = () => {
           boardId={boardId}
         ></ModalEditNewBoard>
       )}
-    </>
+    </BoardContainer>
   );
 };
 

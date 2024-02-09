@@ -2,10 +2,17 @@ import styled from "styled-components";
 import { primaryFont } from "../fonts";
 import { FiPlus } from "react-icons/fi";
 
+export const BoardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+`;
+
 export const NewBoardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  padding: 2.4rem;
 `;
 
 export const NewBoardSubTitle = styled.p`

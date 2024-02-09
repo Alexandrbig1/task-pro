@@ -8,6 +8,7 @@ import {
   CloseIcon,
   LogoutWrapper,
   AsideWrapper,
+  LogoWrapper,
 } from "./Aside.styled";
 
 // eslint-disable-next-line react/prop-types
@@ -40,7 +41,9 @@ export default function Aside({ aside, handleAsideHide }) {
     <AsideContainer $aside={aside} onClick={(e) => handleBgClose(e)}>
       <AsideWrapper ref={containerRef} $aside={aside} $scrollable={scrollable}>
         <CloseIcon onClick={handleAsideHide} />
-        <Logo />
+        <LogoWrapper>
+          <Logo />
+        </LogoWrapper>
         <NewBoard />
         <LogoutWrapper>
           <NeedHelp />
