@@ -55,6 +55,7 @@ const NewBoard = () => {
   };
   const handleDelete = (id) => {
     dispatch(deleteBoard(id));
+    dispatch(fetchBoards());
   };
 
   return (

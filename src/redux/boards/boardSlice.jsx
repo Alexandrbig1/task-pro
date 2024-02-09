@@ -95,10 +95,12 @@ const boardsSlice = createSlice({
       .addCase(deleteBoard.fulfilled, (state, action) => {
         state.boards.isLoading = false;
         state.boards.error = null;
-        const index = state.boards.items.findIndex(
-          (board) => board._id === action.payload._id
+
+        const deletedId = action.payload.id || action.payload._id;
+
+        state.boards.items = state.boards.items.filter(
+          (board) => board._id !== deletedId
         );
-        state.boards.items.splice(index, 1);
       })
       .addCase(deleteBoard.rejected, (state, action) => {
         state.boards.isLoading = false;
