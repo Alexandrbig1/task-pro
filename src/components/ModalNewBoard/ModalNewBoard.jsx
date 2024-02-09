@@ -9,7 +9,7 @@ import {
   Modal,
 } from "../ModalNewBoard/ModalNewBoard.styled";
 import CreateNewBoardForm from "./CreateNewBoardForm";
-import ModalEditNewBoard from "../ModalEditNewBoard/ModalEditNewBoard";
+// import ModalEditNewBoard from "../ModalEditNewBoard/ModalEditNewBoard";
 export default function ModalNewBoard({ openNewBoardModal }) {
   useEffect(() => {
     const handleKeyDown = (evt) => {
