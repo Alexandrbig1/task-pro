@@ -14,9 +14,12 @@ import {
 import { CardButton } from "../CardButton/CardButton";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useSelector } from "react-redux";
 
 const AddColumnModal = ({ openColumnModal }) => {
   const dispatch = useDispatch();
+
+  const { board } = useSelector((state) => state.boards.boards.current);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -49,7 +52,11 @@ const AddColumnModal = ({ openColumnModal }) => {
     const validTitle = title.length > 0;
 
     if (validTitle) {
-      dispatch(addColumn(title)); // Диспатч action з назвою колонки
+      const newColumn = {
+        titleColumn: title,
+        boardId: board._id,
+      };
+      dispatch(addColumn(newColumn)); // Диспатч action з назвою колонки
       form.reset();
       openColumnModal();
       toast.success("You are successful add column!", {
