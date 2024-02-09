@@ -16,6 +16,8 @@ export const HeaderWrapper = styled.div`
   @media (min-width: 1440px) {
     justify-content: end;
     padding: 1.8rem 2.4rem;
+
+    max-width: 118rem;
   }
 `;
 

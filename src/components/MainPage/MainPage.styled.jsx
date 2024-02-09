@@ -16,7 +16,9 @@ export const MainWrapper = styled.main`
 
   @media (min-width: 1440px) {
     height: 100%;
-    padding: 4.8rem 2rem 2rem;
+    /* padding: 4.8rem 2rem 2rem; */
+    /* margin: 0 auto; */
+    max-width: 118rem;
   }
 `;
 

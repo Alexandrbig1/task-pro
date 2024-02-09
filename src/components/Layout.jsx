@@ -14,8 +14,10 @@ export const Container = styled.div`
   }
 
   @media (min-width: 1440px) {
-    /* max-width: 144rem; */
+    max-width: 144rem;
     display: flex;
+    background-color: grey;
+    justify-content: center;
   }
 `;
 

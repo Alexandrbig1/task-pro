@@ -1,8 +1,45 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const BoardWrapper = styled.div`
   display: flex;
   gap: 15px;
+  height: 100%;
+
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+    /* width: 0; */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 12px;
+    /* background: ${(p) => p.theme.colors.cardListScrollThumb}; */
+    background-color: ${(p) => p.theme.colors.scrollThumb};
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 12px;
+    /* background: ${(p) => p.theme.colors.cardListScrollBar}; */
+    background-color: ${(p) => p.theme.colors.scrollBar};
+  }
+
+  ${(p) =>
+    p?.$scrollable &&
+    css`
+      &::-webkit-scrollbar-thumb {
+        background-color: ${(p) => p.theme.colors.scrollThumb};
+      }
+      &::-webkit-scrollbar-track {
+        background-color: ${(p) => p.theme.colors.scrollBar};
+      }
+    `}
+
+  @media (min-width: 1440px) {
+    max-width: 118rem;
+  }
 `;
 
 export const BoardTitle = styled.h2`
