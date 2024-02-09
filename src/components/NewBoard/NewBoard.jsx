@@ -42,10 +42,6 @@ const NewBoard = () => {
     dispatch(getBoardById(id));
   };
 
-  useEffect(() => {
-    dispatch(fetchBoards());
-  }, [dispatch]);
-
   const openNewBoardModal = () => {
     setIsOpenModalNewBoard((prevState) => !prevState);
   };
@@ -53,11 +49,20 @@ const NewBoard = () => {
     setBoardId(id);
     setIsOpenModalEditBoard((prevState) => !prevState);
   };
-  const handleDelete = (id) => {
-    console.log(id);
 
-    dispatch(deleteBoard(id));
+  useEffect(() => {
     dispatch(fetchBoards());
+  }, [dispatch]);
+
+  const handleDelete = (id) => {
+    dispatch(deleteBoard(id)).then((action) => {
+      if (action.type === deleteBoard.fulfilled.type) {
+        console.log("Дані успішно видалені:");
+        dispatch(fetchBoards());
+      } else {
+        console.log("Виникла помилка під час завантаження даних:");
+      }
+    });
   };
 
   return (
