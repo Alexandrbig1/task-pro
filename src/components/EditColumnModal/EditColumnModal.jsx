@@ -1,5 +1,8 @@
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { PropTypes } from "prop-types";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   EditModalWrap,
   StyledEditModal,
@@ -10,8 +13,11 @@ import {
   CloseEditColumnModal,
 } from "../EditColumnModal/EditColumnModal.styled";
 import { CardButton } from "../CardButton/CardButton";
+import { editColumn } from "../../redux/columns/operations";
 
-const EditColumnModal = ({ openEditColumnModal }) => {
+const EditColumnModal = ({ openEditColumnModal, columnId, title }) => {
+  const dispatch = useDispatch();
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.code === "Escape") {
@@ -33,16 +39,61 @@ const EditColumnModal = ({ openEditColumnModal }) => {
       openEditColumnModal();
     }
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+    const title = form.elements.title.value.trim();
+
+    const validTitle = title.length > 0;
+
+    if (validTitle) {
+      const newColumnData = {
+        titleColumn: title,
+      };
+      dispatch(editColumn({ columnId, newColumnData }));
+      form.reset();
+      openEditColumnModal();
+      toast.success("You have successfully edited the column!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "light",
+      });
+    } else {
+      toast.error("Please enter a title", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+  };
+
   return (
     <EditModalWrap onClick={handleEditModalClick}>
       <StyledEditModal className="modal">
-        <EditColumnModalBtn onClick={()=>openEditColumnModal()} type="button">
+        <EditColumnModalBtn onClick={() => openEditColumnModal()} type="button">
           <CloseEditColumnModal />
         </EditColumnModalBtn>
         <div>
           <EditColumnTitle>Edit column</EditColumnTitle>
-          <EditColumnForm>
-            <EditColumnInput type="text" placeholder="To Do" />
+          <EditColumnForm onSubmit={handleSubmit}>
+            <EditColumnInput
+              type="text"
+              placeholder="To Do"
+              name="title"
+              defaultValue={title}
+            />
             <CardButton btnText="Add" />
           </EditColumnForm>
         </div>
@@ -55,6 +106,8 @@ export default EditColumnModal;
 
 EditColumnModal.propTypes = {
   openEditColumnModal: PropTypes.func,
+  columnId: PropTypes.string,
+  title: PropTypes.string,
 };
 
 //Connect

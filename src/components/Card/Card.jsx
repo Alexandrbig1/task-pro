@@ -17,8 +17,8 @@ import {
 } from "./Card.styled";
 import { CardIconsList } from "./CardIconsList/CardIconsList";
 
-export const Card = ({ info, currentColumn }) => {
-  const { titleCard, description, priority, deadline } = info;
+export const Card = ({ cardInfo, currentColumn }) => {
+  const { titleCard, description, priority, deadline } = cardInfo;
   return (
     <CardItem>
       <Container>
@@ -41,7 +41,7 @@ export const Card = ({ info, currentColumn }) => {
             <Subtitle>Deadline</Subtitle>
             <Date>{deadline}</Date>
           </DeadlineWrapp>
-          <CardIconsList currentColumn={currentColumn} />
+          <CardIconsList currentColumn={currentColumn} cardInfo={cardInfo} />
         </UnderlineInfo>
       </Container>
     </CardItem>
@@ -49,5 +49,6 @@ export const Card = ({ info, currentColumn }) => {
 };
 
 Card.propTypes = {
-  info: PropTypes.object,
+  cardInfo: PropTypes.object,
+  currentColumn: PropTypes.string,
 };

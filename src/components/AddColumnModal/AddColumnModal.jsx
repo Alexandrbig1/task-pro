@@ -56,8 +56,6 @@ const AddColumnModal = ({ openColumnModal }) => {
         titleColumn: title,
         boardId: board._id,
       };
-
-      console.log(newColumn);
       dispatch(addColumn(newColumn)); // Диспатч action з назвою колонки
       form.reset();
       openColumnModal();
