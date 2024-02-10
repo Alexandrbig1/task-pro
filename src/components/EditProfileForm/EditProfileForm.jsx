@@ -43,6 +43,7 @@ export default function ProfileForm() {
     const [showPassword, setShowPassword] = useState(false);
     // const { user } = useAuth();
     const user = useSelector(selectUser);
+
     const dispatch = useDispatch();
 
     const handleClickShowPassword = () => {
@@ -51,32 +52,35 @@ export default function ProfileForm() {
 
     const formik = useFormik({
         initialValues: {
-            avatarURL: "images/VectorExample.png",
-            name: "",
-            email: "",
-            password: "",
+            avatar: user && user.avatar ? user.avatar : "",
+            // name: user && user.name ? user.name : "",
+            // email: user && user.email ? user.email : "",
+            // password: "",
         },
         validationSchema: editProfileSchema,
+
         onSubmit: async (values, actions) => {
             try {
-                const formData = {
-                    avatarURL: values.avatarURL,
-                    name: values.name,
-                    email: values.email,
-                    password: values.password,
-                };
-                await dispatch(editUser(formData));
-                // await dispatch(usersAvatar(formData.avatarURL));
-                console.log(values.name);
-                console.log(user);
+                if (!user) return;
 
-                actions.resetForm({
-                    values: {
-                        name: "",
-                        email: "",
-                        password: "",
-                    },
-                });
+                // const resultInputs = await dispatch(editUser(values));
+
+                // if (resultInputs.meta.requestStatus === "fulfilled") {
+                //     actions.setValues({
+                //         //  avatarURL: resultInputs.payload.avatarURL,
+                //         name: resultInputs.payload.name,
+                //         email: resultInputs.payload.email,
+                //         password: "",
+                //     });
+                // }
+
+                const avatarUpdate = await dispatch(usersAvatar(values.avatar));
+
+                // if (avatarUpdate.meta.requestStatus === "fulfilled") {
+                //     actions.setValues({
+                //         avatarURL: avatarUpdate.payload.avatarURL,
+                //     });
+                // }
             } catch (error) {
                 console.error("error:", error);
             }
@@ -87,6 +91,7 @@ export default function ProfileForm() {
         const { name, type, files } = e.target;
         const value = type === "file" ? files[0] : e.target.value;
 
+        console.log(e.target.files);
         formik.handleChange(e);
         formik.setFieldValue(name, value);
 

@@ -15,7 +15,7 @@ export const AvatarText = styled.p`
 `;
 export const AvatarIcon = styled.svg`
     /* font-size: 3.2rem; */
-    --color1: ${(p) => p.theme.colors.logoIconBgColor};
+    --color1: ${(p) => p.theme.colors.defaultIconBackground};
     --color2: #fff;
     width: ${(p) => (p?.size?.width ? p?.size?.width : "32px")};
     height: ${(p) => (p?.size?.height ? p?.size?.height : "32px")};
