@@ -2,6 +2,8 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
 import PropTypes from "prop-types";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   FormWrapper,
   Input,
@@ -24,7 +26,7 @@ const schema = Yup.object().shape({
   description: Yup.string(),
 });
 
-export const AddCardForm = ({ onClose, columnId, boardID }) => {
+export const AddCardForm = ({ onClose, columnId }) => {
   const [labelChecked, setLabelChecked] = useState("without");
   const dispatch = useDispatch();
 
@@ -39,9 +41,18 @@ export const AddCardForm = ({ onClose, columnId, boardID }) => {
       priority: labelChecked,
       deadline: "2024-02-08",
       columnId: columnId,
-      // boardId: boardID,
     };
     dispatch(addCard(newCard));
+    toast.success("You have successfully added the card!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "light",
+    });
     resetForm();
     onClose();
   };
@@ -124,5 +135,4 @@ export const AddCardForm = ({ onClose, columnId, boardID }) => {
 AddCardForm.propTypes = {
   onClose: PropTypes.func,
   columnId: PropTypes.string,
-  boardID: PropTypes.string,
 };

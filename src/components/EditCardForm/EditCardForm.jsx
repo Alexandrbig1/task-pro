@@ -1,7 +1,10 @@
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
+import PropTypes from "prop-types";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   FormWrapper,
   Input,
@@ -16,37 +19,50 @@ import {
   DatePicker,
 } from "./EditCardForm.styled";
 import { CardButton } from "../CardButton/CardButton";
+import { editCard } from "../../redux/cards/operations";
 
 const schema = Yup.object().shape({
   title: Yup.string().required(),
   description: Yup.string(),
 });
 
-export const EditCardForm = () => {
-  const [labelChecked, setLabelChecked] = useState("without");
-  //   const dispatch = useDispatch();
+export const EditCardForm = ({ cardInfo, onClose }) => {
+  const { _id, titleCard, description, priority, deadline } = cardInfo;
+
+  const [labelChecked, setLabelChecked] = useState(priority);
+  const dispatch = useDispatch();
 
   const handleLableChange = (e) => {
     setLabelChecked(e.target.value);
   };
 
-  // const handleSubmit = (values, { resetForm }) => {
-  //   const newTask = {
-  //     title: values.title,
-  //     description: values.description,
-  //     priority: labelChecked,
-  //   };
-  //   console.log(newTask);
-  //   resetForm();
-  // };
-
-  // initial values for Formik  from backend
+  const handleSubmit = (values, { resetForm }) => {
+    const newCardData = {
+      titleCard: values.title,
+      description: values.description,
+      priority: labelChecked,
+      deadline: "2024-01-02",
+    };
+    dispatch(editCard({ _id, newCardData }));
+    toast.success("You have successfully edited the card!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "light",
+    });
+    resetForm();
+    onClose();
+  };
 
   return (
     <Formik
-      initialValues={{ title: "swg", description: "wsrghywshtwsht" }}
+      initialValues={{ title: titleCard, description: description }}
       validationSchema={schema}
-      // onSubmit={handleSubmit}
+      onSubmit={handleSubmit}
     >
       <Form autoComplete="off">
         <FormWrapper>
@@ -122,4 +138,9 @@ export const EditCardForm = () => {
       </Form>
     </Formik>
   );
+};
+
+EditCardForm.propTypes = {
+  cardInfo: PropTypes.object,
+  onClose: PropTypes.func,
 };

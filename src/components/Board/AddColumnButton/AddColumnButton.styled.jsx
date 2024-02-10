@@ -6,7 +6,7 @@ export const AddBtn = styled.button`
   justify-content: center;
   align-items: center;
   gap: 8px;
-  width: 335px;
+  min-width: 335px;
   height: 56px;
   background-color: ${(p) => p.theme.colors.addColumnBtn};
   border: none;
