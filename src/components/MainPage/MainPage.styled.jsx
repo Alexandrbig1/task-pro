@@ -9,9 +9,11 @@ export const MainWrapper = styled.main`
   padding: 7.4rem 2rem 2rem;
 
   min-height: calc(100vh - 6rem);
+  /* min-height: 100vh; */
 
   @media (min-width: 768px) {
     min-height: calc(100vh - 6.8rem);
+    /* min-height: 100vh; */
   }
 
   @media (min-width: 1440px) {

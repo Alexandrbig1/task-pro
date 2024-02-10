@@ -4,6 +4,7 @@ export const BoardWrapper = styled.div`
   display: flex;
   gap: 15px;
   height: 100%;
+  min-height: calc(100vh - 6rem - 9.4rem);
 
   overflow-x: scroll;
 
@@ -37,8 +38,13 @@ export const BoardWrapper = styled.div`
       }
     `}
 
+  @media(min-width: 768px) {
+    min-height: calc(100vh - 6.8rem - 9.4rem);
+  }
+
   @media (min-width: 1440px) {
     max-width: 118rem;
+    height: 100%;
   }
 `;
 

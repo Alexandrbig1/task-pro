@@ -39,7 +39,7 @@ export const AddCardForm = ({ onClose, columnId, boardID }) => {
       priority: labelChecked,
       deadline: "2024-02-08",
       columnId: columnId,
-      boardId: boardID,
+      // boardId: boardID,
     };
     dispatch(addCard(newCard));
     resetForm();

@@ -117,10 +117,12 @@ export default function CreateNewBoardForm({ closeModal }) {
                   name="icon"
                   value={name}
                 />
-                <StyledIcon value={icon === name.toString()}>
-                  <svg width="18" height="18">
-                    <use href={`${sprite}#${name}-dark`} />
-                  </svg>
+                <StyledIcon
+                  width="18"
+                  height="18"
+                  value={icon === name.toString()}
+                >
+                  <use href={`${sprite}#${name}-dark`} />
                 </StyledIcon>
               </StyledLabel>
             ))}

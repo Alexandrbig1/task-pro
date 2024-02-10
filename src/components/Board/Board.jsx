@@ -24,7 +24,9 @@ export const Board = () => {
   const [columnId, setColumnId] = useState();
 
   const currentBoard = useSelector((state) => state.boards.boards.current);
+
   const { board, columns } = currentBoard;
+
   const [scrollable, setScrollable] = useState(false);
 
   const containerRef = useRef();

@@ -73,15 +73,16 @@ export default function EditNewBoardForm({ boardId, closeModal }) {
   const selectedBoard = boards.filter((board) => {
     return board._id === boardId;
   });
-  // console.log(selectedBoard);
 
-  const [icon, setIcon] = useState(selectedBoard[0].icon);
+  // const [icon, setIcon] = useState(selectedBoard[0].icon);
+  const [icon, setIcon] = useState("icon-project");
 
   const handleRadioChange = (e) => {
     setIcon(e.target.value);
   };
 
-  const [background, setBackground] = useState(selectedBoard[0].background);
+  const [background, setBackground] = useState("default");
+  // const [background, setBackground] = useState(selectedBoard[0].background);
 
   const handleRadioChangeBackground = (e) => {
     setBackground(e.target.value);
@@ -90,8 +91,8 @@ export default function EditNewBoardForm({ boardId, closeModal }) {
   const handleSubmit = (values, { resetForm }) => {
     const updatedData = {
       titleBoard: values.titleBoard,
-      background: background,
       icon: icon,
+      background: background,
     };
 
     // dispatch(editBoardById(boardId, updatedData));
@@ -105,8 +106,10 @@ export default function EditNewBoardForm({ boardId, closeModal }) {
     <Formik
       initialValues={{
         titleBoard: selectedBoard[0].titleBoard,
-        icon: icon,
-        background: background,
+        // icon: icon,
+        // background: background,
+        icon: "icon-project",
+        background: "default",
       }}
       validationSchema={formSquema}
       onSubmit={handleSubmit}
@@ -135,10 +138,12 @@ export default function EditNewBoardForm({ boardId, closeModal }) {
                   name="icon"
                   value={name}
                 />
-                <StyledIcon value={icon === name.toString()}>
-                  <svg width="18" height="18">
-                    <use href={`${sprite}#${name}-dark`} />
-                  </svg>
+                <StyledIcon
+                  width="18"
+                  height="18"
+                  value={icon === name.toString()}
+                >
+                  <use href={`${sprite}#${name}-dark`} />
                 </StyledIcon>
               </StyledLabel>
             ))}
@@ -152,9 +157,10 @@ export default function EditNewBoardForm({ boardId, closeModal }) {
           >
             {backgrounds.map((name) => (
               <StyledBackgroundLabel
-                key={name}
                 value={background === name.toString()}
+                key={name}
               >
+                {" "}
                 <StyledBackgroudField
                   onChange={handleRadioChangeBackground}
                   checked={background === name.toString()}

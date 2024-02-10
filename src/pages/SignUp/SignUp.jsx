@@ -10,6 +10,8 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 // import { useNavigate } from "react-router-dom";
 // import { toast } from "react-toastify";
 import emailRegex from "../../regex/emailRegex";
+import { Helmet, HelmetProvider } from "react-helmet-async";
+
 import {
   BoxSignUpStyled,
   ContainerSignUpStyled,
@@ -27,7 +29,7 @@ import {
   FieldWrapper,
   PasswordErrorMessage,
 } from "./SignUp.styled";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import Google from "../../components/GoogleIcon/GoogleIcon";
 
 const customTheme = createTheme({
   breakpoints: {
@@ -67,6 +69,7 @@ export default function SignUp() {
   const [showPassword, setShowPassword] = React.useState(false);
   const dispatch = useDispatch();
   const [errors, setErrors] = React.useState({});
+
   // const navigate = useNavigate();
 
   const handleClickShowPassword = () => {
@@ -173,6 +176,7 @@ export default function SignUp() {
                   display: "flex",
                   alignItems: "center",
                   gap: "1.4rem",
+                  position: "relative",
                 }}
               >
                 <TypoTitleSignUpStyled component="h1" variant="h5">
@@ -181,6 +185,7 @@ export default function SignUp() {
                 <LoginLink href="#/signin" variant="body2">
                   Log In
                 </LoginLink>
+                <Google />
               </Box>
               <Box
                 component="form"
@@ -239,6 +244,7 @@ export default function SignUp() {
                         type={showPassword ? "text" : "password"}
                         error={errors.password ? true : false}
                       />
+
                       {errors.password && (
                         <PasswordErrorMessage>
                           {errors.password}

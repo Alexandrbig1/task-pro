@@ -24,6 +24,7 @@ export const Container = styled.div`
 export const MainContainer = styled.div`
   width: 100%;
   /* max-width: 144rem; */
+  /* height: 100%; */
 
   @media (min-width: 375px) {
     /* max-width: 37.5rem; */
@@ -37,5 +38,6 @@ export const MainContainer = styled.div`
     /* max-width: 144rem; */
     display: flex;
     flex-direction: column;
+    /* min-height: calc(100vh - 6.8rem); */
   }
 `;

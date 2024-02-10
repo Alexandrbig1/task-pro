@@ -76,7 +76,7 @@ const NewBoard = () => {
           </NewBoardButton>
         </CreateNewBoardWrapper>
         {isOpenModalNewBoard && (
-          <ModalNewBoard openNewBoardModal={openNewBoardModal}></ModalNewBoard>
+          <ModalNewBoard openNewBoardModal={openNewBoardModal} />
         )}
       </NewBoardWrapper>
       <BoardsList>
