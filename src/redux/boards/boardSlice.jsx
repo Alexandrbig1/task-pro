@@ -28,9 +28,11 @@ const boardsSlice = createSlice({
       .addCase(getBoardById.fulfilled, (state, action) => {
         state.boards.isLoading = false;
         state.boards.error = null;
-        //         const boardById = state.boards.items.map((board) =>
-        // board.id === action.payload.id ? action.payload : board)
+        // const boardById = state.boards.items.map((board) =>
+        //   board.id === action.payload.id ? action.payload : board
+        // );
         state.boards.current = { ...action.payload };
+        // state.boards.current = boardById;
       })
       .addCase(fetchBoards.pending, (state) => {
         state.boards.isLoading = true;

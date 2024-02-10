@@ -1,6 +1,9 @@
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
 //dark theme
+<symbol id="default" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.6667 13H13.3403C13.9877 13 14.3114 13 14.4899 12.865C14.6453 12.7474 14.7415 12.5677 14.7531 12.3731C14.7665 12.1497 14.5869 11.8804 14.2278 11.3417L12.2209 8.33128C11.9241 7.88616 11.7757 7.66359 11.5887 7.58604C11.4252 7.51823 11.2415 7.51823 11.078 7.58604C10.8909 7.66359 10.7426 7.88616 10.4458 8.33128L9.94969 9.07547M12.6667 13L7.54368 5.60012C7.24905 5.17455 7.10174 4.96176 6.91773 4.88696C6.75676 4.82152 6.5766 4.82152 6.41562 4.88696C6.23161 4.96176 6.0843 5.17455 5.78967 5.60012L1.82548 11.3262C1.45013 11.8684 1.26245 12.1394 1.27314 12.3649C1.28244 12.5612 1.37792 12.7435 1.53406 12.8629C1.71335 13 2.04306 13 2.70248 13H12.6667ZM14 3C14 4.10457 13.1046 5 12 5C10.8954 5 10 4.10457 10 3C10 1.89543 10.8954 1 12 1C13.1046 1 14 1.89543 14 3Z"  stroke-opacity="0.1" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
 <symbol id="icon-x-close" viewBox="0 0 32 32">
 <path fill="none" style="stroke: var(--color1, #fff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M24.016 8.005l-16.010 16.010M8.005 8.005l16.010 16.010"></path>
 </symbol>

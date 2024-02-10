@@ -4,31 +4,32 @@ export const BoardWrapper = styled.div`
   display: flex;
   gap: 15px;
   height: 100%;
+  min-height: calc(100vh - 6rem - 9.4rem);
 
   overflow-x: scroll;
 
   &::-webkit-scrollbar {
-    width: 12px;
-    /* width: 0; */
+    /* width: 12px; */
+    width: 0;
   }
 
   &::-webkit-scrollbar-thumb {
     background-color: transparent;
     border-radius: 12px;
-    /* background: ${(p) => p.theme.colors.cardListScrollThumb}; */
     background-color: ${(p) => p.theme.colors.scrollThumb};
   }
 
   &::-webkit-scrollbar-track {
     background-color: transparent;
     border-radius: 12px;
-    /* background: ${(p) => p.theme.colors.cardListScrollBar}; */
-    background-color: ${(p) => p.theme.colors.scrollBar};
   }
 
   ${(p) =>
     p?.$scrollable &&
     css`
+      &::-webkit-scrollbar {
+        width: 12px;
+      }
       &::-webkit-scrollbar-thumb {
         background-color: ${(p) => p.theme.colors.scrollThumb};
       }
@@ -37,8 +38,13 @@ export const BoardWrapper = styled.div`
       }
     `}
 
+  @media(min-width: 768px) {
+    min-height: calc(100vh - 6.8rem - 9.4rem);
+  }
+
   @media (min-width: 1440px) {
     max-width: 118rem;
+    height: 100%;
   }
 `;
 

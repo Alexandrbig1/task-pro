@@ -2,6 +2,8 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
 import PropTypes from "prop-types";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   FormWrapper,
   Input,
@@ -41,6 +43,16 @@ export const AddCardForm = ({ onClose, columnId }) => {
       columnId: columnId,
     };
     dispatch(addCard(newCard));
+    toast.success("You have successfully added the card!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "light",
+    });
     resetForm();
     onClose();
   };

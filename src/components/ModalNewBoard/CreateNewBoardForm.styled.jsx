@@ -70,7 +70,7 @@ export const StyledField = styled(Field)`
 export const StyledBackgroudField = styled(Field)`
   appearance: none;
 
-  &: checked {
+  &:checked {
     stroke: solid 5px ${(p) => p.theme.colors.secondaryTextColor};
   }
 `;
@@ -93,7 +93,7 @@ export const StyledIcon = styled.svg`
   height: 100%;
   stroke: ${(p) => p.theme.colors.secondaryTextColor};
   stroke-width: 1.5;
-  opacity: ${(p) => (p.value ? "1" : "0.5")};
+  opacity: ${(p) => (p?.value ? "1" : "0.5")};
   &:active {
     opacity: 1;
   }
@@ -106,26 +106,15 @@ export const StyledIconBackground = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-    border-radius: 6px;
+  border-radius: 6px;
   opacity: ${(p) => (p.value ? "1" : "0.7")};
   outline: 1px solid
-    ${(p) => (p.value ? p.theme.colors.accentTextColor : "transparent")};
+    ${(p) => (p?.value ? p.theme.colors.accentTextColor : "transparent")};
   &:active {
     opacity: 1;
   }
-  }
 `;
-export const StyledDefaultIcon = styled.svg`
-  width: 16px;
-  height: 16px;
-  stroke: ${(p) => p.theme.colors.secondaryTextColor};
-  stroke-width: 1;
-  opacity: ${(p) => (p.value ? "1" : "0.3")};
 
-  &:active {
-    opacity: 1;
-  }
-`;
 export const DefaultIconWrapper = styled.div`
   background-color: ${(p) => p.theme.colors.defaultIconBackground};
   width: 100%;
@@ -137,7 +126,19 @@ export const DefaultIconWrapper = styled.div`
   border-radius: 6px;
 
   border: 1px solid
-    ${(p) => (p.value ? p.theme.colors.accentTextColor : "transparent")};
+    ${(p) => (p?.value ? p.theme.colors.accentTextColor : "transparent")};
+  &:active {
+    opacity: 1;
+  }
+`;
+export const StyledDefaultIcon = styled.svg`
+  width: 16px;
+  height: 16px;
+  stroke: ${(p) => p.theme.colors.secondaryTextColor};
+  stroke-width: 1;
+  opacity: ${(p) => (p?.value ? "1" : "0.3")};
+  opacity: 1;
+
   &:active {
     opacity: 1;
   }

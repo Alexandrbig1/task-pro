@@ -1,4 +1,5 @@
 import ReactReadMoreReadLess from "react-read-more-read-less";
+import PropTypes from "prop-types";
 import {
   CardItem,
   Container,
@@ -16,16 +17,12 @@ import {
 } from "./Card.styled";
 import { CardIconsList } from "./CardIconsList/CardIconsList";
 
-const text =
-  " Create visually appealing and functional design prototypes based on the approved concepts.";
-
-export const Card = ({ info, currentColumn }) => {
-
-  const { title, description, priority, deadline } = info;
+export const Card = ({ cardInfo, currentColumn }) => {
+  const { titleCard, description, priority, deadline } = cardInfo;
   return (
     <CardItem>
       <Container>
-        <Title>{title}</Title>
+        <Title>{titleCard}</Title>
         <Description>
           <ReactReadMoreReadLess charLimit={90}>
             {description + "..."}
@@ -36,7 +33,7 @@ export const Card = ({ info, currentColumn }) => {
           <PriorityWrapp>
             <Subtitle>Priority</Subtitle>
             <Wrapper>
-              <PriorityColor />
+              <PriorityColor value={priority} />
               <PriorityText>{priority}</PriorityText>
             </Wrapper>
           </PriorityWrapp>
@@ -44,9 +41,14 @@ export const Card = ({ info, currentColumn }) => {
             <Subtitle>Deadline</Subtitle>
             <Date>{deadline}</Date>
           </DeadlineWrapp>
-          <CardIconsList currentColumn={currentColumn} />
+          <CardIconsList currentColumn={currentColumn} cardInfo={cardInfo} />
         </UnderlineInfo>
       </Container>
     </CardItem>
   );
+};
+
+Card.propTypes = {
+  cardInfo: PropTypes.object,
+  currentColumn: PropTypes.string,
 };

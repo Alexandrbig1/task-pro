@@ -10,6 +10,7 @@ import {
 } from "../ModalNewBoard/ModalNewBoard.styled";
 import CreateNewBoardForm from "./CreateNewBoardForm";
 // import ModalEditNewBoard from "../ModalEditNewBoard/ModalEditNewBoard";
+// eslint-disable-next-line react/prop-types
 export default function ModalNewBoard({ openNewBoardModal }) {
   useEffect(() => {
     const handleKeyDown = (evt) => {

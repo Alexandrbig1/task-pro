@@ -1,17 +1,39 @@
 import { IconList, ListItem, Button, Svg } from "./CardIconsList.styled";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import sprite from "/public/images/icons.svg";
 import { EditCardModal } from "../../EditCardModal/EditCardModal";
 import { useState } from "react";
 // import { DeadlineBell } from "../DeadlineBell/DeadlineBell";
 import Ring from "../../Ring/Ring";
 import { Tooltip } from "../../Tooltip/Tooltip";
+import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
+import { deleteCard } from "../../../redux/cards/operations";
 
-export const CardIconsList = ({ currentColumn }) => {
+export const CardIconsList = ({ currentColumn, cardInfo }) => {
+  const { _id } = cardInfo;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isTooltipModalOpen, setIsTooltipModalOpen] = useState(false);
 
+  const dispatch = useDispatch();
+
   const handleToggleModal = () => {
     setIsModalOpen(!isModalOpen);
+  };
+
+  const handleDelete = () => {
+    dispatch(deleteCard(_id));
+    toast.success("You have successfully deleted the card!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "light",
+    });
   };
 
   return (
@@ -39,14 +61,16 @@ export const CardIconsList = ({ currentColumn }) => {
           </Button>
         </ListItem>
         <ListItem key={"delete"}>
-          <Button type="button">
+          <Button type="button" onClick={handleDelete}>
             <Svg width="16" height="16">
               <use href={`${sprite}#icon-trash-dark`}></use>
             </Svg>
           </Button>
         </ListItem>
       </IconList>
-      {isModalOpen && <EditCardModal onClose={handleToggleModal} />}
+      {isModalOpen && (
+        <EditCardModal onClose={handleToggleModal} cardInfo={cardInfo} />
+      )}
       {isTooltipModalOpen && (
         <Tooltip
           currentColumn={currentColumn}
@@ -55,4 +79,9 @@ export const CardIconsList = ({ currentColumn }) => {
       )}
     </>
   );
+};
+
+CardIconsList.propTypes = {
+  currentColumn: PropTypes.string,
+  cardInfo: PropTypes.object,
 };

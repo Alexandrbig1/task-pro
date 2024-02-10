@@ -41,6 +41,7 @@ export const AsideWrapper = styled.div`
 
   &::-webkit-scrollbar-track {
     background-color: transparent;
+    border-radius: 12px;
   }
 
   ${(p) =>

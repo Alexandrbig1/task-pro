@@ -26,6 +26,7 @@ import {
   RegistrationLink,
   BtnLogInSpan,
 } from "./SignIn.styled";
+import Google from "../../components/GoogleIcon/GoogleIcon";
 
 const customTheme = createTheme({
   breakpoints: {
@@ -160,6 +161,7 @@ export default function SignIn() {
                   display: "flex",
                   alignItems: "center",
                   gap: "1.4rem",
+                  position: "relative",
                 }}
               >
                 <RegistrationLink href="#/signup" variant="body2">
@@ -168,6 +170,7 @@ export default function SignIn() {
                 <TypoTitleStyled component="h1" variant="h5">
                   Log In
                 </TypoTitleStyled>
+                <Google />
               </Box>
               <Box
                 component="form"

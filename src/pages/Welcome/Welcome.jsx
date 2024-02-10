@@ -8,7 +8,6 @@ import {
   WelcomeBtnWrapper,
   RegistrationBtn,
   LoginBtn,
-  GoogleIcon,
 } from "./Welcome.styled";
 
 const size = {
@@ -27,9 +26,6 @@ const icon = {
 };
 
 export default function Welcome() {
-  function handleGoogleAuth() {
-    console.log("google");
-  }
   return (
     <>
       <HelmetProvider>
@@ -52,17 +48,12 @@ export default function Welcome() {
           <WelcomeBtnWrapper>
             <RegistrationBtn to="signup">Registration</RegistrationBtn>
             <LoginBtn to="signin">Log In</LoginBtn>
-            <GoogleIcon onClick={handleGoogleAuth} />
           </WelcomeBtnWrapper>
         </WelcomeWrapper>
       </WelcomeContainer>
     </>
   );
 }
-
-
-
-
 
 // const Welcome = () => {
 //   // Стан для управління видимістю модального вікна

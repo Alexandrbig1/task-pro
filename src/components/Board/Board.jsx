@@ -1,4 +1,3 @@
-// import PropTypes from "prop-types";
 import {
   BoardWrapper,
   BoardTitle,
@@ -11,24 +10,34 @@ import { IconList } from "./IconList/IconList";
 import { CardList } from "./CardList/CardList";
 import { AddCardButton } from "./AddCardButton/AddCardButton";
 import { AddColumnButton } from "./AddColumnButton/AddColumnButton";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import AddColumnModal from "../AddColumnModal/AddColumnModal";
 import { AddCardModal } from "../AddCardModal/AddCardModal";
 import { useSelector } from "react-redux";
-// import { selectColumns } from "../../redux/columns/selectors";
-// import { selectCards } from "../../redux/cards/selectors";
+import { selectCurrentBoard } from "../../redux/boards/selectors";
 
 export const Board = () => {
   const [isModalColumnOpen, setIsModalColumnOpen] = useState(false);
   const [isModalCardOpen, setIsModalCardOpen] = useState(false);
   const [columnId, setColumnId] = useState();
+  const [scrollable, setScrollable] = useState(false);
+  const containerRef = useRef();
 
-  const currentBoard = useSelector((state) => state.boards.boards.current);
-  const { board, columns } = currentBoard;
+  const { board, columns } = useSelector(selectCurrentBoard);
 
-  // const columns = useSelector(selectColumns);
-  // const cards = useSelector(selectCards);
-  // console.log(cards);
+  useEffect(() => {
+    const container = containerRef.current;
+
+    const handleScroll = () => {
+      setScrollable(container.scrollLeft > 0);
+    };
+
+    container.addEventListener("scroll", handleScroll);
+
+    return () => {
+      container.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleColumnModalOpen = () => {
     setIsModalColumnOpen(!isModalColumnOpen);
@@ -41,7 +50,7 @@ export const Board = () => {
 
   return (
     <>
-      <BoardWrapper>
+      <BoardWrapper ref={containerRef} $scrollable={scrollable}>
         <BoardTitle>{board?.titleBoard ? board?.titleBoard : ""}</BoardTitle>
 
         {columns.length !== 0 && (
@@ -50,7 +59,7 @@ export const Board = () => {
               <ColumnItem key={column._id}>
                 <Wrapper>
                   <ColumnTitle>{column.titleColumn}</ColumnTitle>
-                  <IconList />
+                  <IconList columnID={column._id} title={column.titleColumn} />
                 </Wrapper>
 
                 {column.cards.length !== 0 && (
@@ -66,8 +75,9 @@ export const Board = () => {
           </ColumnList>
         )}
         <AddColumnButton onClick={handleColumnModalOpen} />
+
         {isModalCardOpen && (
-          <AddCardModal onClose={handleCardModalOpen} id={columnId} />
+          <AddCardModal onClose={handleCardModalOpen} columnId={columnId} />
         )}
         {isModalColumnOpen && (
           <AddColumnModal openColumnModal={handleColumnModalOpen} />

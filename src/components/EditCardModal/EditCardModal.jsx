@@ -9,7 +9,7 @@ import {
 } from "./EditCardModal.styled";
 import { EditCardForm } from "../EditCardForm/EditCardForm";
 
-export const EditCardModal = ({ onClose }) => {
+export const EditCardModal = ({ onClose, cardInfo }) => {
   useEffect(() => {
     const handleCloseOnKeydown = (e) => {
       if (e.key === "Escape") {
@@ -34,7 +34,7 @@ export const EditCardModal = ({ onClose }) => {
         <ModalContainer>
           <CloseIcon onClick={onClose} />
           <Title>Edit card</Title>
-          <EditCardForm />
+          <EditCardForm onClose={onClose} cardInfo={cardInfo} />
         </ModalContainer>
       </Modal>
     </BackDrop>
@@ -43,4 +43,5 @@ export const EditCardModal = ({ onClose }) => {
 
 EditCardModal.propTypes = {
   onClose: PropTypes.func,
+  cardInfo: PropTypes.object,
 };

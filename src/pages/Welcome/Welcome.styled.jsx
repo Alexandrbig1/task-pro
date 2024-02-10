@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { primaryFont } from "../../components/fonts";
 import { Link } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
 
 export const WelcomeContainer = styled.div`
   background: linear-gradient(
@@ -110,14 +109,6 @@ export const LoginBtn = styled(Link)`
   line-height: normal;
   letter-spacing: -0.28px;
   text-align: center;
-
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
-export const GoogleIcon = styled(FcGoogle)`
-  font-size: 2.4rem;
 
   &:hover {
     cursor: pointer;
