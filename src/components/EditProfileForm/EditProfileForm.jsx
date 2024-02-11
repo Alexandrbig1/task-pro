@@ -37,12 +37,10 @@ const editProfileSchema = Yup.object().shape({
 });
 
 export default function ProfileForm() {
-    const [avatarPreview, setAvatarPreview] = useState(
-        "images/VectorExample.png"
-    );
+    const user = useSelector(selectUser);
+    const [avatarPreview, setAvatarPreview] = useState(user.avatarURL);
     const [showPassword, setShowPassword] = useState(false);
     // const { user } = useAuth();
-    const user = useSelector(selectUser);
 
     const dispatch = useDispatch();
 
@@ -52,7 +50,7 @@ export default function ProfileForm() {
 
     const formik = useFormik({
         initialValues: {
-            avatar: user && user.avatar ? user.avatar : "",
+            avatarURL: user && user.avatarURL ? user.avatarURL : "",
             name: user && user.name ? user.name : "",
             email: user && user.email ? user.email : "",
             password: "",
@@ -63,7 +61,7 @@ export default function ProfileForm() {
             try {
                 if (!user) return;
 
-                const updateAvatar = user.avatar !== values.avatar;
+                const updateAvatar = user.avatarURL !== values.avatar;
                 const updateUser =
                     user.name !== values.name ||
                     user.email !== values.email ||
@@ -71,8 +69,10 @@ export default function ProfileForm() {
 
                 if (updateAvatar) {
                     await dispatch(usersAvatar(values));
-                } else if (!updateAvatar && updateUser) {
-                    await dispatch(editUser(values));
+
+                    setAvatarPreview(user.avatarURL);
+                } else {
+                    dispatch(editUser(values));
                 }
 
                 resetForm({});
@@ -110,7 +110,7 @@ export default function ProfileForm() {
     return (
         <StyledForm onSubmit={formik.handleSubmit}>
             <WrapperUpdateAvatar>
-                <UpdateAvatar src={avatarPreview} />
+                <UpdateAvatar src={user.avatarURL} />
                 <LabelAvatar htmlFor="button-file">
                     <input
                         name="avatar"

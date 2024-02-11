@@ -2,7 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 import { requestHelp, usersAvatar, editUser } from "./operations";
 
 const initialState = {
-    user: { name: null, email: null, password: null },
+    user: {
+        name: null,
+        email: null,
+        password: null,
+        avatarURL: "images/VectorExample.png",
+    },
     isLoggedIn: false,
     isRefreshing: false,
 };
@@ -39,9 +44,11 @@ const userSlice = createSlice({
                 state.isRefreshing = true;
             })
             .addCase(usersAvatar.fulfilled, (state, action) => {
-                state.user = action.payload.user;
+                console.log(state.user.avatarURL);
+                state.user.avatarURL = action.payload.avatarURL;
+                state.user = action.payload;
                 state.isRefreshing = false;
-                console.log(action.payload);
+                console.log(state.user.avatarURL);
             })
             .addCase(usersAvatar.rejected, (state, action) => {
                 state.isRefreshing = false;
