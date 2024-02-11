@@ -2,6 +2,8 @@ import { useState } from "react";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { BsFillEyeSlashFill, BsFillEyeFill } from "react-icons/bs";
+import { useDispatch, useSelector } from "react-redux";
+import { usersAvatar, editUser } from "../../redux/user/operations";
 import {
     BtnPlus,
     BtnSubmit,
@@ -16,10 +18,11 @@ import {
     EyeWrapper,
 } from "./EditProfileForm.styled";
 import emailRegex from "../../regex/emailRegex";
-import { useAuth } from "../../hooks";
+// import { useAuth } from "../../hooks";
+import { selectUser } from "../../redux/user/selectors";
 
 const editProfileSchema = Yup.object().shape({
-    avatar: Yup.string(),
+    avatarURL: Yup.string(),
     name: Yup.string().min(3, "Too Short!").max(50, "Too Long!"),
     email: Yup.string().matches(emailRegex, "Invalid email address"),
     password: Yup.string()
@@ -34,11 +37,12 @@ const editProfileSchema = Yup.object().shape({
 });
 
 export default function ProfileForm() {
-    const [avatarPreview, setAvatarPreview] = useState(
-        "images/VectorExample.png"
-    );
+    const user = useSelector(selectUser);
+    const [avatarPreview, setAvatarPreview] = useState(user.avatarURL);
     const [showPassword, setShowPassword] = useState(false);
-    const { user } = useAuth();
+    // const { user } = useAuth();
+
+    const dispatch = useDispatch();
 
     const handleClickShowPassword = () => {
         setShowPassword(!showPassword);
@@ -46,18 +50,39 @@ export default function ProfileForm() {
 
     const formik = useFormik({
         initialValues: {
-            avatar: "images/VectorExample.png",
-            name: "",
-            email: "",
+            avatarURL: user && user.avatarURL ? user.avatarURL : "",
+            name: user && user.name ? user.name : "",
+            email: user && user.email ? user.email : "",
             password: "",
         },
         validationSchema: editProfileSchema,
-        onSubmit: (values) => {
-            console.log(values);
+
+        onSubmit: async (values, { resetForm }) => {
+            try {
+                if (!user) return;
+
+                const updateAvatar = user.avatarURL !== values.avatar;
+                const updateUser =
+                    user.name !== values.name ||
+                    user.email !== values.email ||
+                    user.password !== values.password;
+
+                if (updateAvatar) {
+                    await dispatch(usersAvatar(values));
+
+                    setAvatarPreview(user.avatarURL);
+                } else {
+                    dispatch(editUser(values));
+                }
+
+                resetForm({});
+            } catch (error) {
+                console.error("error:", error);
+            }
         },
     });
 
-    const handleChange = (e) => {
+    const handleChangeAvatar = (e) => {
         const { name, type, files } = e.target;
         const value = type === "file" ? files[0] : e.target.value;
 
@@ -77,10 +102,15 @@ export default function ProfileForm() {
         }
     };
 
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        formik.setFieldValue(name, value);
+    };
+
     return (
         <StyledForm onSubmit={formik.handleSubmit}>
             <WrapperUpdateAvatar>
-                <UpdateAvatar src={avatarPreview} />
+                <UpdateAvatar src={user.avatarURL} />
                 <LabelAvatar htmlFor="button-file">
                     <input
                         name="avatar"
@@ -88,7 +118,7 @@ export default function ProfileForm() {
                         id="button-file"
                         type="file"
                         hidden
-                        onChange={handleChange}
+                        onChange={handleChangeAvatar}
                     />
                     <BtnPlus />
                 </LabelAvatar>
