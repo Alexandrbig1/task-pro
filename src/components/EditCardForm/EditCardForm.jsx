@@ -40,14 +40,14 @@ export const EditCardForm = ({ cardInfo, onClose }) => {
     setLabelChecked(e.target.value);
   };
 
-  const handleSubmit = (values, { resetForm }) => {
+  const handleSubmit = async (values, { resetForm }) => {
     const newCardData = {
       titleCard: values.title,
       description: values.description,
       priority: labelChecked,
       deadline: "2024-01-02",
     };
-    dispatch(editCard({ _id, newCardData }));
+    await dispatch(editCard({ _id, newCardData }));
     dispatch(getBoardById(board._id));
     toast.success("You have successfully edited the card!", {
       position: "top-right",

@@ -52,10 +52,6 @@ export const Board = () => {
     setColumnId(id);
   };
 
-  function addCardHandler(id) {
-    handleCardModalOpen(id);
-  }
-
   const onSubmitColumnClick = async (e) => {
     e.preventDefault();
 
