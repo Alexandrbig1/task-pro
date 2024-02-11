@@ -18,8 +18,10 @@ import {
   DatePicker,
 } from "./AddCardForm.styled";
 import { CardButton } from "../CardButton/CardButton";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addCard } from "../../redux/cards/operations";
+import { selectCurrentBoard } from "../../redux/boards/selectors";
+import { getBoardById } from "../../redux/boards/operations";
 
 const schema = Yup.object().shape({
   title: Yup.string().required(),
@@ -30,11 +32,13 @@ export const AddCardForm = ({ onClose, columnId }) => {
   const [labelChecked, setLabelChecked] = useState("without");
   const dispatch = useDispatch();
 
+  const { board } = useSelector(selectCurrentBoard);
+
   const handleLableChange = (e) => {
     setLabelChecked(e.target.value);
   };
 
-  const handleSubmit = (values, { resetForm }) => {
+  const handleSubmit = async (values, { resetForm }) => {
     const newCard = {
       titleCard: values.title,
       description: values.description,
@@ -42,7 +46,8 @@ export const AddCardForm = ({ onClose, columnId }) => {
       deadline: "2024-02-08",
       columnId: columnId,
     };
-    dispatch(addCard(newCard));
+    await dispatch(addCard(newCard));
+    dispatch(getBoardById(board._id));
     toast.success("You have successfully added the card!", {
       position: "top-right",
       autoClose: 5000,

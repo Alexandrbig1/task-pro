@@ -52,6 +52,10 @@ export const Board = () => {
     setColumnId(id);
   };
 
+  function addCardHandler(id) {
+    handleCardModalOpen(id);
+  }
+
   const onSubmitColumnClick = async (e) => {
     e.preventDefault();
 
@@ -128,7 +132,7 @@ export const Board = () => {
                   />
                 </Wrapper>
 
-                {column.cards.length !== 0 && (
+                {column?.cards?.length !== 0 && (
                   <CardList
                     currentColumn={column.titleColumn}
                     cardInfo={column.cards}
