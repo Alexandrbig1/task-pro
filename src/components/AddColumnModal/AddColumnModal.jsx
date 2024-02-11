@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux"; ///dispatch
-import { addColumn } from "../../redux/columns/operations";
+// import { useDispatch } from "react-redux"; ///dispatch
+
 import PropTypes from "prop-types";
 import {
   AddModalWrap,
@@ -12,15 +12,10 @@ import {
   AddColumnInput,
 } from "../AddColumnModal/AddColumnModal.styled";
 import { CardButton } from "../CardButton/CardButton";
-import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
-const AddColumnModal = ({ openColumnModal }) => {
-  const dispatch = useDispatch();
-
-  const { board } = useSelector((state) => state.boards.boards.current);
-
+const AddColumnModal = ({ openColumnModal, onSubmitColumnClick }) => {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.code === "Escape") {
@@ -40,46 +35,6 @@ const AddColumnModal = ({ openColumnModal }) => {
   const handleModalClick = (e) => {
     if (e.target === e.currentTarget) {
       openColumnModal();
-    }
-  };
-
-  const onSubmitColumnClick = async (e) => {
-    e.preventDefault();
-
-    const form = e.currentTarget;
-    const title = form.elements.title.value.trim();
-
-    const validTitle = title.length > 0;
-
-    if (validTitle) {
-      const newColumn = {
-        titleColumn: title,
-        boardId: board._id,
-      };
-      dispatch(addColumn(newColumn)); // Диспатч action з назвою колонки
-      form.reset();
-      openColumnModal();
-      toast.success("You are successful add column!", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        progress: undefined,
-        theme: "light",
-      });
-    } else {
-      toast.error("Please enter a title", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        progress: undefined,
-        theme: "light",
-      });
     }
   };
 
@@ -105,6 +60,7 @@ export default AddColumnModal;
 
 AddColumnModal.propTypes = {
   openColumnModal: PropTypes.func.isRequired,
+  onSubmitColumnClick: PropTypes.func.isRequired,
 };
 
 // import { useEffect } from "react";

@@ -5,11 +5,13 @@ export default function Loader() {
   return (
     <LoaderDivWrapper>
       <RotatingLines
-        strokeColor="#40c057"
         strokeWidth="5"
         animationDuration="0.75"
         width="96"
         visible={true}
+        color="black"
+        ariaLabel="rotating-lines-loading"
+        strokeColor="#bedbb0"
       />
     </LoaderDivWrapper>
   );

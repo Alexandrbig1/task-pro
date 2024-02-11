@@ -1,6 +1,6 @@
 import ModalNewBoard from "../ModalNewBoard/ModalNewBoard";
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import {
   CreateNewBoardWrapper,
@@ -33,6 +33,7 @@ const NewBoard = () => {
   const [isOpenModalNewBoard, setIsOpenModalNewBoard] = useState(false);
   const [isOpenModalEditBoard, setIsOpenModalEditBoard] = useState(false);
   const [boardId, setBoardId] = useState("");
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
   const location = useLocation();
@@ -57,8 +58,8 @@ const NewBoard = () => {
   const handleDelete = (id) => {
     dispatch(deleteBoard(id)).then((action) => {
       if (action.type === deleteBoard.fulfilled.type) {
-        console.log("Дані успішно видалені:");
         dispatch(fetchBoards());
+        navigate("/home");
       } else {
         console.log("Виникла помилка під час завантаження даних:");
       }

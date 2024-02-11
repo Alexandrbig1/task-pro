@@ -1,27 +1,18 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Aside from "../../components/Aside/Aside";
 import Header from "../../components/Header/Header";
 import { Container, MainContainer } from "../../components/Layout";
 import MainPage from "../../components/MainPage/MainPage";
 import PropTypes from "prop-types";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { Suspense } from "react";
-// import Loader from "../../components/Loader/Loader";
 import { MainWrapper } from "../../components/MainPage/MainPage.styled";
-import { useSelector } from "react-redux";
+import Loader from "../../components/Loader/Loader";
 
 export default function Home({ toggleTheme }) {
   const [aside, setAside] = useState(false);
-  const [boardLength, setBoardLength] = useState(true);
-
-  const board = useSelector((state) => state.boards.boards.current);
-
-  useEffect(() => {
-    if (Object.keys(board).length > 0) {
-      setBoardLength((prevState) => !prevState);
-    }
-  }, [board]);
+  const location = useLocation();
 
   function handleAsideHide() {
     setAside((prevState) => !prevState);
@@ -43,10 +34,10 @@ export default function Home({ toggleTheme }) {
         <MainContainer>
           <Header toggleTheme={toggleTheme} handleAsideHide={handleAsideHide} />
           <MainWrapper>
-            {boardLength ? (
+            {location.pathname === "/home" ? (
               <MainPage />
             ) : (
-              <Suspense>
+              <Suspense fallback={<Loader />}>
                 <Outlet />
               </Suspense>
             )}

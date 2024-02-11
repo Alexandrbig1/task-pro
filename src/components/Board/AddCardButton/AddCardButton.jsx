@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import { AddBtn, IconWrapper, Svg, BtnTextWrapp } from "./AddCardButton.styled";
 
-export const AddCardButton = ({ onClick, val }) => {
+export const AddCardButton = ({ handleCardModalOpen, val }) => {
   return (
-    <AddBtn type="button" onClick={() => onClick(val)}>
+    <AddBtn type="button" onClick={() => handleCardModalOpen(val)}>
       <IconWrapper>
         <Svg />
       </IconWrapper>
@@ -13,6 +13,6 @@ export const AddCardButton = ({ onClick, val }) => {
 };
 
 AddCardButton.propTypes = {
-  onClick: PropTypes.func,
+  handleCardModalOpen: PropTypes.func,
   val: PropTypes.string,
 };
