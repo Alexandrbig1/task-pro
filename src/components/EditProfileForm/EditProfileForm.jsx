@@ -53,45 +53,39 @@ export default function ProfileForm() {
     const formik = useFormik({
         initialValues: {
             avatar: user && user.avatar ? user.avatar : "",
-            // name: user && user.name ? user.name : "",
-            // email: user && user.email ? user.email : "",
-            // password: "",
+            name: user && user.name ? user.name : "",
+            email: user && user.email ? user.email : "",
+            password: "",
         },
         validationSchema: editProfileSchema,
 
-        onSubmit: async (values, actions) => {
+        onSubmit: async (values, { resetForm }) => {
             try {
                 if (!user) return;
 
-                // const resultInputs = await dispatch(editUser(values));
+                const updateAvatar = user.avatar !== values.avatar;
+                const updateUser =
+                    user.name !== values.name ||
+                    user.email !== values.email ||
+                    user.password !== values.password;
 
-                // if (resultInputs.meta.requestStatus === "fulfilled") {
-                //     actions.setValues({
-                //         //  avatarURL: resultInputs.payload.avatarURL,
-                //         name: resultInputs.payload.name,
-                //         email: resultInputs.payload.email,
-                //         password: "",
-                //     });
-                // }
+                if (updateAvatar) {
+                    await dispatch(usersAvatar(values));
+                } else if (!updateAvatar && updateUser) {
+                    await dispatch(editUser(values));
+                }
 
-                const avatarUpdate = await dispatch(usersAvatar(values.avatar));
-
-                // if (avatarUpdate.meta.requestStatus === "fulfilled") {
-                //     actions.setValues({
-                //         avatarURL: avatarUpdate.payload.avatarURL,
-                //     });
-                // }
+                resetForm({});
             } catch (error) {
                 console.error("error:", error);
             }
         },
     });
 
-    const handleChange = (e) => {
+    const handleChangeAvatar = (e) => {
         const { name, type, files } = e.target;
         const value = type === "file" ? files[0] : e.target.value;
 
-        console.log(e.target.files);
         formik.handleChange(e);
         formik.setFieldValue(name, value);
 
@@ -108,6 +102,11 @@ export default function ProfileForm() {
         }
     };
 
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        formik.setFieldValue(name, value);
+    };
+
     return (
         <StyledForm onSubmit={formik.handleSubmit}>
             <WrapperUpdateAvatar>
@@ -119,7 +118,7 @@ export default function ProfileForm() {
                         id="button-file"
                         type="file"
                         hidden
-                        onChange={handleChange}
+                        onChange={handleChangeAvatar}
                     />
                     <BtnPlus />
                 </LabelAvatar>

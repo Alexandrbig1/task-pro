@@ -51,7 +51,7 @@ export const usersAvatar = createAsyncThunk(
                 },
             });
             console.log(res);
-            setAuthHeader(res.data);
+            // setAuthHeader(res.data);
             return res.data;
         } catch (err) {
             return thunkAPI.rejectWithValue(err.message);
@@ -70,7 +70,7 @@ export const editUser = createAsyncThunk(
                 headers: {
                     Accept: "application/json",
                     Authorization: `Bearer ${token}`,
-                    "Content-Type": "multipart/form-data",
+                    "Content-Type": "application/json",
                 },
             };
             const { data } = await axios.patch("/user/update", config, header);
