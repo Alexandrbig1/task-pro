@@ -27,8 +27,6 @@ import { selectBoards } from "../../redux/boards/selectors";
 import { useDispatch } from "react-redux";
 import { editBoardById } from "../../redux/boards/operations";
 
-// import { selectBoards, selectIsLoading } from "../../redux/boards/selectors";
-
 const formSquema = Yup.object().shape({
   titleBoard: Yup.string()
     .min(2, "Too Short!")
@@ -95,7 +93,6 @@ export default function EditNewBoardForm({ boardId, closeModal }) {
       background: background,
     };
 
-    // dispatch(editBoardById(boardId, updatedData));
     dispatch(editBoardById({ boardId, updatedData }));
 
     resetForm();

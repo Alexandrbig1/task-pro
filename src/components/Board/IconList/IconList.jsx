@@ -1,12 +1,9 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-// import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { List, ListItem, Button, Svg } from "./IconList.styled";
 import sprite from "/public/images/icons.svg";
 import EditColumnModal from "../../EditColumnModal/EditColumnModal";
-// import { useDispatch } from "react-redux";
-// import { deleteColumn } from "../../../redux/columns/operations";
 
 export const IconList = ({ columnID, title, handleDelete }) => {
   const [isModalOpen, setIsModalOpen] = useState();

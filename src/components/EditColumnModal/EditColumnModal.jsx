@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { PropTypes } from "prop-types";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -14,9 +14,13 @@ import {
 } from "../EditColumnModal/EditColumnModal.styled";
 import { CardButton } from "../CardButton/CardButton";
 import { editColumn } from "../../redux/columns/operations";
+import { getBoardById } from "../../redux/boards/operations";
+import { selectCurrentBoard } from "../../redux/boards/selectors";
 
 const EditColumnModal = ({ openEditColumnModal, columnId, title }) => {
   const dispatch = useDispatch();
+
+  const { board } = useSelector(selectCurrentBoard);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -40,7 +44,7 @@ const EditColumnModal = ({ openEditColumnModal, columnId, title }) => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const form = e.currentTarget;
@@ -52,7 +56,8 @@ const EditColumnModal = ({ openEditColumnModal, columnId, title }) => {
       const newColumnData = {
         titleColumn: title,
       };
-      dispatch(editColumn({ columnId, newColumnData }));
+      await dispatch(editColumn({ columnId, newColumnData }));
+      dispatch(getBoardById(board._id));
       form.reset();
       openEditColumnModal();
       toast.success("You have successfully edited the column!", {
