@@ -8,13 +8,17 @@ import { useState } from "react";
 import Ring from "../../Ring/Ring";
 import { Tooltip } from "../../Tooltip/Tooltip";
 import PropTypes from "prop-types";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { deleteCard } from "../../../redux/cards/operations";
+import { getBoardById } from "../../../redux/boards/operations";
+import { selectCurrentBoard } from "../../../redux/boards/selectors";
 
 export const CardIconsList = ({ currentColumn, cardInfo }) => {
   const { _id } = cardInfo;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isTooltipModalOpen, setIsTooltipModalOpen] = useState(false);
+
+  const { board } = useSelector(selectCurrentBoard);
 
   const dispatch = useDispatch();
 
@@ -22,8 +26,9 @@ export const CardIconsList = ({ currentColumn, cardInfo }) => {
     setIsModalOpen(!isModalOpen);
   };
 
-  const handleDelete = () => {
-    dispatch(deleteCard(_id));
+  const handleDelete = async () => {
+    await dispatch(deleteCard(_id));
+    dispatch(getBoardById(board._id));
     toast.success("You have successfully deleted the card!", {
       position: "top-right",
       autoClose: 5000,

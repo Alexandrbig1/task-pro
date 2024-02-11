@@ -1,7 +1,7 @@
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -20,6 +20,8 @@ import {
 } from "./EditCardForm.styled";
 import { CardButton } from "../CardButton/CardButton";
 import { editCard } from "../../redux/cards/operations";
+import { selectCurrentBoard } from "../../redux/boards/selectors";
+import { getBoardById } from "../../redux/boards/operations";
 
 const schema = Yup.object().shape({
   title: Yup.string().required(),
@@ -28,6 +30,8 @@ const schema = Yup.object().shape({
 
 export const EditCardForm = ({ cardInfo, onClose }) => {
   const { _id, titleCard, description, priority, deadline } = cardInfo;
+
+  const { board } = useSelector(selectCurrentBoard);
 
   const [labelChecked, setLabelChecked] = useState(priority);
   const dispatch = useDispatch();
@@ -44,6 +48,7 @@ export const EditCardForm = ({ cardInfo, onClose }) => {
       deadline: "2024-01-02",
     };
     dispatch(editCard({ _id, newCardData }));
+    dispatch(getBoardById(board._id));
     toast.success("You have successfully edited the card!", {
       position: "top-right",
       autoClose: 5000,
