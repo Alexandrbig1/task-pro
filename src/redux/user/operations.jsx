@@ -52,7 +52,7 @@ export const usersAvatar = createAsyncThunk(
             });
             console.log(res);
             // setAuthHeader(res.data);
-            return res.data;
+            return res.data.avatarURL;
         } catch (err) {
             return thunkAPI.rejectWithValue(err.message);
         }
