@@ -5,11 +5,7 @@ const columnsSlice = createSlice({
   name: "columns",
   initialState: {
     columns: {
-      items: [
-        // { id: "1", title: "to do" },
-        // { id: "2", title: "proggres" },
-        // { id: "3", title: "done" },
-      ],
+      items: [],
       isLoading: false,
       error: null,
     },
@@ -22,7 +18,6 @@ const columnsSlice = createSlice({
       .addCase(addColumn.fulfilled, (state, action) => {
         state.columns.isLoading = false;
         state.columns.error = null;
-        // state.columns.items.push(action.payload);
         state.columns.items = [...state.columns.items, action.payload];
       })
       .addCase(addColumn.rejected, (state, action) => {
@@ -51,10 +46,11 @@ const columnsSlice = createSlice({
       .addCase(deleteColumn.fulfilled, (state, action) => {
         state.columns.isLoading = false;
         state.columns.error = null;
-        const index = state.columns.items.findIndex(
-          (column) => column._id === action.payload._id
+        const deletedId = action.payload.id || action.payload._id;
+
+        state.columns.items = state.columns.items.filter(
+          (column) => column._id !== deletedId
         );
-        state.columns.items.splice(index, 1);
       })
       .addCase(deleteColumn.rejected, (state, action) => {
         state.columns.isLoading = false;

@@ -1,11 +1,3 @@
-import {
-  BoardWrapper,
-  BoardTitle,
-  ColumnList,
-  ColumnItem,
-  Wrapper,
-  ColumnTitle,
-} from "./Board.styled";
 import { IconList } from "./IconList/IconList";
 import { CardList } from "./CardList/CardList";
 import { AddCardButton } from "./AddCardButton/AddCardButton";
@@ -17,8 +9,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentBoard } from "../../redux/boards/selectors";
 import { addColumn, deleteColumn } from "../../redux/columns/operations";
 import { toast } from "react-toastify";
-import { selectColumns } from "../../redux/columns/selectors";
-import { fetchBoards, getBoardById } from "../../redux/boards/operations";
+import { getBoardById } from "../../redux/boards/operations";
+import {
+  BoardWrapper,
+  BoardTitle,
+  ColumnList,
+  ColumnItem,
+  Wrapper,
+  ColumnTitle,
+} from "./Board.styled";
 
 export const Board = () => {
   const [isModalColumnOpen, setIsModalColumnOpen] = useState(false);
@@ -28,15 +27,7 @@ export const Board = () => {
   const containerRef = useRef();
   const dispatch = useDispatch();
 
-  const [boardKey, setBoardKey] = useState(Date.now());
-
-  const [boardId, setBoardId] = useState("");
-
   const { board, columns } = useSelector(selectCurrentBoard);
-
-  useEffect(() => {
-    dispatch(getBoardById(boardId));
-  }, [boardId, dispatch]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -53,17 +44,15 @@ export const Board = () => {
   }, []);
 
   const handleColumnModalOpen = () => {
-    // setIsModalColumnOpen(!isModalColumnOpen);
     setIsModalColumnOpen((prevState) => !prevState);
   };
 
   const handleCardModalOpen = (id) => {
-    // setIsModalCardOpen(!isModalColumnOpen);
     setIsModalCardOpen((prevState) => !prevState);
     setColumnId(id);
   };
 
-  const onSubmitColumnClick = (e) => {
+  const onSubmitColumnClick = async (e) => {
     e.preventDefault();
 
     const form = e.currentTarget;
@@ -77,10 +66,8 @@ export const Board = () => {
         boardId: board._id,
       };
 
-      dispatch(addColumn(newColumn));
+      await dispatch(addColumn(newColumn));
       dispatch(getBoardById(board._id));
-      // dispatch(getBoardById(boardId));
-      setBoardId(board._id);
 
       form.reset();
       handleColumnModalOpen();
@@ -108,9 +95,9 @@ export const Board = () => {
     }
   };
 
-  const handleDelete = (id) => {
-    dispatch(deleteColumn(id));
-    setBoardId(board._id);
+  const handleDelete = async (id) => {
+    await dispatch(deleteColumn(id));
+    dispatch(getBoardById(board._id));
     toast.success("You have successfully deleted the column!", {
       position: "top-right",
       autoClose: 5000,
@@ -121,18 +108,12 @@ export const Board = () => {
       progress: undefined,
       theme: "light",
     });
-
-    setBoardKey(Date.now());
   };
-
-  useEffect(() => {
-    dispatch(getBoardById(boardId));
-  }, [boardId, dispatch, boardKey]); // Include boardKey in the dependency array
 
   return (
     <>
       <BoardWrapper ref={containerRef} $scrollable={scrollable}>
-        <BoardTitle>{board?.titleBoard ? board?.titleBoard : ""}</BoardTitle>
+        <BoardTitle>{board?.titleBoard}</BoardTitle>
 
         {columns?.length !== 0 && (
           <ColumnList>
@@ -145,7 +126,6 @@ export const Board = () => {
                     title={column.titleColumn}
                     handleDelete={handleDelete}
                   />
-                  {/* <IconList columnID={column._id} title={column.titleColumn} /> */}
                 </Wrapper>
 
                 {column.cards.length !== 0 && (

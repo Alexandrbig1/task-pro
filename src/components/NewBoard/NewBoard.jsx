@@ -1,7 +1,10 @@
 import ModalNewBoard from "../ModalNewBoard/ModalNewBoard";
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-
+import ModalEditNewBoard from "../ModalEditNewBoard/ModalEditNewBoard";
+import { selectBoards } from "../../redux/boards/selectors";
+import sprite from "../ModalNewBoard/images/icons.svg";
+import { useDispatch, useSelector } from "react-redux";
 import {
   CreateNewBoardWrapper,
   NewBoardButton,
@@ -19,15 +22,11 @@ import {
   BoardIconDelete,
   BoardIconEdit,
 } from "./NewBoard.styled";
-import ModalEditNewBoard from "../ModalEditNewBoard/ModalEditNewBoard";
-import { selectBoards } from "../../redux/boards/selectors";
-import sprite from "../ModalNewBoard/images/icons.svg";
 import {
   deleteBoard,
   fetchBoards,
   getBoardById,
 } from "../../redux/boards/operations";
-import { useDispatch, useSelector } from "react-redux";
 
 const NewBoard = () => {
   const [isOpenModalNewBoard, setIsOpenModalNewBoard] = useState(false);
