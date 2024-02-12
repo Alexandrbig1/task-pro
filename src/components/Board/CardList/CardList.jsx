@@ -4,18 +4,26 @@ import { List } from "./CardList.styled";
 import { useSelector } from "react-redux";
 import { selectFiltersBoards } from "../../../redux/boards/selectors";
 
-export const CardList = ({ currentColumn, cardInfo }) => {
-  const filter = useSelector(selectFiltersBoards);
-  const renderCard =
-    filter === ""
-      ? cardInfo
-      : cardInfo.filter((card) => card.priority === filter);
+
+// export const CardList = ({ currentColumn, cardInfo }) => {
+//   const filter = useSelector(selectFiltersBoards);
+//   const renderCard =
+//     filter === ""
+//       ? cardInfo
+//       : cardInfo.filter((card) => card.priority === filter);
+
+
+export const CardList = ({ currentColumn, cardInfo, columnsInfo }) => {
 
   return (
     <List>
       {renderCard.map((card) => (
         <li key={card._id}>
-          <Card currentColumn={currentColumn} cardInfo={card} />
+          <Card
+            columnsInfo={columnsInfo}
+            currentColumn={currentColumn}
+            cardInfo={card}
+          />
         </li>
       ))}
     </List>
@@ -25,4 +33,5 @@ export const CardList = ({ currentColumn, cardInfo }) => {
 CardList.propTypes = {
   currentColumn: PropTypes.string,
   cardInfo: PropTypes.array,
+  columnsInfo: PropTypes.array,
 };

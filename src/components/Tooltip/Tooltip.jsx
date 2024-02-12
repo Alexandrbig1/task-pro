@@ -1,17 +1,15 @@
-import { useSelector } from "react-redux";
 import { BackDrop, Modal, List, Item, Button } from "./Tooltip.styled";
+import PropTypes from "prop-types";
+
 import sprite from "/public/images/icons.svg";
-import { selectColumns } from "../../redux/columns/selectors";
 
-// eslint-disable-next-line react/prop-types
-export const Tooltip = ({ onClose, currentColumn }) => {
-  const allColumns = useSelector(selectColumns);
-  if (allColumns.length === 0) return;
+export const Tooltip = ({ onClose, currentColumn, columnsInfo }) => {
+  if (columnsInfo.length === 0) return;
 
-  const renderColumns = allColumns.filter(
-    (item) => item.title !== currentColumn
+  const renderColumns = columnsInfo.filter(
+    (item) => item.titleColumn !== currentColumn
   );
-
+  console.log(renderColumns);
   return (
     <BackDrop
       id="backdrop"
@@ -24,9 +22,9 @@ export const Tooltip = ({ onClose, currentColumn }) => {
       <Modal>
         <List>
           {renderColumns.map((item) => (
-            <Item key={item.id}>
+            <Item key={item._id}>
               <Button>
-                {item.title}
+                {item.titleColumn}
                 <svg width="16" height="16">
                   <use href={`${sprite}#icon-arrow-circle-dark`}></use>
                 </svg>
@@ -37,4 +35,9 @@ export const Tooltip = ({ onClose, currentColumn }) => {
       </Modal>
     </BackDrop>
   );
+};
+Tooltip.propTypes = {
+  columnsInfo: PropTypes.array,
+  currentColumn: PropTypes.string,
+  onClose: PropTypes.func,
 };
