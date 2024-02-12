@@ -19,4 +19,9 @@ export const Button = styled.button`
 
 export const Svg = styled.svg`
   stroke: ${(p) => p.theme.colors.mainPageTextColor};
+  transition: all var(--primary-transition);
+
+  &:hover {
+    stroke: ${(p) => p.theme.colors.accentTextColor};
+  }
 `;

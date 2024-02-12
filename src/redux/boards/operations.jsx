@@ -38,6 +38,20 @@ export const getBoardById = createAsyncThunk(
   }
 );
 
+export const moveCard = createAsyncThunk(
+  "boards/moveCard",
+  async (payload, thunkAPI) => {
+    try {
+      const response = await axios.patch(`${URL}/cards/${payload.cardId}`, {
+        columnId: payload.newColumnId,
+      });
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
 export const editBoardById = createAsyncThunk(
   "boards/editBoardById",
   async (params, thunkAPI) => {

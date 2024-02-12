@@ -5,6 +5,7 @@ import {
   deleteBoard,
   getBoardById,
   editBoardById,
+  moveCard,
 } from "./operations";
 
 const boardsSlice = createSlice({
@@ -25,16 +26,6 @@ const boardsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getBoardById.fulfilled, (state, action) => {
-        state.boards.isLoading = false;
-        state.boards.error = null;
-        state.boards.current = { ...action.payload };
-
-        // const boardById = state.boards.items.map((board) =>
-        //   board.id === action.payload.id ? action.payload : board
-        // );
-        // state.boards.current = boardById;
-      })
       .addCase(fetchBoards.pending, (state) => {
         state.boards.isLoading = true;
       })
@@ -61,6 +52,16 @@ const boardsSlice = createSlice({
       })
       .addCase(getBoardById.pending, (state) => {
         state.boards.isLoading = true;
+      })
+      .addCase(getBoardById.fulfilled, (state, action) => {
+        state.boards.isLoading = false;
+        state.boards.error = null;
+        state.boards.current = { ...action.payload };
+
+        // const boardById = state.boards.items.map((board) =>
+        //   board.id === action.payload.id ? action.payload : board
+        // );
+        // state.boards.current = boardById;
       })
       // .addCase(getBoardById.fulfilled, (state, action) => {
       //   state.boards.isLoading = false;
@@ -89,6 +90,31 @@ const boardsSlice = createSlice({
         );
       })
       .addCase(editBoardById.rejected, (state, action) => {
+        state.boards.isLoading = false;
+        state.boards.error = action.payload;
+      })
+      .addCase(moveCard.pending, (state) => {
+        state.boards.isLoading = true;
+      })
+      .addCase(moveCard.fulfilled, (state, action) => {
+        state.boards.isLoading = false;
+        state.boards.error = null;
+        const updatedCard = action.payload;
+
+        state.boards.current.columns = state.boards.current.columns.map(
+          (column) => {
+            if (column._id === updatedCard.columnId) {
+              column.cards = column.cards.map((card) =>
+                card._id === updatedCard._id
+                  ? { ...card, columnId: updatedCard.columnId }
+                  : card
+              );
+            }
+            return column;
+          }
+        );
+      })
+      .addCase(moveCard.rejected, (state, action) => {
         state.boards.isLoading = false;
         state.boards.error = action.payload;
       })

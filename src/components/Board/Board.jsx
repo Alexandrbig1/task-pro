@@ -10,6 +10,7 @@ import { selectCurrentBoard } from "../../redux/boards/selectors";
 import { addColumn, deleteColumn } from "../../redux/columns/operations";
 import { toast } from "react-toastify";
 import { getBoardById } from "../../redux/boards/operations";
+import { Droppable, DragDropContext } from "react-beautiful-dnd";
 import {
   BoardWrapper,
   BoardTitle,
@@ -31,7 +32,6 @@ export const Board = () => {
 
   useEffect(() => {
     const container = containerRef.current;
-
     const handleScroll = () => {
       setScrollable(container.scrollLeft > 0);
     };
@@ -110,8 +110,31 @@ export const Board = () => {
     });
   };
 
+  function handleDragEnd(result) {
+    console.log(result);
+    const { destination, source, type } = result;
+
+    if (!destination) return;
+
+    if (
+      source.droppableId === destination.droppableId &&
+      source.index === destination.index
+    )
+      return;
+
+    // if (type === "group") {
+    //   const renderedStores = [...stores];
+    //   const sourceIndex = source.index;
+    //   const destinationIndex = destination.index;
+    //   const [removedStore] = reorderedStores.splice(sourceIndex, 1);
+    //   reorderedStores.splice(destinationIndex, 0, removedStore);
+
+    //   return setStores(reorderedStores);
+    // }
+  }
+
   return (
-    <>
+    <DragDropContext onDragEnd={handleDragEnd}>
       <BoardWrapper ref={containerRef} $scrollable={scrollable}>
         <BoardTitle>{board?.titleBoard}</BoardTitle>
 
@@ -119,25 +142,32 @@ export const Board = () => {
           <ColumnList>
             {columns?.map((column) => (
               <ColumnItem key={column._id}>
-                <Wrapper>
-                  <ColumnTitle>{column.titleColumn}</ColumnTitle>
-                  <IconList
-                    columnID={column._id}
-                    title={column.titleColumn}
-                    handleDelete={handleDelete}
-                  />
-                </Wrapper>
-
-                {column?.cards?.length !== 0 && (
-                  <CardList
-                    currentColumn={column.titleColumn}
-                    cardInfo={column.cards}
-                  />
-                )}
-                <AddCardButton
-                  handleCardModalOpen={handleCardModalOpen}
-                  val={column._id}
-                />
+                <Droppable droppableId={column._id} type="group">
+                  {(provided) => (
+                    <div {...provided.droppableProps} ref={provided.innerRef}>
+                      <Wrapper>
+                        <ColumnTitle>{column.titleColumn}</ColumnTitle>
+                        <IconList
+                          columnID={column._id}
+                          title={column.titleColumn}
+                          handleDelete={handleDelete}
+                        />
+                      </Wrapper>
+                      {column?.cards?.length !== 0 && (
+                        <CardList
+                          currentColumn={column.titleColumn}
+                          cardInfo={column.cards}
+                          columnID={column._id}
+                        />
+                      )}
+                      <AddCardButton
+                        handleCardModalOpen={handleCardModalOpen}
+                        val={column._id}
+                      />
+                      {provided.placeholder}
+                    </div>
+                  )}
+                </Droppable>
               </ColumnItem>
             ))}
           </ColumnList>
@@ -154,6 +184,6 @@ export const Board = () => {
           />
         )}
       </BoardWrapper>
-    </>
+    </DragDropContext>
   );
 };

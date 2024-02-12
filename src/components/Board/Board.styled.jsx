@@ -64,28 +64,14 @@ export const BoardTitle = styled.h2`
 export const ColumnList = styled.ul`
   display: flex;
   gap: 15px;
-
-  // &::-webkit-scrollbar-thumb {
-  //   background: ${(p) => p.theme.colors.priorityColorWithout};
-  //   border-radius: 12px;
-  // }
-
-  // &::-webkit-scrollbar {
-  //   width: 12px;
-  // }
-
-  // &::-webkit-scrollbar-track {
-  //   background: #121212;
-  //   opacity: 0.08;
-  //   border-radius: 12px;
-  // }
+  margin-bottom: 16px;
 `;
 
 export const ColumnItem = styled.li`
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-bottom: 20px;
+  // display: flex;
+  // flex-direction: column;
+  // gap: 14px;
+  // margin-bottom: 20px;
 `;
 
 export const Wrapper = styled.div`
@@ -96,6 +82,7 @@ export const Wrapper = styled.div`
   height: 56px;
   background: ${(p) => p.theme.colors.addColumnBtn};
   padding: 18px 20px;
+  margin-bottom: 14px;
 `;
 
 export const ColumnTitle = styled.h2`

@@ -13,7 +13,7 @@ import { deleteCard } from "../../../redux/cards/operations";
 import { getBoardById } from "../../../redux/boards/operations";
 import { selectCurrentBoard } from "../../../redux/boards/selectors";
 
-export const CardIconsList = ({ currentColumn, cardInfo }) => {
+export const CardIconsList = ({ currentColumn, cardInfo, columnsInfo }) => {
   const { _id } = cardInfo;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isTooltipModalOpen, setIsTooltipModalOpen] = useState(false);
@@ -25,6 +25,10 @@ export const CardIconsList = ({ currentColumn, cardInfo }) => {
   const handleToggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+
+  function handleEditModal() {
+    setIsTooltipModalOpen((prevState) => !prevState);
+  }
 
   const handleDelete = async () => {
     await dispatch(deleteCard(_id));
@@ -49,9 +53,8 @@ export const CardIconsList = ({ currentColumn, cardInfo }) => {
         <ListItem key={"move"}>
           <Button
             type="button"
-            onClick={() => {
-              setIsTooltipModalOpen(!isTooltipModalOpen);
-            }}
+            onClick={handleEditModal}
+            // onClick={() => setIsTooltipModalOpen((prevState) => !prevState)}
           >
             <Svg width="16" height="16">
               <use href={`${sprite}#icon-arrow-circle-dark`}></use>
@@ -78,8 +81,10 @@ export const CardIconsList = ({ currentColumn, cardInfo }) => {
       )}
       {isTooltipModalOpen && (
         <Tooltip
+          columnsInfo={columnsInfo}
           currentColumn={currentColumn}
           onClose={setIsTooltipModalOpen}
+          cardId={_id}
         />
       )}
     </>
@@ -89,4 +94,5 @@ export const CardIconsList = ({ currentColumn, cardInfo }) => {
 CardIconsList.propTypes = {
   currentColumn: PropTypes.string,
   cardInfo: PropTypes.object,
+  columnsInfo: PropTypes.array,
 };
