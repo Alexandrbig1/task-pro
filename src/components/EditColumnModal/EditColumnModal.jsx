@@ -94,6 +94,7 @@ const EditColumnModal = ({ openEditColumnModal, columnId, title }) => {
           <EditColumnTitle>Edit column</EditColumnTitle>
           <EditColumnForm onSubmit={handleSubmit}>
             <EditColumnInput
+              autoFocus
               type="text"
               placeholder="To Do"
               name="title"
@@ -114,4 +115,3 @@ EditColumnModal.propTypes = {
   columnId: PropTypes.string,
   title: PropTypes.string,
 };
-

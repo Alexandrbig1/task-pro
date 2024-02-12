@@ -87,7 +87,7 @@ export const EditCardForm = ({ cardInfo, onClose }) => {
               rows="5"
               cols="33"
               placeholder="Description"
-              autoFocus
+
             />
           </label>
         </FormWrapper>
