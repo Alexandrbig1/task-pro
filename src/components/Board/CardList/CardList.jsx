@@ -13,14 +13,12 @@ export const CardList = ({ currentColumn, cardInfo }) => {
   function handleClick(id) {
     // console.log(id);
   }
-  const {
-    board: { filter },
-  } = useSelector(selectCurrentBoard);
-  console.log(filter);
+  const { board } = useSelector(selectCurrentBoard);
+
   const renderCard =
-    filter === "default"
+    board.filter === "default"
       ? cardInfo
-      : cardInfo.filter((card) => card.priority === filter);
+      : cardInfo.filter((card) => card.priority === board.filter);
 
   useEffect(() => {
     const container = containerRef.current;

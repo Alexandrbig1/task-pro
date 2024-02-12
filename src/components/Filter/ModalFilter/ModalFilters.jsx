@@ -24,11 +24,15 @@ import { useDispatch } from "react-redux";
 import { setFilter } from "../../../redux/boards/boardSlice";
 import { boardFilter } from "../../../redux/boards/operations";
 import { useSelector } from "react-redux";
-import { selectCurrentBoardId } from "../../../redux/boards/selectors";
+import {
+  selectCurrentBoardId,
+  selectCurrentBoard,
+} from "../../../redux/boards/selectors";
 
-export const ModalFilters = ({ closeModal, currentFilter }) => {
-  const [checkPriority, setCheckPriority] = useState(currentFilter);
+export const ModalFilters = ({ closeModal }) => {
   const boardId = useSelector(selectCurrentBoardId);
+  const { board } = useSelector(selectCurrentBoard);
+  const [checkPriority, setCheckPriority] = useState(board.filter);
   const dispatch = useDispatch();
 
   const hendlerFilter = (filter) => {
@@ -177,5 +181,4 @@ export const ModalFilters = ({ closeModal, currentFilter }) => {
 
 ModalFilters.propTypes = {
   closeModal: PropTypes.func,
-  currentFilter: PropTypes.string,
 };
