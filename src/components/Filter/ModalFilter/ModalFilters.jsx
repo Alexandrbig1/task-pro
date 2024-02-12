@@ -19,10 +19,14 @@ import {
   Span,
   CheckedSpan,
 } from "./ModalFilter.styled";
-// eslint-disable-next-line react/prop-types
-export function ModalFilters({ closeModal }) {
-  const [checkPriority, setCheckPriority] = useState("");
+import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
+import { setFilter } from "../../../redux/boards/boardSlice";
 
+export const ModalFilters = ({ closeModal }) => {
+  const [checkPriority, setCheckPriority] = useState("");
+  const dispatch = useDispatch();
+  const hendlerFilter = (filter) => dispatch(setFilter(filter));
   const isCheck = (e) => {
     setCheckPriority(e.target.value);
   };
@@ -43,9 +47,9 @@ export function ModalFilters({ closeModal }) {
   }, [closeModal]);
   return (
     <BackDrop
-      id="backfrop"
+      id="backdrop"
       onClick={(e) => {
-        if (e.target.id === "backfrop") {
+        if (e.target.id === "backdrop") {
           closeModal();
         }
       }}
@@ -58,11 +62,18 @@ export function ModalFilters({ closeModal }) {
         <StyledWrapper>
           <Box>
             <Text>Label color</Text>
-            <Btn onClick={() => setCheckPriority("")}>Show all</Btn>
+            <Btn
+              onClick={() => {
+                setCheckPriority("");
+                hendlerFilter("");
+              }}
+            >
+              Show all
+            </Btn>
           </Box>
           <List>
             <Item>
-              <Label $check={checkPriority}>
+              <Label onClick={() => hendlerFilter("without")}>
                 <RadioInput
                   onChange={isCheck}
                   type="radio"
@@ -84,7 +95,7 @@ export function ModalFilters({ closeModal }) {
               </Label>
             </Item>
             <Item>
-              <Label>
+              <Label onClick={() => hendlerFilter("low")}>
                 <RadioInput
                   onChange={isCheck}
                   type="radio"
@@ -106,7 +117,7 @@ export function ModalFilters({ closeModal }) {
               </Label>
             </Item>
             <Item>
-              <Label>
+              <Label onClick={() => hendlerFilter("medium")}>
                 <RadioInput
                   onChange={isCheck}
                   type="radio"
@@ -128,7 +139,7 @@ export function ModalFilters({ closeModal }) {
               </Label>
             </Item>
             <Item>
-              <Label>
+              <Label onClick={() => hendlerFilter("high")}>
                 <RadioInput
                   onChange={isCheck}
                   type="radio"
@@ -154,4 +165,8 @@ export function ModalFilters({ closeModal }) {
       </Modal>
     </BackDrop>
   );
-}
+};
+
+ModalFilters.propTypes = {
+  closeModal: PropTypes.func,
+};
