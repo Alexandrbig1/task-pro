@@ -22,11 +22,23 @@ import {
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { setFilter } from "../../../redux/boards/boardSlice";
+import { boardFilter } from "../../../redux/boards/operations";
+import { useSelector } from "react-redux";
+import {
+  selectCurrentBoardId,
+  selectCurrentBoard,
+} from "../../../redux/boards/selectors";
 
 export const ModalFilters = ({ closeModal }) => {
-  const [checkPriority, setCheckPriority] = useState("");
+  const boardId = useSelector(selectCurrentBoardId);
+  const { board } = useSelector(selectCurrentBoard);
+  const [checkPriority, setCheckPriority] = useState(board.filter);
   const dispatch = useDispatch();
-  const hendlerFilter = (filter) => dispatch(setFilter(filter));
+
+  const hendlerFilter = (filter) => {
+    dispatch(setFilter(filter));
+    dispatch(boardFilter({ boardId, filter }));
+  };
   const isCheck = (e) => {
     setCheckPriority(e.target.value);
   };
@@ -64,8 +76,8 @@ export const ModalFilters = ({ closeModal }) => {
             <Text>Label color</Text>
             <Btn
               onClick={() => {
-                setCheckPriority("");
-                hendlerFilter("");
+                setCheckPriority("default");
+                hendlerFilter("default");
               }}
             >
               Show all

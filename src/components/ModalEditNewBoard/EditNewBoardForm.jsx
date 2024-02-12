@@ -113,7 +113,7 @@ export default function EditNewBoardForm({ boardId, closeModal }) {
       onSubmit={handleSubmit}
     >
       <StyledForm>
-        <label>
+        <label autoFocus>
           {" "}
           <StyledInput
             type="text"

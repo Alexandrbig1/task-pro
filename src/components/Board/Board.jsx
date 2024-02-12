@@ -19,10 +19,12 @@ import {
   Wrapper,
   ColumnTitle,
 } from "./Board.styled";
+import { FilterBtn } from "../Filter/FilterBtn/Filters";
 
 export const Board = () => {
   const [isModalColumnOpen, setIsModalColumnOpen] = useState(false);
   const [isModalCardOpen, setIsModalCardOpen] = useState(false);
+
   const [columnId, setColumnId] = useState();
   const [scrollable, setScrollable] = useState(false);
   const containerRef = useRef();
@@ -183,6 +185,7 @@ export const Board = () => {
             onSubmitColumnClick={onSubmitColumnClick}
           />
         )}
+        <FilterBtn />
       </BoardWrapper>
     </DragDropContext>
   );

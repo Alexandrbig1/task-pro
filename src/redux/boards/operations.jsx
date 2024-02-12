@@ -88,3 +88,18 @@ export const deleteBoard = createAsyncThunk(
     }
   }
 );
+
+export const boardFilter = createAsyncThunk(
+  "boards/boardFilter",
+  async (params, thunkAPI) => {
+    try {
+      const { boardId, filter } = params;
+      const response = await axios.patch(`${URL}/boards/filter/${boardId}`, {
+        filter,
+      });
+      return response.data.filter;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);

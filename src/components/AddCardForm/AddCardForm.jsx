@@ -89,7 +89,7 @@ export const AddCardForm = ({ onClose, columnId }) => {
       <Form autoComplete="off">
         <FormWrapper>
           <label htmlFor="title">
-            <Input type="text" name="title" placeholder="Title" required />
+            <Input autoFocus type="text" name="title" placeholder="Title" required />
           </label>
           <label htmlFor="description">
             <DescriptionArea

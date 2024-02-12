@@ -10,7 +10,7 @@ export const Button = styled.button`
   align-items: center;
   column-gap: 8px;
   padding: 4px;
-  background-color: inherit;
+  background-color: rgba(0, 0, 0, 0);
   border: none;
   cursor: pointer;
 

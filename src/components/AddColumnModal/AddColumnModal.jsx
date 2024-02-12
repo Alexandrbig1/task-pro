@@ -45,7 +45,7 @@ const AddColumnModal = ({ openColumnModal, onSubmitColumnClick }) => {
         <div>
           <AddColumnTitle>Add column</AddColumnTitle>
           <AddColumnForm onSubmit={onSubmitColumnClick}>
-            <AddColumnInput type="text" placeholder="Title" name="title" />
+            <AddColumnInput autoFocus type="text" placeholder="Title" name="title" />
             <CardButton type="submit" btnText="Add" />
           </AddColumnForm>
         </div>
