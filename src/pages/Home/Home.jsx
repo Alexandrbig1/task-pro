@@ -37,7 +37,10 @@ export default function Home({ toggleTheme }) {
         <Aside aside={aside} handleAsideHide={handleAsideHide} />
         <MainContainer>
           <Header toggleTheme={toggleTheme} handleAsideHide={handleAsideHide} />
-          <MainWrapper background={board ? board.background : "default"}>
+          <MainWrapper
+            background={board ? board.background : "default"}
+            loc={location.pathname}
+          >
             {location.pathname === "/home" ? (
               <MainPage />
             ) : (

@@ -22,9 +22,9 @@ export const MainWrapper = styled.main`
     /* margin: 0 auto; */
     max-width: 118rem;
   }
-
   ${(props) =>
     props.background !== "default" &&
+    props.loc !== "/home" &&
     css`
       background-image: url(${(props) =>
         `https://res.cloudinary.com/dsywt0aej/image/upload/v1707238602/background-boards-mobile/${props.background}`});

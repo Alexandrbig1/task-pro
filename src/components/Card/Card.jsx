@@ -1,4 +1,4 @@
-import { format, parseISO } from "date-fns";
+import dayjs from "dayjs";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 import PropTypes from "prop-types";
 import { CardIconsList } from "./CardIconsList/CardIconsList";
@@ -25,12 +25,9 @@ export const Card = ({ cardInfo, currentColumn }) => {
   const [formattedDate, setFormattedDate] = useState("");
 
   useEffect(() => {
-    const dateFormater = () => {
-      const parsedDate = parseISO(deadline);
-      const formattedDate = format(parsedDate, "dd/MM/yyyy");
-      setFormattedDate(formattedDate);
-    };
-    dateFormater();
+    const date = dayjs(deadline);
+    const outputDate = `0${date.$D}/0${date.$M}/${date.$y}`;
+    setFormattedDate(outputDate);
   }, [deadline]);
 
   return (

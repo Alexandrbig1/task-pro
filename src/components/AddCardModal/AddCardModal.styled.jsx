@@ -36,7 +36,7 @@ export const ModalContainer = styled.div`
 `;
 
 export const CloseIcon = styled(IoClose)`
-  font-size: 18px;
+  font-size: 24px;
   color: ${(p) => p.theme.colors.secondaryTextColor};
   position: absolute;
   top: 14px;

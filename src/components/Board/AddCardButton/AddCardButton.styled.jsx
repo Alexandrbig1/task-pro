@@ -6,7 +6,7 @@ export const AddBtn = styled.button`
   justify-content: center;
   align-items: center;
   gap: 8px;
-  width: 100%;
+  width: 335px;
   background-color: ${(p) => p.theme.colors.accentTextColor};
   border: none;
   border-radius: 8px;
@@ -17,6 +17,10 @@ export const AddBtn = styled.button`
 
   &:hover {
     background-color: ${(p) => p.theme.colors.modalBtnHover};
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 375px) {
+    width: 260px;
   }
 `;
 export const IconWrapper = styled.div`
