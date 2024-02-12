@@ -1,5 +1,6 @@
 import ReactReadMoreReadLess from "react-read-more-read-less";
 import PropTypes from "prop-types";
+import { CardIconsList } from "./CardIconsList/CardIconsList";
 import {
   CardItem,
   Container,
@@ -15,22 +16,13 @@ import {
   DeadlineWrapp,
   Date,
 } from "./Card.styled";
-import { CardIconsList } from "./CardIconsList/CardIconsList";
-// import { Draggable } from "react-beautiful-dnd";
 
 // eslint-disable-next-line react/prop-types
 export const Card = ({ cardInfo, currentColumn }) => {
   const { titleCard, description, priority, deadline } = cardInfo;
 
   return (
-    // <Draggable draggableId={id} index={index}>
-    //   {(provided, snapshot) => (
-    <CardItem
-    // onClick={handleClick}
-    // {...provided.dragHandleProps}
-    // {...provided.draggableProps}
-    // ref={provided.innerRef}
-    >
+    <CardItem>
       <Container>
         <Title>{titleCard}</Title>
         <Description>
@@ -51,17 +43,10 @@ export const Card = ({ cardInfo, currentColumn }) => {
             <Subtitle>Deadline</Subtitle>
             <Date>{deadline}</Date>
           </DeadlineWrapp>
-          <CardIconsList
-            columnsInfo={columnsInfo}
-            currentColumn={currentColumn}
-            cardInfo={cardInfo}
-          />
+          <CardIconsList currentColumn={currentColumn} cardInfo={cardInfo} />
         </UnderlineInfo>
       </Container>
-      {/* {provided.placeholder} */}
     </CardItem>
-    //   )}
-    // </Draggable>
   );
 };
 

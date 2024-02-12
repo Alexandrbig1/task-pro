@@ -153,18 +153,6 @@ export const Board = () => {
                           handleDelete={handleDelete}
                         />
                       </Wrapper>
-
-                      {column?.cards?.length !== 0 && (
-                        <CardList
-                          columnsInfo={columns}
-                          currentColumn={column.titleColumn}
-                          cardInfo={column.cards}
-                        />
-                      )}
-                      <AddCardButton
-                        handleCardModalOpen={handleCardModalOpen}
-                        val={column._id}
-                      />
                       {column?.cards?.length !== 0 && (
                         <CardList
                           currentColumn={column.titleColumn}

@@ -1,17 +1,7 @@
 import PropTypes from "prop-types";
 import { Card } from "../../Card/Card";
 import { List } from "./CardList.styled";
-// import { useSelector } from "react-redux";
-// import { selectFiltersBoards } from "../../../redux/boards/selectors";
 import { Draggable } from "react-beautiful-dnd";
-
-// export const CardList = ({ currentColumn, cardInfo }) => {
-//   const filter = useSelector(selectFiltersBoards);
-//   const renderCard =
-//     filter === ""
-//       ? cardInfo
-//       : cardInfo.filter((card) => card.priority === filter);
-
 // eslint-disable-next-line react/prop-types
 export const CardList = ({ currentColumn, cardInfo }) => {
   function handleClick(id) {
