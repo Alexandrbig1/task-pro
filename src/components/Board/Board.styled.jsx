@@ -55,7 +55,31 @@ export const BoardTitle = styled.h2`
   font-weight: 500;
   font-size: 18px;
   letter-spacing: -0.02em;
-  color: ${(p) => p.theme.colors.burgerColor};
+  color: ${(p) => {
+    switch (p?.$colorBg) {
+      case "night":
+        return p?.theme?.colors?.whiteColor;
+      case "moon":
+        return p?.theme?.colors?.whiteColor;
+      case "plant":
+        return p?.theme?.colors?.whiteColor;
+      case "rocks":
+        return p?.theme?.colors?.whiteColor;
+      case "full-moon":
+        return p?.theme?.colors?.whiteColor;
+      case "gorge":
+        return p?.theme?.colors?.whiteColor;
+      case "ocean":
+        return p?.theme?.colors?.whiteColor;
+      case "milky-way":
+        return p?.theme?.colors?.whiteColor;
+      case "clouds":
+        return p?.theme?.colors?.blackColor;
+      default:
+        return p?.theme?.colors?.themeMainTextColor;
+    }
+  }};
+
   @media only screen and (max-width: 767.9px) {
     font-size: 14px;
   }
