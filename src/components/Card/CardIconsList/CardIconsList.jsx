@@ -13,7 +13,7 @@ import { deleteCard } from "../../../redux/cards/operations";
 import { getBoardById } from "../../../redux/boards/operations";
 import { selectCurrentBoard } from "../../../redux/boards/selectors";
 
-export const CardIconsList = ({ currentColumn, cardInfo }) => {
+export const CardIconsList = ({ currentColumn, cardInfo, columnsInfo }) => {
   const { _id } = cardInfo;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isTooltipModalOpen, setIsTooltipModalOpen] = useState(false);
@@ -78,6 +78,7 @@ export const CardIconsList = ({ currentColumn, cardInfo }) => {
       )}
       {isTooltipModalOpen && (
         <Tooltip
+          columnsInfo={columnsInfo}
           currentColumn={currentColumn}
           onClose={setIsTooltipModalOpen}
         />
@@ -89,4 +90,5 @@ export const CardIconsList = ({ currentColumn, cardInfo }) => {
 CardIconsList.propTypes = {
   currentColumn: PropTypes.string,
   cardInfo: PropTypes.object,
+  columnsInfo: PropTypes.array,
 };
