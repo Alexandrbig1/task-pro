@@ -16,7 +16,7 @@ export const BackDrop = styled.div`
 
 export const Modal = styled.div`
   position: absolute;
-  z-index: 20px;
+  z-index: 150px;
   width: 335px;
   border: 1px solid rgba(190, 219, 176, 0.5);
   border-radius: 8px;
