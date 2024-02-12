@@ -9,7 +9,6 @@ export const Tooltip = ({ onClose, currentColumn, columnsInfo }) => {
   const renderColumns = columnsInfo.filter(
     (item) => item.titleColumn !== currentColumn
   );
-  console.log(renderColumns);
   return (
     <BackDrop
       id="backdrop"
