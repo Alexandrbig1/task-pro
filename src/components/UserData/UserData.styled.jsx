@@ -13,16 +13,24 @@ export const AvatarText = styled.p`
     letter-spacing: -0.02em;
     color: ${(p) => p.theme.colors.secondaryTextColor};
 `;
-export const AvatarIcon = styled.svg`
+export const AvatarImg = styled.img`
     /* font-size: 3.2rem; */
-    --color1: ${(p) => p.theme.colors.defaultIconBackground};
-    --color2: #fff;
+
     width: ${(p) => (p?.size?.width ? p?.size?.width : "32px")};
     height: ${(p) => (p?.size?.height ? p?.size?.height : "32px")};
 
     border-radius: 0.8rem;
 `;
+export const AvatarIcon = styled.svg`
+    /* font-size: 3.2rem; */
 
+    --color1: ${(p) => p.theme.colors.defaultIconBackground};
+    --color2: ${(p) => p.theme.colors.defaultAvatar};
+    width: ${(p) => (p?.size?.width ? p?.size?.width : "32px")};
+    height: ${(p) => (p?.size?.height ? p?.size?.height : "32px")};
+
+    border-radius: 0.8rem;
+`;
 export const AvatarBtn = styled.button`
     display: flex;
     flex-direction: row;

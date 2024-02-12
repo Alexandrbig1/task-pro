@@ -16,10 +16,10 @@ import {
     InputNthChild,
     ErrorMessage,
     EyeWrapper,
+    AvatarIconUpdate,
 } from "./EditProfileForm.styled";
 import emailRegex from "../../regex/emailRegex";
-// import { useAuth } from "../../hooks";
-import { selectUser } from "../../redux/user/selectors";
+import { selectUser } from "../../redux/auth/selectors";
 
 const editProfileSchema = Yup.object().shape({
     avatarURL: Yup.string(),
@@ -40,7 +40,6 @@ export default function ProfileForm() {
     const user = useSelector(selectUser);
     const [avatarPreview, setAvatarPreview] = useState(user.avatarURL);
     const [showPassword, setShowPassword] = useState(false);
-    // const { user } = useAuth();
 
     const dispatch = useDispatch();
 
@@ -61,19 +60,13 @@ export default function ProfileForm() {
             try {
                 if (!user) return;
 
-                const updateAvatar = user.avatarURL !== values.avatar;
-                const updateUser =
-                    user.name !== values.name ||
-                    user.email !== values.email ||
-                    user.password !== values.password;
+                // const updateAvatar = user.avatarURL !== values.avatar;
+                // const updateUser =
+                //     user.name !== values.name ||
+                //     user.email !== values.email ||
+                //     user.password !== values.password;
 
-                if (updateAvatar) {
-                    await dispatch(usersAvatar(values));
-
-                    setAvatarPreview(user.avatarURL);
-                } else {
-                    dispatch(editUser(values));
-                }
+                await dispatch(editUser(values));
 
                 resetForm({});
             } catch (error) {
@@ -82,11 +75,10 @@ export default function ProfileForm() {
         },
     });
 
-    const handleChangeAvatar = (e) => {
+    const handleChangeAvatar = async (e) => {
         const { name, type, files } = e.target;
         const value = type === "file" ? files[0] : e.target.value;
 
-        formik.handleChange(e);
         formik.setFieldValue(name, value);
 
         if (type === "file") {
@@ -98,6 +90,7 @@ export default function ProfileForm() {
             };
             if (files[0]) {
                 fileReader.readAsDataURL(files[0]);
+                await dispatch(usersAvatar({ avatar: value }));
             }
         }
     };
@@ -110,7 +103,14 @@ export default function ProfileForm() {
     return (
         <StyledForm onSubmit={formik.handleSubmit}>
             <WrapperUpdateAvatar>
-                <UpdateAvatar src={user.avatarURL} />
+                {user.avatarURL && user.avatarURL !== "default" ? (
+                    <UpdateAvatar src={avatarPreview} />
+                ) : (
+                    <AvatarIconUpdate>
+                        <use href="images/icons.svg#icon-userAvatarDefault" />
+                    </AvatarIconUpdate>
+                )}
+
                 <LabelAvatar htmlFor="button-file">
                     <input
                         name="avatar"
