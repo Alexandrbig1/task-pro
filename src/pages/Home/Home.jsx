@@ -9,10 +9,14 @@ import { Outlet, useLocation } from "react-router-dom";
 import { Suspense } from "react";
 import { MainWrapper } from "../../components/MainPage/MainPage.styled";
 import Loader from "../../components/Loader/Loader";
+import { useSelector } from "react-redux";
+import { selectCurrentBoard } from "../../redux/boards/selectors";
 
 export default function Home({ toggleTheme }) {
   const [aside, setAside] = useState(false);
   const location = useLocation();
+
+  const { board } = useSelector(selectCurrentBoard);
 
   function handleAsideHide() {
     setAside((prevState) => !prevState);
@@ -33,7 +37,7 @@ export default function Home({ toggleTheme }) {
         <Aside aside={aside} handleAsideHide={handleAsideHide} />
         <MainContainer>
           <Header toggleTheme={toggleTheme} handleAsideHide={handleAsideHide} />
-          <MainWrapper>
+          <MainWrapper background={board ? board.background : "default"}>
             {location.pathname === "/home" ? (
               <MainPage />
             ) : (

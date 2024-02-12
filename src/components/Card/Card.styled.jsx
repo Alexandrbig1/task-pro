@@ -1,9 +1,24 @@
 import styled from "styled-components";
 
+const changeColor = (props) => {
+  switch (props.value) {
+    case "low":
+      return `${props.theme.colors.priorityColorLow}`;
+    case "medium":
+      return `${props.theme.colors.priorityColorMedium}`;
+    case "high":
+      return `${props.theme.colors.priorityColorHigh}`;
+    case "without":
+      return `${props.theme.colors.priorityColorWithout}`;
+    default:
+      return `${props.theme.colors.priorityColorWithout}`;
+  }
+};
+
 export const CardItem = styled.div`
   width: 335px;
   border-radius: 8px;
-  background: #8fa1d0;
+  background: ${changeColor};
   overflow: hidden;
   list-style: none;
 `;
@@ -63,20 +78,6 @@ export const Wrapper = styled.div`
   gap: 4px;
 `;
 
-const changeColor = (props) => {
-  switch (props.value) {
-    case "low":
-      return `${props.theme.colors.priorityColorLow}`;
-    case "medium":
-      return `${props.theme.colors.priorityColorMedium}`;
-    case "high":
-      return `${props.theme.colors.priorityColorHigh}`;
-    case "without":
-      return `${props.theme.colors.priorityColorWithout}`;
-    default:
-      return `${props.theme.colors.priorityColorWithout}`;
-  }
-};
 export const PriorityColor = styled.div`
   border-radius: 100%;
   width: 12px;

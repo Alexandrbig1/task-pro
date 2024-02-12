@@ -1,13 +1,14 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const List = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 8px;
   max-height: 480px;
-  overflow-y: auto;
+  overflow-y: scroll;
   scroll-behavior: smooth;
-  padding-right: 4px;
+  padding-right: 8px;
+  margin-bottom: 14px;
 
   &::-webkit-scrollbar-thumb {
     background: ${(p) => p.theme.colors.cardListScrollThumb};
@@ -19,7 +20,18 @@ export const List = styled.ul`
   }
 
   &::-webkit-scrollbar-track {
-    background: ${(p) => p.theme.colors.cardListScrollBar};
     border-radius: 12px;
+    background-color: transparent;
   }
+
+  ${(p) =>
+    p?.$scrollable &&
+    css`
+      &::-webkit-scrollbar-thumb {
+        background-color: ${(p) => p.theme.colors.cardListScrollThumb};
+      }
+      &::-webkit-scrollbar-track {
+        background-color: ${(p) => p.theme.colors.cardListScrollBar};
+      }
+    `}
 `;
