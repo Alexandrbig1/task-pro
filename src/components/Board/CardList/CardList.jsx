@@ -12,6 +12,8 @@ export const CardList = ({ currentColumn, cardInfo }) => {
 
   function handleClick(id) {
     // console.log(id);
+    // console.log(id);
+    // console.log(id);
   }
   const { board } = useSelector(selectCurrentBoard);
 
