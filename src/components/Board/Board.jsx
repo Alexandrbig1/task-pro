@@ -31,7 +31,6 @@ export const Board = () => {
 
   useEffect(() => {
     const container = containerRef.current;
-
     const handleScroll = () => {
       setScrollable(container.scrollLeft > 0);
     };
@@ -130,6 +129,7 @@ export const Board = () => {
 
                 {column?.cards?.length !== 0 && (
                   <CardList
+                  columnsInfo={columns}
                     currentColumn={column.titleColumn}
                     cardInfo={column.cards}
                   />

@@ -2,12 +2,16 @@ import PropTypes from "prop-types";
 import { Card } from "../../Card/Card";
 import { List } from "./CardList.styled";
 
-export const CardList = ({ currentColumn, cardInfo }) => {
+export const CardList = ({ currentColumn, cardInfo, columnsInfo }) => {
   return (
     <List>
       {cardInfo.map((card) => (
         <li key={card._id}>
-          <Card currentColumn={currentColumn} cardInfo={card} />
+          <Card
+            columnsInfo={columnsInfo}
+            currentColumn={currentColumn}
+            cardInfo={card}
+          />
         </li>
       ))}
     </List>
@@ -17,4 +21,5 @@ export const CardList = ({ currentColumn, cardInfo }) => {
 CardList.propTypes = {
   currentColumn: PropTypes.string,
   cardInfo: PropTypes.array,
+  columnsInfo: PropTypes.array,
 };
