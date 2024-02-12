@@ -1,4 +1,4 @@
-import{u as t,p as f,b as j,j as o,l as ne,r as m,c as ie,B,d as ae,e as $,f as se,g as N,h as le,i as R,k as E,L as ce,m as O,n as D,s as U,o as de,q as he,H as me,a as pe,t as ue,O as xe}from"./index-kSR8cbiM.js";import{L as ge}from"./Logo-p5MV_Byz.js";import{G as w,P as y}from"./hoist-non-react-statics.cjs-_oxF8iT5.js";import{I as T,F as V,a as C,c as I,b as k,d as _,E as q,C as K,s as Z,e as X,u as fe,f as be}from"./selectors-uFJbIetm.js";import{e as G,B as ve,a as ye}from"./index-bV7CJpv0.js";function we(e){return w({tag:"svg",attr:{fill:"none",viewBox:"0 0 24 24",strokeWidth:"2",stroke:"currentColor","aria-hidden":"true"},child:[{tag:"path",attr:{strokeLinecap:"round",strokeLinejoin:"round",d:"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"},child:[]}]})(e)}const ke=t(we)`
+import{u as t,p as f,b as j,j as o,l as ne,r as m,c as ie,B,d as ae,e as $,f as se,g as N,h as le,i as R,k as E,L as ce,m as O,n as D,s as U,o as de,q as he,H as me,a as pe,t as ue,O as xe}from"./index-Uc9TBw2y.js";import{L as ge}from"./Logo-3rMp3M8S.js";import{G as w,P as y}from"./hoist-non-react-statics.cjs-vF48zycB.js";import{I as T,F as V,a as C,c as I,b as k,d as _,E as q,C as K,s as Z,e as X,u as fe,f as be}from"./selectors-s07xFoeU.js";import{e as G,B as ve,a as ye}from"./index-JzsQrewr.js";function we(e){return w({tag:"svg",attr:{fill:"none",viewBox:"0 0 24 24",strokeWidth:"2",stroke:"currentColor","aria-hidden":"true"},child:[{tag:"path",attr:{strokeLinecap:"round",strokeLinejoin:"round",d:"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"},child:[]}]})(e)}const ke=t(we)`
   font-size: 3.2rem;
   color: ${e=>e.theme.colors.logoutIcon};
 `,je=t.a`
@@ -366,14 +366,14 @@ import{u as t,p as f,b as j,j as o,l as ne,r as m,c as ie,B,d as ae,e as $,f as 
   right: 0;
   bottom: 0;
   width: 100vw;
-  z-index: 10;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgb(46, 46, 46, 0.7);
 `,xo=t.div`
   position: absolute;
-  z-index: 20px;
+  z-index: 200;
   width: 335px;
   border-radius: 8px;
   padding: 24px;
