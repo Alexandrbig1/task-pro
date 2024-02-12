@@ -100,7 +100,12 @@ export default function CreateNewBoardForm({ closeModal }) {
       <StyledForm>
         <label>
           {" "}
-          <StyledInput type="text" name="titleBoard" placeholder="Title" />
+          <StyledInput
+            autoFocus
+            type="text"
+            name="titleBoard"
+            placeholder="Title"
+          />
           <StyledError>
             <ErrorMessage name="titleBoard" />
           </StyledError>

@@ -113,9 +113,10 @@ export default function EditNewBoardForm({ boardId, closeModal }) {
       onSubmit={handleSubmit}
     >
       <StyledForm>
-        <label autoFocus>
+        <label>
           {" "}
           <StyledInput
+            autoFocus
             type="text"
             name="titleBoard"
             placeholder={selectedBoard[0].titleBoard}
