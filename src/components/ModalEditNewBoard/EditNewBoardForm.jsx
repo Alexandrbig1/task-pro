@@ -25,7 +25,7 @@ import { CardButton } from "../CardButton/CardButton";
 import { useSelector } from "react-redux";
 import { selectBoards } from "../../redux/boards/selectors";
 import { useDispatch } from "react-redux";
-import { editBoardById } from "../../redux/boards/operations";
+import { editBoardById, getBoardById } from "../../redux/boards/operations";
 
 const formSquema = Yup.object().shape({
   titleBoard: Yup.string()
@@ -86,14 +86,15 @@ export default function EditNewBoardForm({ boardId, closeModal }) {
     setBackground(e.target.value);
   };
 
-  const handleSubmit = (values, { resetForm }) => {
+  const handleSubmit = async (values, { resetForm }) => {
     const updatedData = {
       titleBoard: values.titleBoard,
       icon: icon,
       background: background,
     };
 
-    dispatch(editBoardById({ boardId, updatedData }));
+    await dispatch(editBoardById({ boardId, updatedData }));
+    dispatch(getBoardById(boardId));
 
     resetForm();
     closeModal();
