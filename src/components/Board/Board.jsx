@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentBoard } from "../../redux/boards/selectors";
 import { addColumn, deleteColumn } from "../../redux/columns/operations";
 import { toast } from "react-toastify";
-import { getBoardById } from "../../redux/boards/operations";
+import { getBoardById, moveCard } from "../../redux/boards/operations";
 import { Droppable, DragDropContext } from "react-beautiful-dnd";
 import {
   BoardWrapper,
@@ -113,16 +113,26 @@ export const Board = () => {
   };
 
   function handleDragEnd(result) {
-    console.log(result);
     const { destination, source, type } = result;
 
-    if (!destination) return;
-
     if (
-      source.droppableId === destination.droppableId &&
-      source.index === destination.index
-    )
+      !destination ||
+      (source.droppableId === destination.droppableId &&
+        source.index === destination.index)
+    ) {
       return;
+    }
+
+    dispatch(
+      moveCard({
+        cardId: source.droppableId,
+        newColumnId: destination.droppableId,
+      })
+    )
+      .then(() => dispatch(getBoardById(board._id)))
+      .catch((err) => {
+        console.err("Error handling column:", err);
+      });
 
     // if (type === "group") {
     //   const renderedStores = [...stores];
@@ -133,6 +143,37 @@ export const Board = () => {
 
     //   return setStores(reorderedStores);
     // }
+
+    // const storeSourceIndex = stores.findIndex(
+    //   (store) => store.id === source.droppableId
+    // );
+
+    // const storeDestinationIndex = stores.findIndex(
+    //   (store) => store.id === destination.droppableId
+    // );
+
+    // const newSourceItems = [...stores[storeSourceIndex].items];
+    // const newDestinationItems =
+    //   source.droppableId !== destination.droppableId
+    //     ? [...stores[storeDestinationIndex].items]
+    //     : newSourceItems;
+
+    // const [deletedItem] = newSourceItems.splice(source.index, 1);
+    // newDestinationItems.splice(destination.index, 0, deletedItem);
+
+    // const newStores = [...stores];
+
+    // newStores[storeSourceIndex] = {
+    //   ...stores[storeSourceIndex],
+    //   items: newSourceItems,
+    // };
+
+    // newStores[storeDestinationIndex] = {
+    //   ...stores[storeDestinationIndex],
+    //   items: newDestinationItems,
+    // };
+
+    // setStores(newStores);
   }
 
   return (
