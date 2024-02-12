@@ -83,6 +83,10 @@ export const Wrapper = styled.div`
   background: ${(p) => p.theme.colors.addColumnBtn};
   padding: 18px 20px;
   margin-bottom: 14px;
+
+  @media screen and (min-width: 320px) and (max-width: 375px) {
+    width: 260px;
+  }
 `;
 
 export const ColumnTitle = styled.h2`

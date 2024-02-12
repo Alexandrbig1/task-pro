@@ -21,12 +21,19 @@ export const CardItem = styled.div`
   background: ${changeColor};
   overflow: hidden;
   list-style: none;
+
+  @media screen and (min-width: 320px) and (max-width: 375px) {
+    width: 260px;
+  }
 `;
 export const Container = styled.div`
   width: 330px;
   padding: 14px 20px;
   background: ${(p) => p.theme.colors.themeWrapper};
   margin-left: auto;
+  @media screen and (min-width: 320px) and (max-width: 375px) {
+    width: 255px;
+  }
 `;
 export const Title = styled.h2`
   font-weight: 600;
@@ -48,7 +55,7 @@ export const Description = styled.div`
 `;
 
 export const Line = styled.div`
-  width: 290px;
+  max-width: 290px;
   height: 0.5px;
   background-color: ${(p) => p.theme.colors.priorityColorWithout};
   margin-bottom: 16px;
@@ -75,6 +82,7 @@ export const Subtitle = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   justify-content: start;
+  align-items: center;
   gap: 4px;
 `;
 
