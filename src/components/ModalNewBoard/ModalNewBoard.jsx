@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 
 import {
-  StyledWrapper,
   StyledTitle,
   CloseIcon,
   CloseBtn,
@@ -40,14 +39,12 @@ export default function ModalNewBoard({ openNewBoardModal }) {
   return (
     <BackDrop onClick={handleOverlayClick}>
       <Modal>
-        <StyledWrapper>
-          <CloseBtn onClick={openNewBoardModal}>
-            <CloseIcon />
-          </CloseBtn>
-          <StyledTitle>New board</StyledTitle>
+        <CloseBtn onClick={openNewBoardModal}>
+          <CloseIcon />
+        </CloseBtn>
+        <StyledTitle>New board</StyledTitle>
 
-          <CreateNewBoardForm closeModal={closeModal} />
-        </StyledWrapper>
+        <CreateNewBoardForm closeModal={closeModal} />
       </Modal>
     </BackDrop>
   );

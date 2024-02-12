@@ -5,10 +5,9 @@ export const BackDrop = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
   width: 100vw;
-  z-index: 100;
+  height: 100vh;
+  z-index: 110;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +16,11 @@ export const BackDrop = styled.div`
 
 export const Modal = styled.div`
   position: absolute;
-  z-index: 200;
+  z-index: 220;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 335px;
   border-radius: 8px;
   padding: 24px;
@@ -30,9 +33,6 @@ export const Modal = styled.div`
   @media (min-width: 768px) {
     width: 350px;
   }
-`;
-export const StyledWrapper = styled.div`
-  z-index: 100;
 `;
 
 export const StyledTitle = styled.h2`

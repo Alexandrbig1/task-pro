@@ -25,7 +25,7 @@ export const StyledModal = styled.div`
   z-index: 200;
 
   background-color: ${(p) => p.theme.colors.modalWindowsBgColor};
-  border-radius: 10px;
+  border-radius: 8px;
 
   @media (max-width: 767px) {
     width: 100%;
