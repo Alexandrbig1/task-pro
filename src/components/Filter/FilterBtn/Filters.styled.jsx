@@ -17,11 +17,66 @@ export const Button = styled.button`
   font-weight: 500;
   font-size: 14px;
   letter-spacing: -0.02em;
-  color: ${(p) => p.theme.colors.themeMainTextColor};
+  color: ${(p) => {
+    switch (p?.$colorBg) {
+      case "night":
+        return p?.theme?.colors?.whiteColor;
+      case "moon":
+        return p?.theme?.colors?.whiteColor;
+      case "plant":
+        return p?.theme?.colors?.whiteColor;
+      case "rocks":
+        return p?.theme?.colors?.whiteColor;
+      case "full-moon":
+        return p?.theme?.colors?.whiteColor;
+      case "gorge":
+        return p?.theme?.colors?.whiteColor;
+      case "ocean":
+        return p?.theme?.colors?.whiteColor;
+      case "milky-way":
+        return p?.theme?.colors?.whiteColor;
+      case "clouds":
+        return p?.theme?.colors?.blackColor;
+      default:
+        return p?.theme?.colors?.themeMainTextColor;
+    }
+  }};
+  transition: color var(--primary-transition);
+
+  &:hover {
+    color: ${(p) => p?.theme?.colors?.accentTextColor};
+    svg {
+      fill: ${(p) => p?.theme?.colors?.accentTextColor};
+    }
+  }
 `;
 
 export const IconFilter = styled(LiaFilterSolid)`
-  fill: ${(p) => p.theme.colors.themeMainTextColor};
+  fill: ${(p) => {
+    switch (p?.$colorBg) {
+      case "night":
+        return p?.theme?.colors?.whiteColor;
+      case "moon":
+        return p?.theme?.colors?.whiteColor;
+      case "plant":
+        return p?.theme?.colors?.whiteColor;
+      case "rocks":
+        return p?.theme?.colors?.whiteColor;
+      case "full-moon":
+        return p?.theme?.colors?.whiteColor;
+      case "gorge":
+        return p?.theme?.colors?.whiteColor;
+      case "ocean":
+        return p?.theme?.colors?.whiteColor;
+      case "milky-way":
+        return p?.theme?.colors?.whiteColor;
+      case "clouds":
+        return p?.theme?.colors?.blackColor;
+      default:
+        return p?.theme?.colors?.themeMainTextColor;
+    }
+  }};
   width: 2.4rem;
   height: 2.4rem;
+  transition: fill var(--primary-transition);
 `;

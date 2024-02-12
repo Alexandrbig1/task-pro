@@ -44,7 +44,6 @@ export const Board = () => {
       container.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
   const handleColumnModalOpen = () => {
     setIsModalColumnOpen((prevState) => !prevState);
   };
@@ -219,7 +218,9 @@ export const Board = () => {
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
       <BoardWrapper ref={containerRef} $scrollable={scrollable}>
-        <BoardTitle>{board?.titleBoard}</BoardTitle>
+        <BoardTitle $colorBg={board?.background}>
+          {board?.titleBoard}
+        </BoardTitle>
 
         {columns?.length !== 0 && (
           <ColumnList>
