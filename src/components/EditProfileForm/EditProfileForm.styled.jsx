@@ -21,6 +21,17 @@ export const UpdateAvatar = styled.img`
     border: none;
     border-radius: 0.8rem;
 `;
+
+export const AvatarIconUpdate = styled.svg`
+    /* font-size: 3.2rem; */
+    --color1: ${(p) => p.theme.colors.defaultIconBackground};
+    --color2: ${(p) => p.theme.colors.defaultAvatar};
+    width: ${(p) => (p?.size?.width ? p?.size?.width : "68px")};
+    height: ${(p) => (p?.size?.height ? p?.size?.height : "68px")};
+
+    border-radius: 0.8rem;
+`;
+
 export const LabelAvatar = styled.label`
     position: absolute;
     bottom: 0;
