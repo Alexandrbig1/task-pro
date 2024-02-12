@@ -15,7 +15,6 @@ import {
   LabelRadio,
   DeadlineWrapper,
   DeadlineTitle,
-  DatePicker,
 } from "./AddCardForm.styled";
 import { CardButton } from "../CardButton/CardButton";
 import { useDispatch, useSelector } from "react-redux";
@@ -24,7 +23,7 @@ import { selectCurrentBoard } from "../../redux/boards/selectors";
 import { getBoardById } from "../../redux/boards/operations";
 // import CustomSlots from "../DatePicker/DatePicker";
 
-import dayjs from "dayjs";
+import CustomDatePicker from "../Calendar/Calendar";
 
 const schema = Yup.object().shape({
   title: Yup.string().required(),
@@ -35,7 +34,7 @@ export const AddCardForm = ({ onClose, columnId }) => {
   const [labelChecked, setLabelChecked] = useState("without");
   const dispatch = useDispatch();
 
-  const [value, setValue] = useState(dayjs());
+  // const [value, setValue] = useState(null);
 
   // const [currentDate, setCurrentDate] = useState(dayjs());
 
@@ -146,8 +145,9 @@ export const AddCardForm = ({ onClose, columnId }) => {
 
         <DeadlineWrapper>
           <DeadlineTitle>Deadline</DeadlineTitle>
-          <DatePicker>Today, 8</DatePicker>
+          {/* <DatePicker>Today, 8</DatePicker> */}
           {/* <CustomSlots setValue={setValue} value={value} /> */}
+          <CustomDatePicker />
         </DeadlineWrapper>
 
         <CardButton btnText="Add" />
