@@ -27,6 +27,7 @@ const editProfileSchema = Yup.object().shape({
     email: Yup.string().matches(emailRegex, "Invalid email address"),
     password: Yup.string()
         .min(8, "Must Contain 8 Characters")
+        .max(18, "not more than 18 characters")
         .matches(/^(?=.*[a-z])/, " Must Contain One Lowercase Character")
         .matches(/^(?=.*[A-Z])/, "  Must Contain One Uppercase Character")
         .matches(/^(?=.*[0-9])/, "  Must Contain One Number Character")
@@ -36,7 +37,7 @@ const editProfileSchema = Yup.object().shape({
         ),
 });
 
-export default function ProfileForm() {
+export default function ProfileForm({ toggleModal }) {
     const user = useSelector(selectUser);
     const [avatarPreview, setAvatarPreview] = useState(user.avatarURL);
     const [showPassword, setShowPassword] = useState(false);
@@ -60,14 +61,8 @@ export default function ProfileForm() {
             try {
                 if (!user) return;
 
-                // const updateAvatar = user.avatarURL !== values.avatar;
-                // const updateUser =
-                //     user.name !== values.name ||
-                //     user.email !== values.email ||
-                //     user.password !== values.password;
-
                 await dispatch(editUser(values));
-
+                toggleModal();
                 resetForm({});
             } catch (error) {
                 console.error("error:", error);
