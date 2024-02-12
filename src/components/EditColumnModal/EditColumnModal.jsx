@@ -115,29 +115,3 @@ EditColumnModal.propTypes = {
   title: PropTypes.string,
 };
 
-//Connect
-
-// import React, { useState } from 'react';
-// import EditColumnModal from './EditColumnModal'; // Імпортуйте ваш компонент модального вікна
-
-// const YourComponent = () => {
-//   // Стан для управління видимістю модального вікна
-//   const [isModalOpen, setIsModalOpen] = useState(false);
-
-//   // Функція для відкриття та закриття модального вікна
-//   const toggleModal = () => {
-//     setIsModalOpen(!isModalOpen);
-//   };
-
-//   return (
-//     <div>
-//       {/* Кнопка для відкриття модального вікна */}
-//       <button onClick={toggleModal}>Add another column</button>
-
-//       {/* Модальне вікно, яке відображається на основі стану isModalOpen */}
-//       {isModalOpen && <EditColumnModal openEditColumnModal={toggleModal} />}
-//     </div>
-//   );
-// };
-
-// export default YourComponent;
