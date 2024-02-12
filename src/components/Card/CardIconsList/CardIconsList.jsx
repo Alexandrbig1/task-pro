@@ -26,6 +26,10 @@ export const CardIconsList = ({ currentColumn, cardInfo, columnsInfo }) => {
     setIsModalOpen(!isModalOpen);
   };
 
+  function handleEditModal() {
+    setIsTooltipModalOpen((prevState) => !prevState);
+  }
+
   const handleDelete = async () => {
     await dispatch(deleteCard(_id));
     dispatch(getBoardById(board._id));
@@ -49,9 +53,8 @@ export const CardIconsList = ({ currentColumn, cardInfo, columnsInfo }) => {
         <ListItem key={"move"}>
           <Button
             type="button"
-            onClick={() => {
-              setIsTooltipModalOpen(!isTooltipModalOpen);
-            }}
+            onClick={handleEditModal}
+            // onClick={() => setIsTooltipModalOpen((prevState) => !prevState)}
           >
             <Svg width="16" height="16">
               <use href={`${sprite}#icon-arrow-circle-dark`}></use>
@@ -81,6 +84,7 @@ export const CardIconsList = ({ currentColumn, cardInfo, columnsInfo }) => {
           columnsInfo={columnsInfo}
           currentColumn={currentColumn}
           onClose={setIsTooltipModalOpen}
+          cardId={_id}
         />
       )}
     </>

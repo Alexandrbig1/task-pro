@@ -3,13 +3,29 @@ import PropTypes from "prop-types";
 
 import sprite from "/public/images/icons.svg";
 
-export const Tooltip = ({ onClose, currentColumn, columnsInfo }) => {
-  if (columnsInfo.length === 0) return;
+import { selectCurrentBoard } from "../../redux/boards/selectors";
+import { useDispatch } from "react-redux";
+import { getBoardById, moveCard } from "../../redux/boards/operations";
+import { useSelector } from "react-redux";
 
-  const renderColumns = columnsInfo.filter(
+// eslint-disable-next-line react/prop-types
+export const Tooltip = ({ onClose, currentColumn, cardId }) => {
+  const { board, columns } = useSelector(selectCurrentBoard);
+  const dispatch = useDispatch();
+
+  const renderColumns = columns.filter(
     (item) => item.titleColumn !== currentColumn
   );
-  console.log(renderColumns);
+
+  function checkedColumnHandler(columnId) {
+    dispatch(moveCard({ cardId, newColumnId: columnId }))
+      .then(() => dispatch(getBoardById(board._id)))
+      .catch((err) => {
+        console.err("Error handling column:", err);
+      })
+      .finally(onClose);
+  }
+
   return (
     <BackDrop
       id="backdrop"
@@ -23,7 +39,7 @@ export const Tooltip = ({ onClose, currentColumn, columnsInfo }) => {
         <List>
           {renderColumns.map((item) => (
             <Item key={item._id}>
-              <Button>
+              <Button onClick={() => checkedColumnHandler(item._id)}>
                 {item.titleColumn}
                 <svg width="16" height="16">
                   <use href={`${sprite}#icon-arrow-circle-dark`}></use>

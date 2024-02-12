@@ -16,7 +16,9 @@ const StyledButton = styled(IconButton)({
   padding: 0,
 });
 
+// eslint-disable-next-line react/prop-types
 export default function CustomSlots() {
+  // export default function CustomSlots({ value, setValue }) {
   const [value, setValue] = useState(dayjs());
 
   return (
@@ -29,10 +31,10 @@ export default function CustomSlots() {
           views={["month", "day"]}
           allowSameDateSelection
           firstDayOfWeek={"Mon"}
-          slots={{
-            openPickerIcon: CustomIconButton,
-            openPickerButton: StyledButton,
-          }}
+          // slots={{
+          //   openPickerIcon: CustomIconButton,
+          //   openPickerButton: StyledButton,
+          // }}
           slotProps={{
             openPickerIcon: { fontSize: "large" },
             layout: {
@@ -78,7 +80,8 @@ export default function CustomSlots() {
                 },
                 ////Стилі для обраного дня////
                 ".Mui-selected": {
-                  backgroundColor: "#4CAF50 !important",
+                  backgroundColor: "#4CAF50 ",
+                  // backgroundColor: "#4CAF50 !important",
                   color: "#fff",
                   width: "24px",
                   height: "24px",
@@ -88,7 +91,8 @@ export default function CustomSlots() {
                 ".MuiPickersDay-today": {
                   color: "black",
                   borderRadius: "50%",
-                  border: "2px solid #53d616 !important",
+                  border: "2px solid #53d616 ",
+                  // border: "2px solid #53d616 !important",
                 },
                 ////////
                 ".MuiDayCalendar-slideTransition": {

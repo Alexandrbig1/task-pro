@@ -29,12 +29,11 @@
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
+    "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.18",
     "@mui/joy": "^5.0.0-beta.14",
-    "@mui/material": "^5.14.18",
-    "@mui/x-date-pickers": "^6.19.4",
+    "@mui/material": "^5.15.9",
     "@reduxjs/toolkit": "^2.1.0",
     "axios": "^1.6.7",
     "dayjs": "^1.11.10",
@@ -45,6 +44,7 @@
     "modern-normalize": "^2.0.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.4",
     "react-icons": "^5.0.1",

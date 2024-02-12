@@ -16,11 +16,21 @@ import {
   Date,
 } from "./Card.styled";
 import { CardIconsList } from "./CardIconsList/CardIconsList";
+// import { Draggable } from "react-beautiful-dnd";
 
-export const Card = ({ cardInfo, currentColumn, columnsInfo }) => {
+// eslint-disable-next-line react/prop-types
+export const Card = ({ cardInfo, currentColumn }) => {
   const { titleCard, description, priority, deadline } = cardInfo;
+
   return (
-    <CardItem>
+    // <Draggable draggableId={id} index={index}>
+    //   {(provided, snapshot) => (
+    <CardItem
+    // onClick={handleClick}
+    // {...provided.dragHandleProps}
+    // {...provided.draggableProps}
+    // ref={provided.innerRef}
+    >
       <Container>
         <Title>{titleCard}</Title>
         <Description>
@@ -41,10 +51,17 @@ export const Card = ({ cardInfo, currentColumn, columnsInfo }) => {
             <Subtitle>Deadline</Subtitle>
             <Date>{deadline}</Date>
           </DeadlineWrapp>
-          <CardIconsList columnsInfo={columnsInfo} currentColumn={currentColumn} cardInfo={cardInfo} />
+          <CardIconsList
+            columnsInfo={columnsInfo}
+            currentColumn={currentColumn}
+            cardInfo={cardInfo}
+          />
         </UnderlineInfo>
       </Container>
+      {/* {provided.placeholder} */}
     </CardItem>
+    //   )}
+    // </Draggable>
   );
 };
 
