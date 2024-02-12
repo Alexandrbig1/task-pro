@@ -79,6 +79,11 @@ export const Btn = styled.button`
   letter-spacing: -0.02em;
   text-decoration: underline;
   color: ${(p) => p.theme.colors.secondaryTextColorLowOp};
+  transition: color var(--primary-transition);
+
+  &:hover {
+    color: ${(p) => p.theme.colors.accentTextColor};
+  }
 `;
 export const List = styled.ul`
   display: flex;
@@ -93,6 +98,11 @@ export const Label = styled.label`
   align-items: center;
   column-gap: 8px;
   cursor: pointer;
+  transition: color var(--primary-transition);
+
+  &:hover {
+    color: ${(p) => p.theme.colors.accentTextColor};
+  }
 `;
 export const RadioInput = styled.input`
   display: none;
@@ -152,6 +162,11 @@ export const Span = styled.span`
   letter-spacing: -0.02em;
 
   color: ${(p) => p.theme.colors.secondaryTextColorLowOp};
+  transition: color var(--primary-transition);
+
+  &:hover {
+    color: ${(p) => p.theme.colors.accentTextColor};
+  }
 `;
 export const CheckedSpan = styled.span`
   font-weight: 400;

@@ -162,6 +162,7 @@ export const BoardIconEdit = styled(SlPencil)`
     color: ${(p) => p.theme.colors.accentTextColor};
   }
 `;
+
 export const BoardIconDelete = styled(AiOutlineDelete)`
   font-size: 1.8rem;
   color: ${(p) => p.theme.colors.mainTextColorLowOp};

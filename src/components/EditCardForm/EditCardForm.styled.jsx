@@ -6,6 +6,8 @@ export const FormWrapper = styled.div`
   flex-direction: column;
   gap: 14px;
   margin-bottom: 24px;
+
+  z-index: 250;
 `;
 
 export const Input = styled(Field)`

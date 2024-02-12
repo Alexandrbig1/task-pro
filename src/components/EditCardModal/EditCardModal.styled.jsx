@@ -7,7 +7,7 @@ export const BackDrop = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 10;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,7 +16,7 @@ export const BackDrop = styled.div`
 
 export const Modal = styled.div`
   position: absolute;
-  z-index: 20px;
+  z-index: 150px;
   width: 335px;
   border: 1px solid rgba(190, 219, 176, 0.5);
   border-radius: 8px;

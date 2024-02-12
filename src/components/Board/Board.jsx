@@ -123,6 +123,8 @@ export const Board = () => {
       return;
     }
 
+    // console.log(destination);
+
     dispatch(
       moveCard({
         cardId: source.droppableId,
