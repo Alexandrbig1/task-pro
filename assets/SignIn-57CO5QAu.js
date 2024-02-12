@@ -1,4 +1,4 @@
-import{u as o,p as n,r as c,b,j as t,H as j,a as v,K as C}from"./index-Uc9TBw2y.js";import{a as k,B as S,e as $}from"./index-JzsQrewr.js";import{B as s,a as T,L as B,T as u,b as E,c as F,G as z,F as P,d as I}from"./GoogleIcon-_npahn4E.js";import"./hoist-non-react-statics.cjs-vF48zycB.js";import"./objectWithoutPropertiesLoose-wqavpohd.js";const L=o(s)`
+import{u as o,p as n,r as c,b,j as t,H as j,a as v,M as C}from"./index-_KMBdrzx.js";import{a as k,B as S,e as $}from"./index-zOUa3_yt.js";import{B as s,a as T,L as B,T as u,b as E,c as F,G as z,F as P,d as I}from"./GoogleIcon-jwY-wQIB.js";import"./hoist-non-react-statics.cjs-P3G6KCah.js";import"./objectWithoutPropertiesLoose-wqavpohd.js";const L=o(s)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -84,7 +84,7 @@ import{u as o,p as n,r as c,b,j as t,H as j,a as v,K as C}from"./index-Uc9TBw2y.
   letter-spacing: -0.36px;
 `,G=o(u)`
   color: ${e=>e.theme.colors.blackColor};
-`,Y=o(u)`
+`,M=o(u)`
   color: ${e=>e.theme.colors.whiteColor};
   font-family: ${n};
   font-size: 18px;
@@ -139,7 +139,7 @@ import{u as o,p as n,r as c,b,j as t,H as j,a as v,K as C}from"./index-Uc9TBw2y.
     letter-spacing: -0.28px;
     font-size: 1.4rem;
   }
-`,K=o.div`
+`,Y=o.div`
   position: relative;
   width: 100%;
   max-width: 256px;
@@ -151,7 +151,7 @@ import{u as o,p as n,r as c,b,j as t,H as j,a as v,K as C}from"./index-Uc9TBw2y.
   @media (min-width: 768px) {
     max-width: 344px;
   }
-`,M=o.span`
+`,N=o.span`
   position: absolute;
   top: 50%;
   right: 1.2rem;
@@ -173,4 +173,4 @@ import{u as o,p as n,r as c,b,j as t,H as j,a as v,K as C}from"./index-Uc9TBw2y.
   @media (min-width: 768px) {
     font-size: 1.2rem;
   }
-`,N=I({breakpoints:{values:{xs:0,sm:550,md:960,lg:1280,xl:1920}}});function V(e){return t.jsxs(G,{variant:"body2",align:"center",...e,style:{fontSize:"1rem"},children:["Creamy Sharks © ",t.jsx(R,{color:"inherit",href:"https://alexandrbig1.github.io/task-pro/",target:"_blank",children:"TaskPro"})," ",new Date().getFullYear(),"."]})}function X(){const[e,g]=c.useState(!1),w=b(),[r,d]=c.useState({}),f=()=>{g(!e)},y=h=>{h.preventDefault();const a=h.currentTarget,l=a.elements.email.value,m=a.elements.password.value,i={};l.trim().length===0?i.email="Email address is required":$.test(l)||(i.email="Please enter a valid email address"),(m.length<6||m.length>18)&&(i.password="Password must be between 6 and 18 characters"),d(i),Object.keys(i).length===0&&(d({}),w(C({email:l,password:m})),a.reset())};return t.jsxs(t.Fragment,{children:[t.jsx(j,{children:t.jsxs(v,{children:[t.jsx("title",{children:"Creamy Sharks - Sign In"}),t.jsx("meta",{name:"description",content:"Explore TaskPro, the ultimate task manager born out of a 10-month Fullstack Development Bootcamp. Elevate your productivity with TaskPro's intuitive design and powerful functionality."})]})}),t.jsx(F,{theme:N,children:t.jsxs(L,{children:[t.jsx("div",{style:{display:"flex",alignItems:"center",justifyContent:"center",padding:"1.2rem"},children:t.jsxs(W,{children:[t.jsxs(s,{style:{display:"flex",alignItems:"center",gap:"1.4rem",position:"relative"},children:[t.jsx(q,{href:"#/signup",variant:"body2",children:"Registration"}),t.jsx(Y,{component:"h1",variant:"h5",children:"Log In"}),t.jsx(z,{})]}),t.jsxs(s,{component:"form",onSubmit:y,noValidate:!0,sx:{mt:2,width:{sm:"376px",xs:"312px"}},children:[t.jsxs(P,{children:[t.jsx(p,{margin:"normal",required:!0,fullWidth:!0,id:"email",label:"Enter your email",name:"email",autoComplete:"email",autoFocus:!0,error:!!r.email}),r.email&&t.jsx(x,{children:r.email})]}),t.jsxs(K,{children:[t.jsx(p,{label:"Confirm a password",variant:"outlined",margin:"normal",required:!0,fullWidth:!0,name:"password",id:"password",autoComplete:"current-password",type:e?"text":"password",error:!!r.password}),r.password&&t.jsx(x,{children:r.password}),t.jsx(M,{onClick:f,children:e?t.jsx(k,{}):t.jsx(S,{})})]}),t.jsx(H,{children:t.jsx(D,{type:"submit",color:"inherit",children:t.jsx(O,{children:"Log In Now"})})})]})]})}),t.jsx(V,{sx:{mt:8,mb:4}})]})})]})}export{X as default};
+`,V=I({breakpoints:{values:{xs:0,sm:550,md:960,lg:1280,xl:1920}}});function _(e){return t.jsxs(G,{variant:"body2",align:"center",...e,style:{fontSize:"1rem"},children:["Creamy Sharks © ",t.jsx(R,{color:"inherit",href:"https://alexandrbig1.github.io/task-pro/",target:"_blank",children:"TaskPro"})," ",new Date().getFullYear(),"."]})}function X(){const[e,g]=c.useState(!1),w=b(),[r,d]=c.useState({}),f=()=>{g(!e)},y=h=>{h.preventDefault();const a=h.currentTarget,l=a.elements.email.value,m=a.elements.password.value,i={};l.trim().length===0?i.email="Email address is required":$.test(l)||(i.email="Please enter a valid email address"),(m.length<6||m.length>18)&&(i.password="Password must be between 6 and 18 characters"),d(i),Object.keys(i).length===0&&(d({}),w(C({email:l,password:m})),a.reset())};return t.jsxs(t.Fragment,{children:[t.jsx(j,{children:t.jsxs(v,{children:[t.jsx("title",{children:"Creamy Sharks - Sign In"}),t.jsx("meta",{name:"description",content:"Explore TaskPro, the ultimate task manager born out of a 10-month Fullstack Development Bootcamp. Elevate your productivity with TaskPro's intuitive design and powerful functionality."})]})}),t.jsx(F,{theme:V,children:t.jsxs(L,{children:[t.jsx("div",{style:{display:"flex",alignItems:"center",justifyContent:"center",padding:"1.2rem"},children:t.jsxs(W,{children:[t.jsxs(s,{style:{display:"flex",alignItems:"center",gap:"1.4rem",position:"relative"},children:[t.jsx(q,{href:"#/signup",variant:"body2",children:"Registration"}),t.jsx(M,{component:"h1",variant:"h5",children:"Log In"}),t.jsx(z,{})]}),t.jsxs(s,{component:"form",onSubmit:y,noValidate:!0,sx:{mt:2,width:{sm:"376px",xs:"312px"}},children:[t.jsxs(P,{children:[t.jsx(p,{margin:"normal",required:!0,fullWidth:!0,id:"email",label:"Enter your email",name:"email",autoComplete:"email",autoFocus:!0,error:!!r.email}),r.email&&t.jsx(x,{children:r.email})]}),t.jsxs(Y,{children:[t.jsx(p,{label:"Confirm a password",variant:"outlined",margin:"normal",required:!0,fullWidth:!0,name:"password",id:"password",autoComplete:"current-password",type:e?"text":"password",error:!!r.password}),r.password&&t.jsx(x,{children:r.password}),t.jsx(N,{onClick:f,children:e?t.jsx(k,{}):t.jsx(S,{})})]}),t.jsx(H,{children:t.jsx(D,{type:"submit",color:"inherit",children:t.jsx(O,{children:"Log In Now"})})})]})]})}),t.jsx(_,{sx:{mt:8,mb:4}})]})})]})}export{X as default};
