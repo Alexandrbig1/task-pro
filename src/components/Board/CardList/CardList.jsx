@@ -6,21 +6,18 @@ import { selectFiltersBoards } from "../../../redux/boards/selectors";
 
 export const CardList = ({ currentColumn, cardInfo }) => {
   const filter = useSelector(selectFiltersBoards);
-  const renderCard = cardInfo.filter((card) => card.priority === filter);
+  const renderCard =
+    filter === ""
+      ? cardInfo
+      : cardInfo.filter((card) => card.priority === filter);
 
   return (
     <List>
-      {filter === ""
-        ? cardInfo.map((card) => (
-            <li key={card._id}>
-              <Card currentColumn={currentColumn} cardInfo={card} />
-            </li>
-          ))
-        : renderCard.map((card) => (
-            <li key={card._id}>
-              <Card currentColumn={currentColumn} cardInfo={card} />
-            </li>
-          ))}
+      {renderCard.map((card) => (
+        <li key={card._id}>
+          <Card currentColumn={currentColumn} cardInfo={card} />
+        </li>
+      ))}
     </List>
   );
 };
