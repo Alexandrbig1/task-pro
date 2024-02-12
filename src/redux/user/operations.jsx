@@ -41,17 +41,14 @@ export const usersAvatar = createAsyncThunk(
     "users/avatar",
 
     async (avatarFormData, thunkAPI) => {
-        console.log(axios.defaults.headers.common);
         try {
-            console.log(avatarFormData);
             const res = await axios.patch("/users/avatar", avatarFormData, {
                 headers: {
                     Authorization: axios.defaults.headers.common.Authorization,
                     "Content-Type": "multipart/form-data",
                 },
             });
-            console.log(res);
-            // setAuthHeader(res.data);
+
             return res.data.avatarURL;
         } catch (err) {
             return thunkAPI.rejectWithValue(err.message);
@@ -61,25 +58,37 @@ export const usersAvatar = createAsyncThunk(
 
 export const editUser = createAsyncThunk(
     "users/profile",
-    async ({ type, value, token }) => {
+    async (formData, thunkAPI) => {
         try {
             const config = {
-                [type]: value,
+                name: formData.name,
+                email: formData.email,
             };
+
+            if (formData.password.trim() !== "") {
+                config.password = formData.password.trim();
+            }
+
             const header = {
                 headers: {
                     Accept: "application/json",
-                    Authorization: `Bearer ${token}`,
+                    Authorization: axios.defaults.headers.common.Authorization,
                     "Content-Type": "application/json",
                 },
             };
-            const { data } = await axios.patch("/user/update", config, header);
-            console.log("Returned data:", data);
+
+            const { data } = await axios.patch(
+                "/users/profile",
+                config,
+                header
+            );
+
             toast.success("Your information was update");
 
             return data;
         } catch (err) {
             toast.error(err.message);
+            return thunkAPI.rejectWithValue(err.message);
         }
     }
 );
