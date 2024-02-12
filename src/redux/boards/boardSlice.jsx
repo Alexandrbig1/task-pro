@@ -6,6 +6,7 @@ import {
   getBoardById,
   editBoardById,
   moveCard,
+  boardFilter,
 } from "./operations";
 
 const boardsSlice = createSlice({
@@ -17,11 +18,10 @@ const boardsSlice = createSlice({
       isLoading: false,
       error: null,
     },
-    filters: "",
   },
   reducers: {
     setFilter(state, action) {
-      state.filters = action.payload;
+      state.boards.current.board.filter = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -135,6 +135,12 @@ const boardsSlice = createSlice({
       .addCase(deleteBoard.rejected, (state, action) => {
         state.boards.isLoading = false;
         state.boards.error = action.payload;
+      })
+      .addCase(boardFilter.fulfilled, (state, action) => {
+        state.boards.current.board.filter = action.payload;
+      })
+      .addCase(boardFilter.rejected, (state, _) => {
+        state.boards.current.board.filter = "default";
       });
   },
 });

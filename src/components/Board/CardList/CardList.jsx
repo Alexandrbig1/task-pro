@@ -3,6 +3,8 @@ import { Card } from "../../Card/Card";
 import { List } from "./CardList.styled";
 import { Draggable } from "react-beautiful-dnd";
 import { useEffect, useRef, useState } from "react";
+import { useSelector } from "react-redux";
+import { selectFiltersBoards } from "../../../redux/boards/selectors";
 // eslint-disable-next-line react/prop-types
 export const CardList = ({ currentColumn, cardInfo }) => {
   const [scrollable, setScrollable] = useState(false);
@@ -11,6 +13,12 @@ export const CardList = ({ currentColumn, cardInfo }) => {
   function handleClick(id) {
     // console.log(id);
   }
+  const filter = useSelector(selectFiltersBoards);
+
+  const renderCard =
+    filter === "default"
+      ? cardInfo
+      : cardInfo.filter((card) => card.priority === filter);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -27,7 +35,7 @@ export const CardList = ({ currentColumn, cardInfo }) => {
 
   return (
     <List ref={containerRef} $scrollable={scrollable}>
-      {cardInfo.map((card, index) => (
+      {renderCard.map((card, index) => (
         <li key={card._id}>
           <Draggable draggableId={card._id} index={index}>
             {(provided) => (

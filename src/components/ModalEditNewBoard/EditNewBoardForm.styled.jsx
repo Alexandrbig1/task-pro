@@ -23,6 +23,7 @@ export const StyledInput = styled(Field)`
   margin-bottom: 24px;
   opacity: 0.4;
 
+
   &:focus {
     opacity: 1;
     outline: none;
