@@ -31,9 +31,7 @@ const NeedHelp = () => {
           Need help?
         </HelpBtn>
       </HelpWrapper>
-      {isOpenModal && (
-        <NeedHelpModal openHelpModal={openHelpModal}></NeedHelpModal>
-      )}
+      {isOpenModal && <NeedHelpModal openHelpModal={openHelpModal} />}
     </>
   );
 };

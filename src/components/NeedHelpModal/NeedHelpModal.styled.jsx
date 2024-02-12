@@ -9,7 +9,7 @@ export const HelpModalWrap = styled.div`
   height: 100vh;
   background-color: ${(p) => p.theme.colors.modalBgColor};
   /* cursor: pointer; */
-  z-index: 5;
+  z-index: 100;
 `;
 
 export const StyledModal = styled.div`
@@ -22,7 +22,7 @@ export const StyledModal = styled.div`
   max-width: 400px;
   /* min-height: 355px; */
 
-  z-index: 10;
+  z-index: 200;
 
   background-color: ${(p) => p.theme.colors.modalWindowsBgColor};
   border-radius: 10px;

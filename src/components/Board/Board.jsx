@@ -113,28 +113,66 @@ export const Board = () => {
   };
 
   function handleDragEnd(result) {
-    const { destination, source, type } = result;
+    const { draggableId, destination, source } = result;
 
-    if (
-      !destination ||
-      (source.droppableId === destination.droppableId &&
-        source.index === destination.index)
-    ) {
+    // Check if the card was dropped outside a valid droppable
+    if (!destination) {
       return;
     }
 
-    // console.log(destination);
-
-    dispatch(
-      moveCard({
-        cardId: source.droppableId,
+    // Check if the card was dropped in a different location
+    if (
+      destination.droppableId !== source.droppableId ||
+      destination.index !== source.index
+    ) {
+      const payload = {
+        cardId: draggableId,
         newColumnId: destination.droppableId,
-      })
-    )
-      .then(() => dispatch(getBoardById(board._id)))
-      .catch((err) => {
-        console.err("Error handling column:", err);
-      });
+      };
+
+      // Dispatch the moveCard action with the payload
+      // dispatch(moveCard(payload));
+      dispatch(moveCard(payload))
+        .then(() => dispatch(getBoardById(board._id)))
+        .catch((err) => {
+          console.error("Error handling column:", err);
+        });
+    }
+    // const { destination, source, type } = result;
+
+    // if (
+    //   !destination ||
+    //   (source.droppableId === destination.droppableId &&
+    //     source.index === destination.index)
+    // ) {
+    //   return;
+    // }
+    // console.log("droppableId ID:", source.droppableId);
+    // console.log("Draggable ID:", destination.droppableId);
+
+    // const payload = {
+    //   cardId: source.droppableId,
+    //   newColumnId: destination.droppableId,
+    // };
+    // console.log("Drag-and-Drop Payload:", payload);
+
+    // setTimeout(() => {
+    //   dispatch(moveCard(payload))
+    //     .then(() => dispatch(getBoardById(board._id)))
+    //     .catch((err) => {
+    //       console.error("Error handling column:", err);
+    //     });
+    // }, 100);
+
+    //
+    //
+    //
+
+    // dispatch(moveCard(payload))
+    //   .then(() => dispatch(getBoardById(board._id)))
+    //   .catch((err) => {
+    //     console.err("Error handling column:", err);
+    //   });
 
     // if (type === "group") {
     //   const renderedStores = [...stores];

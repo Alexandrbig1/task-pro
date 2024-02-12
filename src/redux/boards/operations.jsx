@@ -42,13 +42,13 @@ export const moveCard = createAsyncThunk(
   "boards/moveCard",
   async (payload, thunkAPI) => {
     try {
-      console.log(payload);
+      console.log("Move Card Payload:", payload);
 
       const response = await axios.patch(`${URL}/cards/${payload.cardId}`, {
         columnId: payload.newColumnId,
       });
 
-      console.log(response);
+      console.log("Move Card Response:", response);
 
       return response.data;
     } catch (e) {
