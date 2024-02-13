@@ -9,7 +9,7 @@ export const CustomDatePickerWrapper = styled.div`
     /* width: 233px; */
     /* height: 254px; */
     border: 1px solid ${(p) => p.theme.colors.accentTextColor};
-    background-color: ${(p) => p.theme.colors.mainBgColor};
+    background-color: ${(p) => p.theme.colors.calendarBgColor};
     border-radius: 8px;
     padding: 18px;
   }
@@ -45,7 +45,7 @@ export const CustomDatePickerWrapper = styled.div`
     letter-spacing: -0.02em;
     border-bottom: 1px solid ${(p) => p.theme.colors.priorityColorWithout};
     padding-bottom: 14px;
-    color: ${(p) => p.theme.colors.mainTextColor};
+    color: ${(p) => p.theme.colors.secondaryTextColor};
   }
 
   //// Тижні ////
@@ -77,7 +77,7 @@ export const CustomDatePickerWrapper = styled.div`
     text-align: center;
     border-radius: 50%;
     margin: 0;
-    color: ${(p) => p.theme.colors.mainTextColor};
+    color: ${(p) => p.theme.colors.secondaryTextColor};
   }
 
   .react-datepicker__day--today {
