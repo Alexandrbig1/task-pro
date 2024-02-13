@@ -155,22 +155,16 @@ export const TextFieldSignUpStyled = styled(TextField)`
       /* border: 1px solid transparent; */
       outline: none;
     }
-  }
 
-  &:focus-within {
-    label {
-      font-size: 1rem;
+    &::placeholder {
+      color: ${(p) => p.theme.colors.whiteColor};
+      font-family: ${primaryFont};
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: -0.28px;
+      font-size: 1.4rem;
     }
-  }
-
-  label {
-    color: ${(p) => p.theme.colors.whiteColorLowOp};
-    font-family: ${primaryFont};
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: -0.28px;
-    font-size: 1.4rem;
   }
 `;
 

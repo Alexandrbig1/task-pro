@@ -5,10 +5,6 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useDispatch } from "react-redux";
 import { logIn } from "../../redux/auth/operations";
 import { FieldWrapper } from "../SignUp/SignUp.styled";
-// import { signInWithEmailAndPassword } from "firebase/auth";
-// import { auth } from "../../backend/firebase";
-// import { useNavigate } from "react-router-dom";
-// import { toast } from "react-toastify";
 import emailRegex from "../../regex/emailRegex";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import {
@@ -26,7 +22,6 @@ import {
   RegistrationLink,
   BtnLogInSpan,
 } from "./SignIn.styled";
-import Google from "../../components/GoogleIcon/GoogleIcon";
 
 const customTheme = createTheme({
   breakpoints: {
@@ -65,7 +60,6 @@ function Copyright(props) {
 export default function SignIn() {
   const [showPassword, setShowPassword] = React.useState(false);
   const dispatch = useDispatch();
-  // const navigate = useNavigate();
   const [errors, setErrors] = React.useState({});
 
   const handleClickShowPassword = () => {
@@ -95,35 +89,6 @@ export default function SignIn() {
 
     if (Object.keys(newErrors).length === 0) {
       setErrors({});
-      // signInWithEmailAndPassword(auth, email, password)
-      //   .then(() => {
-      //     navigate("/home");
-      //     toast.success("Welcome to TaskPro! 🚀 Created by Creamy Sharks 🦈", {
-      //       position: "top-right",
-      //       autoClose: 3000,
-      //       hideProgressBar: false,
-      //       closeOnClick: true,
-      //       pauseOnHover: false,
-      //       draggable: false,
-      //       progress: undefined,
-      //       theme: "light",
-      //     });
-      //   })
-      //   .catch(() => {
-      //     toast.error("Incorrect email or password. Please try again.", {
-      //       position: "top-right",
-      //       autoClose: 5000,
-      //       hideProgressBar: false,
-      //       closeOnClick: true,
-      //       pauseOnHover: false,
-      //       draggable: false,
-      //       progress: undefined,
-      //       theme: "light",
-      //     });
-      //   })
-      //   .finally(() => {
-      //     form.reset();
-      //   });
       dispatch(
         logIn({
           email: email,
@@ -170,7 +135,6 @@ export default function SignIn() {
                 <TypoTitleStyled component="h1" variant="h5">
                   Log In
                 </TypoTitleStyled>
-                <Google />
               </Box>
               <Box
                 component="form"
@@ -187,7 +151,7 @@ export default function SignIn() {
                     required
                     fullWidth
                     id="email"
-                    label="Enter your email"
+                    placeholder="Enter your email"
                     name="email"
                     autoComplete="email"
                     autoFocus
@@ -200,7 +164,7 @@ export default function SignIn() {
 
                 <EyePasswordWrap>
                   <TextFieldStyled
-                    label="Confirm a password"
+                    placeholder="Confirm a password"
                     variant="outlined"
                     margin="normal"
                     required

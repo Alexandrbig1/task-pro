@@ -44,7 +44,8 @@ export default function Home({ toggleTheme }) {
             {location.pathname === "/home" ? (
               <MainPage />
             ) : (
-              <Suspense fallback={<Loader />}>
+              <Suspense>
+                {/* <Suspense fallback={<Loader />}> */}
                 <Outlet />
               </Suspense>
             )}

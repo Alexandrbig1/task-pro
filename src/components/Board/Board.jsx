@@ -44,6 +44,7 @@ export const Board = () => {
       container.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   const handleColumnModalOpen = () => {
     setIsModalColumnOpen((prevState) => !prevState);
   };
