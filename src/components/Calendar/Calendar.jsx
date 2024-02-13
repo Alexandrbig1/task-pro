@@ -17,8 +17,9 @@ const CustomDatePicker = ({ setSelectedDate }) => {
       <DatePicker
         selected={startDate}
         onChange={(date) => handleDateChange(date)}
-        dateFormat="MMMM dd"
-        minDate={startDate}
+        dateFormat="EEEE, MMMM dd"
+        minDate={new Date()}
+        showPopperArrow={false}
       />
     </CustomDatePickerWrapper>
   );

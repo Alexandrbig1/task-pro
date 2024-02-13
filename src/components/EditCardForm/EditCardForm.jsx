@@ -155,8 +155,9 @@ export const EditCardForm = ({ cardInfo, onClose }) => {
             <DatePicker
               selected={selectedDate}
               onChange={(date) => handleDateChange(date)}
-              dateFormat="MMMM dd"
+              dateFormat="EEEE, MMMM dd"
               minDate={startDate}
+              showPopperArrow={false}
             />
           </EditCalendarWrapper>
         </DeadlineWrapper>
