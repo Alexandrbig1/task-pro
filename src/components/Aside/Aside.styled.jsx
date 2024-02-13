@@ -73,6 +73,7 @@ export const AsideWrapper = styled.div`
     display: flex;
     position: relative;
     height: 100%;
+    min-height: 100vh;
     overflow-y: hidden;
     justify-content: space-between;
     gap: 0;

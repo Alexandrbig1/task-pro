@@ -2,10 +2,12 @@
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { CustomDatePickerWrapper } from "./Calendar.styled";
+import { useState } from "react";
 
 // eslint-disable-next-line react/prop-types
-const CustomDatePicker = ({ selectedDate, handleDateChange }) => {
-  // const [selectedDate, setSelectedDate] = useState(new Date());
+const CustomDatePicker = () => {
+  // const CustomDatePicker = ({ selectedDate, handleDateChange }) => {
+  const [startDate, setStartDate] = useState(new Date());
 
   // const handleDateChange = (date) => {
   //   setSelectedDate(date);
@@ -24,6 +26,17 @@ const CustomDatePicker = ({ selectedDate, handleDateChange }) => {
   return (
     <CustomDatePickerWrapper>
       <DatePicker
+        selected={startDate}
+        onChange={(date) => setStartDate(date)}
+        // selected={startDate}
+        // onChange={(date) => setStartDate(date)}
+        dateFormat="MMMM dd"
+        ////Заборона вибору дат до поточної дати////
+        minDate={startDate}
+        // filterDate={filterDates}
+        // customDayClassName={customDayClassName}
+      />
+      {/* <DatePicker
         selected={selectedDate}
         onChange={handleDateChange}
         dateFormat="MMMM dd"
@@ -31,7 +44,7 @@ const CustomDatePicker = ({ selectedDate, handleDateChange }) => {
         minDate={new Date()}
         // filterDate={filterDates}
         // customDayClassName={customDayClassName}
-      />
+      /> */}
     </CustomDatePickerWrapper>
   );
 };
