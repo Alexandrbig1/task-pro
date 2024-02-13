@@ -1,4 +1,4 @@
-import{u as t,p as g,b as $,j as o,l as ne,r as m,c as ie,B as S,d as ae,e as T,f as se,g as D,N as le,h as ce,i as U,k as F,m as A,n as V,s as _,o as de,q as he,H as me,a as pe,O as ue}from"./index-Lck8J9_M.js";import{L as xe}from"./Logo-02bh8dQb.js";import{G as k}from"./hoist-non-react-statics.cjs--WwnqE8t.js";import{I as B,P as w,F as q,a as C,c as O,b as j,d as K,E as Z,C as X,s as G,e as Q,u as ge,f as fe}from"./selectors-KcfwlJbo.js";import{e as Y,B as be,a as ve}from"./index-KB1_7bMO.js";function ye(e){return k({tag:"svg",attr:{fill:"none",viewBox:"0 0 24 24",strokeWidth:"2",stroke:"currentColor","aria-hidden":"true"},child:[{tag:"path",attr:{strokeLinecap:"round",strokeLinejoin:"round",d:"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"},child:[]}]})(e)}const we=t(ye)`
+import{u as t,p as g,b as $,j as o,l as ne,r as m,c as ie,B as S,d as ae,e as T,f as se,g as D,N as le,h as ce,i as U,k as F,m as A,n as V,s as _,o as de,q as he,H as me,a as pe,O as ue}from"./index-Ab2k9T3l.js";import{L as xe}from"./Logo-3KKEiQUq.js";import{G as k}from"./hoist-non-react-statics.cjs-9gJ7CPl9.js";import{I as B,P as w,F as q,a as C,c as O,b as j,d as K,E as Z,C as X,s as G,e as Q,u as ge,f as fe}from"./selectors-iQHRWcI_.js";import{e as Y,B as be,a as ve}from"./index-TIQSNEfB.js";function ye(e){return k({tag:"svg",attr:{fill:"none",viewBox:"0 0 24 24",strokeWidth:"2",stroke:"currentColor","aria-hidden":"true"},child:[{tag:"path",attr:{strokeLinecap:"round",strokeLinejoin:"round",d:"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"},child:[]}]})(e)}const we=t(ye)`
   font-size: 3.2rem;
   color: ${e=>e.theme.colors.logoutIcon};
 `,ke=t.a`
@@ -767,6 +767,7 @@ import{u as t,p as g,b as $,j as o,l as ne,r as m,c as ie,B as S,d as ae,e as T,
     display: flex;
     position: relative;
     height: 100%;
+    min-height: 100vh;
     overflow-y: hidden;
     justify-content: space-between;
     gap: 0;
@@ -1164,23 +1165,27 @@ import{u as t,p as g,b as $,j as o,l as ne,r as m,c as ie,B as S,d as ae,e as T,
   ${e=>e.background!=="default"&&e.loc!=="/home"&&V`
       background-image: url(${r=>`https://res.cloudinary.com/dsywt0aej/image/upload/v1707238602/background-boards-mobile/${r.background}`});
 
-      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
         background-image: url(${r=>`https://res.cloudinary.com/dsywt0aej/image/upload/v1707238602/background-boards-mobile/${r.background}_2x`});
       }
 
       @media screen and (min-width: 768px) {
-        background-image: url(${r=>`https://res.cloudinary.com/dsywt0aej/image/upload/v1707238602/background-boards-tablet/${r.background}`});
+        background-image: url(${r=>`https://res.cloudinary.com/dsywt0aej/image/upload/v1707238986/background-boards-tablet/${r.background}`});
       }
-      @media screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
-        (min-resolution: 192dpi) {
-        background-image: url(${r=>`https://res.cloudinary.com/dsywt0aej/image/upload/v1707238602/background-boards-tablet/${r.background}_2x`});
+      @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+        background-image: url(${r=>`https://res.cloudinary.com/dsywt0aej/image/upload/v1707238986/background-boards-tablet/${r.background}_2x`});
       }
 
       @media screen and (min-width: 1440px) {
         background-image: url(${r=>`https://res.cloudinary.com/dsywt0aej/image/upload/v1707238503/background-boards-desktop/${r.background}`});
       }
-      @media screen and (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2),
-        (min-resolution: 192dpi) {
+      @media screen and (min-width: 1440px) and (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
         background-image: url(${r=>`https://res.cloudinary.com/dsywt0aej/image/upload/v1707238503/background-boards-desktop/${r.background}_2x`});
       }
       background-size: cover;
