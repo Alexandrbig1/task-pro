@@ -58,7 +58,5 @@ export const CardList = ({ currentColumn, cardInfo }) => {
 
 CardList.propTypes = {
   currentColumn: PropTypes.string,
-  // columnID: PropTypes.string,
   cardInfo: PropTypes.array,
-  columnsInfo: PropTypes.array,
 };

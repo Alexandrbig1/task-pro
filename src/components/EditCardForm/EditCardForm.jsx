@@ -1,16 +1,19 @@
-import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { CardButton } from "../CardButton/CardButton";
+import { Formik, Form, ErrorMessage } from "formik";
+import { useDispatch, useSelector } from "react-redux";
 import { editCard } from "../../redux/cards/operations";
 import { selectCurrentBoard } from "../../redux/boards/selectors";
 import { getBoardById } from "../../redux/boards/operations";
+import { CardButton } from "../CardButton/CardButton";
+import CustomDatePicker from "../Calendar/Calendar";
 import {
   FormWrapper,
+  Error,
+  Label,
   Input,
   DescriptionArea,
   FormRadioWrapper,
@@ -20,21 +23,30 @@ import {
   LabelRadio,
   DeadlineWrapper,
   DeadlineTitle,
-  DatePicker,
 } from "./EditCardForm.styled";
 
 const schema = Yup.object().shape({
-  title: Yup.string().required(),
+  title: Yup.string()
+    .required()
+    .max(25, "must be no more than 25 characters long"),
   description: Yup.string(),
 });
 
 export const EditCardForm = ({ cardInfo, onClose }) => {
   const { _id, titleCard, description, priority, deadline } = cardInfo;
+  const [labelChecked, setLabelChecked] = useState(priority);
+  const [selectedDate, setSelectedDate] = useState(deadline);
+  const dispatch = useDispatch();
+
+  const handleDateChange = (date) => {
+    const year = date.getFullYear().toString();
+    const month = (date.getMonth() + 1).toString().padStart(2, "0");
+    const day = date.getDate().toString().padStart(2, "0");
+    const formattedDate = `${year}-${month}-${day}`;
+    setSelectedDate(formattedDate);
+  };
 
   const { board } = useSelector(selectCurrentBoard);
-
-  const [labelChecked, setLabelChecked] = useState(priority);
-  const dispatch = useDispatch();
 
   const handleLableChange = (e) => {
     setLabelChecked(e.target.value);
@@ -45,7 +57,7 @@ export const EditCardForm = ({ cardInfo, onClose }) => {
       titleCard: values.title,
       description: values.description,
       priority: labelChecked,
-      deadline: "2024-01-02",
+      deadline: selectedDate,
     };
     await dispatch(editCard({ _id, newCardData }));
     dispatch(getBoardById(board._id));
@@ -71,7 +83,7 @@ export const EditCardForm = ({ cardInfo, onClose }) => {
     >
       <Form autoComplete="off">
         <FormWrapper>
-          <label htmlFor="title">
+          <Label htmlFor="title">
             <Input
               type="text"
               name="title"
@@ -79,8 +91,11 @@ export const EditCardForm = ({ cardInfo, onClose }) => {
               autoFocus
               required
             />
-          </label>
-          <label htmlFor="description">
+            <Error>
+              <ErrorMessage name="title" />
+            </Error>
+          </Label>
+          <Label htmlFor="description">
             <DescriptionArea
               component="textarea"
               name="description"
@@ -88,7 +103,7 @@ export const EditCardForm = ({ cardInfo, onClose }) => {
               cols="33"
               placeholder="Description"
             />
-          </label>
+          </Label>
         </FormWrapper>
 
         <FormRadioWrapper>
@@ -135,7 +150,10 @@ export const EditCardForm = ({ cardInfo, onClose }) => {
 
         <DeadlineWrapper>
           <DeadlineTitle>Deadline</DeadlineTitle>
-          <DatePicker>Today, 8</DatePicker>
+          <CustomDatePicker
+            handleDateChange={handleDateChange}
+            selectedDate={selectedDate}
+          />
         </DeadlineWrapper>
 
         <CardButton btnText="Edit" />
