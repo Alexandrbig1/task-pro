@@ -37,7 +37,7 @@ const schema = Yup.object().shape({
 export const EditCardForm = ({ cardInfo, onClose }) => {
   const { _id, titleCard, description, priority, deadline } = cardInfo;
   const [labelChecked, setLabelChecked] = useState(priority);
-
+  const [startDate, setStartDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(deadline);
 
   const dispatch = useDispatch();
@@ -156,6 +156,7 @@ export const EditCardForm = ({ cardInfo, onClose }) => {
               selected={selectedDate}
               onChange={(date) => handleDateChange(date)}
               dateFormat="MMMM dd"
+              minDate={startDate}
             />
           </EditCalendarWrapper>
         </DeadlineWrapper>
