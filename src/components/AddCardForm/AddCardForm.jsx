@@ -42,7 +42,6 @@ export const AddCardForm = ({ onClose, columnId }) => {
     const month = (date.getMonth() + 1).toString().padStart(2, "0");
     const day = date.getDate().toString().padStart(2, "0");
     const formattedDate = `${year}-${month}-${day}`;
-    setSelectedDate(formattedDate);
   };
 
   const { board } = useSelector(selectCurrentBoard);
@@ -151,10 +150,7 @@ export const AddCardForm = ({ onClose, columnId }) => {
 
         <DeadlineWrapper>
           <DeadlineTitle>Deadline</DeadlineTitle>
-          <CustomDatePicker
-            handleDateChange={handleDateChange}
-            selectedDate={selectedDate}
-          />
+          <CustomDatePicker setSelectedDate={setSelectedDate} />
         </DeadlineWrapper>
 
         <CardButton btnText="Add" />

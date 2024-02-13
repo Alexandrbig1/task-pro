@@ -5,13 +5,15 @@ import { CustomDatePickerWrapper } from "./Calendar.styled";
 import { useState } from "react";
 
 // eslint-disable-next-line react/prop-types
-const CustomDatePicker = () => {
+const CustomDatePicker = ({ setSelectedDate }) => {
+  // const CustomDatePicker = () => {
   // const CustomDatePicker = ({ selectedDate, handleDateChange }) => {
   const [startDate, setStartDate] = useState(new Date());
 
-  // const handleDateChange = (date) => {
-  //   setSelectedDate(date);
-  // };
+  const handleDateChange = (date) => {
+    setStartDate(date);
+    setSelectedDate(date);
+  };
 
   // const filterDates = (date) => {
   //   // Порівнюємо дату та перевіряємо, чи вона належить обраному місяцю
@@ -27,11 +29,12 @@ const CustomDatePicker = () => {
     <CustomDatePickerWrapper>
       <DatePicker
         selected={startDate}
-        onChange={(date) => setStartDate(date)}
-        // selected={startDate}
-        // onChange={(date) => setStartDate(date)}
+        onChange={(date) => handleDateChange(date)}
+        // selected={selectedDate}
+        // onChange={(date) => handleDateChange(date)}
         dateFormat="MMMM dd"
         ////Заборона вибору дат до поточної дати////
+        // minDate={selectedDate}
         minDate={startDate}
         // filterDate={filterDates}
         // customDayClassName={customDayClassName}
