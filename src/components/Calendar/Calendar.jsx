@@ -1,14 +1,15 @@
-import { useState } from "react";
+// import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { CustomDatePickerWrapper } from "./Calendar.styled";
 
-const CustomDatePicker = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
+// eslint-disable-next-line react/prop-types
+const CustomDatePicker = ({ selectedDate, handleDateChange }) => {
+  // const [selectedDate, setSelectedDate] = useState(new Date());
 
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
+  // const handleDateChange = (date) => {
+  //   setSelectedDate(date);
+  // };
 
   // const filterDates = (date) => {
   //   // Порівнюємо дату та перевіряємо, чи вона належить обраному місяцю

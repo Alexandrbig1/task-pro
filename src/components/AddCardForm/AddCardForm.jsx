@@ -32,9 +32,15 @@ export const AddCardForm = ({ onClose, columnId }) => {
   const [labelChecked, setLabelChecked] = useState("without");
   const dispatch = useDispatch();
 
-  // const [value, setValue] = useState(null);
+  const [selectedDate, setSelectedDate] = useState(new Date());
 
-  // const [currentDate, setCurrentDate] = useState(dayjs());
+  const handleDateChange = (date) => {
+    const year = date.getFullYear().toString();
+    const month = (date.getMonth() + 1).toString().padStart(2, "0");
+    const day = date.getDate().toString().padStart(2, "0");
+    const formattedDate = `${year}-${month}-${day}`;
+    setSelectedDate(formattedDate);
+  };
 
   const { board } = useSelector(selectCurrentBoard);
 
@@ -43,24 +49,15 @@ export const AddCardForm = ({ onClose, columnId }) => {
   };
 
   const handleSubmit = async (values, { resetForm }) => {
-    // const calendarDate = {
-    //   day: value.$D,
-    //   month: value.$M,
-    //   year: value.$y,
-    // };
-
-    // let calendar = "";
-
-    // let calendar = `${calendarDate.year}-0${calendarDate.month}-${calendarDate.day}`;
-
     const newCard = {
       titleCard: values.title,
       description: values.description,
       priority: labelChecked,
-      // deadline: calendar,
-      deadline: "2024-02-08",
+      // deadline: "2024-02-22",
+      deadline: selectedDate,
       columnId: columnId,
     };
+
     await dispatch(addCard(newCard));
     dispatch(getBoardById(board._id));
     toast.success("You have successfully added the card!", {
@@ -149,7 +146,10 @@ export const AddCardForm = ({ onClose, columnId }) => {
 
         <DeadlineWrapper>
           <DeadlineTitle>Deadline</DeadlineTitle>
-          <CustomDatePicker />
+          <CustomDatePicker
+            handleDateChange={handleDateChange}
+            selectedDate={selectedDate}
+          />
         </DeadlineWrapper>
 
         <CardButton btnText="Add" />

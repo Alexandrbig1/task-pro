@@ -22,11 +22,12 @@ import {
 // eslint-disable-next-line react/prop-types
 export const Card = ({ cardInfo, currentColumn }) => {
   const { titleCard, description, priority, deadline } = cardInfo;
+
   const [formattedDate, setFormattedDate] = useState("");
 
   useEffect(() => {
     const date = dayjs(deadline);
-    const outputDate = `0${date.$D}/0${date.$M}/${date.$y}`;
+    const outputDate = date.format("DD/MM/YYYY");
     setFormattedDate(outputDate);
   }, [deadline]);
 
