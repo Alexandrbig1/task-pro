@@ -1,6 +1,11 @@
 import { ErrorMessage, Formik } from "formik";
 import * as Yup from "yup";
-
+import PropTypes from "prop-types";
+import sprite from "./images/icons.svg";
+import { useState } from "react";
+import { CardButton } from "../CardButton/CardButton";
+import { useDispatch } from "react-redux";
+import { addBoard } from "../../redux/boards/operations";
 import {
   StyledForm,
   StyledIcon,
@@ -17,14 +22,6 @@ import {
   StyledDefaultIcon,
   DefaultIconWrapper,
 } from "../ModalNewBoard/CreateNewBoardForm.styled";
-import PropTypes from "prop-types";
-import sprite from "./images/icons.svg";
-
-import { useState } from "react";
-import { CardButton } from "../CardButton/CardButton";
-
-import { useDispatch } from "react-redux";
-import { addBoard } from "../../redux/boards/operations";
 
 const formSquema = Yup.object().shape({
   titleBoard: Yup.string()

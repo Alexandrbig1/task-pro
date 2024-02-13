@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import PropTypes from "prop-types";
+import { AddCardForm } from "../AddCardForm/AddCardForm";
 import {
   BackDrop,
   Modal,
@@ -7,7 +8,6 @@ import {
   ModalContainer,
   Title,
 } from "./AddCardModal.styled";
-import { AddCardForm } from "../AddCardForm/AddCardForm";
 
 export const AddCardModal = ({ onClose, columnId }) => {
   useEffect(() => {

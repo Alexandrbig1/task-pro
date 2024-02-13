@@ -4,7 +4,6 @@ import "react-toastify/dist/ReactToastify.css";
 import sprite from "/public/images/icons.svg";
 import { EditCardModal } from "../../EditCardModal/EditCardModal";
 import { useState } from "react";
-// import { DeadlineBell } from "../DeadlineBell/DeadlineBell";
 import Ring from "../../Ring/Ring";
 import { Tooltip } from "../../Tooltip/Tooltip";
 import PropTypes from "prop-types";
@@ -48,14 +47,9 @@ export const CardIconsList = ({ currentColumn, cardInfo, columnsInfo }) => {
   return (
     <>
       <IconList>
-        {/* <DeadlineBell /> */}
         <Ring />
         <ListItem key={"move"}>
-          <Button
-            type="button"
-            onClick={handleEditModal}
-            // onClick={() => setIsTooltipModalOpen((prevState) => !prevState)}
-          >
+          <Button type="button" onClick={handleEditModal}>
             <Svg width="16" height="16">
               <use href={`${sprite}#icon-arrow-circle-dark`}></use>
             </Svg>

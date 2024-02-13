@@ -1,4 +1,13 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
+import { setFilter } from "../../../redux/boards/boardSlice";
+import { boardFilter } from "../../../redux/boards/operations";
+import { useSelector } from "react-redux";
+import {
+  selectCurrentBoardId,
+  selectCurrentBoard,
+} from "../../../redux/boards/selectors";
 import {
   Modal,
   BackDrop,
@@ -19,15 +28,6 @@ import {
   Span,
   CheckedSpan,
 } from "./ModalFilter.styled";
-import PropTypes from "prop-types";
-import { useDispatch } from "react-redux";
-import { setFilter } from "../../../redux/boards/boardSlice";
-import { boardFilter } from "../../../redux/boards/operations";
-import { useSelector } from "react-redux";
-import {
-  selectCurrentBoardId,
-  selectCurrentBoard,
-} from "../../../redux/boards/selectors";
 
 export const ModalFilters = ({ closeModal }) => {
   const boardId = useSelector(selectCurrentBoardId);

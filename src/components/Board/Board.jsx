@@ -11,6 +11,7 @@ import { addColumn, deleteColumn } from "../../redux/columns/operations";
 import { toast } from "react-toastify";
 import { getBoardById, moveCard } from "../../redux/boards/operations";
 import { Droppable, DragDropContext } from "react-beautiful-dnd";
+import { FilterBtn } from "../Filter/FilterBtn/Filters";
 import {
   BoardWrapper,
   BoardTitle,
@@ -19,7 +20,6 @@ import {
   Wrapper,
   ColumnTitle,
 } from "./Board.styled";
-import { FilterBtn } from "../Filter/FilterBtn/Filters";
 
 export const Board = () => {
   const [isModalColumnOpen, setIsModalColumnOpen] = useState(false);
@@ -114,12 +114,10 @@ export const Board = () => {
   function handleDragEnd(result) {
     const { draggableId, destination, source } = result;
 
-    // Check if the card was dropped outside a valid droppable
     if (!destination) {
       return;
     }
 
-    // Check if the card was dropped in a different location
     if (
       destination.droppableId !== source.droppableId ||
       destination.index !== source.index
@@ -129,90 +127,12 @@ export const Board = () => {
         newColumnId: destination.droppableId,
       };
 
-      // Dispatch the moveCard action with the payload
-      // dispatch(moveCard(payload));
       dispatch(moveCard(payload))
         .then(() => dispatch(getBoardById(board._id)))
         .catch((err) => {
           console.error("Error handling column:", err);
         });
     }
-    // const { destination, source, type } = result;
-
-    // if (
-    //   !destination ||
-    //   (source.droppableId === destination.droppableId &&
-    //     source.index === destination.index)
-    // ) {
-    //   return;
-    // }
-    // console.log("droppableId ID:", source.droppableId);
-    // console.log("Draggable ID:", destination.droppableId);
-
-    // const payload = {
-    //   cardId: source.droppableId,
-    //   newColumnId: destination.droppableId,
-    // };
-    // console.log("Drag-and-Drop Payload:", payload);
-
-    // setTimeout(() => {
-    //   dispatch(moveCard(payload))
-    //     .then(() => dispatch(getBoardById(board._id)))
-    //     .catch((err) => {
-    //       console.error("Error handling column:", err);
-    //     });
-    // }, 100);
-
-    //
-    //
-    //
-
-    // dispatch(moveCard(payload))
-    //   .then(() => dispatch(getBoardById(board._id)))
-    //   .catch((err) => {
-    //     console.err("Error handling column:", err);
-    //   });
-
-    // if (type === "group") {
-    //   const renderedStores = [...stores];
-    //   const sourceIndex = source.index;
-    //   const destinationIndex = destination.index;
-    //   const [removedStore] = reorderedStores.splice(sourceIndex, 1);
-    //   reorderedStores.splice(destinationIndex, 0, removedStore);
-
-    //   return setStores(reorderedStores);
-    // }
-
-    // const storeSourceIndex = stores.findIndex(
-    //   (store) => store.id === source.droppableId
-    // );
-
-    // const storeDestinationIndex = stores.findIndex(
-    //   (store) => store.id === destination.droppableId
-    // );
-
-    // const newSourceItems = [...stores[storeSourceIndex].items];
-    // const newDestinationItems =
-    //   source.droppableId !== destination.droppableId
-    //     ? [...stores[storeDestinationIndex].items]
-    //     : newSourceItems;
-
-    // const [deletedItem] = newSourceItems.splice(source.index, 1);
-    // newDestinationItems.splice(destination.index, 0, deletedItem);
-
-    // const newStores = [...stores];
-
-    // newStores[storeSourceIndex] = {
-    //   ...stores[storeSourceIndex],
-    //   items: newSourceItems,
-    // };
-
-    // newStores[storeDestinationIndex] = {
-    //   ...stores[storeDestinationIndex],
-    //   items: newDestinationItems,
-    // };
-
-    // setStores(newStores);
   }
 
   return (

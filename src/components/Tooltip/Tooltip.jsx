@@ -1,8 +1,6 @@
 import { BackDrop, Modal, List, Item, Button } from "./Tooltip.styled";
 import PropTypes from "prop-types";
-
 import sprite from "/public/images/icons.svg";
-
 import { selectCurrentBoard } from "../../redux/boards/selectors";
 import { useDispatch } from "react-redux";
 import { getBoardById, moveCard } from "../../redux/boards/operations";

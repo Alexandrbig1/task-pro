@@ -5,16 +5,11 @@ import { Draggable } from "react-beautiful-dnd";
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { selectCurrentBoard } from "../../../redux/boards/selectors";
-// eslint-disable-next-line react/prop-types
+
 export const CardList = ({ currentColumn, cardInfo }) => {
   const [scrollable, setScrollable] = useState(false);
   const containerRef = useRef();
 
-  function handleClick(id) {
-    // console.log(id);
-    // console.log(id);
-    // console.log(id);
-  }
   const { board } = useSelector(selectCurrentBoard);
 
   const renderCard =
@@ -42,7 +37,6 @@ export const CardList = ({ currentColumn, cardInfo }) => {
           <Draggable draggableId={card._id} index={index}>
             {(provided) => (
               <div
-                onClick={() => handleClick(card._id)}
                 {...provided.dragHandleProps}
                 {...provided.draggableProps}
                 ref={provided.innerRef}

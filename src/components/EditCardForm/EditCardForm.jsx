@@ -5,6 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { CardButton } from "../CardButton/CardButton";
+import { editCard } from "../../redux/cards/operations";
+import { selectCurrentBoard } from "../../redux/boards/selectors";
+import { getBoardById } from "../../redux/boards/operations";
 import {
   FormWrapper,
   Input,
@@ -18,10 +22,6 @@ import {
   DeadlineTitle,
   DatePicker,
 } from "./EditCardForm.styled";
-import { CardButton } from "../CardButton/CardButton";
-import { editCard } from "../../redux/cards/operations";
-import { selectCurrentBoard } from "../../redux/boards/selectors";
-import { getBoardById } from "../../redux/boards/operations";
 
 const schema = Yup.object().shape({
   title: Yup.string().required(),
@@ -87,7 +87,6 @@ export const EditCardForm = ({ cardInfo, onClose }) => {
               rows="5"
               cols="33"
               placeholder="Description"
-
             />
           </label>
         </FormWrapper>

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-
 import PropTypes from "prop-types";
+import { CardButton } from "../CardButton/CardButton";
+import "react-toastify/dist/ReactToastify.css";
 import {
   AddModalWrap,
   StyledAddModal,
@@ -10,8 +11,6 @@ import {
   AddColumnForm,
   AddColumnInput,
 } from "../AddColumnModal/AddColumnModal.styled";
-import { CardButton } from "../CardButton/CardButton";
-import "react-toastify/dist/ReactToastify.css";
 
 const AddColumnModal = ({ openColumnModal, onSubmitColumnClick }) => {
   useEffect(() => {
@@ -45,7 +44,12 @@ const AddColumnModal = ({ openColumnModal, onSubmitColumnClick }) => {
         <div>
           <AddColumnTitle>Add column</AddColumnTitle>
           <AddColumnForm onSubmit={onSubmitColumnClick}>
-            <AddColumnInput autoFocus type="text" placeholder="Title" name="title" />
+            <AddColumnInput
+              autoFocus
+              type="text"
+              placeholder="Title"
+              name="title"
+            />
             <CardButton type="submit" btnText="Add" />
           </AddColumnForm>
         </div>

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-
+import EditNewBoardForm from "./EditNewBoardForm";
 import {
   StyledWrapper,
   StyledTitle,
@@ -8,7 +8,6 @@ import {
   BackDrop,
   Modal,
 } from "../ModalEditNewBoard/ModalEditNewBoard.styled";
-import EditNewBoardForm from "./EditNewBoardForm";
 
 // eslint-disable-next-line react/prop-types
 export default function ModalEditNewBoard({ openEditBoardModal, boardId }) {

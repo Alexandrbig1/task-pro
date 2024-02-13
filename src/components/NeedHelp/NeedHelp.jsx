@@ -1,4 +1,5 @@
 import { useState } from "react";
+import NeedHelpModal from "../NeedHelpModal/NeedHelpModal";
 import {
   HelpBtn,
   HelpText,
@@ -7,7 +8,6 @@ import {
   HelpStrongText,
   QuestionMark,
 } from "./NeedHelp.styled";
-import NeedHelpModal from "../NeedHelpModal/NeedHelpModal";
 
 const NeedHelp = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);

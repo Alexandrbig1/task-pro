@@ -3,6 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { PropTypes } from "prop-types";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { CardButton } from "../CardButton/CardButton";
+import { editColumn } from "../../redux/columns/operations";
+import { getBoardById } from "../../redux/boards/operations";
+import { selectCurrentBoard } from "../../redux/boards/selectors";
 import {
   EditModalWrap,
   StyledEditModal,
@@ -12,10 +16,6 @@ import {
   EditColumnInput,
   CloseEditColumnModal,
 } from "../EditColumnModal/EditColumnModal.styled";
-import { CardButton } from "../CardButton/CardButton";
-import { editColumn } from "../../redux/columns/operations";
-import { getBoardById } from "../../redux/boards/operations";
-import { selectCurrentBoard } from "../../redux/boards/selectors";
 
 const EditColumnModal = ({ openEditColumnModal, columnId, title }) => {
   const dispatch = useDispatch();

@@ -4,6 +4,12 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { CardButton } from "../CardButton/CardButton";
+import { useDispatch, useSelector } from "react-redux";
+import { addCard } from "../../redux/cards/operations";
+import { selectCurrentBoard } from "../../redux/boards/selectors";
+import { getBoardById } from "../../redux/boards/operations";
+import CustomDatePicker from "../Calendar/Calendar";
 import {
   FormWrapper,
   Input,
@@ -16,14 +22,6 @@ import {
   DeadlineWrapper,
   DeadlineTitle,
 } from "./AddCardForm.styled";
-import { CardButton } from "../CardButton/CardButton";
-import { useDispatch, useSelector } from "react-redux";
-import { addCard } from "../../redux/cards/operations";
-import { selectCurrentBoard } from "../../redux/boards/selectors";
-import { getBoardById } from "../../redux/boards/operations";
-// import CustomSlots from "../DatePicker/DatePicker";
-
-import CustomDatePicker from "../Calendar/Calendar";
 
 const schema = Yup.object().shape({
   title: Yup.string().required(),
@@ -88,7 +86,13 @@ export const AddCardForm = ({ onClose, columnId }) => {
       <Form autoComplete="off">
         <FormWrapper>
           <label htmlFor="title">
-            <Input autoFocus type="text" name="title" placeholder="Title" required />
+            <Input
+              autoFocus
+              type="text"
+              name="title"
+              placeholder="Title"
+              required
+            />
           </label>
           <label htmlFor="description">
             <DescriptionArea
@@ -145,8 +149,6 @@ export const AddCardForm = ({ onClose, columnId }) => {
 
         <DeadlineWrapper>
           <DeadlineTitle>Deadline</DeadlineTitle>
-          {/* <DatePicker>Today, 8</DatePicker> */}
-          {/* <CustomSlots setValue={setValue} value={value} /> */}
           <CustomDatePicker />
         </DeadlineWrapper>
 

@@ -2,6 +2,7 @@ import dayjs from "dayjs";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 import PropTypes from "prop-types";
 import { CardIconsList } from "./CardIconsList/CardIconsList";
+import { useEffect, useState } from "react";
 import {
   CardItem,
   Container,
@@ -17,7 +18,6 @@ import {
   DeadlineWrapp,
   Date,
 } from "./Card.styled";
-import { useEffect, useState } from "react";
 
 // eslint-disable-next-line react/prop-types
 export const Card = ({ cardInfo, currentColumn }) => {

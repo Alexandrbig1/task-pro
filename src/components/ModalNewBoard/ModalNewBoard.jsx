@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-
+import CreateNewBoardForm from "./CreateNewBoardForm";
 import {
   StyledTitle,
   CloseIcon,
@@ -7,8 +7,7 @@ import {
   BackDrop,
   Modal,
 } from "../ModalNewBoard/ModalNewBoard.styled";
-import CreateNewBoardForm from "./CreateNewBoardForm";
-// import ModalEditNewBoard from "../ModalEditNewBoard/ModalEditNewBoard";
+
 // eslint-disable-next-line react/prop-types
 export default function ModalNewBoard({ openNewBoardModal }) {
   useEffect(() => {
@@ -22,7 +21,6 @@ export default function ModalNewBoard({ openNewBoardModal }) {
     document.body.style.overflow = "hidden";
 
     return () => {
-      // componentWillUnmount(
       window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "auto";
     };

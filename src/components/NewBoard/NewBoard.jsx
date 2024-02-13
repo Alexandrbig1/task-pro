@@ -6,6 +6,11 @@ import { selectBoards } from "../../redux/boards/selectors";
 import sprite from "../ModalNewBoard/images/icons.svg";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  deleteBoard,
+  fetchBoards,
+  getBoardById,
+} from "../../redux/boards/operations";
+import {
   CreateNewBoardWrapper,
   NewBoardButton,
   NewBoardSubTitle,
@@ -22,11 +27,6 @@ import {
   BoardIconDelete,
   BoardIconEdit,
 } from "./NewBoard.styled";
-import {
-  deleteBoard,
-  fetchBoards,
-  getBoardById,
-} from "../../redux/boards/operations";
 
 const NewBoard = () => {
   const [isOpenModalNewBoard, setIsOpenModalNewBoard] = useState(false);

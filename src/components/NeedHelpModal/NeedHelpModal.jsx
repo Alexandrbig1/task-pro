@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
-
+import emailRegex from "../../regex/emailRegex";
+import { toast } from "react-toastify";
+import { requestHelp } from "../../redux/user/operations";
 import {
   CloseModal,
   HelpCloseBtn,
@@ -13,9 +15,6 @@ import {
   HelpTitle,
   StyledModal,
 } from "./NeedHelpModal.styled";
-import emailRegex from "../../regex/emailRegex";
-import { toast } from "react-toastify";
-import { requestHelp } from "../../redux/user/operations";
 
 const NeedHelpModal = ({ openHelpModal }) => {
   const dispatch = useDispatch();

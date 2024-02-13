@@ -76,7 +76,6 @@ export const AsideWrapper = styled.div`
     overflow-y: hidden;
     justify-content: space-between;
     gap: 0;
-    /* gap: 4rem; */
   }
 `;
 
