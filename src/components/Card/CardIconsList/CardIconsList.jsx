@@ -1,25 +1,24 @@
-import { IconList, ListItem, Button, Svg } from "./CardIconsList.styled";
+import PropTypes from "prop-types";
+import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import sprite from "/public/images/icons.svg";
-import { EditCardModal } from "../../EditCardModal/EditCardModal";
-import { useState } from "react";
-import Ring from "../../Ring/Ring";
-import { Tooltip } from "../../Tooltip/Tooltip";
-import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteCard } from "../../../redux/cards/operations";
 import { getBoardById } from "../../../redux/boards/operations";
 import { selectCurrentBoard } from "../../../redux/boards/selectors";
+import { IconList, ListItem, Button, Svg } from "./CardIconsList.styled";
+import { EditCardModal } from "../../EditCardModal/EditCardModal";
+import { Tooltip } from "../../Tooltip/Tooltip";
+import Ring from "../../Ring/Ring";
 
 export const CardIconsList = ({ currentColumn, cardInfo, columnsInfo }) => {
-  const { _id } = cardInfo;
+  const { _id, deadline } = cardInfo;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isTooltipModalOpen, setIsTooltipModalOpen] = useState(false);
+  const dispatch = useDispatch();
 
   const { board } = useSelector(selectCurrentBoard);
-
-  const dispatch = useDispatch();
 
   const handleToggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -47,7 +46,7 @@ export const CardIconsList = ({ currentColumn, cardInfo, columnsInfo }) => {
   return (
     <>
       <IconList>
-        <Ring />
+        <Ring deadline={deadline} />
         <ListItem key={"move"}>
           <Button type="button" onClick={handleEditModal}>
             <Svg width="16" height="16">

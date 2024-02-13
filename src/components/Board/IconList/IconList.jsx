@@ -1,8 +1,8 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import sprite from "/public/images/icons.svg";
 import "react-toastify/dist/ReactToastify.css";
 import { List, ListItem, Button, Svg } from "./IconList.styled";
-import sprite from "/public/images/icons.svg";
 import EditColumnModal from "../../EditColumnModal/EditColumnModal";
 
 export const IconList = ({ columnID, title, handleDelete }) => {

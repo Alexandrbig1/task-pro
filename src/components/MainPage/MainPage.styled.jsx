@@ -29,27 +29,31 @@ export const MainWrapper = styled.main`
       background-image: url(${(props) =>
         `https://res.cloudinary.com/dsywt0aej/image/upload/v1707238602/background-boards-mobile/${props.background}`});
 
-      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
         background-image: url(${(props) =>
           `https://res.cloudinary.com/dsywt0aej/image/upload/v1707238602/background-boards-mobile/${props.background}_2x`});
       }
 
       @media screen and (min-width: 768px) {
         background-image: url(${(props) =>
-          `https://res.cloudinary.com/dsywt0aej/image/upload/v1707238602/background-boards-tablet/${props.background}`});
+          `https://res.cloudinary.com/dsywt0aej/image/upload/v1707238986/background-boards-tablet/${props.background}`});
       }
-      @media screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
-        (min-resolution: 192dpi) {
+      @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
         background-image: url(${(props) =>
-          `https://res.cloudinary.com/dsywt0aej/image/upload/v1707238602/background-boards-tablet/${props.background}_2x`});
+          `https://res.cloudinary.com/dsywt0aej/image/upload/v1707238986/background-boards-tablet/${props.background}_2x`});
       }
 
       @media screen and (min-width: 1440px) {
         background-image: url(${(props) =>
           `https://res.cloudinary.com/dsywt0aej/image/upload/v1707238503/background-boards-desktop/${props.background}`});
       }
-      @media screen and (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2),
-        (min-resolution: 192dpi) {
+      @media screen and (min-width: 1440px) and (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
         background-image: url(${(props) =>
           `https://res.cloudinary.com/dsywt0aej/image/upload/v1707238503/background-boards-desktop/${props.background}_2x`});
       }

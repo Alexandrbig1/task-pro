@@ -23,6 +23,10 @@ export const StyledEditModal = styled.div`
   z-index: 10;
   background-color: ${(p) => p.theme.colors.modalWindowsBgColor};
   border-radius: 10px;
+
+  @media screen and (min-width: 320px) and (max-width: 375px) {
+    width: 90%;
+  }
 `;
 
 export const EditColumnModalBtn = styled.button`
