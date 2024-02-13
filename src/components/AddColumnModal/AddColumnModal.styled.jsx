@@ -80,3 +80,4 @@ export const CloseAddColumnModal = styled(IoClose)`
     color: ${(p) => p.theme.colors.accentTextColor};
   }
 `;
+

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { PropTypes } from "prop-types";
 import { toast } from "react-toastify";
@@ -17,7 +17,9 @@ import {
   CloseEditColumnModal,
 } from "../EditColumnModal/EditColumnModal.styled";
 
-const EditColumnModal = ({ openEditColumnModal, columnId, title }) => {
+const EditColumnModal = ({ openEditColumnModal, columnId, initialTitle }) => {
+  const [title, setTitle] = useState(initialTitle);
+  const [error, setError] = useState("");
   const dispatch = useDispatch();
 
   const { board } = useSelector(selectCurrentBoard);
@@ -44,44 +46,37 @@ const EditColumnModal = ({ openEditColumnModal, columnId, title }) => {
     }
   };
 
+  const handleChange = (e) => {
+    setTitle(e.target.value);
+    if (e.target.value.length > 25) {
+      setError("Title must be 25 characters or less");
+    } else {
+      setError("");
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const form = e.currentTarget;
-    const title = form.elements.title.value.trim();
-
-    const validTitle = title.length > 0;
-
-    if (validTitle) {
-      const newColumnData = {
-        titleColumn: title,
-      };
-      await dispatch(editColumn({ columnId, newColumnData }));
-      dispatch(getBoardById(board._id));
-      form.reset();
-      openEditColumnModal();
-      toast.success("You have successfully edited the column!", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        progress: undefined,
-        theme: "light",
-      });
-    } else {
-      toast.error("Please enter a title", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        progress: undefined,
-        theme: "light",
-      });
+    if (title.length === 0 || title.length > 25) {
+      setError("Please enter a valid title up to 25 characters");
+      return;
     }
+    const newColumnData = {
+      titleColumn: title,
+    };
+    await dispatch(editColumn({ columnId, newColumnData }));
+    dispatch(getBoardById(board._id));
+    openEditColumnModal();
+    toast.success("You have successfully edited the column!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "light",
+    });
   };
 
   return (
@@ -98,8 +93,10 @@ const EditColumnModal = ({ openEditColumnModal, columnId, title }) => {
               type="text"
               placeholder="To Do"
               name="title"
-              defaultValue={title}
+              value={title}
+              onChange={handleChange}
             />
+            {error && <p style={{ color: "red" }}>{error}</p>}
             <CardButton btnText="Add" />
           </EditColumnForm>
         </div>
