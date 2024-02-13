@@ -9,7 +9,8 @@ import { editCard } from "../../redux/cards/operations";
 import { selectCurrentBoard } from "../../redux/boards/selectors";
 import { getBoardById } from "../../redux/boards/operations";
 import { CardButton } from "../CardButton/CardButton";
-import CustomDatePicker from "../Calendar/Calendar";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import {
   FormWrapper,
   Error,
@@ -23,6 +24,7 @@ import {
   LabelRadio,
   DeadlineWrapper,
   DeadlineTitle,
+  EditCalendarWrapper,
 } from "./EditCardForm.styled";
 
 const schema = Yup.object().shape({
@@ -35,15 +37,13 @@ const schema = Yup.object().shape({
 export const EditCardForm = ({ cardInfo, onClose }) => {
   const { _id, titleCard, description, priority, deadline } = cardInfo;
   const [labelChecked, setLabelChecked] = useState(priority);
+
   const [selectedDate, setSelectedDate] = useState(deadline);
+
   const dispatch = useDispatch();
 
   const handleDateChange = (date) => {
-    const year = date.getFullYear().toString();
-    const month = (date.getMonth() + 1).toString().padStart(2, "0");
-    const day = date.getDate().toString().padStart(2, "0");
-    const formattedDate = `${year}-${month}-${day}`;
-    setSelectedDate(formattedDate);
+    setSelectedDate(date);
   };
 
   const { board } = useSelector(selectCurrentBoard);
@@ -59,6 +59,7 @@ export const EditCardForm = ({ cardInfo, onClose }) => {
       priority: labelChecked,
       deadline: selectedDate,
     };
+
     await dispatch(editCard({ _id, newCardData }));
     dispatch(getBoardById(board._id));
     toast.success("You have successfully edited the card!", {
@@ -150,10 +151,13 @@ export const EditCardForm = ({ cardInfo, onClose }) => {
 
         <DeadlineWrapper>
           <DeadlineTitle>Deadline</DeadlineTitle>
-          <CustomDatePicker
-            handleDateChange={handleDateChange}
-            selectedDate={selectedDate}
-          />
+          <EditCalendarWrapper>
+            <DatePicker
+              selected={selectedDate}
+              onChange={(date) => handleDateChange(date)}
+              dateFormat="MMMM dd"
+            />
+          </EditCalendarWrapper>
         </DeadlineWrapper>
 
         <CardButton btnText="Edit" />

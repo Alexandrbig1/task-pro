@@ -37,12 +37,14 @@ export const AddCardForm = ({ onClose, columnId }) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const dispatch = useDispatch();
 
-  const handleDateChange = (date) => {
-    const year = date.getFullYear().toString();
-    const month = (date.getMonth() + 1).toString().padStart(2, "0");
-    const day = date.getDate().toString().padStart(2, "0");
-    const formattedDate = `${year}-${month}-${day}`;
-  };
+  // const handleDateChange = (date) => {
+  //   const year = date.getFullYear().toString();
+  //   const month = (date.getMonth() + 1).toString().padStart(2, "0");
+  //   const day = date.getDate().toString().padStart(2, "0");
+  //   const formattedDate = `${year}-${month}-${day}`;
+
+  //   return formattedDate;
+  // };
 
   const { board } = useSelector(selectCurrentBoard);
 

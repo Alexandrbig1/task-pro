@@ -27,6 +27,7 @@ export const Card = ({ cardInfo, currentColumn }) => {
 
   useEffect(() => {
     const date = dayjs(deadline);
+
     const outputDate = date.format("DD/MM/YYYY");
     setFormattedDate(outputDate);
   }, [deadline]);
