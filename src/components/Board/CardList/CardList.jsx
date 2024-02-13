@@ -17,6 +17,10 @@ export const CardList = ({ currentColumn, cardInfo }) => {
       ? cardInfo
       : cardInfo.filter((card) => card.priority === board.filter);
 
+  const sortedCards = [...renderCard].sort((a, b) =>
+    a.deadline.localeCompare(b.deadline)
+  );
+
   useEffect(() => {
     const container = containerRef.current;
     const handleScroll = () => {
@@ -32,7 +36,7 @@ export const CardList = ({ currentColumn, cardInfo }) => {
 
   return (
     <List ref={containerRef} $scrollable={scrollable}>
-      {renderCard.map((card, index) => (
+      {sortedCards.map((card, index) => (
         <li key={card._id}>
           <Draggable draggableId={card._id} index={index}>
             {(provided) => (
