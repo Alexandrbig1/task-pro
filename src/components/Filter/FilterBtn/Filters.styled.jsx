@@ -9,7 +9,6 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
   column-gap: 8px;
-  padding: 4px;
   background-color: rgba(0, 0, 0, 0);
   border: none;
   cursor: pointer;
@@ -48,6 +47,9 @@ export const Button = styled.button`
     svg {
       fill: ${(p) => p?.theme?.colors?.accentTextColor};
     }
+  }
+  @media only screen and (min-width: 768px) {
+    top: 10px;
   }
 `;
 

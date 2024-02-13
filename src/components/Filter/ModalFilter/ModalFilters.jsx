@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { setFilter } from "../../../redux/boards/boardSlice";
-import { boardFilter } from "../../../redux/boards/operations";
+import { editBoardById } from "../../../redux/boards/operations";
 import { useSelector } from "react-redux";
 import {
   selectCurrentBoardId,
@@ -37,7 +37,7 @@ export const ModalFilters = ({ closeModal }) => {
 
   const hendlerFilter = (filter) => {
     dispatch(setFilter(filter));
-    dispatch(boardFilter({ boardId, filter }));
+    dispatch(editBoardById({ boardId, filter }));
   };
   const isCheck = (e) => {
     setCheckPriority(e.target.value);
