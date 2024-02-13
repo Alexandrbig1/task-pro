@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { RingIcon, RingList } from "./Ring.styled";
 
+// && hoursDifference > 0
 export default function Ring({ deadline }) {
   const [deadlineInOneDay, setDeadlineInOneDay] = useState();
 
@@ -13,11 +14,11 @@ export default function Ring({ deadline }) {
       const timeDifference = deadlineDate - currentDate;
       const hoursDifference = timeDifference / (1000 * 60 * 60);
 
-      return hoursDifference < 24 && hoursDifference > 0;
+      return hoursDifference < 24;
     };
 
     setDeadlineInOneDay(tasksWithinNextDay());
-  }, []);
+  }, [deadline]);
 
   return (
     deadlineInOneDay && (

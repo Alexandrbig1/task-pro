@@ -14,6 +14,7 @@ import Ring from "../../Ring/Ring";
 
 export const CardIconsList = ({ currentColumn, cardInfo, columnsInfo }) => {
   const { _id, deadline } = cardInfo;
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isTooltipModalOpen, setIsTooltipModalOpen] = useState(false);
   const dispatch = useDispatch();
