@@ -85,6 +85,35 @@ export const logIn = createAsyncThunk(
   }
 );
 
+export const googleAuth = createAsyncThunk(
+  "auth/googleAuth",
+  async (googleToken, thunkAPI) => {
+    try {
+      console.log(googleToken);
+      const res = await axios.post("/api/auth/google", { token: googleToken });
+
+      console.log(res);
+      setAuthHeader(res.data.token);
+      toast.success(
+        "Welcome to TaskPro via Google! 🚀 Created by Creamy Sharks 🦈",
+        {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: "light",
+        }
+      );
+      return res.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
 export const logOut = createAsyncThunk("logout", async (_, thunkAPI) => {
   try {
     await axios.post("/auth/logout");

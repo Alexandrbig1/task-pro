@@ -1,6 +1,6 @@
 import ModalNewBoard from "../ModalNewBoard/ModalNewBoard";
 import { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import ModalEditNewBoard from "../ModalEditNewBoard/ModalEditNewBoard";
 import { selectBoards } from "../../redux/boards/selectors";
 import sprite from "../ModalNewBoard/images/icons.svg";
@@ -18,7 +18,6 @@ import {
   NewBoardWrapper,
   NewBoardBtnIcon,
   BoardsList,
-  BoardItem,
   BoardIcon,
   BoardTitle,
   ButtonsWrapper,
@@ -26,6 +25,7 @@ import {
   BoardContainer,
   BoardIconDelete,
   BoardIconEdit,
+  StyledNavLink,
 } from "./NewBoard.styled";
 
 const NewBoard = () => {
@@ -82,22 +82,23 @@ const NewBoard = () => {
       <BoardsList>
         {boards.map(({ _id: id, icon, titleBoard }) => (
           <li key={id} onClick={() => handleClick(id)}>
-            <Link to={`/home/${titleBoard}`} state={{ from: location }}>
-              <BoardItem>
-                <IconTitleWrapper>
-                  <BoardIcon>
-                    <svg width="18" height="18">
-                      <use href={`${sprite}#${icon}-dark`} />
-                    </svg>
-                  </BoardIcon>
-                  <BoardTitle>{titleBoard}</BoardTitle>
-                </IconTitleWrapper>
-                <ButtonsWrapper>
-                  <BoardIconEdit onClick={() => openEditBoardModal(id)} />
-                  <BoardIconDelete onClick={() => handleDelete(id)} />
-                </ButtonsWrapper>
-              </BoardItem>
-            </Link>
+            <StyledNavLink
+              to={`/home/${titleBoard}`}
+              state={{ from: location }}
+            >
+              <IconTitleWrapper>
+                <BoardIcon>
+                  <svg width="18" height="18">
+                    <use href={`${sprite}#${icon}-dark`} />
+                  </svg>
+                </BoardIcon>
+                <BoardTitle>{titleBoard}</BoardTitle>
+              </IconTitleWrapper>
+              <ButtonsWrapper>
+                <BoardIconEdit onClick={() => openEditBoardModal(id)} />
+                <BoardIconDelete onClick={() => handleDelete(id)} />
+              </ButtonsWrapper>
+            </StyledNavLink>
           </li>
         ))}
       </BoardsList>

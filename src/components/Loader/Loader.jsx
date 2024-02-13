@@ -12,7 +12,6 @@ export default function Loader() {
         color="black"
         ariaLabel="rotating-lines-loading"
         strokeColor="#868e96"
-        // strokeColor="#bedbb0"
       />
     </LoaderDivWrapper>
   );

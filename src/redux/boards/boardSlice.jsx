@@ -57,21 +57,7 @@ const boardsSlice = createSlice({
         state.boards.isLoading = false;
         state.boards.error = null;
         state.boards.current = { ...action.payload };
-
-        // const boardById = state.boards.items.map((board) =>
-        //   board.id === action.payload.id ? action.payload : board
-        // );
-        // state.boards.current = boardById;
       })
-      // .addCase(getBoardById.fulfilled, (state, action) => {
-      //   state.boards.isLoading = false;
-      //   state.boards.error = null;
-      //   const boardById = state.boards.items.map((board) =>
-      //     board._id === action.payload._id ? action.payload : board
-      //   );
-
-      //   state.boards.items = boardById;
-      // })
       .addCase(getBoardById.rejected, (state, action) => {
         state.boards.isLoading = false;
         state.boards.error = action.payload;
@@ -139,7 +125,7 @@ const boardsSlice = createSlice({
       .addCase(boardFilter.fulfilled, (state, action) => {
         state.boards.current.board.filter = action.payload;
       })
-      .addCase(boardFilter.rejected, (state, _) => {
+      .addCase(boardFilter.rejected, (state) => {
         state.boards.current.board.filter = "default";
       });
   },

@@ -3,6 +3,7 @@ import { primaryFont } from "../fonts";
 import { FiPlus } from "react-icons/fi";
 import { SlPencil } from "react-icons/sl";
 import { AiOutlineDelete } from "react-icons/ai";
+import { NavLink } from "react-router-dom";
 
 export const BoardContainer = styled.div`
   display: flex;
@@ -94,7 +95,7 @@ export const BoardIcon = styled.svg`
   transition: all var(--primary-transition);
 `;
 
-export const BoardItem = styled.div`
+export const StyledNavLink = styled(NavLink)`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -136,6 +137,21 @@ export const BoardItem = styled.div`
   &:hover {
     ${BoardTitle} {
       color: ${(p) => p.theme.colors.mainTextColor};
+    }
+  }
+
+  &.active {
+    ${BoardTitle} {
+      color: ${(p) => p.theme.colors.mainTextColor};
+    }
+    ${BoardIcon} {
+      stroke: ${(p) => p.theme.colors.mainTextColor};
+    }
+    background-color: ${(p) => p.theme.colors.needHelpBgColor};
+    cursor: pointer;
+
+    &::after {
+      border-right: 4px solid ${(p) => p.theme.colors.logoutIcon};
     }
   }
 `;
