@@ -28,8 +28,7 @@ export const CustomDatePickerWrapper = styled.div`
     font-size: 14px;
     letter-spacing: -0.02em;
     cursor: pointer;
-    width: 100%;
-    position: relative;
+    /* width: 100%; */
   }
 
   .react-datepicker__header {
@@ -131,4 +130,16 @@ export const CustomDatePickerWrapper = styled.div`
   .react-datepicker__navigation-icon::before {
     border-color: ${(p) => p.theme.colors.accentTextColor};
   }
+`;
+
+export const ArrowIcon = styled.div`
+  color: ${(p) => p.theme.colors.accentTextColor};
+  font-size: 18px;
+`;
+
+export const DateTextWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
 `;
