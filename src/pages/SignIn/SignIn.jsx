@@ -23,6 +23,7 @@ import {
   RegistrationLink,
   BtnLogInSpan,
 } from "./SignIn.styled";
+import Google from "../../components/GoogleIcon/GoogleIcon";
 // import Google from "../../components/Google/Google";
 
 const customTheme = createTheme({
@@ -137,8 +138,8 @@ export default function SignIn() {
                 <TypoTitleStyled component="h1" variant="h5">
                   Log In
                 </TypoTitleStyled>
+                <Google />
               </Box>
-              {/* <Google /> */}
               <Box
                 component="form"
                 onSubmit={handleSubmit}

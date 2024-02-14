@@ -1,17 +1,16 @@
 import { GoogleWrapper, GoogleIcon } from "./GoogleIcon.styled";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 export default function Google() {
-  function handleGoogleAuth() {
-    console.log("google");
-  }
   return (
-    <GoogleWrapper onClick={handleGoogleAuth}>
-      <GoogleIcon />
+    <GoogleWrapper>
+      <a href="http://localhost:3000/api/auth/google" target="_self">
+        <GoogleIcon />
+      </a>
     </GoogleWrapper>
   );
 }
 
-Google.propTypes = {
-  handleGoogleAuth: PropTypes.func,
-};
+// Google.propTypes = {
+//   handleGoogleAuth: PropTypes.func,
+// };

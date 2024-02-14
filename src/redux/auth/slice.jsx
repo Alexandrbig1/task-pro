@@ -18,7 +18,15 @@ const initialState = {
 const authSlice = createSlice({
   name: "auth",
   initialState,
-  reducers: {},
+  reducers: {
+    setGoogleTokens(state, { payload }) {
+      state.token = payload.token;
+      state.isLoggedIn = true;
+    },
+    // setLoading(state, { payload }) {
+    //   state.isRefreshing = payload;
+    // },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(register.fulfilled, (state, action) => {
@@ -36,11 +44,12 @@ const authSlice = createSlice({
         state.token = null;
         state.isLoggedIn = false;
       })
-      .addCase(googleAuth.fulfilled, (state, action) => {
-        state.user = action.payload.user;
-        state.token = action.payload.token;
-        state.isLoggedIn = true;
-      })
+      // .addCase(googleAuth.fulfilled, (state, action) => {
+      //   state.user = action.payload.user;
+      //   state.token = action.payload.token;
+      //   state.isLoggedIn = true;
+      // })
+
       .addCase(refreshUser.pending, (state) => {
         state.isRefreshing = true;
       })
@@ -75,3 +84,5 @@ const authSlice = createSlice({
 });
 
 export const authReducer = authSlice.reducer;
+
+export const { setGoogleTokens } = authSlice.actions;
