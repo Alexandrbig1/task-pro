@@ -34,7 +34,7 @@ export const IconList = ({ columnID, title, handleDelete }) => {
         <EditColumnModal
           openEditColumnModal={handleOpenModal}
           columnId={columnID}
-          title={title}
+          initialTitle={title}
         />
       )}
     </>
