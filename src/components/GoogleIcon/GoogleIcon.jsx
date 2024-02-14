@@ -4,7 +4,10 @@ import { GoogleWrapper, GoogleIcon } from "./GoogleIcon.styled";
 export default function Google() {
   return (
     <GoogleWrapper>
-      <a href="http://localhost:3000/api/auth/google" target="_self">
+      <a
+        href="https://task-backend-project.onrender.com/auth/google"
+        target="_self"
+      >
         <GoogleIcon />
       </a>
     </GoogleWrapper>
