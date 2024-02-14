@@ -31,7 +31,7 @@
 //       // eslint-disable-next-line no-undef
 //       google.accounts.id.initialize({
 //         client_id:
-//           "30656011235517570-qskl06tssqqed6rgkgjgei11ksd517edoh0ssdvvpr5.apps.googleusercontent.com",
+//           "306560117570-qskl06td6rgkgjgei11k17edoh0sspr5.apps.googleusercontent.com",
 //         callback: handleCallbackResponse,
 //       });
 //     }
