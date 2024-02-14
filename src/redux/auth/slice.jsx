@@ -41,11 +41,11 @@ const authSlice = createSlice({
         state.token = null;
         state.isLoggedIn = false;
       })
-      // .addCase(googleAuth.fulfilled, (state, action) => {
-      //   state.user = action.payload.user;
-      //   state.token = action.payload.token;
-      //   state.isLoggedIn = true;
-      // })
+      .addCase(googleAuth.fulfilled, (state, action) => {
+        state.user = action.payload.user;
+        state.token = action.payload.token;
+        state.isLoggedIn = true;
+      })
       .addCase(refreshUser.pending, (state) => {
         state.isRefreshing = true;
       })
