@@ -1,5 +1,17 @@
 import { useNavigate } from "react-router-dom";
-import { SharksBtn, SharksText, SharksWrapper } from "./CreamySharks.styled";
+import {
+  SharksBtn,
+  SharksText,
+  SharksTextWrapper,
+  SharksTitle,
+  SharksWrapper,
+  SharksTextContainer,
+  SharksBtnWrapper,
+  SharksBtnIcon,
+  SharksTeamTitle,
+  SharksTeamWrapper,
+  SharksTeamContainer,
+} from "./CreamySharks.styled";
 
 export default function CreamySharks() {
   const navigate = useNavigate();
@@ -10,9 +22,36 @@ export default function CreamySharks() {
 
   return (
     <SharksWrapper>
-      <SharksBtn onClick={goBack}>return</SharksBtn>
+      <SharksTextContainer>
+        <SharksBtnWrapper onClick={goBack}>
+          <SharksBtnIcon />
+          <SharksBtn>return</SharksBtn>
+        </SharksBtnWrapper>
+        <SharksTeamContainer>
+          <SharksTextWrapper>
+            <SharksTitle>
+              Journey to Fullstack Mastery: Task Pro - Our Graduation Project
+            </SharksTitle>
 
-      <SharksText>Creamy Sharks is here</SharksText>
+            <SharksText>
+              Welcome to Task Pro, the culmination of our 10-month journey into
+              the world of full-stack development at GoIT. As passionate
+              learners and aspiring developers, we proudly present our final
+              project that showcases the skills and knowledge acquired during
+              this intensive program.
+            </SharksText>
+          </SharksTextWrapper>
+          <SharksTeamWrapper>
+            <SharksTeamTitle>Team Members:</SharksTeamTitle>
+            <SharksText>
+              Meet the talented individuals who brought Task Pro to life! Our
+              dedicated team of full-stack developers poured their passion and
+              expertise into every line of code, creating a collaborative and
+              efficient task management solution.
+            </SharksText>
+          </SharksTeamWrapper>
+        </SharksTeamContainer>
+      </SharksTextContainer>
     </SharksWrapper>
   );
 }
