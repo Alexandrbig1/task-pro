@@ -5,7 +5,7 @@ export default function Google() {
   return (
     <GoogleWrapper>
       <a
-        href="https://task-backend-project.onrender.com/auth/google"
+        href="https://task-backend-project.onrender.com/api/auth/google"
         target="_self"
       >
         <GoogleIcon />
