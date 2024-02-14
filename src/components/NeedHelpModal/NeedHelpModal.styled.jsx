@@ -7,7 +7,7 @@ export const HelpModalWrap = styled.div`
   left: 0;
   width: 100vw;
   max-width: 1440px;
-  height: 100vh;
+  height: 100%;
   background-color: ${(p) => p.theme.colors.modalBgColor};
   z-index: 100;
 `;
