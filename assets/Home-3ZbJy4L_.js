@@ -1,4 +1,4 @@
-import{u as t,p as g,b as $,j as o,l as ne,r as m,c as ie,B as S,d as ae,e as T,f as se,g as D,N as le,h as ce,i as U,k as F,m as A,n as V,s as _,o as de,q as he,H as me,a as pe,O as ue}from"./index-CQ4zykYr.js";import{L as xe}from"./Logo-RDu5jhpa.js";import{G as k}from"./hoist-non-react-statics.cjs-rWpqUuwv.js";import{I as B,P as w,F as q,a as C,c as O,b as j,d as K,E as Z,C as X,s as G,e as Q,u as ge,f as fe}from"./selectors-6q-6hC40.js";import{e as Y,B as be,a as ve}from"./index-oFKtx2ib.js";function ye(e){return k({tag:"svg",attr:{fill:"none",viewBox:"0 0 24 24",strokeWidth:"2",stroke:"currentColor","aria-hidden":"true"},child:[{tag:"path",attr:{strokeLinecap:"round",strokeLinejoin:"round",d:"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"},child:[]}]})(e)}const we=t(ye)`
+import{u as t,p as g,b as $,j as o,l as ne,r as m,c as ie,B as S,d as ae,e as T,f as se,g as D,N as le,h as ce,i as U,k as F,m as A,n as V,s as _,o as de,q as he,H as me,a as pe,O as ue}from"./index-JUZdJLVc.js";import{L as xe}from"./Logo-L9srSHrS.js";import{G as k}from"./hoist-non-react-statics.cjs-rVkE7p_Q.js";import{I as B,P as w,F as q,a as C,c as O,b as j,d as K,E as Z,C as X,s as G,e as Q,u as ge,f as fe}from"./selectors-GhDW53u2.js";import{e as Y,B as be,a as ve}from"./index-1kdr_amI.js";function ye(e){return k({tag:"svg",attr:{fill:"none",viewBox:"0 0 24 24",strokeWidth:"2",stroke:"currentColor","aria-hidden":"true"},child:[{tag:"path",attr:{strokeLinecap:"round",strokeLinejoin:"round",d:"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"},child:[]}]})(e)}const we=t(ye)`
   font-size: 3.2rem;
   color: ${e=>e.theme.colors.logoutIcon};
 `,ke=t.a`
@@ -22,9 +22,9 @@ import{u as t,p as g,b as $,j as o,l as ne,r as m,c as ie,B as S,d as ae,e as T,
   top: 0;
   left: 0;
   width: 100vw;
+  max-width: 1440px;
   height: 100vh;
   background-color: ${e=>e.theme.colors.modalBgColor};
-  /* cursor: pointer; */
   z-index: 100;
 `,Te=t.div`
   position: absolute;
@@ -34,7 +34,6 @@ import{u as t,p as g,b as $,j as o,l as ne,r as m,c as ie,B as S,d as ae,e as T,
   padding: 24px;
   width: 100%;
   max-width: 400px;
-  /* min-height: 355px; */
 
   z-index: 200;
 
@@ -42,7 +41,7 @@ import{u as t,p as g,b as $,j as o,l as ne,r as m,c as ie,B as S,d as ae,e as T,
   border-radius: 8px;
 
   @media (max-width: 767px) {
-    width: 100%;
+    width: 90%;
     max-width: 355px;
   }
 `,Be=t.span`
@@ -63,7 +62,6 @@ import{u as t,p as g,b as $,j as o,l as ne,r as m,c as ie,B as S,d as ae,e as T,
   width: 100%;
 `,Le=t.input`
   width: 100%;
-  /* height: 49px; */
   font-size: 14px;
   letter-spacing: -0.02em;
   color: ${e=>e.theme.colors.secondaryTextColor};
@@ -101,7 +99,6 @@ import{u as t,p as g,b as $,j as o,l as ne,r as m,c as ie,B as S,d as ae,e as T,
 `,Ie=t.button`
   width: 100%;
   padding: 16px;
-  /* height: 49px; */
   border-radius: 8px;
   background-color: ${e=>e.theme.colors.accentTextColor};
   border: none;
