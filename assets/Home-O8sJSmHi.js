@@ -1,4 +1,4 @@
-import{u as t,p as g,c as $,j as o,l as ne,r as m,d as ie,B as S,e as ae,f as T,g as se,h as D,N as le,b as ce,i as U,k as F,m as A,n as V,s as _,o as de,q as he,H as me,a as pe,O as ue}from"./index-RCBu__Vc.js";import{L as xe}from"./Logo-Pqwn8tce.js";import{G as k}from"./hoist-non-react-statics.cjs-igdNm1L-.js";import{I as B,P as w,F as q,a as C,c as O,b as j,d as K,E as Z,C as X,s as G,e as Q,u as ge,f as fe}from"./selectors-Y0GixvPO.js";import{e as Y,B as be,a as ve}from"./index-1gp1zG-3.js";function ye(e){return k({tag:"svg",attr:{fill:"none",viewBox:"0 0 24 24",strokeWidth:"2",stroke:"currentColor","aria-hidden":"true"},child:[{tag:"path",attr:{strokeLinecap:"round",strokeLinejoin:"round",d:"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"},child:[]}]})(e)}const we=t(ye)`
+import{u as t,p as g,c as $,j as o,l as ne,r as m,d as ie,B as S,e as ae,f as T,g as se,h as D,N as le,b as ce,i as U,k as F,m as A,n as V,s as _,o as de,q as he,H as me,a as pe,O as ue}from"./index-PZe8hBdj.js";import{L as xe}from"./Logo-D75gwkrH.js";import{G as k}from"./hoist-non-react-statics.cjs-IgCJlNZs.js";import{I as B,P as w,F as q,a as C,c as O,b as j,d as K,E as Z,C as X,s as G,e as Q,u as ge,f as fe}from"./selectors-WuxdX8dm.js";import{e as Y,B as be,a as ve}from"./index-6X9nPwr2.js";function ye(e){return k({tag:"svg",attr:{fill:"none",viewBox:"0 0 24 24",strokeWidth:"2",stroke:"currentColor","aria-hidden":"true"},child:[{tag:"path",attr:{strokeLinecap:"round",strokeLinejoin:"round",d:"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"},child:[]}]})(e)}const we=t(ye)`
   font-size: 3.2rem;
   color: ${e=>e.theme.colors.logoutIcon};
 `,ke=t.a`
@@ -315,7 +315,7 @@ import{u as t,p as g,c as $,j as o,l as ne,r as m,d as ie,B as S,e as ae,f as T,
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(46, 46, 46, 0.7);
+  background-color: ${e=>e.theme.colors.modalBgColor};
 `,ao=t.div`
   position: absolute;
   z-index: 220;
@@ -500,7 +500,7 @@ import{u as t,p as g,c as $,j as o,l as ne,r as m,d as ie,B as S,e as ae,f as T,
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(46, 46, 46, 0.7);
+  background-color: ${e=>e.theme.colors.modalBgColor};
 `,Lo=t.div`
   position: absolute;
   z-index: 200;
@@ -995,71 +995,71 @@ import{u as t,p as g,c as $,j as o,l as ne,r as m,d as ie,B as S,e as ae,f as T,
         opacity: 1;
     }
 `,$t=O().shape({avatarURL:j(),name:j().min(3,"Too Short!").max(50,"Too Long!"),email:j().matches(Y,"Invalid email address"),password:j().min(8,"Must Contain 8 Characters").max(18,"not more than 18 characters").matches(/^(?=.*[a-z])/," Must Contain One Lowercase Character").matches(/^(?=.*[A-Z])/,"  Must Contain One Uppercase Character").matches(/^(?=.*[0-9])/,"  Must Contain One Number Character").matches(/^(?=.*[!@#\$%\^&\*])/,"Must Contain One Special Case Character")});function Ct({toggleModal:e}){const r=T(_),[n,l]=m.useState(r.avatarURL),[a,c]=m.useState(!1),s=$(),u=()=>{c(!a)},h=ge({initialValues:{avatarURL:r&&r.avatarURL?r.avatarURL:"",name:r&&r.name?r.name:"",email:r&&r.email?r.email:"",password:""},validationSchema:$t,onSubmit:async(x,{resetForm:i})=>{try{if(!r)return;await s(de(x)),e(),i({})}catch(b){console.error("error:",b)}}}),d=async x=>{const{name:i,type:b,files:p}=x.target,v=b==="file"?p[0]:x.target.value;if(h.setFieldValue(i,v),b==="file"){const y=new FileReader;y.onload=()=>{y.readyState===2&&l(y.result)},p[0]&&(y.readAsDataURL(p[0]),await s(he({avatar:v})))}},f=x=>{const{name:i,value:b}=x.target;h.setFieldValue(i,b)};return o.jsxs(xt,{onSubmit:h.handleSubmit,children:[o.jsxs(gt,{children:[r.avatarURL&&r.avatarURL!=="default"?o.jsx(ft,{src:n}):o.jsx(bt,{children:o.jsx("use",{href:"images/icons.svg#icon-userAvatarDefault"})}),o.jsxs(vt,{htmlFor:"button-file",children:[o.jsx("input",{name:"avatar",accept:"image/*",id:"button-file",type:"file",hidden:!0,onChange:d}),o.jsx(yt,{})]})]}),o.jsx("div",{}),o.jsxs(L,{children:[h.touched.name&&h.errors.name&&o.jsx(M,{className:"error-message",children:h.errors.name}),o.jsx(R,{type:"text",name:"name",placeholder:r.name,value:h.values.name,onChange:f})]}),o.jsxs(L,{children:[h.touched.email&&h.errors.email&&o.jsx(M,{className:"error-message",children:h.errors.email}),o.jsx(R,{type:"text",name:"email",placeholder:r.email,value:h.values.email,onChange:f})]}),o.jsxs(L,{children:[h.touched.password&&h.errors.password&&o.jsx(M,{className:"error-message",children:h.errors.password}),o.jsx(wt,{type:a?"text":"password",name:"password",placeholder:"Enter your password",className:"nth-child",value:h.values.password,onChange:f}),o.jsx(jt,{onClick:u,children:a?o.jsx(be,{}):o.jsx(ve,{})})]}),o.jsx(kt,{type:"submit",children:"Send"})]})}const Tt=t.div`
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: ${e=>e.theme.colors.modalBgColor};
 
-    z-index: 200;
+  z-index: 200;
 
-    &:hover {
-        cursor: pointer;
-    }
-`,Bt=t.div`
-    position: absolute;
-    width: 40rem;
-
-    background-color: ${e=>e.theme.colors.mainHeaderColor};
-    padding: 2.4rem;
-    border-radius: 1rem;
-
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    &:hover {
-        cursor: auto;
-    }
-
-    @media (max-width: 767px) {
-        max-width: 33.5rem;
-        width: 100%;
-    }
-`,St=t(B)`
-    fill: ${e=>e.theme.colors.burgerColor};
-
-    position: absolute;
-    top: 1.4rem;
-    right: 1.4rem;
-
-    font-size: 2.4rem;
-    background-color: transparent;
-    outline: none;
-    border: none;
+  &:hover {
     cursor: pointer;
-    transition: 0.3s linear;
+  }
+`,Bt=t.div`
+  position: absolute;
+  width: 40rem;
 
-    &:hover {
-        transform: rotate(90deg);
-        fill: ${e=>e.theme.colors.accentTextColor};
-    }
+  background-color: ${e=>e.theme.colors.mainHeaderColor};
+  padding: 2.4rem;
+  border-radius: 1rem;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  &:hover {
+    cursor: auto;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 33.5rem;
+    width: 100%;
+  }
+`,St=t(B)`
+  fill: ${e=>e.theme.colors.burgerColor};
+
+  position: absolute;
+  top: 1.4rem;
+  right: 1.4rem;
+
+  font-size: 2.4rem;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s linear;
+
+  &:hover {
+    transform: rotate(90deg);
+    fill: ${e=>e.theme.colors.accentTextColor};
+  }
 `,zt=t.h2`
-    margin-bottom: 2.4rem;
-    font-family: ${g};
-    font-weight: 500;
-    font-size: 1.8rem;
-    letter-spacing: -0.02em;
-    color: ${e=>e.theme.colors.secondaryTextColor};
+  margin-bottom: 2.4rem;
+  font-family: ${g};
+  font-weight: 500;
+  font-size: 1.8rem;
+  letter-spacing: -0.02em;
+  color: ${e=>e.theme.colors.secondaryTextColor};
 
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
-    margin-bottom: 2.4rem;
-    font-family: ${g};
-    font-weight: 500;
-    font-size: 1.8rem;
-    letter-spacing: -0.02em;
-    color: ${e=>e.theme.colors.secondaryTextColor};
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  margin-bottom: 2.4rem;
+  font-family: ${g};
+  font-weight: 500;
+  font-size: 1.8rem;
+  letter-spacing: -0.02em;
+  color: ${e=>e.theme.colors.secondaryTextColor};
 `;function Lt({toggleModal:e}){m.useEffect(()=>{const n=l=>{l.code==="Escape"&&e()};return window.addEventListener("keydown",n),document.body.style.overflow="hidden",()=>{window.removeEventListener("keydown",n),document.body.style.overflow="auto"}},[e]);const r=n=>{n.currentTarget===n.target&&e()};return o.jsx(o.Fragment,{children:o.jsx(Tt,{onClick:r,children:o.jsxs(Bt,{children:[o.jsx(St,{onClick:e,className:"btnClose"}),o.jsx(zt,{children:"Edit Profile"}),o.jsx(Ct,{toggleModal:e})]})})})}const Mt=t.div`
     display: flex;
     align-items: center;
