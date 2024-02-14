@@ -11,7 +11,7 @@ export const FormWrapper = styled.div`
 export const Error = styled.span`
   position: absolute;
   left: 3px;
-  top: -14px;
+  top: -16px;
   color: ${(p) => p.theme.colors.secondaryTextColor};
 `;
 

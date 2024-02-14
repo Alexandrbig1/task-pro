@@ -110,5 +110,5 @@ export default EditColumnModal;
 EditColumnModal.propTypes = {
   openEditColumnModal: PropTypes.func,
   columnId: PropTypes.string,
-  title: PropTypes.string,
+  initialTitle: PropTypes.string,
 };
