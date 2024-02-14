@@ -21,15 +21,14 @@ const CustomDatePicker = ({ setSelectedDate }) => {
       date.getMonth() === today.getMonth() &&
       date.getFullYear() === today.getFullYear()
     ) {
-      return "Сьогодні, MMMM dd";
+      return "'Today', MMMM dd";
     } else if (
       date.getDate() === tomorrow.getDate() &&
       date.getMonth() === tomorrow.getMonth() &&
       date.getFullYear() === tomorrow.getFullYear()
     ) {
-      return "Завтра, MMMM dd";
+      return "'Tomorrow', MMMM dd";
     } else {
-      // Вивести назву дня тижня в форматі, який вам потрібен
       return "EEEE, MMMM dd";
     }
   };
