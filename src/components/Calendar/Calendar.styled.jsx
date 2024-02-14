@@ -1,12 +1,6 @@
 import styled from "styled-components";
 
 export const CustomDatePickerWrapper = styled.div`
-  /* display: flex;
-  align-items: center;
-
-  &:hover {
-    cursor: pointer;
-  } */
   .react-datepicker {
     display: flex;
     justify-content: center;
@@ -32,7 +26,7 @@ export const CustomDatePickerWrapper = styled.div`
     caret-color: transparent;
   }
 
-  ////Виставляю модалку по центру картки////
+  ////Виставляю календар по центру картки////
   .react-datepicker-popper {
     position: absolute;
     left: 50% !important;
@@ -145,18 +139,3 @@ export const CustomDatePickerWrapper = styled.div`
     border-color: ${(p) => p.theme.colors.accentTextColor};
   }
 `;
-
-// export const DateTextWrapper = styled.div`
-//   display: flex;
-//   align-items: center;
-//   position: relative;
-
-//   &:hover {
-//     cursor: pointer;
-//   }
-// `;
-
-// export const ArrowIcon = styled.div`
-//   color: ${(p) => p.theme.colors.accentTextColor};
-//   font-size: 22px;
-// `;
