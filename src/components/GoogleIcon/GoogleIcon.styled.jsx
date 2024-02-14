@@ -7,7 +7,7 @@ export const GoogleWrapper = styled.div`
   right: 0;
 `;
 
-export const GoogleIcon = styled(FcGoogle)`
+export const IconGoogle = styled(FcGoogle)`
   font-size: 2.4rem;
 
   &:hover {
