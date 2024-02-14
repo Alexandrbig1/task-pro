@@ -9,10 +9,11 @@ export const FormWrapper = styled.div`
 `;
 
 export const Error = styled.span`
+  font-size: 14px;
   position: absolute;
   left: 3px;
   top: -16px;
-  color: ${(p) => p.theme.colors.secondaryTextColor};
+  color: ${(p) => p.theme.colors.errorColor};
 `;
 
 export const Label = styled.label`
