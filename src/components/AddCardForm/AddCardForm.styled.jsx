@@ -8,6 +8,17 @@ export const FormWrapper = styled.div`
   margin-bottom: 24px;
 `;
 
+export const Error = styled.span`
+  position: absolute;
+  left: 3px;
+  top: -16px;
+  color: ${(p) => p.theme.colors.secondaryTextColor};
+`;
+
+export const Label = styled.label`
+  position: relative;
+`;
+
 export const Input = styled(Field)`
   font-weight: 400;
   font-size: 14px;
@@ -73,6 +84,7 @@ export const TitleForRadio = styled.div`
 `;
 export const WrappRadioButtons = styled.div`
   display: flex;
+  align-items: center;
   gap: 8px;
 `;
 
@@ -104,8 +116,12 @@ export const RadioButton = styled(Field)`
   width: 14px;
   height: 14px;
   background-color: ${changeColor};
+  cursor: pointer;
 
   &:checked {
+    margin-top: -1px;
+    width: 16px;
+    height: 16px;
     border: 3px double white;
   }
 `;

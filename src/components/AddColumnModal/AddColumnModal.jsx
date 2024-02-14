@@ -49,6 +49,7 @@ const AddColumnModal = ({ openColumnModal, onSubmitColumnClick }) => {
               type="text"
               placeholder="Title"
               name="title"
+              maxLength={25}
             />
             <CardButton type="submit" btnText="Add" />
           </AddColumnForm>

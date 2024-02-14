@@ -65,6 +65,8 @@ const themes = {
       cardListScrollThumb: "rgba(22, 22, 22, 0.1)",
       cardListScrollBar: "rgba(22, 22, 22, 0.10)",
       defaultIconBackground: "#F6F6F7",
+      calendarBgColor: "#fff",
+      calendarNumbersOutLowOp: "rgba(22,22,22,0.2)",
     },
   },
   dark: {
@@ -116,6 +118,8 @@ const themes = {
       cardListScrollThumb: "#121212",
       cardListScrollBar: "rgba(255, 255, 255, 0.10)",
       defaultIconBackground: "#1F1F1F",
+      calendarBgColor: "#1f1f1f",
+      calendarNumbersOutLowOp: "rgba(255,255,255,0.2)",
     },
   },
   violet: {
@@ -167,16 +171,20 @@ const themes = {
       cardListScrollThumb: "#b8bcfd",
       cardListScrollBar: "#FFF",
       defaultIconBackground: "#ECEDFD",
+      calendarBgColor: "#fff",
+      calendarNumbersOutLowOp: "rgba(22,22,22,0.2)",
     },
   },
 };
 
 const Welcome = lazy(() => import("../pages/Welcome/Welcome"));
+const CreamySharks = lazy(() => import("../pages/CreamySharks/CreamySharks"));
 const Home = lazy(() => import("../pages/Home/Home"));
 const MainPage = lazy(() => import("../pages/MainPage/MainPage"));
 const SignIn = lazy(() => import("../pages/SignIn/SignIn"));
 const SignUp = lazy(() => import("../pages/SignUp/SignUp"));
 const NotFound = lazy(() => import("../pages/NotFound/NotFound"));
+// const GoogleAuth = lazy(() => import("../pages/GoogleAuth/GoogleAuth"));
 
 function App() {
   const dispatch = useDispatch();
@@ -208,6 +216,7 @@ function App() {
         <Routes>
           <Route path="/" element={<RootLayout />}>
             <Route index element={<Welcome />} />
+            <Route path="creamy-sharks" element={<CreamySharks />} />
             <Route
               path="home"
               element={
@@ -231,6 +240,15 @@ function App() {
                 <RestrictedRoute redirectTo="/home" component={<SignUp />} />
               }
             />
+            {/* <Route
+              path="google-redirect"
+              element={
+                <RestrictedRoute
+                  redirectTo="/home"
+                  component={<GoogleAuth />}
+                />
+              }
+            /> */}
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

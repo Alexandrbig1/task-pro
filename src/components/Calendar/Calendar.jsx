@@ -1,36 +1,48 @@
-// import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { CustomDatePickerWrapper } from "./Calendar.styled";
-
+import { useState } from "react";
 // eslint-disable-next-line react/prop-types
-const CustomDatePicker = ({ selectedDate, handleDateChange }) => {
-  // const [selectedDate, setSelectedDate] = useState(new Date());
+const CustomDatePicker = ({ setSelectedDate }) => {
+  const [startDate, setStartDate] = useState(new Date());
 
-  // const handleDateChange = (date) => {
-  //   setSelectedDate(date);
-  // };
+  const handleDateChange = (date) => {
+    setStartDate(date);
+    setSelectedDate(date);
+  };
 
-  // const filterDates = (date) => {
-  //   // Порівнюємо дату та перевіряємо, чи вона належить обраному місяцю
-  //   return date.getMonth() === selectedDate.getMonth();
-  // };
+  const getDateFormat = (date) => {
+    const today = new Date();
+    const tomorrow = new Date();
+    tomorrow.setDate(today.getDate() + 1);
 
-  // const customDayClassName = (date) => {
-  //   // Додаємо клас 'disabled' для неактивних днів
-  //   return !filterDates(date) ? "disabled" : null;
-  // };
+    if (
+      date.getDate() === today.getDate() &&
+      date.getMonth() === today.getMonth() &&
+      date.getFullYear() === today.getFullYear()
+    ) {
+      return "'Today', MMMM dd";
+    } else if (
+      date.getDate() === tomorrow.getDate() &&
+      date.getMonth() === tomorrow.getMonth() &&
+      date.getFullYear() === tomorrow.getFullYear()
+    ) {
+      return "'Tomorrow', MMMM dd";
+    } else {
+      return "EEEE, MMMM dd";
+    }
+  };
 
   return (
     <CustomDatePickerWrapper>
       <DatePicker
-        selected={selectedDate}
-        onChange={handleDateChange}
-        dateFormat="MMMM dd"
-        ////Заборона вибору дат до поточної дати////
+        selected={startDate}
+        onChange={(date) => handleDateChange(date)}
+        dateFormat={getDateFormat(startDate)}
         minDate={new Date()}
-        // filterDate={filterDates}
-        // customDayClassName={customDayClassName}
+        showPopperArrow={false}
+        onFocus={(e) => e.target.blur()}
+        onKeyDown={(e) => e.preventDefault()}
       />
     </CustomDatePickerWrapper>
   );

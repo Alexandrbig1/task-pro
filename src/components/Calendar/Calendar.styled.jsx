@@ -1,20 +1,17 @@
-// DatePickerStyles.js
 import styled from "styled-components";
 
 export const CustomDatePickerWrapper = styled.div`
   .react-datepicker {
     display: flex;
     justify-content: center;
-
-    /* width: 233px; */
-    /* height: 254px; */
     border: 1px solid ${(p) => p.theme.colors.accentTextColor};
-    background-color: ${(p) => p.theme.colors.mainBgColor};
+    background-color: ${(p) => p.theme.colors.calendarBgColor};
     border-radius: 8px;
     padding: 18px;
   }
 
   .react-datepicker-wrapper input {
+    position: relative;
     border: none;
     outline: none;
     color: ${(p) => p.theme.colors.accentTextColor};
@@ -23,7 +20,19 @@ export const CustomDatePickerWrapper = styled.div`
     font-size: 14px;
     letter-spacing: -0.02em;
     cursor: pointer;
-    width: 100px;
+    width: 188px;
+    max-width: 280px;
+
+    caret-color: transparent;
+  }
+
+  ////Виставляю календар по центру картки////
+  .react-datepicker-popper {
+    position: absolute;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    will-change: transform;
   }
 
   .react-datepicker__header {
@@ -36,6 +45,10 @@ export const CustomDatePickerWrapper = styled.div`
     margin: 0.4em 0;
   }
 
+  .react-datepicker__day--outside-month {
+    color: ${(p) => p.theme.colors.calendarNumbersOutLowOp} !important;
+  }
+
   .react-datepicker__month-container {
   }
 
@@ -45,7 +58,7 @@ export const CustomDatePickerWrapper = styled.div`
     letter-spacing: -0.02em;
     border-bottom: 1px solid ${(p) => p.theme.colors.priorityColorWithout};
     padding-bottom: 14px;
-    color: ${(p) => p.theme.colors.mainTextColor};
+    color: ${(p) => p.theme.colors.secondaryTextColor};
   }
 
   //// Тижні ////
@@ -70,14 +83,14 @@ export const CustomDatePickerWrapper = styled.div`
   .react-datepicker__day {
     font-weight: 400;
     font-size: 14px;
-    line-height: 22px;
+    line-height: 24px;
     letter-spacing: -0.02em;
     width: 24px;
     height: 24px;
-    text-align: center;
     border-radius: 50%;
     margin: 0;
-    color: ${(p) => p.theme.colors.mainTextColor};
+
+    color: ${(p) => p.theme.colors.secondaryTextColor};
   }
 
   .react-datepicker__day--today {
@@ -92,7 +105,8 @@ export const CustomDatePickerWrapper = styled.div`
   }
 
   .react-datepicker__day:hover {
-    background-color: ${(p) => p.theme.colors.mainTextColorLowOp};
+    background-color: grey;
+    color: white;
     border-radius: 50%;
   }
 

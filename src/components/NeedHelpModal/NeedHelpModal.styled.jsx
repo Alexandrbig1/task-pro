@@ -6,9 +6,9 @@ export const HelpModalWrap = styled.div`
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  max-width: 1440px;
+  height: 100%;
   background-color: ${(p) => p.theme.colors.modalBgColor};
-  /* cursor: pointer; */
   z-index: 100;
 `;
 
@@ -20,7 +20,6 @@ export const StyledModal = styled.div`
   padding: 24px;
   width: 100%;
   max-width: 400px;
-  /* min-height: 355px; */
 
   z-index: 200;
 
@@ -28,7 +27,7 @@ export const StyledModal = styled.div`
   border-radius: 8px;
 
   @media (max-width: 767px) {
-    width: 100%;
+    width: 90%;
     max-width: 355px;
   }
 `;
@@ -57,7 +56,6 @@ export const HelpForm = styled.form`
 
 export const HelpInput = styled.input`
   width: 100%;
-  /* height: 49px; */
   font-size: 14px;
   letter-spacing: -0.02em;
   color: ${(p) => p.theme.colors.secondaryTextColor};
@@ -98,7 +96,6 @@ export const HelpTextArea = styled.textarea`
 export const HelpSubmitBtn = styled.button`
   width: 100%;
   padding: 16px;
-  /* height: 49px; */
   border-radius: 8px;
   background-color: ${(p) => p.theme.colors.accentTextColor};
   border: none;

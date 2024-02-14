@@ -2,13 +2,13 @@ import styled from "styled-components";
 import { IoClose } from "react-icons/io5";
 
 export const AddModalWrap = styled.div`
-position: fixed;
-top: 0;
-left: 0;
-width: 100vw;
-height: 100vh;
-background-color: ${(p) => p.theme.colors.modalBgColor};
-z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: ${(p) => p.theme.colors.modalBgColor};
+  z-index: 5;
 `;
 
 export const StyledAddModal = styled.div`
@@ -23,6 +23,9 @@ export const StyledAddModal = styled.div`
   z-index: 10;
   background-color: ${(p) => p.theme.colors.modalWindowsBgColor};
   border-radius: 10px;
+  @media screen and (min-width: 320px) and (max-width: 375px) {
+    width: 90%;
+  }
 `;
 
 export const AddColumnModalBtn = styled.span`
@@ -64,7 +67,7 @@ export const AddColumnInput = styled.input`
 `;
 
 export const CloseAddColumnModal = styled(IoClose)`
-font-size: 2.4rem;
+  font-size: 2.4rem;
   color: ${(p) => p.theme.colors.secondaryTextColor};
   position: absolute;
   // top: 1.4rem;
@@ -77,3 +80,4 @@ font-size: 2.4rem;
     color: ${(p) => p.theme.colors.accentTextColor};
   }
 `;
+

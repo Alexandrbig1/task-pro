@@ -12,7 +12,7 @@ export const Tooltip = ({ onClose, currentColumn, cardId }) => {
   const dispatch = useDispatch();
 
   const renderColumns = columns.filter(
-    (item) => item.titleColumn !== currentColumn
+    (item) => item._id !== currentColumn
   );
 
   function checkedColumnHandler(columnId) {

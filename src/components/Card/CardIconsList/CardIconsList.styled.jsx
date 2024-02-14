@@ -9,7 +9,7 @@ export const IconList = styled.ul`
 
 export const ListItem = styled.li`
   display: flex;
-  align-items: flex-end;
+  align-items: end;
 `;
 
 export const Button = styled.button`

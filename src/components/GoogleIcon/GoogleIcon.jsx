@@ -1,17 +1,24 @@
-import { GoogleWrapper, GoogleIcon } from "./GoogleIcon.styled";
+import { GoogleWrapper, IconGoogle } from "./GoogleIcon.styled";
 import PropTypes from "prop-types";
 
-export default function Google() {
-  function handleGoogleAuth() {
-    console.log("google");
-  }
+// eslint-disable-next-line react/prop-types
+export default function GoogleIcon({ handleGoogleIconClick }) {
+  // function handleGoogleAuth() {
+  //   console.log("google");
+  // }
   return (
-    <GoogleWrapper onClick={handleGoogleAuth}>
-      <GoogleIcon />
+    <GoogleWrapper onClick={handleGoogleIconClick}>
+      {/* <GoogleWrapper onClick={handleGoogleAuth}> */}
+      {/* <a
+        href="https://task-backend-project.onrender.com/auth/google"
+        target="_self"
+      > */}
+      <IconGoogle />
+      {/* </a> */}
     </GoogleWrapper>
   );
 }
 
-Google.propTypes = {
+GoogleIcon.propTypes = {
   handleGoogleAuth: PropTypes.func,
 };

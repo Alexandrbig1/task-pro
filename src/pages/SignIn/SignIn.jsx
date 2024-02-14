@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { logIn } from "../../redux/auth/operations";
 import { FieldWrapper } from "../SignUp/SignUp.styled";
 import emailRegex from "../../regex/emailRegex";
+import { Link } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import {
   BoxStyled,
@@ -44,7 +45,7 @@ function Copyright(props) {
       {...props}
       style={{ fontSize: "1rem" }}
     >
-      {"Creamy Sharks © "}
+      <Link to="/creamy-sharks">{"Creamy Sharks © "}</Link>
       <LinkStyled
         color="inherit"
         href="https://alexandrbig1.github.io/task-pro/"

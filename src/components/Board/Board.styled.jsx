@@ -52,8 +52,12 @@ export const BoardTitle = styled.h2`
   position: absolute;
   top: 14px;
   left: 20px;
+  min-height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 14px;
   letter-spacing: -0.02em;
   color: ${(p) => {
     switch (p?.$colorBg) {
@@ -80,11 +84,16 @@ export const BoardTitle = styled.h2`
     }
   }};
 
-  @media only screen and (max-width: 767.9px) {
-    font-size: 14px;
+  @media only screen and (min-width: 768px) {
+    top: 10px;
+    font-size: 18px;
   }
 `;
-
+export const Box = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 export const ColumnList = styled.ul`
   display: flex;
   gap: 15px;

@@ -1,8 +1,8 @@
 import dayjs from "dayjs";
-import ReactReadMoreReadLess from "react-read-more-read-less";
 import PropTypes from "prop-types";
-import { CardIconsList } from "./CardIconsList/CardIconsList";
 import { useEffect, useState } from "react";
+import ReactReadMoreReadLess from "react-read-more-read-less";
+import { CardIconsList } from "./CardIconsList/CardIconsList";
 import {
   CardItem,
   Container,
@@ -27,6 +27,7 @@ export const Card = ({ cardInfo, currentColumn }) => {
 
   useEffect(() => {
     const date = dayjs(deadline);
+
     const outputDate = date.format("DD/MM/YYYY");
     setFormattedDate(outputDate);
   }, [deadline]);
@@ -36,7 +37,7 @@ export const Card = ({ cardInfo, currentColumn }) => {
       <Container>
         <Title>{titleCard}</Title>
         <Description>
-          <ReactReadMoreReadLess charLimit={90}>
+          <ReactReadMoreReadLess charLimit={75} readMoreText={""}>
             {description + "..."}
           </ReactReadMoreReadLess>
         </Description>

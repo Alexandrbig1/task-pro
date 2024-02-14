@@ -1,31 +1,46 @@
-import { IconList, ListItem, Button, Svg } from "./CardIconsList.styled";
+import PropTypes from "prop-types";
+import { useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import sprite from "/public/images/icons.svg";
-import { EditCardModal } from "../../EditCardModal/EditCardModal";
-import { useState } from "react";
-import Ring from "../../Ring/Ring";
-import { Tooltip } from "../../Tooltip/Tooltip";
-import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteCard } from "../../../redux/cards/operations";
 import { getBoardById } from "../../../redux/boards/operations";
 import { selectCurrentBoard } from "../../../redux/boards/selectors";
+import { IconList, ListItem, Button, Svg } from "./CardIconsList.styled";
+import { EditCardModal } from "../../EditCardModal/EditCardModal";
+import { Tooltip } from "../../Tooltip/Tooltip";
+import Ring from "../../Ring/Ring";
 
-export const CardIconsList = ({ currentColumn, cardInfo, columnsInfo }) => {
-  const { _id } = cardInfo;
+export const CardIconsList = ({ currentColumn, cardInfo }) => {
+  const { _id, deadline } = cardInfo;
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isTooltipModalOpen, setIsTooltipModalOpen] = useState(false);
-
-  const { board } = useSelector(selectCurrentBoard);
-
   const dispatch = useDispatch();
 
+  const { board, columns } = useSelector(selectCurrentBoard);
+  const moveBtn = useRef();
+  const moveSvg = useRef();
+  useEffect(() => {
+    if (columns.length > 1) {
+      moveBtn.current.disabled = false;
+      moveBtn.current.style.cursor = "pointer";
+      moveSvg.current.style.strokeOpacity = "1";
+      console.log(moveSvg.current.style.pointerEvents);
+      moveSvg.current.style.pointerEvents = "";
+      return;
+    }
+    moveBtn.current.disabled = true;
+    moveBtn.current.style.cursor = "not-allowed";
+    moveSvg.current.style.strokeOpacity = "0.2";
+    moveSvg.current.style.pointerEvents = "none";
+  }, [moveBtn, columns.length]);
   const handleToggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-  function handleEditModal() {
+  function handleMoveModal() {
     setIsTooltipModalOpen((prevState) => !prevState);
   }
 
@@ -47,10 +62,10 @@ export const CardIconsList = ({ currentColumn, cardInfo, columnsInfo }) => {
   return (
     <>
       <IconList>
-        <Ring />
+        <Ring deadline={deadline} />
         <ListItem key={"move"}>
-          <Button type="button" onClick={handleEditModal}>
-            <Svg width="16" height="16">
+          <Button ref={moveBtn} type="button" onClick={handleMoveModal}>
+            <Svg ref={moveSvg} width="16" height="16">
               <use href={`${sprite}#icon-arrow-circle-dark`}></use>
             </Svg>
           </Button>
@@ -75,7 +90,6 @@ export const CardIconsList = ({ currentColumn, cardInfo, columnsInfo }) => {
       )}
       {isTooltipModalOpen && (
         <Tooltip
-          columnsInfo={columnsInfo}
           currentColumn={currentColumn}
           onClose={setIsTooltipModalOpen}
           cardId={_id}
@@ -88,5 +102,4 @@ export const CardIconsList = ({ currentColumn, cardInfo, columnsInfo }) => {
 CardIconsList.propTypes = {
   currentColumn: PropTypes.string,
   cardInfo: PropTypes.object,
-  columnsInfo: PropTypes.array,
 };

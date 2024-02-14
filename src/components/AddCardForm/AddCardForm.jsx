@@ -1,17 +1,19 @@
-import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { CardButton } from "../CardButton/CardButton";
+import { Formik, Form, ErrorMessage } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { addCard } from "../../redux/cards/operations";
 import { selectCurrentBoard } from "../../redux/boards/selectors";
 import { getBoardById } from "../../redux/boards/operations";
+import { CardButton } from "../CardButton/CardButton";
 import CustomDatePicker from "../Calendar/Calendar";
 import {
   FormWrapper,
+  Error,
+  Label,
   Input,
   DescriptionArea,
   FormRadioWrapper,
@@ -24,23 +26,16 @@ import {
 } from "./AddCardForm.styled";
 
 const schema = Yup.object().shape({
-  title: Yup.string().required(),
+  title: Yup.string()
+    .required()
+    .max(25, "must be no more than 25 characters long"),
   description: Yup.string(),
 });
 
 export const AddCardForm = ({ onClose, columnId }) => {
   const [labelChecked, setLabelChecked] = useState("without");
-  const dispatch = useDispatch();
-
   const [selectedDate, setSelectedDate] = useState(new Date());
-
-  const handleDateChange = (date) => {
-    const year = date.getFullYear().toString();
-    const month = (date.getMonth() + 1).toString().padStart(2, "0");
-    const day = date.getDate().toString().padStart(2, "0");
-    const formattedDate = `${year}-${month}-${day}`;
-    setSelectedDate(formattedDate);
-  };
+  const dispatch = useDispatch();
 
   const { board } = useSelector(selectCurrentBoard);
 
@@ -53,7 +48,6 @@ export const AddCardForm = ({ onClose, columnId }) => {
       titleCard: values.title,
       description: values.description,
       priority: labelChecked,
-      // deadline: "2024-02-22",
       deadline: selectedDate,
       columnId: columnId,
     };
@@ -82,7 +76,7 @@ export const AddCardForm = ({ onClose, columnId }) => {
     >
       <Form autoComplete="off">
         <FormWrapper>
-          <label htmlFor="title">
+          <Label htmlFor="title">
             <Input
               autoFocus
               type="text"
@@ -90,8 +84,11 @@ export const AddCardForm = ({ onClose, columnId }) => {
               placeholder="Title"
               required
             />
-          </label>
-          <label htmlFor="description">
+            <Error>
+              <ErrorMessage name="title" />
+            </Error>
+          </Label>
+          <Label htmlFor="description">
             <DescriptionArea
               component="textarea"
               name="description"
@@ -99,7 +96,7 @@ export const AddCardForm = ({ onClose, columnId }) => {
               cols="33"
               placeholder="Description"
             />
-          </label>
+          </Label>
         </FormWrapper>
 
         <FormRadioWrapper>
@@ -146,10 +143,7 @@ export const AddCardForm = ({ onClose, columnId }) => {
 
         <DeadlineWrapper>
           <DeadlineTitle>Deadline</DeadlineTitle>
-          <CustomDatePicker
-            handleDateChange={handleDateChange}
-            selectedDate={selectedDate}
-          />
+          <CustomDatePicker setSelectedDate={setSelectedDate} />
         </DeadlineWrapper>
 
         <CardButton btnText="Add" />

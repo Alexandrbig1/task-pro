@@ -12,7 +12,7 @@ export const BackDrop = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(46, 46, 46, 0.7);
+  background-color: ${(p) => p.theme.colors.modalBgColor};
 `;
 
 export const Modal = styled.div`

@@ -73,7 +73,7 @@ export const Board = () => {
 
       form.reset();
       handleColumnModalOpen();
-      toast.success("You are successful add column!", {
+      toast.success("You have successfully added the column!", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -160,7 +160,7 @@ export const Board = () => {
                       </Wrapper>
                       {column?.cards?.length !== 0 && (
                         <CardList
-                          currentColumn={column.titleColumn}
+                          currentColumn={column._id}
                           cardInfo={column.cards}
                           columnID={column._id}
                         />
