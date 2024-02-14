@@ -1,48 +1,50 @@
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import {
-  // ArrowIcon,
-  CustomDatePickerWrapper,
-  // DateTextWrapper,
-} from "./Calendar.styled";
+import { CustomDatePickerWrapper } from "./Calendar.styled";
 import { useState } from "react";
-// import {
-//   MdOutlineKeyboardArrowDown,
-//   MdOutlineKeyboardArrowUp,
-// } from "react-icons/md";
-
 // eslint-disable-next-line react/prop-types
 const CustomDatePicker = ({ setSelectedDate }) => {
   const [startDate, setStartDate] = useState(new Date());
-  // const [arrow, setArrow] = useState(false);
 
   const handleDateChange = (date) => {
     setStartDate(date);
     setSelectedDate(date);
   };
-  // function toggleArrow() {
-  //   setArrow((prevState) => !prevState);
-  // }
+
+  const getDateFormat = (date) => {
+    const today = new Date();
+    const tomorrow = new Date();
+    tomorrow.setDate(today.getDate() + 1);
+
+    if (
+      date.getDate() === today.getDate() &&
+      date.getMonth() === today.getMonth() &&
+      date.getFullYear() === today.getFullYear()
+    ) {
+      return "Сьогодні, MMMM dd";
+    } else if (
+      date.getDate() === tomorrow.getDate() &&
+      date.getMonth() === tomorrow.getMonth() &&
+      date.getFullYear() === tomorrow.getFullYear()
+    ) {
+      return "Завтра, MMMM dd";
+    } else {
+      // Вивести назву дня тижня в форматі, який вам потрібен
+      return "EEEE, MMMM dd";
+    }
+  };
 
   return (
     <CustomDatePickerWrapper>
-      {/* <DateTextWrapper> */}
       <DatePicker
         selected={startDate}
         onChange={(date) => handleDateChange(date)}
-        dateFormat="EEEE, MMMM dd"
-        // dateFormat="EEEE, MMMM dd"
+        dateFormat={getDateFormat(startDate)}
         minDate={new Date()}
         showPopperArrow={false}
         onFocus={(e) => e.target.blur()}
         onKeyDown={(e) => e.preventDefault()}
-        // onCalendarOpen={toggleArrow}
-        // onCalendarClose={toggleArrow}
       />
-      {/* <ArrowIcon>
-        {arrow ? <MdOutlineKeyboardArrowUp /> : <MdOutlineKeyboardArrowDown />}
-      </ArrowIcon> */}
-      {/* </DateTextWrapper> */}
     </CustomDatePickerWrapper>
   );
 };
