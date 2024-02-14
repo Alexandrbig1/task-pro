@@ -184,7 +184,7 @@ const MainPage = lazy(() => import("../pages/MainPage/MainPage"));
 const SignIn = lazy(() => import("../pages/SignIn/SignIn"));
 const SignUp = lazy(() => import("../pages/SignUp/SignUp"));
 const NotFound = lazy(() => import("../pages/NotFound/NotFound"));
-const GoogleAuth = lazy(() => import("../pages/GoogleAuth/GoogleAuth"));
+// const GoogleAuth = lazy(() => import("../pages/GoogleAuth/GoogleAuth"));
 
 function App() {
   const dispatch = useDispatch();
@@ -240,7 +240,7 @@ function App() {
                 <RestrictedRoute redirectTo="/home" component={<SignUp />} />
               }
             />
-            <Route
+            {/* <Route
               path="google-redirect"
               element={
                 <RestrictedRoute
@@ -248,7 +248,7 @@ function App() {
                   component={<GoogleAuth />}
                 />
               }
-            />
+            /> */}
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
