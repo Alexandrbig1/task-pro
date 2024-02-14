@@ -15,6 +15,7 @@ import {
   EditColumnForm,
   EditColumnInput,
   CloseEditColumnModal,
+  EditColumnErrorMessage,
 } from "../EditColumnModal/EditColumnModal.styled";
 
 const EditColumnModal = ({ openEditColumnModal, columnId, initialTitle }) => {
@@ -47,8 +48,9 @@ const EditColumnModal = ({ openEditColumnModal, columnId, initialTitle }) => {
   };
 
   const handleChange = (e) => {
-    setTitle(e.target.value);
-    if (e.target.value.length > 25) {
+    const newValue = e.target.value;
+    setTitle(newValue);
+    if (newValue.length > 25) {
       setError("Title must be 25 characters or less");
     } else {
       setError("");
@@ -57,13 +59,14 @@ const EditColumnModal = ({ openEditColumnModal, columnId, initialTitle }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (title.length === 0 || title.length > 25) {
+    if (!title.trim() || title.length > 25) {
       setError("Please enter a valid title up to 25 characters");
       return;
     }
     const newColumnData = {
       titleColumn: title,
     };
+
     await dispatch(editColumn({ columnId, newColumnData }));
     dispatch(getBoardById(board._id));
     openEditColumnModal();
@@ -96,7 +99,9 @@ const EditColumnModal = ({ openEditColumnModal, columnId, initialTitle }) => {
               value={title}
               onChange={handleChange}
             />
-            {error && <p style={{ color: "red" }}>{error}</p>}
+            {
+              error && <EditColumnErrorMessage>{error}</EditColumnErrorMessage> 
+            }
             <CardButton btnText="Add" />
           </EditColumnForm>
         </div>
@@ -112,3 +117,24 @@ EditColumnModal.propTypes = {
   columnId: PropTypes.string,
   initialTitle: PropTypes.string,
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

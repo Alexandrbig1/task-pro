@@ -83,3 +83,15 @@ export const CloseEditColumnModal = styled(IoClose)`
     color: ${(p) => p.theme.colors.accentTextColor};
   }
 `;
+
+export const EditColumnErrorMessage = styled.p`
+  color: ${(p) => p.theme.colors.errorColor};
+  font-size: 1rem;
+  margin-top: -20px; // Змініть відступ за потребою
+  margin-bottom: 20px;
+  text-align: center; // Центрує повідомлення про помилку, якщо потрібно
+
+  @media (min-width: 768px) {
+    font-size: 1.2rem;
+  }
+`;
