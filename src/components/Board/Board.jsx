@@ -160,7 +160,7 @@ export const Board = () => {
                       </Wrapper>
                       {column?.cards?.length !== 0 && (
                         <CardList
-                          currentColumn={column.titleColumn}
+                          currentColumn={column._id}
                           cardInfo={column.cards}
                           columnID={column._id}
                         />
