@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import emailRegex from "../../regex/emailRegex";
@@ -7,6 +7,7 @@ import { requestHelp } from "../../redux/user/operations";
 import {
   CloseModal,
   HelpCloseBtn,
+  HelpErrorMsg,
   HelpForm,
   HelpInput,
   HelpModalWrap,
@@ -18,6 +19,7 @@ import {
 
 const NeedHelpModal = ({ openHelpModal }) => {
   const dispatch = useDispatch();
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     const handleKeyDown = (evt) => {
@@ -85,16 +87,12 @@ const NeedHelpModal = ({ openHelpModal }) => {
         });
       }
     } else {
-      toast.error("Please provide a valid email and a comment", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        progress: undefined,
-        theme: "light",
-      });
+      if (!validEmail) {
+        setErrorMessage("Please enter a valid email address!");
+      }
+      if (!validComment) {
+        setErrorMessage("Please enter a comment!");
+      }
     }
   };
 
@@ -107,13 +105,16 @@ const NeedHelpModal = ({ openHelpModal }) => {
         <div>
           <HelpTitle>Need help</HelpTitle>
           <HelpForm onSubmit={onSubmitClick}>
+            <HelpErrorMsg>{errorMessage}</HelpErrorMsg>
             <HelpInput name="email" type="text" placeholder="Email address" />
+
             <HelpTextArea
               cols="30"
               rows="10"
               name="comment"
               placeholder="Enter your message"
             ></HelpTextArea>
+
             <HelpSubmitBtn type="submit">Send</HelpSubmitBtn>
           </HelpForm>
         </div>

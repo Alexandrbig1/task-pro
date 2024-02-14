@@ -50,11 +50,19 @@ export const HelpTitle = styled.h2`
 export const HelpForm = styled.form`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   width: 100%;
 `;
 
+export const HelpErrorMsg = styled.p`
+  top: 50px;
+  font-size: 14px;
+  color: ${(p) => p.theme.colors.errorColor};
+  position: absolute;
+`;
+
 export const HelpInput = styled.input`
+  position: relative;
   width: 100%;
   font-size: 14px;
   letter-spacing: -0.02em;
@@ -74,6 +82,7 @@ export const HelpInput = styled.input`
   }
 `;
 export const HelpTextArea = styled.textarea`
+  position: relative;
   resize: none;
   width: 100%;
   max-height: 120px;
