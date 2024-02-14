@@ -1,0 +1,1 @@
+import{c as o,S as a,r as c,T as n,U as h}from"./index-3avrhR5f.js";const u=()=>{const e=o(),[s]=a();return c.useEffect(()=>{const t=s.get("token"),r=s.get("refreshToken");e(n({token:t,refreshToken:r})),e(h())},[e,s]),null};export{u as default};
