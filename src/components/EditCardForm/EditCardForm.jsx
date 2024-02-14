@@ -158,6 +158,8 @@ export const EditCardForm = ({ cardInfo, onClose }) => {
               dateFormat="EEEE, MMMM dd"
               minDate={startDate}
               showPopperArrow={false}
+              onFocus={(e) => e.target.blur()}
+              onKeyDown={(e) => e.preventDefault()}
             />
           </EditCalendarWrapper>
         </DeadlineWrapper>

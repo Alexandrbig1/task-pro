@@ -173,8 +173,9 @@ export const EditCalendarWrapper = styled.div`
     font-size: 14px;
     letter-spacing: -0.02em;
     cursor: pointer;
-    width: 100%;
-    position: relative;
+    width: 188px;
+    max-width: 280px;
+    caret-color: transparent;
   }
 
   .react-datepicker__header {

@@ -66,6 +66,7 @@ const themes = {
       cardListScrollBar: "rgba(22, 22, 22, 0.10)",
       defaultIconBackground: "#F6F6F7",
       calendarBgColor: "#fff",
+      calendarNumbersOutLowOp: "rgba(22,22,22,0.2)",
     },
   },
   dark: {
@@ -118,6 +119,7 @@ const themes = {
       cardListScrollBar: "rgba(255, 255, 255, 0.10)",
       defaultIconBackground: "#1F1F1F",
       calendarBgColor: "#1f1f1f",
+      calendarNumbersOutLowOp: "rgba(255,255,255,0.2)",
     },
   },
   violet: {
@@ -170,6 +172,7 @@ const themes = {
       cardListScrollBar: "#FFF",
       defaultIconBackground: "#ECEDFD",
       calendarBgColor: "#fff",
+      calendarNumbersOutLowOp: "rgba(22,22,22,0.2)",
     },
   },
 };

@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
 export const CustomDatePickerWrapper = styled.div`
+  /* display: flex;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  } */
   .react-datepicker {
     display: flex;
     justify-content: center;
@@ -8,6 +14,22 @@ export const CustomDatePickerWrapper = styled.div`
     background-color: ${(p) => p.theme.colors.calendarBgColor};
     border-radius: 8px;
     padding: 18px;
+  }
+
+  .react-datepicker-wrapper input {
+    position: relative;
+    border: none;
+    outline: none;
+    color: ${(p) => p.theme.colors.accentTextColor};
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    cursor: pointer;
+    width: 188px;
+    max-width: 280px;
+
+    caret-color: transparent;
   }
 
   ////Виставляю модалку по центру картки////
@@ -19,18 +41,6 @@ export const CustomDatePickerWrapper = styled.div`
     will-change: transform;
   }
 
-  .react-datepicker-wrapper input {
-    border: none;
-    outline: none;
-    color: ${(p) => p.theme.colors.accentTextColor};
-    background-color: transparent;
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: -0.02em;
-    cursor: pointer;
-    /* width: 100%; */
-  }
-
   .react-datepicker__header {
     border-bottom: none;
     background-color: transparent;
@@ -39,6 +49,10 @@ export const CustomDatePickerWrapper = styled.div`
   ////Місяці ////
   .react-datepicker__month {
     margin: 0.4em 0;
+  }
+
+  .react-datepicker__day--outside-month {
+    color: ${(p) => p.theme.colors.calendarNumbersOutLowOp} !important;
   }
 
   .react-datepicker__month-container {
@@ -132,14 +146,17 @@ export const CustomDatePickerWrapper = styled.div`
   }
 `;
 
-export const ArrowIcon = styled.div`
-  color: ${(p) => p.theme.colors.accentTextColor};
-  font-size: 18px;
-`;
+// export const DateTextWrapper = styled.div`
+//   display: flex;
+//   align-items: center;
+//   position: relative;
 
-export const DateTextWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  width: 100%;
-`;
+//   &:hover {
+//     cursor: pointer;
+//   }
+// `;
+
+// export const ArrowIcon = styled.div`
+//   color: ${(p) => p.theme.colors.accentTextColor};
+//   font-size: 22px;
+// `;
