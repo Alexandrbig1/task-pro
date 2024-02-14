@@ -240,7 +240,7 @@ function App() {
                 <RestrictedRoute redirectTo="/home" component={<SignUp />} />
               }
             />
-            {/* <Route
+            <Route
               path="google-redirect"
               element={
                 <RestrictedRoute
@@ -248,7 +248,7 @@ function App() {
                   component={<GoogleAuth />}
                 />
               }
-            /> */}
+            />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
