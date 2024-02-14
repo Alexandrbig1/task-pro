@@ -1,4 +1,4 @@
-import{u as o,p as n,r as c,b,j as t,H as j,a as v,K as C}from"./index-JUZdJLVc.js";import{a as k,B as S,e as $}from"./index-1kdr_amI.js";import{B as s,a as T,L as B,T as u,b as E,c as F,G as P,F as z,d as I}from"./Google-7PcE-RiM.js";import"./hoist-non-react-statics.cjs-rVkE7p_Q.js";import"./objectWithoutPropertiesLoose-wqavpohd.js";const L=o(s)`
+import{u as o,p as n,r as c,c as b,j as t,H as j,a as v,L as k,K as C}from"./index-RCBu__Vc.js";import{a as S,B as $,e as T}from"./index-1gp1zG-3.js";import{B as s,a as B,L as E,T as u,b as F,c as L,F as P,d as z}from"./SignUp.styled-opv3lAid.js";import"./hoist-non-react-statics.cjs-igdNm1L-.js";import"./objectWithoutPropertiesLoose-wqavpohd.js";const I=o(s)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +33,7 @@ import{u as o,p as n,r as c,b,j as t,H as j,a as v,K as C}from"./index-JUZdJLVc.
   }
 `;o(s)`
   width: 100%;
-`;const D=o(T)`
+`;const D=o(B)`
   width: 100%;
   height: 4.9rem;
 `,H=o.div`
@@ -72,7 +72,7 @@ import{u as o,p as n,r as c,b,j as t,H as j,a as v,K as C}from"./index-JUZdJLVc.
   font-weight: 500;
   line-height: normal;
   letter-spacing: -0.28px;
-`,q=o(B)`
+`,q=o(E)`
   color: ${e=>e.theme.colors.textColor};
 `,O=o.a`
   color: ${e=>e.theme.colors.whiteColorLowOp};
@@ -82,9 +82,9 @@ import{u as o,p as n,r as c,b,j as t,H as j,a as v,K as C}from"./index-JUZdJLVc.
   font-weight: 500;
   line-height: normal;
   letter-spacing: -0.36px;
-`,G=o(u)`
-  color: ${e=>e.theme.colors.blackColor};
 `,Y=o(u)`
+  color: ${e=>e.theme.colors.blackColor};
+`,K=o(u)`
   color: ${e=>e.theme.colors.whiteColor};
   font-family: ${n};
   font-size: 18px;
@@ -92,7 +92,7 @@ import{u as o,p as n,r as c,b,j as t,H as j,a as v,K as C}from"./index-JUZdJLVc.
   font-weight: 500;
   line-height: normal;
   letter-spacing: -0.36px;
-`,p=o(E)`
+`,p=o(F)`
   width: 100%;
   max-width: 260px;
 
@@ -133,7 +133,7 @@ import{u as o,p as n,r as c,b,j as t,H as j,a as v,K as C}from"./index-JUZdJLVc.
       font-size: 1.4rem;
     }
   }
-`,K=o.div`
+`,M=o.div`
   position: relative;
   width: 100%;
   max-width: 256px;
@@ -145,7 +145,7 @@ import{u as o,p as n,r as c,b,j as t,H as j,a as v,K as C}from"./index-JUZdJLVc.
   @media (min-width: 768px) {
     max-width: 344px;
   }
-`,M=o.span`
+`,N=o.span`
   position: absolute;
   top: 50%;
   right: 1.2rem;
@@ -167,4 +167,4 @@ import{u as o,p as n,r as c,b,j as t,H as j,a as v,K as C}from"./index-JUZdJLVc.
   @media (min-width: 768px) {
     font-size: 1.2rem;
   }
-`,N=I({breakpoints:{values:{xs:0,sm:550,md:960,lg:1280,xl:1920}}});function V(e){return t.jsxs(G,{variant:"body2",align:"center",...e,style:{fontSize:"1rem"},children:["Creamy Sharks © ",t.jsx(q,{color:"inherit",href:"https://alexandrbig1.github.io/task-pro/",target:"_blank",children:"TaskPro"})," ",new Date().getFullYear(),"."]})}function X(){const[e,g]=c.useState(!1),w=b(),[r,m]=c.useState({}),f=()=>{g(!e)},y=h=>{h.preventDefault();const a=h.currentTarget,l=a.elements.email.value,d=a.elements.password.value,i={};l.trim().length===0?i.email="Email address is required":$.test(l)||(i.email="Please enter a valid email address"),(d.length<6||d.length>18)&&(i.password="Password must be between 6 and 18 characters"),m(i),Object.keys(i).length===0&&(m({}),w(C({email:l,password:d})),a.reset())};return t.jsxs(t.Fragment,{children:[t.jsx(j,{children:t.jsxs(v,{children:[t.jsx("title",{children:"Creamy Sharks - Sign In"}),t.jsx("meta",{name:"description",content:"Explore TaskPro, the ultimate task manager born out of a 10-month Fullstack Development Bootcamp. Elevate your productivity with TaskPro's intuitive design and powerful functionality."})]})}),t.jsx(F,{theme:N,children:t.jsxs(L,{children:[t.jsx("div",{style:{display:"flex",alignItems:"center",justifyContent:"center",padding:"1.2rem"},children:t.jsxs(W,{children:[t.jsxs(s,{style:{display:"flex",alignItems:"center",gap:"1.4rem",position:"relative"},children:[t.jsx(O,{href:"#/signup",variant:"body2",children:"Registration"}),t.jsx(Y,{component:"h1",variant:"h5",children:"Log In"}),t.jsx(P,{})]}),t.jsxs(s,{component:"form",onSubmit:y,noValidate:!0,sx:{mt:2,width:{sm:"376px",xs:"312px"}},children:[t.jsxs(z,{children:[t.jsx(p,{margin:"normal",required:!0,fullWidth:!0,id:"email",placeholder:"Enter your email",name:"email",autoComplete:"email",autoFocus:!0,error:!!r.email}),r.email&&t.jsx(x,{children:r.email})]}),t.jsxs(K,{children:[t.jsx(p,{placeholder:"Confirm a password",variant:"outlined",margin:"normal",required:!0,fullWidth:!0,name:"password",id:"password",autoComplete:"current-password",type:e?"text":"password",error:!!r.password}),r.password&&t.jsx(x,{children:r.password}),t.jsx(M,{onClick:f,children:e?t.jsx(k,{}):t.jsx(S,{})})]}),t.jsx(H,{children:t.jsx(D,{type:"submit",color:"inherit",children:t.jsx(R,{children:"Log In Now"})})})]})]})}),t.jsx(V,{sx:{mt:8,mb:4}})]})})]})}export{X as default};
+`,V=z({breakpoints:{values:{xs:0,sm:550,md:960,lg:1280,xl:1920}}});function _(e){return t.jsxs(Y,{variant:"body2",align:"center",...e,style:{fontSize:"1rem"},children:[t.jsx(k,{to:"/creamy-sharks",children:"Creamy Sharks © "}),t.jsx(q,{color:"inherit",href:"https://alexandrbig1.github.io/task-pro/",target:"_blank",children:"TaskPro"})," ",new Date().getFullYear(),"."]})}function X(){const[e,g]=c.useState(!1),w=b(),[r,m]=c.useState({}),f=()=>{g(!e)},y=h=>{h.preventDefault();const a=h.currentTarget,l=a.elements.email.value,d=a.elements.password.value,i={};l.trim().length===0?i.email="Email address is required":T.test(l)||(i.email="Please enter a valid email address"),(d.length<6||d.length>18)&&(i.password="Password must be between 6 and 18 characters"),m(i),Object.keys(i).length===0&&(m({}),w(C({email:l,password:d})),a.reset())};return t.jsxs(t.Fragment,{children:[t.jsx(j,{children:t.jsxs(v,{children:[t.jsx("title",{children:"Creamy Sharks - Sign In"}),t.jsx("meta",{name:"description",content:"Explore TaskPro, the ultimate task manager born out of a 10-month Fullstack Development Bootcamp. Elevate your productivity with TaskPro's intuitive design and powerful functionality."})]})}),t.jsx(L,{theme:V,children:t.jsxs(I,{children:[t.jsx("div",{style:{display:"flex",alignItems:"center",justifyContent:"center",padding:"1.2rem"},children:t.jsxs(W,{children:[t.jsxs(s,{style:{display:"flex",alignItems:"center",gap:"1.4rem",position:"relative"},children:[t.jsx(O,{href:"#/signup",variant:"body2",children:"Registration"}),t.jsx(K,{component:"h1",variant:"h5",children:"Log In"})]}),t.jsxs(s,{component:"form",onSubmit:y,noValidate:!0,sx:{mt:2,width:{sm:"376px",xs:"312px"}},children:[t.jsxs(P,{children:[t.jsx(p,{margin:"normal",required:!0,fullWidth:!0,id:"email",placeholder:"Enter your email",name:"email",autoComplete:"email",autoFocus:!0,error:!!r.email}),r.email&&t.jsx(x,{children:r.email})]}),t.jsxs(M,{children:[t.jsx(p,{placeholder:"Confirm a password",variant:"outlined",margin:"normal",required:!0,fullWidth:!0,name:"password",id:"password",autoComplete:"current-password",type:e?"text":"password",error:!!r.password}),r.password&&t.jsx(x,{children:r.password}),t.jsx(N,{onClick:f,children:e?t.jsx(S,{}):t.jsx($,{})})]}),t.jsx(H,{children:t.jsx(D,{type:"submit",color:"inherit",children:t.jsx(R,{children:"Log In Now"})})})]})]})}),t.jsx(_,{sx:{mt:8,mb:4}})]})})]})}export{X as default};
