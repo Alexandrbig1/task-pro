@@ -23,7 +23,6 @@ export const UpdateAvatar = styled.img`
 `;
 
 export const AvatarIconUpdate = styled.svg`
-    /* font-size: 3.2rem; */
     --color1: ${(p) => p.theme.colors.defaultIconBackground};
     --color2: ${(p) => p.theme.colors.defaultAvatar};
     width: ${(p) => (p?.size?.width ? p?.size?.width : "68px")};
@@ -152,6 +151,8 @@ export const EyeWrapper = styled.span`
     right: 1.8rem;
 
     transform: translateY(-35%);
+    transition: all var(--primary-transition);
+
     font-size: 2rem;
     opacity: 0.4;
     color: ${(p) => p.theme.colors.secondaryTextColor};

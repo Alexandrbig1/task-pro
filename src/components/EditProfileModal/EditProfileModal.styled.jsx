@@ -28,6 +28,7 @@ export const AvatarModal = styled.div`
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    transition: all var(--primary-transition);
     &:hover {
         cursor: auto;
     }
@@ -50,8 +51,8 @@ export const BtnClose = styled(IoClose)`
     outline: none;
     border: none;
     cursor: pointer;
-    transition: 0.3s linear;
-
+    transition: all var(--primary-transition);
+    
     &:hover {
         transform: rotate(90deg);
         fill: ${(p) => p.theme.colors.accentTextColor};
