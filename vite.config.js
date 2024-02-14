@@ -5,7 +5,7 @@ export default defineConfig({
   base: "/task-pro/",
   plugins: [react()],
   server: {
-    port: 3002,
+    port: 3000,
     open: true,
   },
   build: {
