@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { BsFillEyeSlashFill, BsFillEyeFill } from "react-icons/bs";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import emailRegex from "../../regex/emailRegex";
+import { Link } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import {
   BoxSignUpStyled,
@@ -24,7 +25,7 @@ import {
   FieldWrapper,
   PasswordErrorMessage,
 } from "./SignUp.styled";
-import Google from "../../components/Google/Google";
+// import Google from "../../components/Google/Google";
 
 const customTheme = createTheme({
   breakpoints: {
@@ -46,7 +47,7 @@ function Copyright(props) {
       {...props}
       style={{ fontSize: "1rem" }}
     >
-      {"Creamy Sharks © "}
+      <Link to="/creamy-sharks">{"Creamy Sharks © "}</Link>
       <LinkSignUpStyled
         color="inherit"
         href="https://alexandrbig1.github.io/task-pro/"
@@ -146,7 +147,7 @@ export default function SignUp() {
                 <LoginLink href="#/signin" variant="body2">
                   Log In
                 </LoginLink>
-                <Google />
+                {/* <Google /> */}
               </Box>
               <Box
                 component="form"

@@ -178,6 +178,7 @@ const themes = {
 };
 
 const Welcome = lazy(() => import("../pages/Welcome/Welcome"));
+const CreamySharks = lazy(() => import("../pages/CreamySharks/CreamySharks"));
 const Home = lazy(() => import("../pages/Home/Home"));
 const MainPage = lazy(() => import("../pages/MainPage/MainPage"));
 const SignIn = lazy(() => import("../pages/SignIn/SignIn"));
@@ -214,6 +215,7 @@ function App() {
         <Routes>
           <Route path="/" element={<RootLayout />}>
             <Route index element={<Welcome />} />
+            <Route path="creamy-sharks" element={<CreamySharks />} />
             <Route
               path="home"
               element={

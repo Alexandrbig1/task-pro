@@ -57,6 +57,7 @@ export const logIn = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       const res = await axios.post("/auth/login", credentials);
+
       setAuthHeader(res.data.token);
       toast.success("Welcome to TaskPro! 🚀 Created by Creamy Sharks 🦈", {
         position: "top-right",
@@ -90,9 +91,8 @@ export const googleAuth = createAsyncThunk(
   async (googleToken, thunkAPI) => {
     try {
       console.log(googleToken);
-      const res = await axios.post("/api/auth/google", { token: googleToken });
+      const res = await axios.post("/api/auth/google", googleToken);
 
-      console.log(res);
       setAuthHeader(res.data.token);
       toast.success(
         "Welcome to TaskPro via Google! 🚀 Created by Creamy Sharks 🦈",
