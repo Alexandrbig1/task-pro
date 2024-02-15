@@ -1,4 +1,4 @@
-import{u as t,p as f,c as $,j as o,l as ne,r as m,d as ie,B as O,e as ae,f as T,g as se,h as D,N as le,b as ce,i as U,k as F,m as A,n as V,s as _,o as de,q as he,H as me,a as pe,O as ue}from"./index-qNXMYwQw.js";import{L as xe}from"./Logo-i1WFVlg1.js";import{G as k}from"./iconBase-huA7yV3o.js";import{P as w}from"./hoist-non-react-statics.cjs-hGhbn8SH.js";import{e as q,B as ge,a as fe}from"./index-_wMcIvYL.js";import{I as B,F as K,a as C,c as E,b as j,d as Z,E as X,C as G,s as Q,e as Y,u as be,f as ve}from"./selectors-JYLDgNGy.js";function ye(e){return k({tag:"svg",attr:{fill:"none",viewBox:"0 0 24 24",strokeWidth:"2",stroke:"currentColor","aria-hidden":"true"},child:[{tag:"path",attr:{strokeLinecap:"round",strokeLinejoin:"round",d:"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"},child:[]}]})(e)}const we=t(ye)`
+import{u as t,p as f,c as $,j as o,l as ne,r as m,d as ie,B as O,e as ae,f as T,g as se,h as D,N as le,b as ce,i as U,k as F,m as A,n as V,s as _,o as de,q as he,H as me,a as pe,O as ue}from"./index-GDS5ffS1.js";import{L as xe}from"./Logo-5UxkYxBQ.js";import{G as k}from"./iconBase-bkfjIXOp.js";import{P as w}from"./hoist-non-react-statics.cjs-537mASnl.js";import{e as q,B as ge,a as fe}from"./index-YsdmhyBh.js";import{I as B,F as K,a as C,c as E,b as j,d as Z,E as X,C as G,s as Q,e as Y,u as be,f as ve}from"./selectors-el-XhlsW.js";function ye(e){return k({tag:"svg",attr:{fill:"none",viewBox:"0 0 24 24",strokeWidth:"2",stroke:"currentColor","aria-hidden":"true"},child:[{tag:"path",attr:{strokeLinecap:"round",strokeLinejoin:"round",d:"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"},child:[]}]})(e)}const we=t(ye)`
   font-size: 3.2rem;
   color: ${e=>e.theme.colors.logoutIcon};
 `,ke=t.a`
@@ -62,6 +62,7 @@ import{u as t,p as f,c as $,j as o,l as ne,r as m,d as ie,B as O,e as ae,f as T,
   width: 100%;
 `,Me=t.p`
   top: 50px;
+  right: 24px;
   font-size: 14px;
   color: ${e=>e.theme.colors.errorColor};
   position: absolute;
@@ -866,142 +867,149 @@ import{u as t,p as f,c as $,j as o,l as ne,r as m,d as ie,B as O,e as ae,f as T,
     color: ${e=>e.theme.colors.themeTextHoverColor};
   }
 `;function te({toggleTheme:e}){const[r,n]=m.useState(!1),[s,h]=m.useState(!1);function d(){n(i=>!i),h(i=>!i)}return o.jsxs(ht,{onClick:d,children:[o.jsxs(ut,{children:[o.jsx(mt,{children:"Theme"}),o.jsx(pt,{children:s?o.jsx(dt,{}):o.jsx(ct,{})})]}),r&&o.jsxs(xt,{children:[o.jsx(S,{onClick:i=>e(i),children:"light"},"light"),o.jsx(S,{onClick:i=>e(i),children:"dark"},"dark"),o.jsx(S,{onClick:i=>e(i),children:"violet"},"violet")]})]})}te.propTypes={toggleTheme:w.func.isRequired};const gt=t.form`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `,ft=t.div`
-    position: relative;
-    margin-bottom: 2.5rem;
+  position: relative;
+  margin-bottom: 2.5rem;
 `,bt=t.img`
-    width: 6.8rem;
-    height: 6.8rem;
-    outline: none;
-    border: none;
-    border-radius: 0.8rem;
+  width: 6.8rem;
+  height: 6.8rem;
+  outline: none;
+  border: none;
+  border-radius: 0.8rem;
 `,vt=t.svg`
+
     --color1: ${e=>e.theme.colors.defaultIconBackground};
     --color2: ${e=>e.theme.colors.defaultAvatar};
     width: ${e=>{var r,n;return(r=e==null?void 0:e.size)!=null&&r.width?(n=e==null?void 0:e.size)==null?void 0:n.width:"68px"}};
     height: ${e=>{var r,n;return(r=e==null?void 0:e.size)!=null&&r.height?(n=e==null?void 0:e.size)==null?void 0:n.height:"68px"}};
 
-    border-radius: 0.8rem;
+
+
+  border-radius: 0.8rem;
 `,yt=t.label`
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    stroke: ${e=>e.theme.colors.blackColor};
-    background-color: ${e=>e.theme.colors.themeWrapperBorder};
-    padding: 0.7rem;
-    border-radius: 0.7rem;
-    transform: translate(-50%, 50%);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  stroke: ${e=>e.theme.colors.blackColor};
+  background-color: ${e=>e.theme.colors.themeWrapperBorder};
+  padding: 0.7rem;
+  border-radius: 0.7rem;
+  transform: translate(-50%, 50%);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    transition: all var(--primary-transition);
+  transition: all var(--primary-transition);
 
-    &:hover,
-    &:focus {
-        background-color: ${e=>e.theme.colors.modalBtnHover};
-        cursor: pointer;
-    }
+  &:hover,
+  &:focus {
+    background-color: ${e=>e.theme.colors.modalBtnHover};
+    cursor: pointer;
+  }
 `,wt=t(Y)`
-    stroke: ${e=>e.theme.colors.blackColor};
-    font-size: 1.2rem;
-    &:hover {
-        cursor: pointer;
-    }
+  stroke: ${e=>e.theme.colors.blackColor};
+  font-size: 1.2rem;
+  &:hover {
+    cursor: pointer;
+  }
 `,R=t.input`
-    margin-bottom: 1.4rem;
-    padding: 1.4rem 1.8rem;
-    width: 100%;
-    border-radius: 0.8rem;
-    background-color: inherit;
-    opacity: 0.4;
-    outline: none;
-    border: 1px solid ${e=>e.theme.colors.buttonsBgColor};
+  margin-bottom: 1.4rem;
+  padding: 1.4rem 1.8rem;
+  width: 100%;
+  border-radius: 0.8rem;
+  background-color: inherit;
+  opacity: 0.4;
+  outline: none;
+  border: 1px solid ${e=>e.theme.colors.buttonsBgColor};
 
-    font-family: ${f};
-    font-weight: 400;
-    font-size: 1.4rem;
-    letter-spacing: -0.02em;
+  font-family: ${f};
+  font-weight: 400;
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
 
-    transition: all var(--primary-transition);
+  transition: all var(--primary-transition);
 
-    color: ${e=>e.theme.colors.secondaryTextColor};
+  color: ${e=>e.theme.colors.secondaryTextColor};
 
-    &:hover {
-        opacity: 1;
-    }
+  &:hover {
+    opacity: 1;
+  }
 `,kt=t.input`
-    margin-bottom: 2.4rem;
-    padding: 1.4rem 1.8rem;
-    width: 100%;
-    border-radius: 0.8rem;
-    background-color: inherit;
-    opacity: 0.4;
-    outline: none;
-    border: 1px solid ${e=>e.theme.colors.buttonsBgColor};
-    font-family: ${f};
-    font-weight: 400;
-    font-size: 1.4rem;
-    letter-spacing: -0.02em;
+  margin-bottom: 2.4rem;
+  padding: 1.4rem 1.8rem;
+  width: 100%;
+  border-radius: 0.8rem;
+  background-color: inherit;
+  opacity: 0.4;
+  outline: none;
+  border: 1px solid ${e=>e.theme.colors.buttonsBgColor};
+  font-family: ${f};
+  font-weight: 400;
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
 
-    transition: all var(--primary-transition);
+  transition: all var(--primary-transition);
 
-    color: ${e=>e.theme.colors.secondaryTextColor};
+  color: ${e=>e.theme.colors.secondaryTextColor};
 
-    &:hover {
-        opacity: 1;
-    }
+  &:hover {
+    opacity: 1;
+  }
 `,z=t.label`
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 `,jt=t.button`
-    margin: 0;
-    display: block;
-    border-radius: 0.8rem;
-    width: 100%;
-    padding: 1.4rem 1.59rem;
-    border: none;
-    outline: none;
-    font-family: ${f};
-    font-weight: 500;
-    font-size: 1.4rem;
-    letter-spacing: -0.02em;
-    color: ${e=>e.theme.colors.buttonsColor};
-    background-color: ${e=>e.theme.colors.themeTextHoverColor};
+  margin: 0;
+  display: block;
+  border-radius: 0.8rem;
+  width: 100%;
+  padding: 1.4rem 1.59rem;
+  border: none;
+  outline: none;
+  font-family: ${f};
+  font-weight: 500;
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+  color: ${e=>e.theme.colors.buttonsColor};
+  background-color: ${e=>e.theme.colors.themeTextHoverColor};
 
-    transition: all var(--primary-transition);
+  transition: all var(--primary-transition);
 
-    &:hover,
-    &:focus {
-        cursor: pointer;
-        background-color: ${e=>e.theme.colors.modalBtnHover};
-    }
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    background-color: ${e=>e.theme.colors.modalBtnHover};
+  }
 `,M=t.span`
-    position: absolute;
-    top: -1.5rem;
-    bottom: 0;
-    color: ${e=>e.theme.colors.secondaryTextColor};
+  right: 0.3rem;
+  font-size: 1.4rem;
+  position: absolute;
+  top: -1.5rem;
+  bottom: 0;
+  color: ${e=>e.theme.colors.errorColor};
 `,$t=t.span`
+
     position: absolute;
     top: 30%;
     right: 1.8rem;
 
-    transform: translateY(-35%);
-    transition: all var(--primary-transition);
 
-    font-size: 2rem;
-    opacity: 0.4;
-    color: ${e=>e.theme.colors.secondaryTextColor};
+  transform: translateY(-35%);
+  transition: all var(--primary-transition);
 
-    &:hover {
-        cursor: pointer;
-        opacity: 1;
-    }
+  font-size: 2rem;
+  opacity: 0.4;
+  color: ${e=>e.theme.colors.secondaryTextColor};
+
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
 `,Ct=E().shape({avatarURL:j(),name:j().min(3,"Too Short!").max(50,"Too Long!"),email:j().matches(q,"Invalid email address"),password:j().min(8,"Must Contain 8 Characters").max(18,"not more than 18 characters").matches(/^(?=.*[a-z])/," Must Contain One Lowercase Character").matches(/^(?=.*[A-Z])/,"  Must Contain One Uppercase Character").matches(/^(?=.*[0-9])/,"  Must Contain One Number Character").matches(/^(?=.*[!@#\$%\^&\*])/,"Must Contain One Special Case Character")});function Tt({toggleModal:e}){const r=T(_),[n,s]=m.useState(r.avatarURL),[h,d]=m.useState(!1),i=$(),p=()=>{d(!h)},c=be({initialValues:{avatarURL:r&&r.avatarURL?r.avatarURL:"",name:r&&r.name?r.name:"",email:r&&r.email?r.email:"",password:""},validationSchema:Ct,onSubmit:async(x,{resetForm:a})=>{try{if(!r)return;await i(de(x)),e(),a({})}catch(g){console.error("error:",g)}}}),l=async x=>{const{name:a,type:g,files:u}=x.target,v=g==="file"?u[0]:x.target.value;if(c.setFieldValue(a,v),g==="file"){const y=new FileReader;y.onload=()=>{y.readyState===2&&s(y.result)},u[0]&&(y.readAsDataURL(u[0]),await i(he({avatar:v})))}},b=x=>{const{name:a,value:g}=x.target;c.setFieldValue(a,g)};return o.jsxs(gt,{onSubmit:c.handleSubmit,children:[o.jsxs(ft,{children:[r.avatarURL&&r.avatarURL!=="default"?o.jsx(bt,{src:n}):o.jsx(vt,{children:o.jsx("use",{href:"images/icons.svg#icon-userAvatarDefault"})}),o.jsxs(yt,{htmlFor:"button-file",children:[o.jsx("input",{name:"avatar",accept:"image/*",id:"button-file",type:"file",hidden:!0,onChange:l}),o.jsx(wt,{})]})]}),o.jsx("div",{}),o.jsxs(z,{children:[c.touched.name&&c.errors.name&&o.jsx(M,{className:"error-message",children:c.errors.name}),o.jsx(R,{type:"text",name:"name",placeholder:r.name,value:c.values.name,onChange:b})]}),o.jsxs(z,{children:[c.touched.email&&c.errors.email&&o.jsx(M,{className:"error-message",children:c.errors.email}),o.jsx(R,{type:"text",name:"email",placeholder:r.email,value:c.values.email,onChange:b})]}),o.jsxs(z,{children:[c.touched.password&&c.errors.password&&o.jsx(M,{className:"error-message",children:c.errors.password}),o.jsx(kt,{type:h?"text":"password",name:"password",placeholder:"Enter your password",className:"nth-child",value:c.values.password,onChange:b}),o.jsx($t,{onClick:p,children:h?o.jsx(ge,{}):o.jsx(fe,{})})]}),o.jsx(jt,{type:"submit",children:"Send"})]})}const Bt=t.div`
   position: fixed;
   top: 0;

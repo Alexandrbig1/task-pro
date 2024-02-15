@@ -1,4 +1,4 @@
-var Vl=Object.defineProperty;var Ul=(t,n,e)=>n in t?Vl(t,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):t[n]=e;var j=(t,n,e)=>(Ul(t,typeof n!="symbol"?n+"":n,e),e);import{u as M,r as P,c as Wt,f as Je,j as x,t as zl,h as yt,B as At,v as Kl,w as Qo,x as Xo,R as fs,y as S,z as hs,A as Ql,C as ms,D as Xl,n as gs,E as Jl,F as Zl,g as eu,G as tu,I as ru,J as nu}from"./index-qNXMYwQw.js";import{p as oo,P as he,h as _a}from"./hoist-non-react-statics.cjs-hGhbn8SH.js";import{I as Nr,f as ft,C as Yn,a as sr,c as vs,b as yn,d as ys,F as bs,E as ws,e as xs,g as ou,h as au}from"./selectors-JYLDgNGy.js";import{G as Ds}from"./iconBase-huA7yV3o.js";import{_ as bn,a as Q,b as Cs}from"./objectWithoutPropertiesLoose-wqavpohd.js";const Qt="/task-pro/assets/icons-dtHiyAGN.svg",iu=M.ul`
+var Vl=Object.defineProperty;var Ul=(t,n,e)=>n in t?Vl(t,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):t[n]=e;var j=(t,n,e)=>(Ul(t,typeof n!="symbol"?n+"":n,e),e);import{u as M,r as P,c as Wt,f as Je,j as x,t as zl,h as yt,B as At,v as Kl,w as Qo,x as Xo,R as fs,y as S,z as hs,A as Ql,C as ms,D as Xl,n as gs,E as Jl,F as Zl,g as eu,G as tu,I as ru,J as nu}from"./index-GDS5ffS1.js";import{p as oo,P as he,h as _a}from"./hoist-non-react-statics.cjs-537mASnl.js";import{I as Nr,f as ft,C as Yn,a as sr,c as vs,b as yn,d as ys,F as bs,E as ws,e as xs,g as ou,h as au}from"./selectors-el-XhlsW.js";import{G as Ds}from"./iconBase-bkfjIXOp.js";import{_ as bn,a as Q,b as Cs}from"./objectWithoutPropertiesLoose-wqavpohd.js";const Qt="/task-pro/assets/icons-dtHiyAGN.svg",iu=M.ul`
   display: flex;
   gap: 8px;
   list-style: none;
@@ -139,7 +139,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 `,xh=M.span`
   font-size: 14px;
   position: absolute;
-  left: 3px;
+  right: 3px;
   top: -14px;
   color: ${t=>t.theme.colors.errorColor};
 `,Ei=M.label`
@@ -917,7 +917,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 `,jw=M.span`
   font-size: 14px;
   position: absolute;
-  left: 3px;
+  right: 3px;
   top: -16px;
   color: ${t=>t.theme.colors.errorColor};
 `,ps=M.label`
