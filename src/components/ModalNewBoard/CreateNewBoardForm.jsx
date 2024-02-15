@@ -6,6 +6,8 @@ import { useState } from "react";
 import { CardButton } from "../CardButton/CardButton";
 import { useDispatch } from "react-redux";
 import { addBoard } from "../../redux/boards/operations";
+import { useSelector } from "react-redux";
+import { selectBoards } from "../../redux/boards/selectors";
 import {
   StyledForm,
   StyledIcon,
@@ -22,6 +24,7 @@ import {
   StyledDefaultIcon,
   DefaultIconWrapper,
 } from "../ModalNewBoard/CreateNewBoardForm.styled";
+import { toast } from "react-toastify";
 
 const formSquema = Yup.object().shape({
   titleBoard: Yup.string()
@@ -62,10 +65,7 @@ const backgrounds = [
 
 export default function CreateNewBoardForm({ closeModal }) {
   const dispatch = useDispatch();
-  // const [errInput, setErrInput] = useState("");
-  // const [errMessageSub, setErrMessageSub] = useState(false);
-  // const [errUniqueTitle, setErrUniqueTitle] = useState(false);
-  // const [erShort, setErrShort] = useState(false);
+  const boards = useSelector(selectBoards);
 
   const [icon, setIcon] = useState("icon-project");
 
@@ -79,15 +79,32 @@ export default function CreateNewBoardForm({ closeModal }) {
     setBackground(e.target.value);
   };
 
-  const handleSubmit = (values, { resetForm }) => {
-    const newBoard = {
-      titleBoard: values.titleBoard,
-      icon: icon,
-      background: background,
-    };
-    dispatch(addBoard(newBoard));
-    resetForm();
-    closeModal();
+  const handleSubmit = async (values, { resetForm }) => {
+    const isBoardExists = boards.some(
+      (board) => board.titleBoard === values.titleBoard
+    );
+
+    if (isBoardExists) {
+      toast.warning("Board already exists", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "light",
+      });
+    } else {
+      const newBoard = {
+        titleBoard: values.titleBoard,
+        icon: icon,
+        background: background,
+      };
+      dispatch(addBoard(newBoard));
+      resetForm();
+      closeModal();
+    }
   };
 
   return (
