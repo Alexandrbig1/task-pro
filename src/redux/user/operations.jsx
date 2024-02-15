@@ -9,12 +9,14 @@ export const requestHelp = createAsyncThunk(
   "users/help/request",
   async (credentials, thunkAPI) => {
     try {
-      const res = await axios.post("/users/help", credentials, {
+      const header = {
         headers: {
+          Accept: "application/json",
           Authorization: axios.defaults.headers.common.Authorization,
-          "Content-Type": "multipart/form-data",
+          "Content-Type": "application/json",
         },
-      });
+      };
+      const res = await axios.post("/users/help", credentials, header);
       toast.success(
         "Thank you for reaching out! Your help request has been received. Our team is on it, and we'll get back to you as soon as possible.",
         {
