@@ -30,6 +30,20 @@ export default function Home({ toggleTheme }) {
             name="description"
             content="Explore TaskPro, the ultimate task manager born out of a 10-month Fullstack Development Bootcamp. Elevate your productivity with TaskPro's intuitive design and powerful functionality."
           />
+          <link
+            rel="canonical"
+            href="https://alexandrbig1.github.io/task-pro/"
+          />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <meta property="og:title" content="Creamy Sharks - Task Pro" />
+          <meta
+            property="og:description"
+            content="Explore TaskPro, the ultimate task manager born out of a 10-month Fullstack Development Bootcamp. Elevate your productivity with TaskPro's intuitive design and powerful functionality."
+          />
+          <meta name="author" content="Creamy Sharks" />
         </Helmet>
       </HelmetProvider>
       <Container>

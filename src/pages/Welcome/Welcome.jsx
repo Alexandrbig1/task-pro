@@ -30,10 +30,25 @@ export default function Welcome() {
     <>
       <HelmetProvider>
         <Helmet>
-          <title>Creamy Sharks - Sign Up</title>
+          <title>Creamy Sharks - Welcome</title>
           <meta
             name="description"
-            content="Explore TaskPro, the ultimate task manager born out of a 10-month Fullstack Development Bootcamp. Elevate your productivity with TaskPro's intuitive design and powerful functionality."
+            content="Welcome to Creamy Sharks - Your ultimate destination for efficient task management. Register or log in now to explore the power of Task Pro and boost your productivity."
+          />
+
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+
+          <meta property="og:title" content="Creamy Sharks - Welcome" />
+          <meta
+            property="og:description"
+            content="Welcome to Creamy Sharks - Your ultimate destination for efficient task management. Register or log in now to explore the power of Task Pro and boost your productivity."
+          />
+          <meta
+            property="og:url"
+            content="https://alexandrbig1.github.io/task-pro/"
           />
         </Helmet>
       </HelmetProvider>
