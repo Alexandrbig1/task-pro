@@ -200,7 +200,11 @@ export default function CreamySharks() {
                       <ImgSubTitle>fullstack developer</ImgSubTitle>
                     </div>
                     <SocialWrapper>
-                      <a href="#">
+                      <a
+                        href="https://www.linkedin.com/in/natalia-spivak/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <LinkedInIcon />
                       </a>
                       <a
