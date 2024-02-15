@@ -17,7 +17,11 @@ export const StyledInput = styled(Field)`
   padding: 18px;
   font-size: 14px;
   color: ${(p) => p.theme.colors.secondaryTextColor};
-  border: 1px solid ${(p) => p.theme.colors.accentTextColor};
+  border: 1px solid
+    ${(p) =>
+      p?.$isError === true
+        ? p.theme.colors.errorColor
+        : p.theme.colors.secondaryTextColor};
   background-color: ${(p) => p.theme.colors.mainBgColor};
   border-radius: 8px;
   margin-bottom: 24px;
@@ -62,7 +66,7 @@ export const StyledBackgroundLabel = styled.label`
 export const StyledField = styled(Field)`
   appearance: none;
 
-  &: checked {
+  &:checked {
     color: ${(p) => p.theme.colors.secondaryTextColor};
   }
 `;
@@ -76,11 +80,10 @@ export const StyledBackgroudField = styled(Field)`
 `;
 
 export const StyledError = styled.div`
-  position: absolute;
-  top: 125px;
-  right: 30px;
+  padding: 4px;
+  text-align: right;
   font-size: 14px;
-  color: ${(p) => p.theme.colors.accentTextColor};
+  color: ${(p) => p.theme.colors.errorColor};
 `;
 export const IconsWrapper = styled.div`
   display: flex;

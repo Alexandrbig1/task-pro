@@ -27,7 +27,6 @@ export const CardIconsList = ({ currentColumn, cardInfo }) => {
       moveBtn.current.disabled = false;
       moveBtn.current.style.cursor = "pointer";
       moveSvg.current.style.strokeOpacity = "1";
-      console.log(moveSvg.current.style.pointerEvents);
       moveSvg.current.style.pointerEvents = "";
       return;
     }
