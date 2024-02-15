@@ -1,4 +1,4 @@
-import{u as e,p as i,L as n,j as t,H as r,a}from"./index-gxLt2Js3.js";import{L as s}from"./Logo-dKNWKHiQ.js";const l=e.div`
+import{u as e,p as i,L as n,j as t,H as r,a}from"./index-XCcIrLST.js";import{L as s}from"./Logo-kjOelIiW.js";const l=e.div`
   background: linear-gradient(
     180deg,
     rgba(196, 196, 196, 0) 25%,
@@ -15,24 +15,12 @@ import{u as e,p as i,L as n,j as t,H as r,a}from"./index-gxLt2Js3.js";import{L a
   position: relative;
   margin: 0 auto;
   padding: 0 2rem;
-
-  /* @media (min-width: 375px) {
-    max-width: 37.5rem;
-  }
-
-  @media (min-width: 768px) {
-    max-width: 76.8rem;
-  }
-
-  @media (min-width: 1440px) {
-    max-width: 144rem;
-  } */
-`,m=e.div`
+`,c=e.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2.4rem;
-`,c=e.p`
+`,p=e.p`
   color: #161616;
   text-align: center;
   font-family: ${i};
@@ -51,11 +39,11 @@ import{u as e,p as i,L as n,j as t,H as r,a}from"./index-gxLt2Js3.js";import{L a
   @media (min-width: 768px) {
     max-width: 474px;
   }
-`,d=e.div`
+`,m=e.div`
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
-`,p=e(n)`
+`,d=e(n)`
   color: #fff;
   text-align: center;
   font-family: ${i};
@@ -99,4 +87,4 @@ import{u as e,p as i,L as n,j as t,H as r,a}from"./index-gxLt2Js3.js";import{L a
   &:hover {
     cursor: pointer;
   }
-`,h={width:"48px",height:"48px"},g={color:"#161616",font:"4rem"},f={bgColor:"#161616",iconColor:"#fff"};function y(){return t.jsxs(t.Fragment,{children:[t.jsx(r,{children:t.jsxs(a,{children:[t.jsx("title",{children:"Creamy Sharks - Sign Up"}),t.jsx("meta",{name:"description",content:"Explore TaskPro, the ultimate task manager born out of a 10-month Fullstack Development Bootcamp. Elevate your productivity with TaskPro's intuitive design and powerful functionality."})]})}),t.jsx(l,{children:t.jsxs(m,{children:[t.jsx("img",{src:"images/welcome.png",alt:"boy with laptop"}),t.jsx(s,{size:h,text:g,icon:f}),t.jsx(c,{children:"Supercharge your productivity and take control of your tasks with Task Pro - Don't wait, start achieving your goals now!"}),t.jsxs(d,{children:[t.jsx(p,{to:"signup",children:"Registration"}),t.jsx(x,{to:"signin",children:"Log In"})]})]})})]})}export{y as default};
+`,h={width:"48px",height:"48px"},g={color:"#161616",font:"4rem"},f={bgColor:"#161616",iconColor:"#fff"};function y(){return t.jsxs(t.Fragment,{children:[t.jsx(r,{children:t.jsxs(a,{children:[t.jsx("title",{children:"Creamy Sharks - Sign Up"}),t.jsx("meta",{name:"description",content:"Explore TaskPro, the ultimate task manager born out of a 10-month Fullstack Development Bootcamp. Elevate your productivity with TaskPro's intuitive design and powerful functionality."})]})}),t.jsx(l,{children:t.jsxs(c,{children:[t.jsx("img",{src:"images/welcome.png",alt:"boy with laptop"}),t.jsx(s,{size:h,text:g,icon:f}),t.jsx(p,{children:"Supercharge your productivity and take control of your tasks with Task Pro - Don't wait, start achieving your goals now!"}),t.jsxs(m,{children:[t.jsx(d,{to:"signup",children:"Registration"}),t.jsx(x,{to:"signin",children:"Log In"})]})]})})]})}export{y as default};
