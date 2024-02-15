@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { CardButton } from "../CardButton/CardButton";
 import "react-toastify/dist/ReactToastify.css";
+import { createPortal } from "react-dom";
 import {
   AddModalWrap,
   StyledAddModal,
@@ -12,7 +13,6 @@ import {
   AddColumnInput,
   ErrorMessage,
 } from "../AddColumnModal/AddColumnModal.styled";
-import { createPortal } from "react-dom";
 
 const AddColumnModal = ({
   errorMessageSub,
@@ -44,7 +44,7 @@ const AddColumnModal = ({
       document.body.style.overflow = "auto";
     };
   }, [openColumnModal, setErrorMessageSub, setErrUniqueTitle, setErrShort]);
-  
+
   const ErrShow = (e) => {
     setErrInput(e.target.value);
     setErrorMessageSub(false);

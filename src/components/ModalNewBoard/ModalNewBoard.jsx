@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import CreateNewBoardForm from "./CreateNewBoardForm";
+import { createPortal } from "react-dom";
 import {
   StyledTitle,
   CloseIcon,
@@ -7,7 +8,6 @@ import {
   BackDrop,
   Modal,
 } from "../ModalNewBoard/ModalNewBoard.styled";
-import { createPortal } from "react-dom";
 
 // eslint-disable-next-line react/prop-types
 export default function ModalNewBoard({ openNewBoardModal }) {

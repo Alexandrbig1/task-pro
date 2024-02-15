@@ -7,6 +7,7 @@ import { CardButton } from "../CardButton/CardButton";
 import { editColumn } from "../../redux/columns/operations";
 import { getBoardById } from "../../redux/boards/operations";
 import { selectCurrentBoard } from "../../redux/boards/selectors";
+import { createPortal } from "react-dom";
 import {
   EditModalWrap,
   StyledEditModal,
@@ -16,7 +17,6 @@ import {
   EditColumnInput,
   CloseEditColumnModal,
 } from "../EditColumnModal/EditColumnModal.styled";
-import { createPortal } from "react-dom";
 
 const EditColumnModal = ({ openEditColumnModal, columnId, initialTitle }) => {
   const [title, setTitle] = useState(initialTitle);
@@ -90,7 +90,6 @@ const EditColumnModal = ({ openEditColumnModal, columnId, initialTitle }) => {
           <EditColumnTitle>Edit column</EditColumnTitle>
           <EditColumnForm onSubmit={handleSubmit}>
             <EditColumnInput
-            
               autoFocus
               type="text"
               placeholder="To Do"

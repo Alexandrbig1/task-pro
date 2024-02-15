@@ -98,12 +98,6 @@ export default function CreateNewBoardForm({ closeModal }) {
         background: "default",
       }}
       validationSchema={formSquema}
-      // validate={({ titleBoard }) => {
-      //   const errors = {
-      //     message: titleBoard.trim().length <= 1 ? true : false,
-      //   };
-      //   return errors;
-      // }}
       onSubmit={handleSubmit}
     >
       {(isSubmitting) => (
