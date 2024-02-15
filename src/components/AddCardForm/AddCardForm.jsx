@@ -28,7 +28,7 @@ import {
 const schema = Yup.object().shape({
   title: Yup.string()
     .required("Please fill the title field")
-    .max(25, "must be no more than 25 characters long"),
+    .max(25, "Must be no more than 25 characters long"),
   description: Yup.string(),
 });
 
@@ -77,12 +77,7 @@ export const AddCardForm = ({ onClose, columnId }) => {
       <Form autoComplete="off">
         <FormWrapper>
           <Label htmlFor="title">
-            <Input
-              autoFocus
-              type="text"
-              name="title"
-              placeholder="Title"
-            />
+            <Input autoFocus type="text" name="title" placeholder="Title" />
             <Error>
               <ErrorMessage name="title" />
             </Error>

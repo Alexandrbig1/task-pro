@@ -16,6 +16,7 @@ import {
   EditColumnForm,
   EditColumnInput,
   CloseEditColumnModal,
+  ErrorMessage,
 } from "../EditColumnModal/EditColumnModal.styled";
 
 const EditColumnModal = ({ openEditColumnModal, columnId, initialTitle }) => {
@@ -97,7 +98,7 @@ const EditColumnModal = ({ openEditColumnModal, columnId, initialTitle }) => {
               value={title}
               onChange={handleChange}
             />
-            {error && <p style={{ color: "red" }}>{error}</p>}
+            {error && <ErrorMessage>{error}</ErrorMessage>}
             <CardButton btnText="Add" />
           </EditColumnForm>
         </div>
