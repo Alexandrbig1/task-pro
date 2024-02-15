@@ -1,10 +1,13 @@
-import{u as t,p as v,c as $,j as o,l as ae,r as p,d as ie,B as F,e as se,f as R,g as T,h as le,i as U,N as ce,b as de,k as V,m as O,n as A,o as _,s as q,q as he,t as me,H as pe,a as ue,O as xe}from"./index-R35BXG90.js";import{L as ge}from"./Logo-_h1kdNc5.js";import{G as k}from"./iconBase-Mjx2bMc0.js";import{P as w}from"./hoist-non-react-statics.cjs-kGtDGBXc.js";import{e as K,B as fe,a as ye}from"./index-xwv8Dz5J.js";import{I as B,F as Z,a as C,c as H,b as j,d as X,E as G,C as Q,s as Y,e as J,u as ve,f as be}from"./selectors-vfoSPoom.js";function we(e){return k({tag:"svg",attr:{fill:"none",viewBox:"0 0 24 24",strokeWidth:"2",stroke:"currentColor","aria-hidden":"true"},child:[{tag:"path",attr:{strokeLinecap:"round",strokeLinejoin:"round",d:"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"},child:[]}]})(e)}const ke=t(we)`
+import{u as t,p as v,c as $,j as o,l as ae,r as p,d as ie,B as F,e as se,f as R,g as T,h as le,i as U,N as ce,b as de,k as V,m as O,n as A,o as _,s as q,q as he,t as me,H as pe,a as ue,O as xe}from"./index-aU0M1r8B.js";import{L as ge}from"./Logo-4HuVywhM.js";import{G as k}from"./iconBase-GkPzt2mW.js";import{P as w}from"./hoist-non-react-statics.cjs-e-j7qehA.js";import{e as K,B as fe,a as ye}from"./index-SpdqaGyR.js";import{I as B,F as Z,a as C,c as H,b as j,d as X,E as G,C as Q,s as Y,e as J,u as ve,f as be}from"./selectors-QkM3z8Gn.js";function we(e){return k({tag:"svg",attr:{fill:"none",viewBox:"0 0 24 24",strokeWidth:"2",stroke:"currentColor","aria-hidden":"true"},child:[{tag:"path",attr:{strokeLinecap:"round",strokeLinejoin:"round",d:"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"},child:[]}]})(e)}const ke=t(we)`
   font-size: 3.2rem;
   color: ${e=>e.theme.colors.logoutIcon};
 `,je=t.button`
-  &:hover {
-    cursor: pointer;
-  }
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 
   display: flex;
   gap: 1.4rem;
