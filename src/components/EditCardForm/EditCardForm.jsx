@@ -30,7 +30,7 @@ import {
 const schema = Yup.object().shape({
   title: Yup.string()
     .required()
-    .max(25, "must be no more than 25 characters long"),
+    .max(25, "Must be no more than 25 characters long"),
   description: Yup.string(),
 });
 

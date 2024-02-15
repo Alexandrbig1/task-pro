@@ -81,3 +81,11 @@ export const CloseEditColumnModal = styled(IoClose)`
     color: ${(p) => p.theme.colors.accentTextColor};
   }
 `;
+
+export const ErrorMessage = styled.p`
+  position: absolute;
+  right: 22px;
+  top: 46px;
+  color: ${(p) => p.theme.colors.errorColor};
+  font-size: 14px;
+`;

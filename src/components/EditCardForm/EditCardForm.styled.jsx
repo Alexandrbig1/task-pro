@@ -14,7 +14,7 @@ export const Error = styled.span`
   font-size: 14px;
   position: absolute;
   right: 3px;
-  top: -14px;
+  top: -24px;
   color: ${(p) => p.theme.colors.errorColor};
 `;
 
