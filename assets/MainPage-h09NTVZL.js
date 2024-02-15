@@ -1,4 +1,4 @@
-var Vl=Object.defineProperty;var Ul=(t,n,e)=>n in t?Vl(t,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):t[n]=e;var j=(t,n,e)=>(Ul(t,typeof n!="symbol"?n+"":n,e),e);import{u as M,r as P,c as Wt,g as Je,j as w,v as zl,i as yt,B as At,w as Kl,x as Qo,f as Xo,R as fs,y as S,z as hs,A as Ql,C as ms,D as Xl,E as Jl,o as gs,F as Zl,G as eu,h as tu,I as ru,J as nu,K as ou}from"./index-Xphnxxzx.js";import{p as oo,P as he,h as _a}from"./hoist-non-react-statics.cjs-pA4Rofsk.js";import{I as Nr,f as ft,C as Yn,a as sr,c as vs,b as yn,d as ys,F as bs,E as ws,e as xs,g as au,h as iu}from"./selectors-JFiVNml9.js";import{G as Ds}from"./iconBase-F6dkmf-w.js";import{_ as bn,a as Q,b as Cs}from"./objectWithoutPropertiesLoose-wqavpohd.js";const Qt="/task-pro/assets/icons-dtHiyAGN.svg",su=M.ul`
+var Vl=Object.defineProperty;var Ul=(t,n,e)=>n in t?Vl(t,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):t[n]=e;var j=(t,n,e)=>(Ul(t,typeof n!="symbol"?n+"":n,e),e);import{u as M,r as P,c as Wt,g as Je,j as w,v as zl,i as yt,B as At,w as Kl,x as Qo,f as Xo,R as fs,y as S,z as hs,A as Ql,C as ms,D as Xl,E as Jl,t as gs,F as Zl,G as eu,h as tu,I as ru,J as nu,K as ou}from"./index-BW9EUXF0.js";import{p as oo,P as he,h as _a}from"./hoist-non-react-statics.cjs-F-xUkeid.js";import{I as Nr,f as ft,C as Yn,a as sr,c as vs,b as yn,d as ys,F as bs,E as ws,e as xs,g as au,h as iu}from"./selectors-xg3GecWj.js";import{G as Ds}from"./iconBase-oMaI1aSI.js";import{_ as bn,a as Q,b as Cs}from"./objectWithoutPropertiesLoose-wqavpohd.js";const Qt="/task-pro/assets/icons-dtHiyAGN.svg",su=M.ul`
   display: flex;
   gap: 8px;
   list-style: none;
@@ -61,7 +61,6 @@ var Vl=Object.defineProperty;var Ul=(t,n,e)=>n in t?Vl(t,n,{enumerable:!0,config
   width: 100%;
 `,fu=M.input`
   width: 100%;
-  /* max-width: 352px; */
   height: 49px;
   font-size: 14px;
   letter-spacing: -0.02em;
@@ -77,7 +76,6 @@ var Vl=Object.defineProperty;var Ul=(t,n,e)=>n in t?Vl(t,n,{enumerable:!0,config
   font-size: 2.4rem;
   color: ${t=>t.theme.colors.secondaryTextColor};
   position: absolute;
-  // top: 1.4rem;
   right: 0;
 
   transition: all var(--primary-transition);
@@ -758,7 +756,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   width: 100%;
 `,Fw=M.input`
   width: 100%;
-  /* max-width: 352px; */
   height: 49px;
   font-size: 14px;
   letter-spacing: -0.02em;
@@ -774,7 +771,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   font-size: 2.4rem;
   color: ${t=>t.theme.colors.secondaryTextColor};
   position: absolute;
-  // top: 1.4rem;
   right: 0;
 
   transition: all var(--primary-transition);
@@ -1232,7 +1228,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   overflow-x: scroll;
 
   &::-webkit-scrollbar {
-    /* width: 12px; */
     width: 0;
   }
 

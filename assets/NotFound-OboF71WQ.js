@@ -1,4 +1,4 @@
-import{u as t,p as o,j as e,H as s,a as i}from"./index-Xphnxxzx.js";import{L as r}from"./Logo-8BO2ZRXA.js";const a=t.div`
+import{u as t,p as o,j as e,H as s,a as i}from"./index-BW9EUXF0.js";import{L as r}from"./Logo-uWMUp8W5.js";const a=t.div`
   margin: 0 auto;
   width: 100%;
   min-height: 100vh;
