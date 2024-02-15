@@ -19,9 +19,9 @@ export const StyledInput = styled(Field)`
   color: ${(p) => p.theme.colors.secondaryTextColor};
   border: 1px solid
     ${(p) =>
-      p?.$isError === true
-        ? p.theme.colors.errorColor
-        : p.theme.colors.secondaryTextColor};
+  p?.$isDirty && p?.$isError
+    ? p.theme.colors.errorColor
+    : p.theme.colors.secondaryTextColor};
   background-color: ${(p) => p.theme.colors.mainBgColor};
   border-radius: 8px;
   margin-bottom: 24px;

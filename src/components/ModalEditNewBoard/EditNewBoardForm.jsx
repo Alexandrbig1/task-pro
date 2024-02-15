@@ -118,11 +118,14 @@ export default function EditNewBoardForm({ boardId, closeModal }) {
       {(isSubmitting) => (
         <StyledForm>
           <label>
-            <StyledError>
-              <ErrorMessage name="titleBoard" />
-            </StyledError>
+            {isSubmitting.errors.message && isSubmitting?.dirty ? (
+              <StyledError>
+                <ErrorMessage name="titleBoard" />
+              </StyledError>
+            ) : null}
             <StyledInput
-              $isError={isSubmitting.errors.message}
+              $isError={isSubmitting?.errors?.message}
+              $isDirty={isSubmitting?.dirty}
               autoFocus
               type="text"
               name="titleBoard"

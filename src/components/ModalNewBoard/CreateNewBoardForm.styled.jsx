@@ -19,14 +19,14 @@ export const StyledInput = styled(Field)`
   color: ${(p) => p.theme.colors.secondaryTextColor};
   border: 1px solid
     ${(p) =>
-      p?.$isError === true
+      p?.$isDirty && p?.$isError
         ? p.theme.colors.errorColor
         : p.theme.colors.secondaryTextColor};
   background-color: ${(p) => p.theme.colors.mainBgColor};
   border-radius: 8px;
   margin-bottom: 24px;
   opacity: 0.4;
-
+  transition: border 500ms linear;
   &:focus {
     opacity: 1;
     outline: none;
