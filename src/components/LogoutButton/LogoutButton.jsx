@@ -7,7 +7,6 @@ export default function LogoutButton() {
 
   return (
     <LogoutBtn onClick={() => dispatch(logOut())}>
-      {/* <LogoutBtn onClick={handleLogout}> */}
       <ButtonIcon></ButtonIcon>
       <LogoutText>Log out</LogoutText>
     </LogoutBtn>

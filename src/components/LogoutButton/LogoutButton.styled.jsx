@@ -7,7 +7,7 @@ export const ButtonIcon = styled(HiOutlineLogout)`
   color: ${(p) => p.theme.colors.logoutIcon};
 `;
 
-export const LogoutBtn = styled.a`
+export const LogoutBtn = styled.button`
   &:hover {
     cursor: pointer;
   }
