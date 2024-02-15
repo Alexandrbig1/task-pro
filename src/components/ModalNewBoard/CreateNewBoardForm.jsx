@@ -93,25 +93,25 @@ export default function CreateNewBoardForm({ closeModal }) {
         background: "default",
       }}
       validationSchema={formSquema}
-      validate={({ titleBoard }) => {
-        const errors = {
-          message: titleBoard.trim().length <= 1 ? true : false,
-        };
-        return errors;
-      }}
+      // validate={({ titleBoard }) => {
+      //   const errors = {
+      //     message: titleBoard.trim().length <= 1 ? true : false,
+      //   };
+      //   return errors;
+      // }}
       onSubmit={handleSubmit}
     >
       {(isSubmitting) => (
         <StyledForm>
           <label>
-            {isSubmitting.errors.message && isSubmitting?.dirty ? (
+            {isSubmitting.errors.titleBoard?.length > 0 ? (
               <StyledError>
                 <ErrorMessage name="titleBoard" />
               </StyledError>
             ) : null}
 
             <StyledInput
-              $isError={isSubmitting?.errors?.message}
+              $isError={isSubmitting?.errors.titleBoard}
               $isDirty={isSubmitting?.dirty}
               autoFocus
               type="text"

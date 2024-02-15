@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const StyledForm = styled(Form)`
   margin: 0;
+  position: relative;
 `;
 export const StyledSmallTitle = styled.p`
   color: ${(p) => p.theme.colors.secondaryTextColor};
@@ -19,7 +20,7 @@ export const StyledInput = styled(Field)`
   color: ${(p) => p.theme.colors.secondaryTextColor};
   border: 1px solid
     ${(p) =>
-      p?.$isDirty && p?.$isError
+      p?.$isError?.length > 0
         ? p.theme.colors.errorColor
         : p.theme.colors.secondaryTextColor};
   background-color: ${(p) => p.theme.colors.mainBgColor};
@@ -32,6 +33,9 @@ export const StyledInput = styled(Field)`
     outline: none;
   }
 
+  @media (max-width: 374.9px) {
+    width: 252px;
+  }
   @media (min-width: 768px) {
     width: 302px;
   }
@@ -80,10 +84,15 @@ export const StyledBackgroudField = styled(Field)`
 `;
 
 export const StyledError = styled.div`
+  position: absolute;
+  right: 0;
+  top: -24px;
   padding: 4px;
-  text-align: right;
   font-size: 14px;
   color: ${(p) => p.theme.colors.errorColor};
+  @media (max-width: 374.9px) {
+    right: 25px;
+  }
 `;
 export const IconsWrapper = styled.div`
   display: flex;

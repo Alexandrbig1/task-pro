@@ -118,7 +118,7 @@ export default function EditNewBoardForm({ boardId, closeModal }) {
       {(isSubmitting) => (
         <StyledForm>
           <label>
-            {isSubmitting.errors.message && isSubmitting?.dirty ? (
+          {isSubmitting.errors.titleBoard?.length > 0 ? (
               <StyledError>
                 <ErrorMessage name="titleBoard" />
               </StyledError>
