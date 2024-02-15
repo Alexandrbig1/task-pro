@@ -68,6 +68,12 @@ Welcome to the Task Pro App, the final project from the Fullstack Development Bo
 ![Task Pro App](/public/images/screenshots/taskpro4.jpg) _Caption for Screenshot 4
 (Home Page)_
 
+![Task Pro App](/public/images/screenshots/taskpro5.jpg) _Caption for Screenshot 4
+(Board Page)_
+
+![Task Pro App](/public/images/screenshots/team.jpg) _Caption for Screenshot 4
+(Creamy Sharks Team)_
+
 ## Features
 
 - **User Authentication:** Users can register and log in to access the main application.
