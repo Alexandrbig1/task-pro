@@ -356,7 +356,7 @@ export default function CreamySharks() {
                 </ImgCardItemsWrapper>
               </ImgCardsItems>
               <ImgCardsItems>
-                <Images src="./images/team/cat.jpg" alt="Vialov Vlad" />
+                <Images src="./images/team/vlad.jpg" alt="Vialov Vlad" />
                 <ImgCardItemsWrapper>
                   <ImgWrapper>
                     <div>
@@ -383,7 +383,10 @@ export default function CreamySharks() {
                 </ImgCardItemsWrapper>
               </ImgCardsItems>
               <ImgCardsItems>
-                <Images src="./images/team/cat2.jpg" alt="Svitlana Yurikova" />
+                <Images
+                  src="./images/team/svitlana.jpg"
+                  alt="Svitlana Yurikova"
+                />
                 <ImgCardItemsWrapper>
                   <ImgWrapper>
                     <div>

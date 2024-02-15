@@ -23,7 +23,7 @@ import {
   RegistrationLink,
   BtnLogInSpan,
 } from "./SignIn.styled";
-import Google from "../../components/Google/Google";
+// import Google from "../../components/Google/Google";
 
 const customTheme = createTheme({
   breakpoints: {
@@ -152,7 +152,7 @@ export default function SignIn() {
                 <TypoTitleStyled component="h1" variant="h5">
                   Log In
                 </TypoTitleStyled>
-                <Google />
+                {/* <Google /> */}
               </Box>
               <Box
                 component="form"

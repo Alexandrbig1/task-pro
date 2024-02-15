@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { register, logIn, logOut, refreshUser, googleAuth } from "./operations";
+import { register, logIn, logOut, refreshUser } from "./operations";
+// import { register, logIn, logOut, refreshUser, googleAuth } from "./operations";
 import { selectUser } from "./selectors";
 import { editUser, usersAvatar } from "../user/operations";
 
@@ -42,11 +43,11 @@ const authSlice = createSlice({
         state.token = null;
         state.isLoggedIn = false;
       })
-      .addCase(googleAuth.fulfilled, (state, action) => {
-        state.user = action.payload.user;
-        state.token = action.payload.token;
-        state.isLoggedIn = true;
-      })
+      // .addCase(googleAuth.fulfilled, (state, action) => {
+      //   state.user = action.payload.user;
+      //   state.token = action.payload.token;
+      //   state.isLoggedIn = true;
+      // })
       .addCase(refreshUser.pending, (state) => {
         state.isRefreshing = true;
       })
