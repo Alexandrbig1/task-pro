@@ -85,13 +85,7 @@ export const EditCardForm = ({ cardInfo, onClose }) => {
       <Form autoComplete="off">
         <FormWrapper>
           <Label htmlFor="title">
-            <Input
-              type="text"
-              name="title"
-              placeholder="Title"
-              autoFocus
-              required
-            />
+            <Input type="text" name="title" placeholder="Title" autoFocus />
             <Error>
               <ErrorMessage name="title" />
             </Error>
