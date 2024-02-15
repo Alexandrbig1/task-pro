@@ -1,8 +1,6 @@
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { RingIcon, RingList } from "./Ring.styled";
-
-// && hoursDifference > 0
 export default function Ring({ deadline }) {
   const [deadlineInOneDay, setDeadlineInOneDay] = useState();
 

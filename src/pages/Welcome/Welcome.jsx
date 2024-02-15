@@ -30,10 +30,25 @@ export default function Welcome() {
     <>
       <HelmetProvider>
         <Helmet>
-          <title>Creamy Sharks - Sign Up</title>
+          <title>Creamy Sharks - Welcome</title>
           <meta
             name="description"
-            content="Explore TaskPro, the ultimate task manager born out of a 10-month Fullstack Development Bootcamp. Elevate your productivity with TaskPro's intuitive design and powerful functionality."
+            content="Welcome to Creamy Sharks - Your ultimate destination for efficient task management. Register or log in now to explore the power of Task Pro and boost your productivity."
+          />
+
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+
+          <meta property="og:title" content="Creamy Sharks - Welcome" />
+          <meta
+            property="og:description"
+            content="Welcome to Creamy Sharks - Your ultimate destination for efficient task management. Register or log in now to explore the power of Task Pro and boost your productivity."
+          />
+          <meta
+            property="og:url"
+            content="https://alexandrbig1.github.io/task-pro/"
           />
         </Helmet>
       </HelmetProvider>
@@ -54,37 +69,3 @@ export default function Welcome() {
     </>
   );
 }
-
-// const Welcome = () => {
-//   // Стан для управління видимістю модального вікна
-//   const [isModalColumnOpen, setIsModalColumnOpen] = useState(false);
-
-//   //   // Функція для відкриття та закриття модального вікна
-//    const openColumnModal = () => {
-//      setIsModalColumnOpen((prevState) => !prevState);
-//    };
-
-//   return (
-//     <WelcomeContainer>
-//       <WelcomeWrapper>
-//         <img src="images/welcome.png" alt="boy with laptop" />
-//         <Logo size={size} text={text} icon={icon} />
-//         <WelcomeText>
-//           Supercharge your productivity and take control of your tasks with Task
-//           Pro - Don't wait, start achieving your goals now!
-//         </WelcomeText>
-//         <WelcomeBtnWrapper>
-//           <RegistrationBtn to="auth/signup">Registration</RegistrationBtn>
-//           <LoginBtn to="auth/signin">Log In</LoginBtn>
-//           <LoginBtn onClick={() => openColumnModal()}>
-//             Add another column
-//           </LoginBtn>
-//           {isModalColumnOpen && (
-//             <AddColumnModal openColumnModal={openColumnModal} />
-//           )}
-//         </WelcomeBtnWrapper>
-//       </WelcomeWrapper>
-//     </WelcomeContainer>
-//   );
-// };
-// export default Welcome;

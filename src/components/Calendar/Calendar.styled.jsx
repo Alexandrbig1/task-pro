@@ -26,7 +26,6 @@ export const CustomDatePickerWrapper = styled.div`
     caret-color: transparent;
   }
 
-  ////Виставляю календар по центру картки////
   .react-datepicker-popper {
     position: absolute;
     left: 50% !important;
@@ -40,7 +39,6 @@ export const CustomDatePickerWrapper = styled.div`
     background-color: transparent;
   }
 
-  ////Місяці ////
   .react-datepicker__month {
     margin: 0.4em 0;
   }
@@ -61,14 +59,12 @@ export const CustomDatePickerWrapper = styled.div`
     color: ${(p) => p.theme.colors.secondaryTextColor};
   }
 
-  //// Тижні ////
   .react-datepicker__week {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     column-gap: 10px;
   }
 
-  //// Дні ////
   .react-datepicker__day-names {
     font-weight: 600;
     margin-top: 5px;
@@ -110,12 +106,10 @@ export const CustomDatePickerWrapper = styled.div`
     border-radius: 50%;
   }
 
-  //// Для вибраного числа щоб не показувало на наст місяці////
   .react-datepicker__day--keyboard-selected {
     background-color: transparent;
   }
 
-  ////Для навігації////
   .react-datepicker__navigation {
     align-items: center;
     background: none;
@@ -134,7 +128,6 @@ export const CustomDatePickerWrapper = styled.div`
     overflow: hidden;
   }
 
-  ////Для стрілки навігації////
   .react-datepicker__navigation-icon::before {
     border-color: ${(p) => p.theme.colors.accentTextColor};
   }

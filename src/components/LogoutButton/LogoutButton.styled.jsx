@@ -7,10 +7,13 @@ export const ButtonIcon = styled(HiOutlineLogout)`
   color: ${(p) => p.theme.colors.logoutIcon};
 `;
 
-export const LogoutBtn = styled.a`
-  &:hover {
-    cursor: pointer;
-  }
+export const LogoutBtn = styled.button`
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 
   display: flex;
   gap: 1.4rem;

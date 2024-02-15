@@ -28,6 +28,7 @@ export const StyledInput = styled(Field)`
   border-radius: 8px;
   margin-bottom: 24px;
   opacity: 0.4;
+  transition: border var(--primary-transition);
   &:focus {
     opacity: 1;
     outline: none;
@@ -40,6 +41,7 @@ export const StyledInput = styled(Field)`
     width: 302px;
   }
 `;
+
 export const StyledLabel = styled.label`
   cursor: pointer;
   display: flex;
@@ -94,6 +96,7 @@ export const StyledError = styled.div`
     right: 25px;
   }
 `;
+
 export const IconsWrapper = styled.div`
   display: flex;
   gap: 8px;
@@ -143,6 +146,7 @@ export const DefaultIconWrapper = styled.div`
     opacity: 1;
   }
 `;
+
 export const StyledDefaultIcon = styled.svg`
   width: 16px;
   height: 16px;

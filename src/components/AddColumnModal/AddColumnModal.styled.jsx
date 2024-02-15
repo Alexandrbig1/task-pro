@@ -53,7 +53,6 @@ export const AddColumnForm = styled.form`
 
 export const AddColumnInput = styled.input`
   width: 100%;
-  /* max-width: 352px; */
   height: 49px;
   font-size: 14px;
   letter-spacing: -0.02em;
@@ -73,10 +72,9 @@ export const CloseAddColumnModal = styled(IoClose)`
   font-size: 2.4rem;
   color: ${(p) => p.theme.colors.secondaryTextColor};
   position: absolute;
-  // top: 1.4rem;
   right: 0;
 
-  transition: 0.3s linear;
+  transition: all var(--primary-transition);
 
   &:hover {
     transform: rotate(90deg);
@@ -91,3 +89,4 @@ export const ErrorMessage = styled.p`
   color: ${(p) => p.theme.colors.errorColor};
   font-size: 14px;
 `;
+

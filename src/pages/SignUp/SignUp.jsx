@@ -118,7 +118,22 @@ export default function SignUp() {
           <title>Creamy Sharks - Sign Up</title>
           <meta
             name="description"
-            content="Explore TaskPro, the ultimate task manager born out of a 10-month Fullstack Development Bootcamp. Elevate your productivity with TaskPro's intuitive design and powerful functionality."
+            content="Join Creamy Sharks and embark on a journey to streamlined task management. Sign up now to enjoy personalized features, collaborate effortlessly, and experience the full potential of Task Pro. Elevate your productivity today!"
+          />
+
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+
+          <meta property="og:title" content="Creamy Sharks - Sign Up" />
+          <meta
+            property="og:description"
+            content="Join Creamy Sharks and embark on a journey to streamlined task management. Sign up now to enjoy personalized features, collaborate effortlessly, and experience the full potential of Task Pro. Elevate your productivity today!"
+          />
+          <meta
+            property="og:url"
+            content="https://alexandrbig1.github.io/task-pro/signup"
           />
         </Helmet>
       </HelmetProvider>

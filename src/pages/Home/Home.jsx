@@ -8,7 +8,6 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Outlet, useLocation } from "react-router-dom";
 import { Suspense } from "react";
 import { MainWrapper } from "../../components/MainPage/MainPage.styled";
-// import Loader from "../../components/Loader/Loader";
 import { useSelector } from "react-redux";
 import { selectCurrentBoard } from "../../redux/boards/selectors";
 
@@ -31,6 +30,20 @@ export default function Home({ toggleTheme }) {
             name="description"
             content="Explore TaskPro, the ultimate task manager born out of a 10-month Fullstack Development Bootcamp. Elevate your productivity with TaskPro's intuitive design and powerful functionality."
           />
+          <link
+            rel="canonical"
+            href="https://alexandrbig1.github.io/task-pro/"
+          />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <meta property="og:title" content="Creamy Sharks - Task Pro" />
+          <meta
+            property="og:description"
+            content="Explore TaskPro, the ultimate task manager born out of a 10-month Fullstack Development Bootcamp. Elevate your productivity with TaskPro's intuitive design and powerful functionality."
+          />
+          <meta name="author" content="Creamy Sharks" />
         </Helmet>
       </HelmetProvider>
       <Container>
@@ -45,7 +58,6 @@ export default function Home({ toggleTheme }) {
               <MainPage />
             ) : (
               <Suspense>
-                {/* <Suspense fallback={<Loader />}> */}
                 <Outlet />
               </Suspense>
             )}

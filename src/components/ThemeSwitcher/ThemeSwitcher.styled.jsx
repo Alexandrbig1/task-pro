@@ -58,7 +58,7 @@ export const ThemeText = styled.p`
   font-weight: 400;
   line-height: normal;
   letter-spacing: -0.28px;
-  transition: 0.2s linear;
+  transition: all var(--primary-transition);
 
   &:hover {
     color: ${(p) => p.theme.colors.themeTextHoverColor};
