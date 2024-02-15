@@ -90,7 +90,6 @@ export const googleAuth = createAsyncThunk(
   "auth/googleAuth",
   async (googleToken, thunkAPI) => {
     try {
-      console.log(googleToken);
       const res = await axios.post("/api/auth/google", googleToken);
 
       setAuthHeader(res.data.token);

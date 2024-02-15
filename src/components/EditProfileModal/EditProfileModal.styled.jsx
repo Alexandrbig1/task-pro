@@ -25,12 +25,13 @@ export const AvatarModal = styled.div`
   padding: 2.4rem;
   border-radius: 1rem;
 
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  &:hover {
-    cursor: auto;
-  }
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all var(--primary-transition);
+    &:hover {
+        cursor: auto;
+    }
 
   @media (max-width: 767px) {
     max-width: 33.5rem;
@@ -45,17 +46,20 @@ export const BtnClose = styled(IoClose)`
   top: 1.4rem;
   right: 1.4rem;
 
-  font-size: 2.4rem;
-  background-color: transparent;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s linear;
 
-  &:hover {
-    transform: rotate(90deg);
-    fill: ${(p) => p.theme.colors.accentTextColor};
-  }
+    font-size: 2.4rem;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all var(--primary-transition);
+    
+    &:hover {
+        transform: rotate(90deg);
+        fill: ${(p) => p.theme.colors.accentTextColor};
+    }
+
+ 
 `;
 
 export const TitleModalText = styled.h2`

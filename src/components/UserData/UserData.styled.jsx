@@ -39,6 +39,8 @@ export const AvatarBtn = styled.button`
     border: none;
     width: 100%;
     background-color: transparent;
+    transition: all var(--primary-transition);
+
     &:hover {
         cursor: pointer;
     }

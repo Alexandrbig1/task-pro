@@ -14,8 +14,8 @@ export const requestHelp = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       const res = await axios.post("/users/help", credentials);
-      console.log(res);
-      console.log(res.data);
+      // console.log(res);
+      // console.log(res.data);
       setAuthHeader(res.data);
       toast.success(
         "Thank you for reaching out! Your help request has been received. Our team is on it, and we'll get back to you as soon as possible.",
@@ -28,13 +28,13 @@ export const requestHelp = createAsyncThunk(
           draggable: false,
           progress: undefined,
           theme: "light",
-        }
+        },
       );
       return res.data;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.message);
     }
-  }
+  },
 );
 
 export const usersAvatar = createAsyncThunk(
@@ -53,7 +53,7 @@ export const usersAvatar = createAsyncThunk(
     } catch (err) {
       return thunkAPI.rejectWithValue(err.message);
     }
-  }
+  },
 );
 
 export const editUser = createAsyncThunk(
@@ -86,5 +86,5 @@ export const editUser = createAsyncThunk(
       toast.error(err.message);
       return thunkAPI.rejectWithValue(err.message);
     }
-  }
+  },
 );
