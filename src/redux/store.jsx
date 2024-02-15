@@ -3,7 +3,6 @@ import { boardsReducer } from "./boards/boardSlice";
 import { columnsReducer } from "./columns/columnSlice";
 import { cardsReducer } from "./cards/cardSlice";
 import { authReducer } from "./auth/slice";
-import { userReducer } from "./user/userSlice";
 import storage from "redux-persist/lib/storage";
 import {
   persistStore,
@@ -28,7 +27,6 @@ export const store = configureStore({
     boards: boardsReducer,
     columns: columnsReducer,
     cards: cardsReducer,
-    user: userReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
