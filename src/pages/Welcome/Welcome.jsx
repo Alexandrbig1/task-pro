@@ -1,6 +1,5 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Logo from "../../components/Logo/Logo";
-
 import {
   WelcomeWrapper,
   WelcomeContainer,
@@ -54,7 +53,27 @@ export default function Welcome() {
       </HelmetProvider>
       <WelcomeContainer>
         <WelcomeWrapper>
-          <img src="images/welcome.png" alt="boy with laptop" />
+          <picture>
+            <source
+              srcSet="images/welcome-mobile.png, images/welcome-mobile@2x.png"
+              media="(max-width: 767px)"
+              sizes="(max-width: 767px) 120px, 162px"
+            />
+            <source
+              srcSet="images/welcome-tablet.png, images/welcome-tablet@2x.png"
+              media="(max-width: 1024px)"
+              sizes="(max-width: 1024px) 162px, 420px"
+            />
+            <source
+              srcSet="images/welcome-desktop.png, images/welcome-desktop@2x.png"
+              sizes="420px"
+            />
+            <img
+              src="images/welcome-mobile.png"
+              alt="boy with laptop"
+              loading="lazy"
+            />
+          </picture>
           <Logo size={size} text={text} icon={icon} />
           <WelcomeText>
             Supercharge your productivity and take control of your tasks with

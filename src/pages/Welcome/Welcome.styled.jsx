@@ -66,6 +66,7 @@ export const RegistrationBtn = styled(Link)`
 
   border-radius: 8px;
   background-color: #161616;
+  outline: 1px solid #161616;
 
   display: flex;
   width: 300px;
@@ -73,10 +74,13 @@ export const RegistrationBtn = styled(Link)`
   justify-content: center;
   align-items: center;
   border: none;
-  outline: none;
+
+  transition: all var(--primary-transition);
 
   &:hover {
     cursor: pointer;
+    background-color: transparent;
+    color: #161616;
   }
 
   @media (min-width: 375px) {
@@ -98,7 +102,31 @@ export const LoginBtn = styled(Link)`
   letter-spacing: -0.28px;
   text-align: center;
 
+  border-radius: 8px;
+  display: flex;
+  width: 300px;
+  padding: 14px 0px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  background-color: rgb(248, 249, 250, 0.6);
+  outline: 1px solid transparent;
+
+  transition: all var(--primary-transition);
+
+  @media (min-width: 375px) {
+    max-width: 335px;
+  }
+
+  @media (min-width: 768px) {
+    width: 344px;
+  }
+
   &:hover {
     cursor: pointer;
+    color: #161616;
+    outline: 1px solid #161616;
+    background-color: transparent;
   }
 `;

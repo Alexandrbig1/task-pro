@@ -52,6 +52,10 @@ Welcome to the Task Pro App, the final project from the Fullstack Development Bo
 
 [Figma Design](https://www.figma.com/file/fJF13s2UlxPIwTMcPVrSiz/TaskPro?type=design&t=8OR5JW2MuSskYTdw-0)
 
+## Backend APIs with Swagger Documentation
+
+[Swagger](https://task-backend-project.onrender.com/api-docs/#/)
+
 ### Screenshots:
 
 ![Task Pro App](/public/images/screenshots/taskpro.jpg) _Caption for Screenshot 1
