@@ -23,6 +23,7 @@ export const StyledInput = styled(Field)`
       p?.$isDirty && p?.$isError
         ? p.theme.colors.errorColor
         : p.theme.colors.secondaryTextColor};
+  transition: all var(--primary-transition);
   background-color: ${(p) => p.theme.colors.mainBgColor};
   border-radius: 8px;
   margin-bottom: 24px;

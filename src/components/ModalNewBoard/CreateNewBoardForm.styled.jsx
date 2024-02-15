@@ -23,13 +23,12 @@ export const StyledInput = styled(Field)`
       p?.$isError?.length > 0
         ? p.theme.colors.errorColor
         : p.theme.colors.secondaryTextColor};
+  transition: all var(--primary-transition);
   background-color: ${(p) => p.theme.colors.mainBgColor};
   border-radius: 8px;
   margin-bottom: 24px;
   opacity: 0.4;
-
   transition: border var(--primary-transition);
-
   &:focus {
     opacity: 1;
     outline: none;

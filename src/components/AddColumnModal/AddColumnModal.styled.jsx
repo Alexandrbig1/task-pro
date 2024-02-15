@@ -8,7 +8,7 @@ export const AddModalWrap = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: ${(p) => p.theme.colors.modalBgColor};
-  z-index: 5;
+  z-index: 10;
 `;
 
 export const StyledAddModal = styled.div`
@@ -20,7 +20,7 @@ export const StyledAddModal = styled.div`
   width: 100%;
   max-width: 350px;
   min-height: 221px;
-  z-index: 10;
+  z-index: 11;
   background-color: ${(p) => p.theme.colors.modalWindowsBgColor};
   border-radius: 10px;
   @media screen and (min-width: 320px) and (max-width: 375px) {
@@ -44,6 +44,7 @@ export const AddColumnTitle = styled.h2`
 `;
 
 export const AddColumnForm = styled.form`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,7 +61,9 @@ export const AddColumnInput = styled.input`
 
   padding: 14px 18px;
   border-radius: 8px;
-  border: 1px solid ${(p) => p.theme.colors.accentTextColor};
+  border: 1px solid
+    ${(p) =>
+      p?.$isError ? p.theme.colors.errorColor : p.theme.colors.accentTextColor};
   outline: none;
   margin-bottom: 24px;
 `;
@@ -78,3 +81,12 @@ export const CloseAddColumnModal = styled(IoClose)`
     color: ${(p) => p.theme.colors.accentTextColor};
   }
 `;
+
+export const ErrorMessage = styled.p`
+  position: absolute;
+  right: 0;
+  top: -24px;
+  color: ${(p) => p.theme.colors.errorColor};
+  font-size: 14px;
+`;
+

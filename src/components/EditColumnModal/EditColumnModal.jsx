@@ -16,6 +16,7 @@ import {
   EditColumnInput,
   CloseEditColumnModal,
 } from "../EditColumnModal/EditColumnModal.styled";
+import { createPortal } from "react-dom";
 
 const EditColumnModal = ({ openEditColumnModal, columnId, initialTitle }) => {
   const [title, setTitle] = useState(initialTitle);
@@ -79,7 +80,7 @@ const EditColumnModal = ({ openEditColumnModal, columnId, initialTitle }) => {
     });
   };
 
-  return (
+  return createPortal(
     <EditModalWrap onClick={handleEditModalClick}>
       <StyledEditModal className="modal">
         <EditColumnModalBtn onClick={() => openEditColumnModal()} type="button">
@@ -89,6 +90,7 @@ const EditColumnModal = ({ openEditColumnModal, columnId, initialTitle }) => {
           <EditColumnTitle>Edit column</EditColumnTitle>
           <EditColumnForm onSubmit={handleSubmit}>
             <EditColumnInput
+            
               autoFocus
               type="text"
               placeholder="To Do"
@@ -101,7 +103,8 @@ const EditColumnModal = ({ openEditColumnModal, columnId, initialTitle }) => {
           </EditColumnForm>
         </div>
       </StyledEditModal>
-    </EditModalWrap>
+    </EditModalWrap>,
+    document.getElementById("modal-root")
   );
 };
 
