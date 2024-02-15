@@ -67,34 +67,47 @@ export const SharksTitle = styled.h1`
   color: #121212;
   text-align: center;
   font-family: ${primaryFont};
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 500;
   line-height: normal;
   letter-spacing: -0.36px;
+
+  @media (min-width: 768px) {
+    font-size: 22px;
+  }
 `;
 
 export const SharksTitleSpan = styled.span`
   position: relative;
 
   &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 0;
+    height: 0;
 
-    width: 104%;
-    height: 100%;
-    background-color: rgb(82, 85, 188, 0.3);
-    border-radius: 50rem;
+    @media (min-width: 662px) {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+
+      width: 104%;
+      height: 100%;
+      background-color: rgb(82, 85, 188, 0.3);
+      border-radius: 50rem;
+    }
   }
 `;
 
 export const SharksTextContainer = styled.div`
-  padding: 2rem 4.8rem;
+  padding: 2rem 2.4rem;
   width: 100%;
   max-width: 118rem;
   margin: 0 auto;
+
+  @media (min-width: 768px) {
+    padding: 2rem 4.8rem;
+  }
 `;
 
 export const SharksTextWrapper = styled.div`
@@ -116,8 +129,12 @@ export const SharksTeamContainer = styled.div`
   gap: 4.8rem;
 
   margin-bottom: 2.4rem;
-  max-width: 98rem;
+  max-width: 78rem;
   margin: 0 auto;
+
+  @media (min-width: 768px) {
+    max-width: 98rem;
+  }
 `;
 
 export const SharksTeamTitle = styled.h2`
@@ -131,17 +148,33 @@ export const SharksTeamTitle = styled.h2`
 `;
 
 export const ImgCardsContainer = styled.div`
-  max-width: 144rem;
+  /* max-width: 76.8rem; */
 
   margin-top: 2.4rem;
+
+  @media (min-width: 1440px) {
+    max-width: 144rem;
+  }
 `;
 
 export const ImgCardsMenu = styled.ul`
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto;
+  grid-template-columns: 1fr;
   row-gap: 2.4rem;
   column-gap: 1.2rem;
+
+  @media (min-width: 500px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (min-width: 1440px) {
+    grid-template-columns: repeat(6, 1fr);
+  }
 `;
 
 export const ImgCardItemsWrapper = styled.div`
@@ -182,7 +215,7 @@ export const ImgWrapper = styled.div`
 `;
 
 export const Images = styled.img`
-  height: 220px;
+  height: 100%;
   object-fit: cover;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
@@ -194,19 +227,30 @@ export const ImgTitle = styled.h3`
   color: #121212;
   text-align: center;
   font-family: ${primaryFont};
-  font-size: 14px;
+  font-size: 22px;
   font-weight: 600;
   line-height: normal;
   letter-spacing: -0.28px;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
 `;
 export const ImgSubTitle = styled.h4`
   color: #121212;
   text-align: center;
   font-family: ${primaryFont};
-  font-size: 10px;
+  font-size: 18px;
   font-weight: 400;
   line-height: normal;
   letter-spacing: -0.2px;
+
+  @media (min-width: 768px) {
+    font-size: 12px;
+  }
+  @media (min-width: 1440px) {
+    font-size: 10px;
+  }
 `;
 
 export const SocialWrapper = styled.div`
