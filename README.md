@@ -13,8 +13,6 @@ Welcome to the Task Pro App, the final project from the Fullstack Development Bo
 [![MongoDB](https://img.shields.io/badge/MongoDB-v6.3.0-3B9539)](https://www.mongodb.com/)
 [![Mongoose Version](https://img.shields.io/badge/Mongoose-v8.0.3-6B0002)](https://mongoosejs.com/)
 [![JWT](https://img.shields.io/badge/JSON%20Web%20Token-v9.0.2-000000)](https://jwt.io/)
-[![Jest](https://img.shields.io/badge/Jest-v29.7.0-A7001B)](https://jestjs.io/)
-[![Gravatar](https://img.shields.io/badge/Gravatar-v1.8.2-1C78B0)](https://en.gravatar.com/)
 [![Nodemailer](https://img.shields.io/badge/Nodemailer-v6.9.8-0076C8)](https://nodemailer.com/)
 [![Styled Components](https://img.shields.io/badge/Styled_Components-6.1.6-D664C0.svg)](https://styled-components.com/)
 [![Axios](https://img.shields.io/badge/Axios-1.6.4-5300D8.svg)](https://github.com/axios/axios)
@@ -66,10 +64,10 @@ Welcome to the Task Pro App, the final project from the Fullstack Development Bo
 (Sign In Page)_
 
 ![Task Pro App](/public/images/screenshots/taskpro4.jpg) _Caption for Screenshot 4
-(Home Page)_
+(Home Page Violet Theme)_
 
 ![Task Pro App](/public/images/screenshots/taskpro5.jpg) _Caption for Screenshot 5
-(Board Page)_
+(Board Page Dark Theme)_
 
 ![Task Pro App](/public/images/screenshots/team.jpg) _Caption for Screenshot 6
 (Creamy Sharks Team)_
@@ -91,6 +89,18 @@ Welcome to the Task Pro App, the final project from the Fullstack Development Bo
   - Vite
   - Styled Components
   - Redux
+  - React Icons
+  - MUI Joy (Material-UI experimental component library)
+  - Formik (Form library)
+  - Axios (HTTP client)
+  - Modern Normalize (Modern version of Normalize.css)
+  - Prop Types (Runtime type checking for React props)
+  - React Beautiful DND (Drag and drop library for React)
+  - React Datepicker
+  - React Helmet Async (Async version of React Helmet)
+  - React Loader Spinner
+  - React Read More Read Less
+  - React Toastify (Notification library)
 
 - **Backend:**
   - Node.js
