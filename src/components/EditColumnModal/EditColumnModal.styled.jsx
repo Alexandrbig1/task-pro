@@ -76,7 +76,7 @@ export const CloseEditColumnModal = styled(IoClose)`
   // top: 1.4rem;
   right: 0;
 
-  transition: 0.3s linear;
+  transition: all var(--primary-transition);
 
   &:hover {
     transform: rotate(90deg);

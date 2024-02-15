@@ -5,7 +5,7 @@ export const AsideContainer = styled.aside`
   position: ${(p) => (p?.$aside ? "absolute" : "unset")};
 
   transform: translateX(${(p) => (p?.$aside ? "0%" : "-100%")});
-  transition: transform 0.3s ease-in-out;
+  transition: transform var(--primary-transition);
 
   top: 0;
   left: 0;

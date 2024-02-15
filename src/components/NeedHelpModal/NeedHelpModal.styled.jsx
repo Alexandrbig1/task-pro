@@ -76,7 +76,7 @@ export const HelpInput = styled.input`
   outline: none;
   margin-bottom: 14px;
 
-  transition: border-color 0.3s linear;
+  transition: border-color var(--primary-transition);
 
   &:hover {
     border-color: ${(p) => p.theme.colors.modalBtnHover};
@@ -96,7 +96,7 @@ export const HelpTextArea = styled.textarea`
   color: ${(p) => p.theme.colors.secondaryTextColor};
   margin-bottom: 24px;
 
-  transition: border-color 0.3s linear;
+  transition: border-color var(--primary-transition);
 
   &:hover {
     border-color: ${(p) => p.theme.colors.modalBtnHover};
@@ -115,7 +115,7 @@ export const HelpSubmitBtn = styled.button`
   font-size: 14px;
   letter-spacing: -0.02em;
   color: ${(p) => p.theme.colors.buttonsColor};
-  transition: background-color 0.3s linear;
+  transition: border-color var(--primary-transition);
 
   &:hover {
     background-color: ${(p) => p.theme.colors.modalBtnHover};

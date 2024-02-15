@@ -337,7 +337,11 @@ export default function CreamySharks() {
                       <ImgSubTitle>fullstack developer</ImgSubTitle>
                     </div>
                     <SocialWrapper>
-                      <a href="#">
+                      <a
+                        href="https://www.linkedin.com/in/oleg-baranov977"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <LinkedInIcon />
                       </a>
                       <a

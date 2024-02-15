@@ -156,16 +156,8 @@ export const EditCalendarWrapper = styled.div`
     padding: 18px;
   }
 
-  ////Виставляю модалку по центру картки////
-  .react-datepicker-popper {
-    position: absolute;
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    will-change: transform;
-  }
-
   .react-datepicker-wrapper input {
+    position: relative;
     border: none;
     outline: none;
     color: ${(p) => p.theme.colors.accentTextColor};
@@ -176,7 +168,16 @@ export const EditCalendarWrapper = styled.div`
     cursor: pointer;
     width: 188px;
     max-width: 280px;
+
     caret-color: transparent;
+  }
+
+  .react-datepicker-popper {
+    position: absolute;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    will-change: transform;
   }
 
   .react-datepicker__header {
@@ -184,9 +185,12 @@ export const EditCalendarWrapper = styled.div`
     background-color: transparent;
   }
 
-  ////Місяці ////
   .react-datepicker__month {
     margin: 0.4em 0;
+  }
+
+  .react-datepicker__day--outside-month {
+    color: ${(p) => p.theme.colors.calendarNumbersOutLowOp} !important;
   }
 
   .react-datepicker__month-container {
@@ -201,14 +205,12 @@ export const EditCalendarWrapper = styled.div`
     color: ${(p) => p.theme.colors.secondaryTextColor};
   }
 
-  //// Тижні ////
   .react-datepicker__week {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     column-gap: 10px;
   }
 
-  //// Дні ////
   .react-datepicker__day-names {
     font-weight: 600;
     margin-top: 5px;
@@ -250,12 +252,10 @@ export const EditCalendarWrapper = styled.div`
     border-radius: 50%;
   }
 
-  //// Для вибраного числа щоб не показувало на наст місяці////
   .react-datepicker__day--keyboard-selected {
     background-color: transparent;
   }
 
-  ////Для навігації////
   .react-datepicker__navigation {
     align-items: center;
     background: none;
@@ -274,7 +274,6 @@ export const EditCalendarWrapper = styled.div`
     overflow: hidden;
   }
 
-  ////Для стрілки навігації////
   .react-datepicker__navigation-icon::before {
     border-color: ${(p) => p.theme.colors.accentTextColor};
   }

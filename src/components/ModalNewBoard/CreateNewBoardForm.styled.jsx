@@ -27,7 +27,9 @@ export const StyledInput = styled(Field)`
   border-radius: 8px;
   margin-bottom: 24px;
   opacity: 0.4;
-  transition: border 500ms linear;
+
+  transition: border var(--primary-transition);
+
   &:focus {
     opacity: 1;
     outline: none;
