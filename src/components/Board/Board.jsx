@@ -24,6 +24,9 @@ import {
 export const Board = () => {
   const [isModalColumnOpen, setIsModalColumnOpen] = useState(false);
   const [isModalCardOpen, setIsModalCardOpen] = useState(false);
+  const [errorMessageSub, setErrorMessageSub] = useState(false);
+  const [errUniqueTitle, setErrUniqueTitle] = useState(false);
+  const [errShort, setErrShort] = useState(false);
 
   const [columnId, setColumnId] = useState();
   const [scrollable, setScrollable] = useState(false);
@@ -47,6 +50,8 @@ export const Board = () => {
 
   const handleColumnModalOpen = () => {
     setIsModalColumnOpen((prevState) => !prevState);
+    setErrorMessageSub(false);
+    setErrUniqueTitle(false);
   };
 
   const handleCardModalOpen = (id) => {
@@ -60,9 +65,14 @@ export const Board = () => {
     const form = e.currentTarget;
     const title = form.elements.title.value.trim();
 
-    const validTitle = title.length > 0;
+    const validTitle = title.length > 1;
+    const uniqueTitle = columns.find((item) => item.titleColumn === title);
 
-    if (validTitle) {
+    if (uniqueTitle) setErrUniqueTitle(true);
+    if (title.length === 0) setErrorMessageSub(true);
+    if (title.length === 1) setErrShort(true);
+
+    if (validTitle && !uniqueTitle) {
       const newColumn = {
         titleColumn: title,
         boardId: board._id,
@@ -74,17 +84,6 @@ export const Board = () => {
       form.reset();
       handleColumnModalOpen();
       toast.success("You have successfully added the column!", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        progress: undefined,
-        theme: "light",
-      });
-    } else {
-      toast.error("Please enter a title", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -184,6 +183,12 @@ export const Board = () => {
         )}
         {isModalColumnOpen && (
           <AddColumnModal
+            errShort={errShort}
+            setErrShort={setErrShort}
+            setErrUniqueTitle={setErrUniqueTitle}
+            errUniqueTitle={errUniqueTitle}
+            setErrorMessageSub={setErrorMessageSub}
+            errorMessageSub={errorMessageSub}
             openColumnModal={handleColumnModalOpen}
             onSubmitColumnClick={onSubmitColumnClick}
           />

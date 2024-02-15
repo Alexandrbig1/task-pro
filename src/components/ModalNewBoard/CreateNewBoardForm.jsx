@@ -62,6 +62,10 @@ const backgrounds = [
 
 export default function CreateNewBoardForm({ closeModal }) {
   const dispatch = useDispatch();
+  // const [errInput, setErrInput] = useState("");
+  // const [errMessageSub, setErrMessageSub] = useState(false);
+  // const [errUniqueTitle, setErrUniqueTitle] = useState(false);
+  // const [erShort, setErrShort] = useState(false);
 
   const [icon, setIcon] = useState("icon-project");
 
@@ -85,6 +89,7 @@ export default function CreateNewBoardForm({ closeModal }) {
     resetForm();
     closeModal();
   };
+
   return (
     <Formik
       initialValues={{

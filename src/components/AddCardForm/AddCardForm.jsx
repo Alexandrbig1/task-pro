@@ -27,7 +27,7 @@ import {
 
 const schema = Yup.object().shape({
   title: Yup.string()
-    .required()
+    .required("Please fill the title field")
     .max(25, "must be no more than 25 characters long"),
   description: Yup.string(),
 });
@@ -82,7 +82,6 @@ export const AddCardForm = ({ onClose, columnId }) => {
               type="text"
               name="title"
               placeholder="Title"
-              required
             />
             <Error>
               <ErrorMessage name="title" />
