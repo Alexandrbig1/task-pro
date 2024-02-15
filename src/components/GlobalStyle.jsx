@@ -52,6 +52,10 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+  h4 {
+    margin: 0;
+    padding: 0;
+  }
   h5 {
     margin: 0;
     padding: 0;
