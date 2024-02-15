@@ -8,9 +8,12 @@ export const ButtonIcon = styled(HiOutlineLogout)`
 `;
 
 export const LogoutBtn = styled.button`
-  &:hover {
-    cursor: pointer;
-  }
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 
   display: flex;
   gap: 1.4rem;
