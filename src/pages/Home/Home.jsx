@@ -8,7 +8,6 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Outlet, useLocation } from "react-router-dom";
 import { Suspense } from "react";
 import { MainWrapper } from "../../components/MainPage/MainPage.styled";
-// import Loader from "../../components/Loader/Loader";
 import { useSelector } from "react-redux";
 import { selectCurrentBoard } from "../../redux/boards/selectors";
 
@@ -45,7 +44,6 @@ export default function Home({ toggleTheme }) {
               <MainPage />
             ) : (
               <Suspense>
-                {/* <Suspense fallback={<Loader />}> */}
                 <Outlet />
               </Suspense>
             )}

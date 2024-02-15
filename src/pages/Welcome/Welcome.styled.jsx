@@ -19,18 +19,6 @@ export const WelcomeContainer = styled.div`
   position: relative;
   margin: 0 auto;
   padding: 0 2rem;
-
-  /* @media (min-width: 375px) {
-    max-width: 37.5rem;
-  }
-
-  @media (min-width: 768px) {
-    max-width: 76.8rem;
-  }
-
-  @media (min-width: 1440px) {
-    max-width: 144rem;
-  } */
 `;
 
 export const WelcomeWrapper = styled.div`

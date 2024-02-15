@@ -1,25 +1,6 @@
 import styled from "styled-components";
 import { primaryFont } from "../../components/fonts";
 
-// export const MainWrapper = styled.main`
-//   width: 100%;
-//   position: relative;
-
-//   background-color: ${(p) => p.theme.colors.mainBgColor};
-//   padding: 7.4rem 2rem 2rem;
-
-//   min-height: calc(100vh - 6rem);
-
-//   @media (min-width: 768px) {
-//     min-height: calc(100vh - 6.8rem);
-//   }
-
-//   @media (min-width: 1440px) {
-//     height: 100%;
-//     padding: 4.8rem 2rem 2rem;
-//   }
-// `;
-
 export const MainTextWrapper = styled.div`
   position: absolute;
   top: 50%;
