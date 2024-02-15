@@ -23,10 +23,13 @@ export const UpdateAvatar = styled.img`
 `;
 
 export const AvatarIconUpdate = styled.svg`
-  --color1: ${(p) => p.theme.colors.defaultIconBackground};
-  --color2: ${(p) => p.theme.colors.defaultAvatar};
-  width: ${(p) => (p?.size?.width ? p?.size?.width : "68px")};
-  height: ${(p) => (p?.size?.height ? p?.size?.height : "68px")};
+
+    --color1: ${(p) => p.theme.colors.defaultIconBackground};
+    --color2: ${(p) => p.theme.colors.defaultAvatar};
+    width: ${(p) => (p?.size?.width ? p?.size?.width : "68px")};
+    height: ${(p) => (p?.size?.height ? p?.size?.height : "68px")};
+
+
 
   border-radius: 0.8rem;
 `;
@@ -139,18 +142,20 @@ export const BtnSubmit = styled.button`
 `;
 
 export const ErrorMessage = styled.span`
-  font-size: 14px;
-  position: absolute;
   right: 0.3rem;
+  font-size: 1.4rem;
+  position: absolute;
   top: -1.5rem;
   bottom: 0;
   color: ${(p) => p.theme.colors.errorColor};
 `;
 
 export const EyeWrapper = styled.span`
-  position: absolute;
-  top: 30%;
-  right: 1.8rem;
+
+    position: absolute;
+    top: 30%;
+    right: 1.8rem;
+
 
   transform: translateY(-35%);
   transition: all var(--primary-transition);
