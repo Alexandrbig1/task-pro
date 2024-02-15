@@ -13,7 +13,7 @@ export const FormWrapper = styled.div`
 export const Error = styled.span`
   font-size: 14px;
   position: absolute;
-  left: 3px;
+  right: 3px;
   top: -14px;
   color: ${(p) => p.theme.colors.errorColor};
 `;

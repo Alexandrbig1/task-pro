@@ -56,6 +56,7 @@ export const HelpForm = styled.form`
 
 export const HelpErrorMsg = styled.p`
   top: 50px;
+  right: 24px;
   font-size: 14px;
   color: ${(p) => p.theme.colors.errorColor};
   position: absolute;

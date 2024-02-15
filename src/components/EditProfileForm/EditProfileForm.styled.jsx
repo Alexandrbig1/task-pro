@@ -30,6 +30,7 @@ export const AvatarIconUpdate = styled.svg`
     height: ${(p) => (p?.size?.height ? p?.size?.height : "68px")};
 
 
+
   border-radius: 0.8rem;
 `;
 
@@ -141,6 +142,7 @@ export const BtnSubmit = styled.button`
 `;
 
 export const ErrorMessage = styled.span`
+  right: 0.3rem;
   font-size: 1.4rem;
   position: absolute;
   top: -1.5rem;
@@ -154,15 +156,16 @@ export const EyeWrapper = styled.span`
     top: 30%;
     right: 1.8rem;
 
-    transform: translateY(-35%);
-    transition: all var(--primary-transition);
 
-    font-size: 2rem;
-    opacity: 0.4;
-    color: ${(p) => p.theme.colors.secondaryTextColor};
+  transform: translateY(-35%);
+  transition: all var(--primary-transition);
 
-    &:hover {
-        cursor: pointer;
-        opacity: 1;
-    }
+  font-size: 2rem;
+  opacity: 0.4;
+  color: ${(p) => p.theme.colors.secondaryTextColor};
+
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
 `;
