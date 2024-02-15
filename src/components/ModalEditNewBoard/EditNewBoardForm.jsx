@@ -30,16 +30,6 @@ const formSquema = Yup.object().shape({
     .max(50, "Too Long!")
     .required("Please fill the title field"),
 });
-const validateForm = ({ titleBoard }) => {
-  const errors = {};
-
-  if (titleBoard.trim() === "") {
-    errors.message = true;
-  } else {
-    errors.message = false;
-  }
-  return errors;
-};
 const icons = [
   "icon-project",
   "icon-star",
@@ -117,7 +107,12 @@ export default function EditNewBoardForm({ boardId, closeModal }) {
         background: "default",
       }}
       validationSchema={formSquema}
-      validate={validateForm}
+      validate={({ titleBoard }) => {
+        const errors = {
+          message: titleBoard.trim().length <= 1 ? true : false,
+        };
+        return errors;
+      }}
       onSubmit={handleSubmit}
     >
       {(isSubmitting) => (
