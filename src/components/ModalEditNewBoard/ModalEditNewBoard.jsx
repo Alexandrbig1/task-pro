@@ -8,6 +8,7 @@ import {
   BackDrop,
   Modal,
 } from "../ModalEditNewBoard/ModalEditNewBoard.styled";
+import { createPortal } from "react-dom";
 
 // eslint-disable-next-line react/prop-types
 export default function ModalEditNewBoard({ openEditBoardModal, boardId }) {
@@ -39,7 +40,7 @@ export default function ModalEditNewBoard({ openEditBoardModal, boardId }) {
   const closeModal = () => {
     openEditBoardModal();
   };
-  return (
+  return createPortal(
     <BackDrop onClick={handleOverlayClick}>
       <Modal>
         <StyledWrapper>
@@ -50,6 +51,7 @@ export default function ModalEditNewBoard({ openEditBoardModal, boardId }) {
           <EditNewBoardForm boardId={boardId} closeModal={closeModal} />
         </StyledWrapper>
       </Modal>
-    </BackDrop>
+    </BackDrop>,
+    document.getElementById("modal-root")
   );
 }

@@ -7,6 +7,7 @@ import {
   BackDrop,
   Modal,
 } from "../ModalNewBoard/ModalNewBoard.styled";
+import { createPortal } from "react-dom";
 
 // eslint-disable-next-line react/prop-types
 export default function ModalNewBoard({ openNewBoardModal }) {
@@ -34,7 +35,8 @@ export default function ModalNewBoard({ openNewBoardModal }) {
   const closeModal = () => {
     openNewBoardModal();
   };
-  return (
+
+  return createPortal(
     <BackDrop onClick={handleOverlayClick}>
       <Modal>
         <CloseBtn onClick={openNewBoardModal}>
@@ -44,6 +46,7 @@ export default function ModalNewBoard({ openNewBoardModal }) {
 
         <CreateNewBoardForm closeModal={closeModal} />
       </Modal>
-    </BackDrop>
+    </BackDrop>,
+    document.getElementById("modal-root")
   );
 }

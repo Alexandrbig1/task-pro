@@ -29,6 +29,7 @@ const formSquema = Yup.object().shape({
     .max(50, "Too Long!")
     .required("Please fill the title field"),
 });
+
 const icons = [
   "icon-project",
   "icon-star",
@@ -92,88 +93,100 @@ export default function CreateNewBoardForm({ closeModal }) {
         background: "default",
       }}
       validationSchema={formSquema}
+      // validate={({ titleBoard }) => {
+      //   const errors = {
+      //     message: titleBoard.trim().length <= 1 ? true : false,
+      //   };
+      //   return errors;
+      // }}
       onSubmit={handleSubmit}
     >
-      <StyledForm>
-        <label>
-          {" "}
-          <StyledInput
-            autoFocus
-            type="text"
-            name="titleBoard"
-            placeholder="Title"
-          />
-          <StyledError>
-            <ErrorMessage name="titleBoard" />
-          </StyledError>
-        </label>
-        <StyledSmallTitle>Icons</StyledSmallTitle>
-        <div id="my-radio-group">
-          <IconsWrapper role="group" aria-labelledby="my-radio-group">
-            {icons.map((name) => (
-              <StyledLabel value={icon === name.toString()} key={name}>
-                <StyledField
-                  onChange={handleRadioChange}
-                  checked={icon === name.toString()}
-                  type="radio"
-                  name="icon"
-                  value={name}
-                />
-                <StyledIcon
-                  width="18"
-                  height="18"
-                  value={icon === name.toString()}
-                >
-                  <use href={`${sprite}#${name}-dark`} />
-                </StyledIcon>
-              </StyledLabel>
-            ))}
-          </IconsWrapper>
-        </div>
+      {(isSubmitting) => (
+        <StyledForm>
+          <label>
+            {isSubmitting.errors.titleBoard?.length > 0 ? (
+              <StyledError>
+                <ErrorMessage name="titleBoard" />
+              </StyledError>
+            ) : null}
 
-        <StyledSmallTitle>Background</StyledSmallTitle>
-        <div id="my-backgrounds-radio-group">
-          <IconsBackgroundWrapper
-            role="group"
-            aria-labelledby="my-backgrounds-radio-group"
-          >
-            {backgrounds.map((name) => (
-              <StyledBackgroundLabel
-                value={background === name.toString()}
-                key={name}
-              >
-                {" "}
-                <StyledBackgroudField
-                  onChange={handleRadioChangeBackground}
-                  checked={background === name.toString()}
-                  type="radio"
-                  name="background"
-                  value={name}
-                />
-                {name === "default" ? (
-                  <DefaultIconWrapper>
-                    <StyledDefaultIcon width="16" height="16">
-                      <use href={`${sprite}#default`} />
-                    </StyledDefaultIcon>
-                  </DefaultIconWrapper>
-                ) : (
-                  <StyledIconBackground>
-                    <img
-                      srcSet={`
+            <StyledInput
+              $isError={isSubmitting?.errors.titleBoard}
+              $isDirty={isSubmitting?.dirty}
+              autoFocus
+              type="text"
+              name="titleBoard"
+              placeholder="Title"
+            />
+          </label>
+          <StyledSmallTitle>Icons</StyledSmallTitle>
+          <div id="my-radio-group">
+            <IconsWrapper role="group" aria-labelledby="my-radio-group">
+              {icons.map((name) => (
+                <StyledLabel value={icon === name.toString()} key={name}>
+                  <StyledField
+                    onChange={handleRadioChange}
+                    checked={icon === name.toString()}
+                    type="radio"
+                    name="icon"
+                    value={name}
+                  />
+                  <StyledIcon
+                    width="18"
+                    height="18"
+                    value={icon === name.toString()}
+                  >
+                    <use href={`${sprite}#${name}-dark`} />
+                  </StyledIcon>
+                </StyledLabel>
+              ))}
+            </IconsWrapper>
+          </div>
+
+          <StyledSmallTitle>Background</StyledSmallTitle>
+          <div id="my-backgrounds-radio-group">
+            <IconsBackgroundWrapper
+              role="group"
+              aria-labelledby="my-backgrounds-radio-group"
+            >
+              {backgrounds.map((name) => (
+                <StyledBackgroundLabel
+                  value={background === name.toString()}
+                  key={name}
+                >
+                  {" "}
+                  <StyledBackgroudField
+                    onChange={handleRadioChangeBackground}
+                    checked={background === name.toString()}
+                    type="radio"
+                    name="background"
+                    value={name}
+                  />
+                  {name === "default" ? (
+                    <DefaultIconWrapper>
+                      <StyledDefaultIcon width="16" height="16">
+                        <use href={`${sprite}#default`} />
+                      </StyledDefaultIcon>
+                    </DefaultIconWrapper>
+                  ) : (
+                    <StyledIconBackground>
+                      <img
+                        srcSet={`
       https://res.cloudinary.com/dsywt0aej/image/upload/v1707244606/back-check/${name}.png 1x,
       https://res.cloudinary.com/dsywt0aej/image/upload/v1707246575/back-check_2x/${name}_2x.png 2x
     `}
-                      src={`https://res.cloudinary.com/dsywt0aej/image/upload/v1707244606/back-check/${name}.png`}
-                      alt={name}
-                    />
-                  </StyledIconBackground>
-                )}
-              </StyledBackgroundLabel>
-            ))}
-          </IconsBackgroundWrapper>
-        </div>
-        <CardButton btnText="Create" onSubmit={handleSubmit} />
-      </StyledForm>
+                        src={`https://res.cloudinary.com/dsywt0aej/image/upload/v1707244606/back-check/${name}.png`}
+                        alt={name}
+                      />
+                    </StyledIconBackground>
+                  )}
+                </StyledBackgroundLabel>
+              ))}
+            </IconsBackgroundWrapper>
+          </div>
+          <CardButton btnText="Create" onSubmit={handleSubmit} />
+        </StyledForm>
+      )}
     </Formik>
   );
 }
