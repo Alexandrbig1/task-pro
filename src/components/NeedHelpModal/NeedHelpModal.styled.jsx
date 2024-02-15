@@ -50,7 +50,6 @@ export const HelpTitle = styled.h2`
 export const HelpForm = styled.form`
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   width: 100%;
 `;
 

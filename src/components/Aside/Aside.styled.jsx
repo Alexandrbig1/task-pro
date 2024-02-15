@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { IoClose } from "react-icons/io5";
 
 export const AsideContainer = styled.aside`
@@ -30,7 +30,6 @@ export const AsideWrapper = styled.div`
   overflow-y: scroll;
 
   &::-webkit-scrollbar {
-    /* width: 12px; */
     width: 0;
   }
 
@@ -43,17 +42,6 @@ export const AsideWrapper = styled.div`
     background-color: transparent;
     border-radius: 12px;
   }
-
-  ${(p) =>
-    p?.$scrollable &&
-    css`
-      &::-webkit-scrollbar-thumb {
-        /* background-color: ${(p) => p.theme.colors.scrollThumb}; */
-      }
-      &::-webkit-scrollbar-track {
-        /* background-color: ${(p) => p.theme.colors.scrollBar}; */
-      }
-    `}
 
   flex-direction: column;
   justify-content: space-between;

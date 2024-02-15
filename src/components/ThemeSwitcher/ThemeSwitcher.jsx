@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import {
   MdOutlineKeyboardArrowDown,
@@ -16,14 +16,42 @@ import {
 export default function ThemeSwitcher({ toggleTheme }) {
   const [showTheme, setShowTheme] = useState(false);
   const [arrowTheme, setArrowTheme] = useState(false);
+  const themeSwitcherRef = useRef(null);
 
   function toggleShowTheme() {
     setShowTheme((prevState) => !prevState);
     setArrowTheme((prevState) => !prevState);
   }
 
+  function handleClickOutside(event) {
+    if (
+      themeSwitcherRef.current &&
+      !themeSwitcherRef.current.contains(event.target)
+    ) {
+      setShowTheme(false);
+      setArrowTheme(false);
+    }
+  }
+
+  useEffect(() => {
+    const handleKeyDown = (evt) => {
+      if (evt.code === "Escape") {
+        setShowTheme(false);
+        setArrowTheme(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <ShowThemeContainer onClick={toggleShowTheme}>
+    <ShowThemeContainer onClick={toggleShowTheme} ref={themeSwitcherRef}>
       <ShowThemeTextWrapper>
         <ThemeMainText>Theme</ThemeMainText>
         <ThemeArrowIcon>

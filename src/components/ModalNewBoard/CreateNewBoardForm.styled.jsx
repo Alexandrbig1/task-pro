@@ -42,6 +42,7 @@ export const StyledInput = styled(Field)`
     width: 302px;
   }
 `;
+
 export const StyledLabel = styled.label`
   cursor: pointer;
   display: flex;
@@ -96,6 +97,7 @@ export const StyledError = styled.div`
     right: 25px;
   }
 `;
+
 export const IconsWrapper = styled.div`
   display: flex;
   gap: 8px;
@@ -145,6 +147,7 @@ export const DefaultIconWrapper = styled.div`
     opacity: 1;
   }
 `;
+
 export const StyledDefaultIcon = styled.svg`
   width: 16px;
   height: 16px;

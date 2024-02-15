@@ -27,8 +27,3 @@ export const ThemeSwitcherWrapper = styled.div`
   align-items: center;
   gap: 1.4rem;
 `;
-
-// export const UserData = styled.div`
-//   display: flex;
-//   gap: 0.8rem;
-// `;

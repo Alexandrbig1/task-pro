@@ -14,16 +14,13 @@ export const AvatarText = styled.p`
   color: ${(p) => p.theme.colors.secondaryTextColor};
 `;
 export const AvatarImg = styled.img`
-  /* font-size: 3.2rem; */
-
   width: ${(p) => (p?.size?.width ? p?.size?.width : "32px")};
   height: ${(p) => (p?.size?.height ? p?.size?.height : "32px")};
 
   border-radius: 0.8rem;
 `;
-export const AvatarIcon = styled.svg`
-  /* font-size: 3.2rem; */
 
+export const AvatarIcon = styled.svg`
   --color1: ${(p) => p.theme.colors.defaultIconBackground};
   --color2: ${(p) => p.theme.colors.defaultAvatar};
   width: ${(p) => (p?.size?.width ? p?.size?.width : "32px")};
@@ -31,6 +28,7 @@ export const AvatarIcon = styled.svg`
 
   border-radius: 0.8rem;
 `;
+
 export const AvatarBtn = styled.button`
   display: flex;
   flex-direction: row;

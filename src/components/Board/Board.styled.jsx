@@ -9,7 +9,6 @@ export const BoardWrapper = styled.div`
   overflow-x: scroll;
 
   &::-webkit-scrollbar {
-    /* width: 12px; */
     width: 0;
   }
 
