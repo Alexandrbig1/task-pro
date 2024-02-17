@@ -25,6 +25,7 @@ import {
   FieldWrapper,
   PasswordErrorMessage,
 } from "./SignUp.styled";
+// import Google from "../../components/Google/Google";
 
 const customTheme = createTheme({
   breakpoints: {
@@ -161,6 +162,7 @@ export default function SignUp() {
                 <LoginLink href="#/signin" variant="body2">
                   Log In
                 </LoginLink>
+                {/* <Google /> */}
               </Box>
               <Box
                 component="form"
