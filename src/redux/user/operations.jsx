@@ -9,14 +9,7 @@ export const requestHelp = createAsyncThunk(
   "users/help/request",
   async (credentials, thunkAPI) => {
     try {
-      const header = {
-        headers: {
-          Accept: "application/json",
-          Authorization: axios.defaults.headers.common.Authorization,
-          "Content-Type": "application/json",
-        },
-      };
-      const res = await axios.post("/users/help", credentials, header);
+      const res = await axios.post("/users/help", credentials);
       toast.success(
         "Thank you for reaching out! Your help request has been received. Our team is on it, and we'll get back to you as soon as possible.",
         {
@@ -44,7 +37,6 @@ export const usersAvatar = createAsyncThunk(
     try {
       const res = await axios.patch("/users/avatar", avatarFormData, {
         headers: {
-          Authorization: axios.defaults.headers.common.Authorization,
           "Content-Type": "multipart/form-data",
         },
       });
@@ -72,13 +64,10 @@ export const editUser = createAsyncThunk(
       const header = {
         headers: {
           Accept: "application/json",
-          Authorization: axios.defaults.headers.common.Authorization,
           "Content-Type": "application/json",
         },
       };
-
       const { data } = await axios.patch("/users/profile", config, header);
-
       toast.success("Your information was update");
 
       return data;
