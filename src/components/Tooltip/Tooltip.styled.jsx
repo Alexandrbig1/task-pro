@@ -1,34 +1,22 @@
 import styled from "styled-components";
 
-export const BackDrop = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: ${(p) => p.theme.colors.modalBgColor};
-`;
-
-export const Modal = styled.div`
-  position: absolute;
-  z-index: 11;
+export const List = styled.ul`
   width: 135px;
   padding: 18px;
-  border-radius: 8px;
-  background-color: ${(p) => p.theme.colors.themeWrapper};
 
-  @media screen and (min-width: 320px) and (max-width: 375px) {
-    width: 90%;
-  }
-`;
-export const List = styled.ul`
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%,-100%);
+  z-index: 11;
+
   display: flex;
   flex-direction: column;
   row-gap: 8px;
+
+  background-color: ${(p) => p.theme.colors.themeWrapper};
+  border: 1px solid ${(p) => p.theme.colors.themeWrapperBorder};
+  border-radius: 8px;
 `;
 export const Item = styled.li``;
 

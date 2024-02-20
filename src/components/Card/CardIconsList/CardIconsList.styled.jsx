@@ -8,6 +8,7 @@ export const IconList = styled.ul`
 `;
 
 export const ListItem = styled.li`
+  position: relative;
   display: flex;
   align-items: end;
 `;

@@ -40,7 +40,6 @@ export default function ThemeSwitcher({ toggleTheme }) {
         setArrowTheme(false);
       }
     };
-
     document.addEventListener("keydown", handleKeyDown);
     document.addEventListener("click", handleClickOutside);
 
