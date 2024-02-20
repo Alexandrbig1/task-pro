@@ -7,8 +7,8 @@ export const List = styled.ul`
   position: absolute;
   top: 0;
   left: 0;
-  transform: translate(-50%,-100%);
-  z-index: 11;
+  transform: translate(-50%, -100%);
+  z-index: 111;
 
   display: flex;
   flex-direction: column;
@@ -17,6 +17,7 @@ export const List = styled.ul`
   background-color: ${(p) => p.theme.colors.themeWrapper};
   border: 1px solid ${(p) => p.theme.colors.themeWrapperBorder};
   border-radius: 8px;
+  cursor: auto;
 `;
 export const Item = styled.li``;
 
