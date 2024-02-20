@@ -40,7 +40,7 @@ export const CardIconsList = ({ currentColumn, cardInfo }) => {
   };
 
   function handleMoveModal() {
-    setIsTooltipModalOpen((prevState) => !prevState);
+    setIsTooltipModalOpen(!isTooltipModalOpen);
   }
 
   const handleDelete = async () => {
@@ -68,6 +68,15 @@ export const CardIconsList = ({ currentColumn, cardInfo }) => {
               <use href={`${sprite}#icon-arrow-circle-dark`}></use>
             </Svg>
           </Button>
+          {isTooltipModalOpen && (
+            <Tooltip
+              moveBtn={moveBtn}
+              moveSvg={moveSvg}
+              currentColumn={currentColumn}
+              onClose={setIsTooltipModalOpen}
+              cardId={_id}
+            />
+          )}
         </ListItem>
         <ListItem key={"edit"}>
           <Button type="button" onClick={handleToggleModal}>
@@ -86,13 +95,6 @@ export const CardIconsList = ({ currentColumn, cardInfo }) => {
       </IconList>
       {isModalOpen && (
         <EditCardModal onClose={handleToggleModal} cardInfo={cardInfo} />
-      )}
-      {isTooltipModalOpen && (
-        <Tooltip
-          currentColumn={currentColumn}
-          onClose={setIsTooltipModalOpen}
-          cardId={_id}
-        />
       )}
     </>
   );
