@@ -17,7 +17,7 @@ export const List = styled.ul`
   background-color: ${(p) => p.theme.colors.themeWrapper};
   border: 1px solid ${(p) => p.theme.colors.themeWrapperBorder};
   border-radius: 8px;
-  cursor: auto;
+  cursor: default;
 `;
 export const Item = styled.li``;
 
